@@ -40,7 +40,7 @@ namespace TCOBO
         {
         }
 
-        protected override void Update(GameTime gameTime)
+        protected override void Update(GameTime gameTime)   // viktigt att uppdatera olika saker och ting ibland!
         {
 
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
