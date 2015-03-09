@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\chris_000\OneDrive\Documents\MaH\Systemutveckling\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\grassTile.xnb</Output>
-      <Time>2015-03-06T09:22:45.8673344+01:00</Time>
+      <Output>C:\Users\chris_000\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\grassTile.xnb</Output>
+      <Time>2015-03-06T10:33:09.4556456+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -17,10 +17,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\chris_000\OneDrive\Documents\MaH\Systemutveckling\TCOBO\TCOBO\TCOBO\TCOBOContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\chris_000\OneDrive\Documents\MaH\Systemutveckling\TCOBO\TCOBO\TCOBO\TCOBO\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\chris_000\OneDrive\Documents\MaH\Systemutveckling\TCOBO\TCOBO\TCOBO\TCOBO\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\chris_000\OneDrive\Documents\MaH\Systemutveckling\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\chris_000\Documents\GitHub\TCOBO\TCOBO\TCOBOContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\chris_000\Documents\GitHub\TCOBO\TCOBO\TCOBO\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\chris_000\Documents\GitHub\TCOBO\TCOBO\TCOBO\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\chris_000\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
