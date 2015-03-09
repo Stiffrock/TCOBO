@@ -49,7 +49,7 @@ namespace TCOBO
             base.Update(gameTime);
         }
 
-        protected override void Draw(GameTime gameTime)
+        protected override void Draw(GameTime gameTime) // viktigt att rita olika saker och ting ibland!
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
