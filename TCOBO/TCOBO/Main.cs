@@ -229,7 +229,7 @@ namespace TCOBO
                         player.swordinHand = true;
                         player.swordEquipped = true;
                         itemManager.swordEquip = true;
-                       // itemManager.EquipList.Add(item);
+                        itemManager.EquipList.Add(item);
                         return;
                     }
 

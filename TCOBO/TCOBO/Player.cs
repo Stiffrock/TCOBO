@@ -315,13 +315,11 @@ namespace TCOBO
             {
                 if (swordEquipped)              // HIHIHI SECRET HAX
                 {
-                    swordinHand = true;
                     speed -= 3;
                     max_speed -= 5;
                 }
                 else
                 {
-                    swordinHand = false;
                     speed += 3;
                     max_speed += 5;
                 }
@@ -434,7 +432,7 @@ namespace TCOBO
             }
             else if (swordinHand && strike2)
             {
-                spriteBatch.Draw(strikeTexSword2, playerPos, null, Color.White, rotation, origin, size, SpriteEffects.None, 0f);
+                spriteBatch.Draw(strikeTexSword2, playerPos, null, swordColor, rotation, origin, size, SpriteEffects.None, 0f);
                 spriteBatch.Draw(strikeTexPlayer2, playerPos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
             }
             else
