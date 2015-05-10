@@ -20,7 +20,6 @@ namespace TCOBO
         public Player player;
         private Attack attack;
         private Camera2D camera;        
-        private Enemy enemy;
         private SpriteFont spriteFont;
         private Color swordColor;
         private Color newSwordColor;
@@ -41,11 +40,10 @@ namespace TCOBO
             itemManager = new ItemManager(game1);
             player = new Player(game1.Content);
             testWorld = new TestWorld(game1.Content);
-            camera = new Camera2D(game1.GraphicsDevice.Viewport, player);
-            enemy = new Enemy(game1.Content);            
+            camera = new Camera2D(game1.GraphicsDevice.Viewport, player);        
             enemyList = new List<Enemy>();
             inrangeList = new List<Enemy>();
-            enemyList.Add(enemy);
+            enemyList.Add(new Enemy(new Vector2(300, 300), game1.Content));
             attack = new Attack(player);
             testWorld.ReadLevel("Map01");
             testWorld.SetMap();                 
@@ -63,6 +61,10 @@ namespace TCOBO
             float xDistance = (float)ms.X - player.playerPos.X;
             float yDistance = (float)ms.Y - player.playerPos.Y;
             player.rotation = (float)Math.Atan2(yDistance, xDistance);
+
+            double h = Math.Sqrt(xDistance * xDistance + yDistance * yDistance);
+            float dn = (float)h;
+            player.strikeVelocity = new Vector2(xDistance / dn * 70, yDistance / dn * 70);
 
             aimVector = new Vector2(xDistance, yDistance);
 
@@ -237,7 +239,10 @@ namespace TCOBO
             effectiveStats = player.GetEffectiveStats();
             board.Update(playerStats, effectiveStats);
             camera.Update(gameTime);
-            enemy.UpdateEnemy(gameTime, player.GetPos());            
+            foreach (Enemy e in enemyList)
+            {
+                e.UpdateEnemy(gameTime, player.GetPos(), testWorld.tiles);          
+            }         
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -246,7 +251,10 @@ namespace TCOBO
                 camera.transform);
             testWorld.Draw(spriteBatch);           
             player.Draw(spriteBatch);
-            enemy.Draw(spriteBatch);
+            foreach (Enemy e in enemyList)
+            {
+                e.Draw(spriteBatch);
+            }
             
             foreach (Item item in itemManager.ItemList)
             {

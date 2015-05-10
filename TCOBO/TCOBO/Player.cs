@@ -22,7 +22,7 @@ namespace TCOBO
 
         public float rotation = 0f;
         public int 
-            animaCount = 1, Level = 1, Str = 10, Dex = 10, 
+            animaCount = 0, Level = 1, Str = 10, Dex = 10, 
             Vit = 10, Int = 10, maxLvl = 101, newStat = 0;
         private Color color;
         public float speed = 230f, max_speed = 130, slow_speed = 85, slow_speed_2 = 200;
@@ -41,6 +41,7 @@ namespace TCOBO
         float attackProgress = 0f;
         float playerSize = 36, basePlayerSize = 36;
         public float size;
+        public Vector2 strikeVelocity;
       
         public Vector2 GetPos()
         {
@@ -332,13 +333,15 @@ namespace TCOBO
             {
                 strike = true;
                 animaCount = 0;
+                velocity2 += strikeVelocity;
             }
-            else if (KeyMouseReader.LeftClick() == true && swordEquipped == true && strike == true && strike2 == false && attackProgress <= 80)
+            else if (KeyMouseReader.LeftClick() == true && swordEquipped == true && strike == true && strike2 == false)
             {
                 strike = false;
                 strike2 = true;
                 animaCount = 0;
                 attackProgress = 0;
+                velocity += strikeVelocity;
             }
         }
 
@@ -416,15 +419,15 @@ namespace TCOBO
 
             //spriteBatch.Draw(TextureManager.sand1, boundingBox, Color.Black);
             if (swordEquipped && !(strike || strike2))
-                spriteBatch.Draw(swordTex[animaCount], playerPos, null, swordColor, rotation, origin, size, SpriteEffects.None, 0f);
+                spriteBatch.Draw(swordTex[animaCount], playerPos, null, Color.White, rotation, origin, size, SpriteEffects.None, 0f);
            
             if (strike) {
-                spriteBatch.Draw(strikeTexSword1, playerPos, null, swordColor, rotation, origin, size, SpriteEffects.None, 0f);
+                spriteBatch.Draw(strikeTexSword1, playerPos, null, Color.White, rotation, origin, size, SpriteEffects.None, 0f);
                 spriteBatch.Draw(strikeTexPlayer1, playerPos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
             }
             else if (strike2)
             {
-                spriteBatch.Draw(strikeTexSword2, playerPos, null, swordColor, rotation, origin, size, SpriteEffects.None, 0f);
+                spriteBatch.Draw(strikeTexSword2, playerPos, null, Color.White, rotation, origin, size, SpriteEffects.None, 0f);
                 spriteBatch.Draw(strikeTexPlayer2, playerPos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
             }
             else
