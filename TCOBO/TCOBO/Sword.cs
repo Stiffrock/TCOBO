@@ -10,8 +10,11 @@ namespace TCOBO
 {
     class Sword : Item
     {
+<<<<<<< HEAD
         public Color swordColor;
 
+=======
+>>>>>>> origin/Stoffe
         public Sword(ContentManager content, int damage, Texture2D tex, Color color, Vector2 pos)
             : base(content)
         {
@@ -30,8 +33,13 @@ namespace TCOBO
 
 
         public override void Draw(SpriteBatch sb)
+<<<<<<< HEAD
         {          
             sb.Draw(itemTex, pos, new Rectangle(0,0,50,50) , itemColor);
+=======
+        {
+            sb.Draw(itemTex, pos, new Rectangle(0, 0, 50, 50), Color.White);
+>>>>>>> origin/Stoffe
         }
 
     }

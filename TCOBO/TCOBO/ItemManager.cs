@@ -42,10 +42,13 @@ namespace TCOBO
             IsInventoryshown = false;
         }
 
+<<<<<<< HEAD
        /* public Color changeWeaponColor(Color color)
         {
             //return color = sword.swordColor;
         }*/
+=======
+>>>>>>> origin/Stoffe
 
 
 
@@ -71,12 +74,21 @@ namespace TCOBO
                             if (KeyMouseReader.LeftClick())
                             {
                                 item.hand = false;
+<<<<<<< HEAD
 
                             }
                         }
 
                     }
 
+=======
+
+                            }
+                        }
+
+                    }
+
+>>>>>>> origin/Stoffe
                 }
             }
         }
@@ -87,13 +99,21 @@ namespace TCOBO
             {
                 if (item.hitBox.Contains(KeyMouseReader.MousePos().X, KeyMouseReader.MousePos().Y) && KeyMouseReader.RightClick() && item.equip == false)
                 {
+<<<<<<< HEAD
                     EquipList.Add(item);
+=======
+                    //EquipList.Add(item);
+>>>>>>> origin/Stoffe
                     item.equip = true;
                     return;
                 }
                 if (item.hitBox.Contains(KeyMouseReader.MousePos().X, KeyMouseReader.MousePos().Y) && KeyMouseReader.RightClick() && item.equip == true)
                 {                   
+<<<<<<< HEAD
                     EquipList.Remove(item);
+=======
+                   // EquipList.Remove(item);
+>>>>>>> origin/Stoffe
                     item.equip = false;
                     return;
                 }

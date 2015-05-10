@@ -377,6 +377,7 @@ C:\Users\Stoffe\Documents\GitHub\TCOBO2\TCOBO\TCOBO\obj\x86\Debug\TCOBO.csprojRe
 C:\Users\Stoffe\Documents\GitHub\TCOBO2\TCOBO\TCOBO\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Stoffe\Documents\GitHub\TCOBO2\TCOBO\TCOBO\obj\x86\Debug\TCOBO.exe
 C:\Users\Stoffe\Documents\GitHub\TCOBO2\TCOBO\TCOBO\obj\x86\Debug\TCOBO.pdb
+<<<<<<< HEAD
 C:\Users\Balder\Desktop\TCOBO2\TCOBO\TCOBO\bin\x86\Debug\Content\playerSpritePH.xnb
 C:\Users\Balder\Desktop\TCOBO2\TCOBO\TCOBO\bin\x86\Debug\Content\Bird.xnb
 C:\Users\Balder\Desktop\TCOBO2\TCOBO\TCOBO\bin\x86\Debug\Content\weaponPH.xnb
@@ -473,3 +474,5 @@ C:\Users\Balder\Desktop\TCOBO2\TCOBO\TCOBO\obj\x86\Debug\TCOBO.csprojResolveAsse
 C:\Users\Balder\Desktop\TCOBO2\TCOBO\TCOBO\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Balder\Desktop\TCOBO2\TCOBO\TCOBO\obj\x86\Debug\TCOBO.exe
 C:\Users\Balder\Desktop\TCOBO2\TCOBO\TCOBO\obj\x86\Debug\TCOBO.pdb
+=======
+>>>>>>> origin/Stoffe
