@@ -26,12 +26,7 @@ namespace TCOBO
             texture_rect = new Rectangle((int)pos.X, (int)pos.Y, 50, 50);
 
         }
-
-        
-
-        
-
-        
+      
 
         public void Draw(Texture2D texture, SpriteBatch spriteBatch)
         {

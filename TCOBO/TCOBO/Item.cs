@@ -10,11 +10,14 @@ namespace TCOBO
 {
     abstract class Item
     {
-        public Vector2 itemPos;
         public Color itemColor;
         public Texture2D itemTex;
-        public  Rectangle hitBox;
+        public Rectangle hitBox;
+        public int stat;
         public Vector2 pos;
+        public bool equip;
+        public bool hand;
+        public bool bagRange = true;
 
         public Item(ContentManager content)
         {

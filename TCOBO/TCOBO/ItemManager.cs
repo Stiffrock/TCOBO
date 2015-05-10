@@ -9,195 +9,123 @@ using System.Text;
 
 namespace TCOBO
 {
-    class ItemManager       //TODO Gör så att equippat vapen skickar en color variabel beroende på vapen till main, som skickar den till vidare till player för att ritas ut
+    class ItemManager 
     {
-        //private Texture2D tex;
-        //private Vector2 pos;
         private Game1 game1;
-        //public Stone stone;
-        private Sword sword;
-
-        //private Sword sword;
-        private Item leaf;
+        private Sword standardSword, goldenSword, blueSword, redSword;
         private Inventory inventory;
         private GraphicsDevice grahpics;
-       // private PlayerPanel board;
         private SpriteFont sf;
-        private bool PickedUp;
-
-        private bool Inventored;
-
-        private bool Showstats;
-        private bool IsInventoryshown;
+        private bool Showstats,IsInventoryshown,PickedUp;
+        public bool swordEquip;
         public List<Item> ItemList = new List<Item>();
         public List<Item> InventoryList = new List<Item>();
+        public List<Item> EquipList = new List<Item>();
 
         public ItemManager(Game1 game1)
         {
             this.game1 = game1;
-            grahpics = game1.GraphicsDevice;
-            //stone = new Stone(game1.Content);
-            inventory = new Inventory(game1.Content, new Vector2(200, 200));
-            sword = new Sword(game1.Content);
-            inventory = new Inventory(game1.Content, new Vector2(200, 200));
-            //leaf = new Item(game1.Content, new Vector2(400, 200));
-           
-          //  board = new PlayerPanel(game1.Content, new Vector2(550, 0));
-
-
             this.sf = game1.Content.Load<SpriteFont>("SpriteFont1");
+            grahpics = game1.GraphicsDevice;
 
-            ItemList.Add(sword);
+            standardSword = new Sword(game1.Content, 10, TextureManager.standardSword, Color.White, new Vector2(0,0));
+            blueSword = new Sword(game1.Content, 20, TextureManager.blueSword, Color.LightBlue, new Vector2(0, 20));
+            redSword = new Sword(game1.Content, 40, TextureManager.redSword, Color.Red, new Vector2(0, 40));
+            goldenSword = new Sword(game1.Content, 100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 60));
+            inventory = new Inventory(game1.Content, new Vector2(200, 200));  
+            ItemList.Add(standardSword);
+            ItemList.Add(redSword);
+            ItemList.Add(blueSword);
+            ItemList.Add(goldenSword);
             PickedUp = false;
-
             Showstats = false;
             IsInventoryshown = false;
         }
 
-        public Color changeWeaponColor(Color color)
-        {
-            return color = sword.swordColor;
-        }
 
-        public void Update(GameTime gameTime)
-        {
-            sword.Update(gameTime);
-            inventory.Update();
-            PickItem();
-            MoveItem(Mouse.GetState().X, Mouse.GetState().Y);
-            ShowStats();
-            //IsInventoryShown();
-            //EquipItem();
-            IsInventoryShown();
-            HandleInventory();
-           // EquipItem();
 
-        }
-
-        public void PickItem()
-        {
-
-            foreach (Item item in ItemList)
-            {
-                if (item.hitBox.Contains(Mouse.GetState().X, Mouse.GetState().Y) && KeyMouseReader.LeftClick() == true)
-                {
-                    InventoryList.Add(item);
-                    ItemList.Remove(item);
-                    item.pos.X = 550;
-                    item.pos.Y = 130;
-                    break;
-                }
-              /*  if (item.hitBox.Contains(Mouse.GetState().X, Mouse.GetState().Y) && Mouse.GetState().LeftButton == ButtonState.Released)
-                {
-                    PickedUp = false;
-                }
-                if (PickedUp == true && inventory.hitBox.Contains(sword.hitBox))
-                {                
-                    InventoryList.Add(item);
-                    ItemList.Remove(item);
-                    break;
-                }*/
-            }
-            //if (stone.hitBox.Contains(Mouse.GetState().X, Mouse.GetState().Y) && Mouse.GetState().LeftButton == ButtonState.Released && inventory.hitBox.Contains(stone.hitBox))
-            //{
-            //    Backpacked = true;
-            //}
-            //if (!inventory.hitBox.Contains(stone.hitBox))
-            //{
-            //    Backpacked = false;
-            //}
-
-            //if (!inventory.hitBox.Contains(stone.hitBox) && !IsInventoryshown)
-            //{
-            //    DrawStone = false;
-            //}
-            //else
-            //{
-            //    DrawStone = true;
-            //}
-
-                /*  if (item.hitBox.Contains(Mouse.GetState().X, Mouse.GetState().Y) && Mouse.GetState().LeftButton == ButtonState.Released)
-                  {
-                      PickedUp = false;
-                  }
-                  if (PickedUp == true && inventory.hitBox.Contains(sword.hitBox))
-                  {                
-                      InventoryList.Add(item);
-                      ItemList.Remove(item);
-                      break;
-                  }*/
-            
-        }
 
         public void HandleInventory()
         {
             foreach (Item item in InventoryList)
             {
-                if (item.hitBox.Contains(Mouse.GetState().X, Mouse.GetState().Y) && Mouse.GetState().LeftButton == ButtonState.Pressed)
+                if (item.hitBox.Contains(Mouse.GetState().X, Mouse.GetState().Y) && KeyMouseReader.LeftClick() && item.hand == false)
                 {
-                    PickedUp = true;
+                    // PickedUp = true;
+                    item.hand = true;
+                    return;
                 }
-                if (item.hitBox.Contains(Mouse.GetState().X, Mouse.GetState().Y) && Mouse.GetState().LeftButton == ButtonState.Released)
+
+                if (item.hand == true)
                 {
-                    PickedUp = false;
+                    foreach (InventoryTile tile in inventory.grid)
+                    {
+                        if (item.hitBox.Intersects(tile.texture_rect))
+                        {
+                            item.pos.X = tile.pos.X;
+                            item.pos.Y = tile.pos.Y + 5;
+                            if (KeyMouseReader.LeftClick())
+                            {
+                                item.hand = false;
+
+                            }
+                        }
+
+                    }
+
                 }
-                //if (item.hitBox.Contains(Mouse.GetState().X, Mouse.GetState().Y) && Mouse.GetState().LeftButton == ButtonState.Released && inventory.hitBox.Contains(sword.hitBox))
-                //{
-                //    Inventored = true;
-                //}               
             }
+        }
+
+        public void equipItem()
+        {
+            foreach (Item item in InventoryList)
+            {
+                if (item.hitBox.Contains(KeyMouseReader.MousePos().X, KeyMouseReader.MousePos().Y) && KeyMouseReader.RightClick() && item.equip == false)
+                {
+                    //EquipList.Add(item);
+                    item.equip = true;
+                    return;
+                }
+                if (item.hitBox.Contains(KeyMouseReader.MousePos().X, KeyMouseReader.MousePos().Y) && KeyMouseReader.RightClick() && item.equip == true)
+                {                   
+                   // EquipList.Remove(item);
+                    item.equip = false;
+                    return;
+                }
+            }
+        }
+
 
         
 
-        //public void EquipItem()
-        //{
-        //    if (Mouse.GetState().RightButton == ButtonState.Pressed && inventory.hitBox.Contains(stone.hitBox))
-        //    {
-        //        stone.Equiped = !stone.Equiped;
-        //    }
-        //}
-
-
-                 
-            
-
-            foreach (InventoryTile tile in inventory.grid)
-            {
-                foreach (Item item in InventoryList)
-                {
-                    if (item.hitBox.Intersects(tile.texture_rect) && KeyMouseReader.RightClick())
-                    {
-                        item.pos = tile.pos;
-                        PickedUp = false;
-                    }
-                }
-            }
-        }
-
-        public void MoveItem(int x, int y)
+        public void MoveItem()
         {
+            Vector2 mousePos = new Vector2(KeyMouseReader.MousePos().X, KeyMouseReader.MousePos().Y);
 
             foreach (Item item in InventoryList)
             {
-                    if (PickedUp == true && inventory.hitBox.Contains(item.hitBox))
+                if (item.hand == true)
+                {
+                    item.pos.X = mousePos.X - 25;
+                    item.pos.Y = mousePos.Y - 25;
+                    item.hitBox.X = (int)mousePos.X - 50;
+                    item.hitBox.Y = (int)mousePos.Y - 50;
+
+                    if (item.hitBox.Intersects(inventory.hitBox))
                     {
-                        sword.pos.X = ((Mouse.GetState().X)/50)*50;
-                        sword.pos.Y = ((Mouse.GetState().Y +15) / 50) * 50;
-                        sword.hitBox.X = ((Mouse.GetState().X) / 50) * 50;
-                        sword.hitBox.Y = ((Mouse.GetState().Y +15) / 50) * 50;
+                        item.bagRange = true;                      
                     }
-                    else if (PickedUp == true)
+                    else
                     {
-                        sword.pos.X = (Mouse.GetState().X - 25);
-                        sword.pos.Y = (Mouse.GetState().Y - 25);
-                        sword.hitBox.X = (Mouse.GetState().X - 25);
-                        sword.hitBox.Y = (Mouse.GetState().Y - 25);
+                        item.bagRange = false;                
                     }
+                }
             }
-        }
+       }
 
 
-        public void ShowStats()
+       /* public void ShowStats()
         {
             if (sword.hitBox.Contains(Mouse.GetState().X,Mouse.GetState().Y))
             {
@@ -207,7 +135,7 @@ namespace TCOBO
             {
                 Showstats = false;
             }
-        }
+        }*/
 
         private void IsInventoryShown()
         {
@@ -217,40 +145,37 @@ namespace TCOBO
             }
         }
 
+        public void Update(GameTime gameTime)
+        {
+            standardSword.Update(gameTime);
+            redSword.Update(gameTime);
+            blueSword.Update(gameTime);
+            goldenSword.Update(gameTime);
+            equipItem();
+            inventory.Update();
+            MoveItem();
+            IsInventoryShown();
+            HandleInventory();
+
+        }
+
         public void Draw(SpriteBatch sb)
         {
-          //  sb.Begin();
             inventory.Draw(sb);
-
-            //if (IsInventoryshown || !IsInventoryshown && !inventory.hitBox.Contains(stone.hitBox))
-            //foreach (Item item in ItemList)
-            foreach (Item item in ItemList)
-
-            {
-                item.Draw(sb); 
-            }
-
             if (Showstats && IsInventoryshown)
             {
                 sb.DrawString(sf, "This is a sword.", new Vector2(575, 350), Color.Black);
                 sb.DrawString(sf, "Dmg + 3  Str + 3", new Vector2(575, 375), Color.Black);
-
             }
-            sb.End();
-            sb.Begin();
-            foreach (Item item in InventoryList)
+
+            if (IsInventoryshown)
             {
-                if (IsInventoryshown || !IsInventoryshown && !inventory.hitBox.Contains(item.hitBox))
+                foreach (Item item in InventoryList)
                 {
                     item.Draw(sb);
                 }
-
             }
             sb.End();
-          
-  
-     
-
         }
     }
 }
