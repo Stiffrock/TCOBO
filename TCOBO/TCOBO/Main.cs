@@ -76,12 +76,6 @@ namespace TCOBO
         }
 
 
-       /* public void changeweaponColor()
-        {
-            newSwordColor = itemManager.changeWeaponColor(swordColor);
-        }*/
-
-
         public void ClickStats()
         {
             if (player.newStat != 0)
@@ -185,29 +179,14 @@ namespace TCOBO
 
         public void detectEquip()
         {
-
             foreach (Item item in itemManager.InventoryList)
             {
-                if (item.hitBox.Contains(KeyMouseReader.MousePos().X, KeyMouseReader.MousePos().Y) && KeyMouseReader.RightClick())
-                {
-                    int statAdd = item.stat;
-
-                    if (item is Sword && item.equip == true && itemManager.swordEquip == true)
-                    {
-                        player.Str -= statAdd;
-                        itemManager.swordEquip = false;
-                    }
-                }
-            }
-
-            foreach (Item item in itemManager.InventoryList)
-            {
-
                 if (item.hitBox.Contains(KeyMouseReader.MousePos().X, KeyMouseReader.MousePos().Y) && KeyMouseReader.RightClick())
                 {
                     Color itemCol = item.itemColor;
                     int statAdd = item.stat;
                     int oldStatAdd = 0;
+
 
                     if (item.equip == false && itemManager.swordEquip == true)          //TODO fixxa equippen så den inte buggar runt emd färger. Och så att man kan byta utan att ta av vapen
                     {
@@ -230,9 +209,9 @@ namespace TCOBO
                         return;
                     }
 
+
                     if (item is Sword && item.equip == true && itemManager.swordEquip == true)
                     {
-
                         player.Str -= statAdd;
                         itemCol = Color.White;
                         player.colorswitch(itemCol);
@@ -240,23 +219,23 @@ namespace TCOBO
                         player.swordEquipped = false;
                         itemManager.swordEquip = false;
                         itemManager.EquipList.Remove(item);
-
                         return;
                     }
+
                     if (item.equip == false && itemManager.swordEquip == false)
                     {
-
-                        player.Str += statAdd;
-
                         player.Str += statAdd;
                         player.colorswitch(itemCol);
                         player.swordinHand = true;
                         player.swordEquipped = true;
                         itemManager.swordEquip = true;
+                       // itemManager.EquipList.Add(item);
                         return;
                     }
+
                 }
             }
+
         }
 
 
@@ -278,9 +257,7 @@ namespace TCOBO
         {
             detectEquip();
             detectItem();
-            ClickStats();
-            player.swordColor = newSwordColor;
-        
+            ClickStats();      
             itemManager.Update(gameTime);
             krm.Update();
             attack.Update(gameTime);
@@ -308,10 +285,7 @@ namespace TCOBO
             foreach (Enemy e in enemyList)
             {
                 e.Draw(spriteBatch);
-            }
-            //enemy.Draw(spriteBatch);
-
-            
+            }      
             foreach (Item item in itemManager.ItemList)
             {
                 item.Draw(spriteBatch);

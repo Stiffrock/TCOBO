@@ -61,7 +61,7 @@ namespace TCOBO
         public Player(ContentManager content)
         {
             this.content = content;
-            swordColor = Color.White;
+          //  swordColor = Color.White;
             playerPos = new Vector2(-145, 0);
             //attackHitBox = new Rectangle(0, 0, 0, 0);
             srcRec = new Rectangle(0, 0, 100, 100);
@@ -315,11 +315,13 @@ namespace TCOBO
             {
                 if (swordEquipped)              // HIHIHI SECRET HAX
                 {
+                    swordinHand = true;
                     speed -= 3;
                     max_speed -= 5;
                 }
                 else
                 {
+                    swordinHand = false;
                     speed += 3;
                     max_speed += 5;
                 }
@@ -408,8 +410,7 @@ namespace TCOBO
 
         public override void Update(GameTime gameTime)
         {
-
-            
+           
             float tempVit = Vit;
             size = tempVit / 10;
             HandleLevelUp();
@@ -442,7 +443,7 @@ namespace TCOBO
             }
 
             //Show attackHitBox
-            spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
+           // spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
 
             //spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
 
