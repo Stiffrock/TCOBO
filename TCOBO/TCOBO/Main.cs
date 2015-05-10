@@ -75,15 +75,12 @@ namespace TCOBO
             player.attackHitBox = new Rectangle((int)(player.playerPos.X + recX - 25 * player.size), (int)(player.playerPos.Y + recY - 25 * player.size), (int)(50*player.size), (int)(50*player.size));
         }
 
-<<<<<<< HEAD
+
        /* public void changeweaponColor()
         {
             newSwordColor = itemManager.changeWeaponColor(swordColor);
         }*/
-=======
 
- 
->>>>>>> origin/Stoffe
 
         public void ClickStats()
         {
@@ -187,95 +184,82 @@ namespace TCOBO
         }
 
         public void detectEquip()
-<<<<<<< HEAD
         {
-       
-                foreach (Item item in itemManager.InventoryList)
-                {                    
-                    if (item.hitBox.Contains(KeyMouseReader.MousePos().X, KeyMouseReader.MousePos().Y) && KeyMouseReader.RightClick())
-                    {
-                        int statAdd = item.stat;
 
-                        if (item is Sword && item.equip == true && itemManager.swordEquip == true)
-                        {
-                            player.Str -= statAdd;
-                            itemManager.swordEquip = false;
-=======
-        {     
-                foreach (Item item in itemManager.InventoryList)
+            foreach (Item item in itemManager.InventoryList)
+            {
+                if (item.hitBox.Contains(KeyMouseReader.MousePos().X, KeyMouseReader.MousePos().Y) && KeyMouseReader.RightClick())
                 {
-                                  
-                    if (item.hitBox.Contains(KeyMouseReader.MousePos().X, KeyMouseReader.MousePos().Y) && KeyMouseReader.RightClick())
+                    int statAdd = item.stat;
+
+                    if (item is Sword && item.equip == true && itemManager.swordEquip == true)
                     {
-                        Color itemCol = item.itemColor;
-                     
-                        int statAdd = item.stat;
-                        int oldStatAdd = 0;
-
-           
-
-
-                        if (item.equip == false && itemManager.swordEquip == true)          //TODO fixxa equippen så den inte buggar runt emd färger. Och så att man kan byta utan att ta av vapen
-                        {
-                            foreach (Item sword in itemManager.EquipList)
-                            {
-                                if (sword is Sword)
-                                {
-                                    oldStatAdd = sword.stat;
-                                    itemManager.EquipList.Remove(sword);
-                                    break;
-                                }
-                            }                          
-                            player.Str -= oldStatAdd;
-                            player.Str += statAdd;
-                            player.colorswitch(itemCol);
-                            player.swordinHand = true;
-                            player.swordEquipped = true;
-                            itemManager.swordEquip = true;
-                            itemManager.EquipList.Add(item);
-                            return;
-                        }
-
-
-
-
-
-
-                        if (item is Sword && item.equip == true && itemManager.swordEquip == true)
-                        {
-                            
-                            player.Str -= statAdd;
-                            itemCol = Color.White;
-                            player.colorswitch(itemCol);
-                            player.swordinHand = false;
-                            player.swordEquipped = false;
-                            itemManager.swordEquip = false;
-                            itemManager.EquipList.Remove(item);
->>>>>>> origin/Stoffe
-                            return;
-                        }
-                        if (item.equip == false && itemManager.swordEquip == false)
-                        {
-<<<<<<< HEAD
-                            player.Str += statAdd;
-=======
-                            player.Str += statAdd;                             
-                            player.colorswitch(itemCol);
-                            player.swordinHand = true;
-                            player.swordEquipped = true;
->>>>>>> origin/Stoffe
-                            itemManager.swordEquip = true;
-                            return;
-                        }
-                        
-<<<<<<< HEAD
-                    }                               
-=======
-                    }         
->>>>>>> origin/Stoffe
+                        player.Str -= statAdd;
+                        itemManager.swordEquip = false;
+                    }
+                }
             }
-            
+
+            foreach (Item item in itemManager.InventoryList)
+            {
+
+                if (item.hitBox.Contains(KeyMouseReader.MousePos().X, KeyMouseReader.MousePos().Y) && KeyMouseReader.RightClick())
+                {
+                    Color itemCol = item.itemColor;
+                    int statAdd = item.stat;
+                    int oldStatAdd = 0;
+
+                    if (item.equip == false && itemManager.swordEquip == true)          //TODO fixxa equippen så den inte buggar runt emd färger. Och så att man kan byta utan att ta av vapen
+                    {
+                        foreach (Item sword in itemManager.EquipList)
+                        {
+                            if (sword is Sword)
+                            {
+                                oldStatAdd = sword.stat;
+                                itemManager.EquipList.Remove(sword);
+                                break;
+                            }
+                        }
+                        player.Str -= oldStatAdd;
+                        player.Str += statAdd;
+                        player.colorswitch(itemCol);
+                        player.swordinHand = true;
+                        player.swordEquipped = true;
+                        itemManager.swordEquip = true;
+                        itemManager.EquipList.Add(item);
+                        return;
+                    }
+
+                    if (item is Sword && item.equip == true && itemManager.swordEquip == true)
+                    {
+
+                        player.Str -= statAdd;
+                        itemCol = Color.White;
+                        player.colorswitch(itemCol);
+                        player.swordinHand = false;
+                        player.swordEquipped = false;
+                        itemManager.swordEquip = false;
+                        itemManager.EquipList.Remove(item);
+
+                        return;
+                    }
+                    if (item.equip == false && itemManager.swordEquip == false)
+                    {
+
+                        player.Str += statAdd;
+
+                        player.Str += statAdd;
+                        player.colorswitch(itemCol);
+                        player.swordinHand = true;
+                        player.swordEquipped = true;
+                        itemManager.swordEquip = true;
+                        return;
+                    }
+                }
+            }
         }
+
+
              
 
         private void detectEnemy()
@@ -294,13 +278,9 @@ namespace TCOBO
         {
             detectEquip();
             detectItem();
-<<<<<<< HEAD
             ClickStats();
-           // changeweaponColor();
             player.swordColor = newSwordColor;
-=======
-            ClickStats();           
->>>>>>> origin/Stoffe
+        
             itemManager.Update(gameTime);
             krm.Update();
             attack.Update(gameTime);
@@ -324,14 +304,13 @@ namespace TCOBO
                 camera.transform);
             testWorld.Draw(spriteBatch);           
             player.Draw(spriteBatch);
-<<<<<<< HEAD
+
             foreach (Enemy e in enemyList)
             {
                 e.Draw(spriteBatch);
             }
-=======
-            enemy.Draw(spriteBatch);
->>>>>>> origin/Stoffe
+            //enemy.Draw(spriteBatch);
+
             
             foreach (Item item in itemManager.ItemList)
             {

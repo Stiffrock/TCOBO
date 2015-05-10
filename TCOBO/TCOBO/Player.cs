@@ -16,11 +16,7 @@ namespace TCOBO
         public Texture2D playerTex1, weaponPH;
         public Vector2 playerPos, origin, aimRec;
         private ContentManager content;
-<<<<<<< HEAD
-        public Color swordColor = Color.White;
-=======
         public Color swordColor, newColor;
->>>>>>> origin/Stoffe
         public Rectangle srcRec, attackHitBox;
         private float deltaTime, Exp = 0, mDamage = 1, sDamage = 1, HP = 10;
 
@@ -402,28 +398,10 @@ namespace TCOBO
                 }
             }
         }
-<<<<<<< HEAD
-        public override void Update(GameTime gameTime)
-        {
-
-
-            float tempVit = Vit;
-            size = tempVit / 10;
-            HandleLevelUp();
-            HandlePlayerStats();
-            playerDirection();
-            Movement(gameTime);
-            handleAction(gameTime);
-            handleAnimation(gameTime);
-        }
-=======
->>>>>>> origin/Stoffe
 
         public void colorswitch(Color newCol)
         {
             swordColor = newCol;
-
-            
 
         }
 
@@ -446,19 +424,11 @@ namespace TCOBO
         {
       
             //spriteBatch.Draw(TextureManager.sand1, boundingBox, Color.Black);
-<<<<<<< HEAD
-            if (swordEquipped && !(strike || strike2))
-                spriteBatch.Draw(swordTex[animaCount], playerPos, null, Color.White, rotation, origin, size, SpriteEffects.None, 0f);
-           
-            if (strike) {
-                spriteBatch.Draw(strikeTexSword1, playerPos, null, Color.White, rotation, origin, size, SpriteEffects.None, 0f);
-=======
             if (swordinHand && swordEquipped && !(strike || strike2))
                 spriteBatch.Draw(swordTex[animaCount], playerPos, null, swordColor, rotation, origin, size, SpriteEffects.None, 0f);
            
             if (swordinHand && strike) {
                 spriteBatch.Draw(strikeTexSword1, playerPos, null, swordColor, rotation, origin, size, SpriteEffects.None, 0f);
->>>>>>> origin/Stoffe
                 spriteBatch.Draw(strikeTexPlayer1, playerPos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
             }
             else if (swordinHand && strike2)
@@ -472,11 +442,10 @@ namespace TCOBO
             }
 
             //Show attackHitBox
-<<<<<<< HEAD
             spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
-=======
+
             //spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
->>>>>>> origin/Stoffe
+
             
 
               //spriteBatch.Draw(TextureManager.sand1, boundsTop, Color.Black);
