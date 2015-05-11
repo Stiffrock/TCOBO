@@ -88,3 +88,4 @@ Content\statbox3.xnb
 Content\statBox4.xnb
 Content\SpriteFont1.xnb
 Content\MOStatFont.xnb
+Content\armor_type1.xnb

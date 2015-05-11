@@ -811,6 +811,15 @@
       <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\MOStatFont.xnb</Output>
       <Time>2015-05-09T18:49:00.7583964+02:00</Time>
     </Item>
+    <Item>
+      <Source>armor_type1.png</Source>
+      <Name>armor_type1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\armor_type1.xnb</Output>
+      <Time>2015-05-11T15:47:56.7697281+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{F57F5713-2EE6-4A39-821D-E7329A4EA41E}</ContentProjectGUID>
