@@ -26,7 +26,7 @@ namespace TCOBO
             Vit = 10, Int = 10, maxLvl = 101, newStat = 0;
         private Color color;
         public float speed = 230f, max_speed = 130, slow_speed = 85, slow_speed_2 = 200;
-        public bool swordEquipped = false, swordinHand = false;
+        public bool swordEquipped = false, swordinHand = false, armorEquip = false;
         public Vector2 velocity, velocity2;
         private Vector2 acceleration;
         private Tuple<int, int, int, int, int, int> playerStats;
@@ -446,7 +446,11 @@ namespace TCOBO
                 spriteBatch.Draw(playerTex[animaCount], playerPos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
             }
 
-            spriteBatch.Draw(TextureManager.standardArmor, new Vector2(playerPos.X, playerPos.Y), null, Color.Black, rotation, new Vector2(15,15), size, SpriteEffects.None, 0f);
+            if (armorEquip)
+            {
+                spriteBatch.Draw(TextureManager.standardArmor, new Vector2(playerPos.X, playerPos.Y), null, Color.Black, rotation, new Vector2(15, 15), size, SpriteEffects.None, 0f);
+            }
+           
           
 
             //Show attackHitBox

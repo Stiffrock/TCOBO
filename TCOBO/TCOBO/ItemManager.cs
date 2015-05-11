@@ -17,7 +17,7 @@ namespace TCOBO
         private Inventory inventory;
         private GraphicsDevice grahpics;
         private SpriteFont sf;
-        private bool Showstats,IsInventoryshown,PickedUp;
+        public bool Showstats,IsInventoryshown,PickedUp;
         public bool swordEquip;
         public List<Item> ItemList = new List<Item>();
         public List<Item> InventoryList = new List<Item>();

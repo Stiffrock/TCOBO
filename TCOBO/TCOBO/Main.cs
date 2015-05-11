@@ -83,7 +83,7 @@ namespace TCOBO
 
         public void ClickStats()
         {
-            if (player.newStat != 0)
+            if (player.newStat != 0 && itemManager.IsInventoryshown)
             {
                 board.statColor = Color.Gold;
                 board.showStatButton = true;
@@ -94,14 +94,12 @@ namespace TCOBO
                     if (KeyMouseReader.LeftClick())
                     {
                         player.Str += 1;
-                        player.newStat -= 1;
-<<<<<<< HEAD
-                        soundManager.statseffect.Play();                        
-=======
+                        player.newStat -= 1;                       
+
                         soundManager.statSound.Play();
 
                         
->>>>>>> origin/Stoffe
+
                     }                    
                 }
                 else
@@ -193,60 +191,53 @@ namespace TCOBO
 
         public void detectEquip()
         {
-            foreach (Item item in itemManager.InventoryList)
+            foreach (Item item in itemManager.InventoryList )
             {
-                if (item.hitBox.Contains(KeyMouseReader.MousePos().X, KeyMouseReader.MousePos().Y) && KeyMouseReader.RightClick())
+                if (item.hitBox.Contains(KeyMouseReader.MousePos().X, KeyMouseReader.MousePos().Y) && KeyMouseReader.RightClick() && itemManager.IsInventoryshown)
                 {
                     Color itemCol = item.itemColor;
                     int statAdd = item.stat;
-                    int oldStatAdd = 0;
+                   // int oldStatAdd = 0;
 
                     soundManager.equipSound.Play();
 
-                    if (item.equip == false && itemManager.swordEquip == true)          //TODO fixxa equippen så den inte buggar runt emd färger. Och så att man kan byta utan att ta av vapen
-                    {
-                        foreach (Item sword in itemManager.EquipList)
-                        {
-                            if (sword is Sword)
-                            {
-                                oldStatAdd = sword.stat;
-                                itemManager.EquipList.Remove(sword);
-                                break;
-                            }
-                        }
-                        player.Str -= oldStatAdd;
-                        player.Str += statAdd;
-                        player.colorswitch(itemCol);
-                        player.swordinHand = true;
-                        player.swordEquipped = true;
-                        itemManager.swordEquip = true;
-                        itemManager.EquipList.Add(item);
-                        return;
-                    }
-
-
-                    if (item is Sword && item.equip == true && itemManager.swordEquip == true)
+                    if (item is Sword && item.equip == true && player.swordinHand == true && itemManager.EquipList.Contains(item))
                     {
                         player.Str -= statAdd;
                         itemCol = Color.White;
                         player.colorswitch(itemCol);
                         player.swordinHand = false;
-                        player.swordEquipped = false;
-                        itemManager.swordEquip = false;
+    
+
                         itemManager.EquipList.Remove(item);
                         return;
                     }
 
-                    if (item.equip == false && itemManager.swordEquip == false)
+                    if (item is Sword && item.equip == false && player.swordinHand == false)
                     {
                         player.Str += statAdd;
                         player.colorswitch(itemCol);
                         player.swordinHand = true;
-                        player.swordEquipped = true;
-                        itemManager.swordEquip = true;
+                 
                         itemManager.EquipList.Add(item);
                         return;
                     }
+
+
+                    if (item is Armor && item.equip == true && itemManager.EquipList.Contains(item))
+                    {
+                        player.Vit -= statAdd;
+                        player.armorEquip = false;                       
+                        itemManager.EquipList.Remove(item);
+                        return;
+                    }
+                    if (item is Armor && item.equip == false)
+                    {
+                        player.Vit += statAdd;
+                        player.armorEquip = true;
+                        itemManager.EquipList.Add(item);
+                        return;
+                    } 
 
                 }
             }
