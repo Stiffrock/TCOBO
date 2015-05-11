@@ -47,7 +47,7 @@ namespace TCOBO
             inrangeList = new List<Enemy>();
             enemyList.Add(new Enemy(new Vector2(300, 300), game1.Content));
             attack = new Attack(player);
-            testWorld.ReadLevel("Map01");
+            testWorld.ReadLevel("map01");
             testWorld.SetMap();                 
             spriteFont = game1.Content.Load<SpriteFont>("SpriteFont1");
             board = new PlayerPanel(game1.Content, new Vector2(950, 0), spriteFont);

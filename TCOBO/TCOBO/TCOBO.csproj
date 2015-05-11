@@ -75,6 +75,7 @@
     <Compile Include="Abilities.cs" />
     <Compile Include="Attack.cs" />
     <Compile Include="Camera2D.cs" />
+    <Compile Include="DooDads.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="InventoryTile.cs" />
