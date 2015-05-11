@@ -35,7 +35,7 @@ namespace TCOBO
             blueSword = new Sword(20, TextureManager.blueSword, Color.LightBlue, new Vector2(0, 20));
             redSword = new Sword(40, TextureManager.redSword, Color.SandyBrown, new Vector2(0, 40));
             goldenSword = new Sword(100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 60));
-            standardArmor = new Armor(50, TextureManager.standardArmor, new Vector2(0, 100));
+            standardArmor = new Armor(5, TextureManager.standardArmor, new Vector2(0, 100));
             inventory = new Inventory(game1.Content, new Vector2(200, 200));  
             ItemList.Add(standardSword);
             ItemList.Add(redSword);
