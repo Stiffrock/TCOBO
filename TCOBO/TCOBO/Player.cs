@@ -42,6 +42,8 @@ namespace TCOBO
         float playerSize = 36, basePlayerSize = 36;
         public float size;
         public Vector2 strikeVelocity;
+
+        SoundManager soundManager = new SoundManager();
       
         public Vector2 GetPos()
         {
@@ -70,6 +72,8 @@ namespace TCOBO
             size = Vit / 10;
             LoadPlayerTex();
             HandleLevel();
+
+            soundManager.LoadContent(content);
         }
 
         public void HandleLevel()
@@ -332,6 +336,8 @@ namespace TCOBO
                 strike = true;
                 animaCount = 0;
                 velocity2 += strikeVelocity;
+                soundManager.fightSound.Play();
+                
             }
             else if (KeyMouseReader.LeftClick() == true && swordEquipped == true && strike == true && strike2 == false)
             {
