@@ -30,7 +30,9 @@ namespace TCOBO
         private PlayerPanel board;
         private Tuple<int, int, int, int, int, int> playerStats;
         private Tuple<float, float, float> effectiveStats;
+        SoundManager soundManager = new SoundManager();
 
+        //private Song statseffect;
         
         public Main(Game1 game1)
         {
@@ -45,10 +47,13 @@ namespace TCOBO
             inrangeList = new List<Enemy>();
             enemyList.Add(new Enemy(new Vector2(300, 300), game1.Content));
             attack = new Attack(player);
-            testWorld.ReadLevel("Map01");
+            testWorld.ReadLevel("map01");
             testWorld.SetMap();                 
             spriteFont = game1.Content.Load<SpriteFont>("SpriteFont1");
             board = new PlayerPanel(game1.Content, new Vector2(950, 0), spriteFont);
+
+            soundManager.LoadContent(game1.Content);
+
         }
       
         public void Rotation()
@@ -90,6 +95,9 @@ namespace TCOBO
                     {
                         player.Str += 1;
                         player.newStat -= 1;
+                        soundManager.statseffect.Play();
+
+                        
                     }                    
                 }
                 else
@@ -105,6 +113,7 @@ namespace TCOBO
                         player.speed += 1;
                         player.max_speed += 3;
                         player.newStat -= 1;
+                        soundManager.statseffect.Play();
                     }
                 }
                 else
@@ -119,6 +128,7 @@ namespace TCOBO
                     {
                         player.Vit += 1;
                         player.newStat -= 1;
+                        soundManager.statseffect.Play();
                     }
                 }
                 else
@@ -133,6 +143,7 @@ namespace TCOBO
                     {
                         player.Int += 1;
                         player.newStat -= 1;
+                        soundManager.statseffect.Play();
                     }
                 }
                 else

@@ -16,10 +16,8 @@ namespace TCOBO
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Main main;
+        SoundManager soundManager = new SoundManager();
       
-
-
-
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -38,6 +36,7 @@ namespace TCOBO
         protected override void LoadContent()
         {
             TextureManager.LoadContent(Content);
+            soundManager.LoadContent(Content);
             main = new Main(this);
        
          
