@@ -166,6 +166,15 @@ namespace TCOBO
 
         public void detectItem()
         {
+
+            if (itemManager.IsInventoryshown)
+            {
+                player.canAttack = false;
+            }
+            else
+            {
+                player.canAttack = true;
+            }
             foreach (Item item in itemManager.ItemList)
             {
                 if (player.attackHitBox.Intersects(item.hitBox)&& KeyMouseReader.LeftClick())
@@ -243,8 +252,6 @@ namespace TCOBO
             }
 
         }
-
-
              
 
         private void detectEnemy()
