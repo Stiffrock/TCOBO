@@ -293,6 +293,7 @@ namespace TCOBO
                 camera.transform);
             testWorld.Draw(spriteBatch);           
             player.Draw(spriteBatch);
+          
 
             foreach (Enemy e in enemyList)
             {
