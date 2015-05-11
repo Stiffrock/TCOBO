@@ -87,6 +87,7 @@ Content\statbox2.xnb
 Content\statbox3.xnb
 Content\statBox4.xnb
 Content\armor_type1.xnb
+Content\treetile_blackoutline.xnb
 Content\SpriteFont1.xnb
 Content\MOStatFont.xnb
 Content\Ljudeffekt1.xnb
@@ -94,10 +95,6 @@ Content\Ljudeffekt1.wma
 Content\Sleep Away.xnb
 Content\Sleep Away.wma
 Content\StatsLjud.xnb
-<<<<<<< HEAD
 Content\FightSound.xnb
 Content\EquipSound.xnb
 Content\InventorySound.xnb
-=======
-Content\treetile_blackoutline.xnb
->>>>>>> origin/Stoffe
