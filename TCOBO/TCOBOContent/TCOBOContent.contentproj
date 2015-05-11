@@ -547,12 +547,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="armor_type1.png">
       <Name>armor_type1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
-=======
+    </Compile>
     <Compile Include="Ljudeffekt1.mp3">
       <Name>Ljudeffekt1</Name>
       <Importer>Mp3Importer</Importer>
@@ -571,7 +570,13 @@
       <Name>StatsLjud</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
->>>>>>> origin/Stoffe
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="treetile_blackoutline.png">
+      <Name>treetile_blackoutline</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

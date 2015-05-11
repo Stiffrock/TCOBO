@@ -86,14 +86,12 @@ Content\statBox.xnb
 Content\statbox2.xnb
 Content\statbox3.xnb
 Content\statBox4.xnb
+Content\armor_type1.xnb
 Content\SpriteFont1.xnb
 Content\MOStatFont.xnb
-<<<<<<< HEAD
-Content\armor_type1.xnb
-=======
 Content\Ljudeffekt1.xnb
 Content\Ljudeffekt1.wma
 Content\Sleep Away.xnb
 Content\Sleep Away.wma
 Content\StatsLjud.xnb
->>>>>>> origin/Stoffe
+Content\treetile_blackoutline.xnb
