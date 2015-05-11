@@ -95,7 +95,13 @@ namespace TCOBO
                     {
                         player.Str += 1;
                         player.newStat -= 1;
+<<<<<<< HEAD
                         soundManager.statseffect.Play();                        
+=======
+                        soundManager.statSound.Play();
+
+                        
+>>>>>>> origin/Stoffe
                     }                    
                 }
                 else
@@ -111,7 +117,7 @@ namespace TCOBO
                         player.speed += 1;
                         player.max_speed += 3;
                         player.newStat -= 1;
-                        soundManager.statseffect.Play();
+                        soundManager.statSound.Play();
                     }
                 }
                 else
@@ -126,7 +132,7 @@ namespace TCOBO
                     {
                         player.Vit += 1;
                         player.newStat -= 1;
-                        soundManager.statseffect.Play();
+                        soundManager.statSound.Play();
                     }
                 }
                 else
@@ -141,7 +147,7 @@ namespace TCOBO
                     {
                         player.Int += 1;
                         player.newStat -= 1;
-                        soundManager.statseffect.Play();
+                        soundManager.statSound.Play();
                     }
                 }
                 else
@@ -195,6 +201,7 @@ namespace TCOBO
                     int statAdd = item.stat;
                     int oldStatAdd = 0;
 
+                    soundManager.equipSound.Play();
 
                     if (item.equip == false && itemManager.swordEquip == true)          //TODO fixxa equippen så den inte buggar runt emd färger. Och så att man kan byta utan att ta av vapen
                     {

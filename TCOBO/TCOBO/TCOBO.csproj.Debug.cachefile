@@ -92,6 +92,12 @@ Content\MOStatFont.xnb
 Content\Ljudeffekt1.xnb
 Content\Sleep Away.xnb
 Content\StatsLjud.xnb
+<<<<<<< HEAD
+Content\FightSound.xnb
+Content\EquipSound.xnb
+Content\InventorySound.xnb
+=======
 Content\treetile_blackoutline.xnb
+>>>>>>> origin/Stoffe
 Content\Ljudeffekt1.wma
 Content\Sleep Away.wma

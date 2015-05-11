@@ -10,16 +10,25 @@ namespace TCOBO
 {
     class SoundManager
     {
-        public SoundEffect statseffect;
+        public SoundEffect statSound;
+        public SoundEffect fightSound;
+        public SoundEffect equipSound;
+        public SoundEffect inventorySound;
 
         public SoundManager()
         {
-            statseffect = null;
+            statSound = null;
+            fightSound = null;
+            equipSound = null;
+            inventorySound = null;
         }
 
         public void LoadContent(ContentManager Content)
         {
-            statseffect = Content.Load<SoundEffect>("StatsLjud");
+            statSound = Content.Load<SoundEffect>("StatsLjud");
+            fightSound = Content.Load<SoundEffect>("FightSound");
+            equipSound = Content.Load<SoundEffect>("EquipSound");
+            inventorySound = Content.Load<SoundEffect>("InventorySound");
         }
     }
 }

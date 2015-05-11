@@ -23,6 +23,8 @@ namespace TCOBO
         public List<Item> InventoryList = new List<Item>();
         public List<Item> EquipList = new List<Item>();
 
+        SoundManager soundManager = new SoundManager();
+
         public ItemManager(Game1 game1)
         {
             this.game1 = game1;
@@ -43,6 +45,8 @@ namespace TCOBO
             PickedUp = false;
             Showstats = false;
             IsInventoryshown = false;
+
+            soundManager.LoadContent(game1.Content);
         }
 
         public void HandleInventory()
@@ -118,23 +122,12 @@ namespace TCOBO
        }
 
 
-       /* public void ShowStats()
-        {
-            if (sword.hitBox.Contains(Mouse.GetState().X,Mouse.GetState().Y))
-            {
-                Showstats = true;
-            }
-            else
-            {
-                Showstats = false;
-            }
-        }*/
-
         private void IsInventoryShown()
         {
             if (KeyMouseReader.KeyPressed(Keys.I))
             {
                 IsInventoryshown = !IsInventoryshown;
+                soundManager.inventorySound.Play();
             }
         }
 

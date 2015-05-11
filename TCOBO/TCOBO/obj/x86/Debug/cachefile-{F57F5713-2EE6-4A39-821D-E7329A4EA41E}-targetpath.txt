@@ -94,4 +94,10 @@ Content\Ljudeffekt1.wma
 Content\Sleep Away.xnb
 Content\Sleep Away.wma
 Content\StatsLjud.xnb
+<<<<<<< HEAD
+Content\FightSound.xnb
+Content\EquipSound.xnb
+Content\InventorySound.xnb
+=======
 Content\treetile_blackoutline.xnb
+>>>>>>> origin/Stoffe
