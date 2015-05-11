@@ -331,7 +331,7 @@ namespace TCOBO
                 swordEquipped = !swordEquipped;
             }
 
-            if (KeyMouseReader.LeftClick() == true && swordEquipped == true && strike == false && strike2 == false)
+            if (KeyMouseReader.LeftClick() == true && swordEquipped == true && strike == false && strike2 == false && swordinHand)
             {
                 strike = true;
                 animaCount = 0;
@@ -339,7 +339,7 @@ namespace TCOBO
                 soundManager.fightSound.Play();
                 
             }
-            else if (KeyMouseReader.LeftClick() == true && swordEquipped == true && strike == true && strike2 == false)
+            else if (KeyMouseReader.LeftClick() == true && swordEquipped == true && strike == true && strike2 == false && swordinHand)
             {
                 strike = false;
                 strike2 = true;
