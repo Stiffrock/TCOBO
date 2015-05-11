@@ -27,7 +27,7 @@ namespace TCOBO
 
             this.pos = pos;
             //this.sf = sf;
-            hitBox = new Rectangle(550, 125, 150, 250);
+            hitBox = new Rectangle(950, 125, 250, 250);
 
             CreateGameGrid();
         }
@@ -71,7 +71,7 @@ namespace TCOBO
             {
                 for (int j = 0; j < num_cols; j++)
                 {
-                    grid[i, j] = new InventoryTile(i * 50 + 550, j * 50 + 125, 0, 0);
+                    grid[i, j] = new InventoryTile(i * 50 + 950, j * 50 + 125, 0, 0);
 
                     //i * 50 + 300, j * 50 + 300
                 }

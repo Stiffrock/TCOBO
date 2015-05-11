@@ -31,37 +31,11 @@ namespace TCOBO
             {
                 double deltaX = enemy.pos.X - player.playerPos.X;
                 double deltaY =  enemy.pos.Y - player.playerPos.Y;
-                double deltaXY = Math.Pow(deltaX, 2) + Math.Pow(deltaY, 2);
-                double distance = Math.Sqrt(deltaXY); // Längden         
-                double radians = Math.Atan2((float)aimVector.Y, (float)aimVector.X);             
-                double distanceX = Math.Cos(radians) * distance;
-                double distanceY = Math.Sin(radians) * distance;
-                write = (float)distance;
-
-                
 
 
-                if (distance <= 190 && distance > 150)
-                {                    
-                enemy.pos.X += (float)distanceX / 4;
-                enemy.pos.Y += (float)distanceY / 4;
-                }
-                if (distance <= 150 && distance > 100)
-                {
-                    enemy.pos.X += (float)distanceX / 2;
-                    enemy.pos.Y += (float)distanceY / 2;
-                }
-
-                if (distance < 100 && distance > 80)
-                {
-                    enemy.pos.X += (float)distanceX;
-                    enemy.pos.Y += (float)distanceY; 
-                }
-                if (distance < 80 && distance > 0)
-                {
-                    enemy.pos.X += (float)distanceX * 2;
-                    enemy.pos.Y += (float)distanceY * 2;
-                }
+                double h = Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
+                float dn = (float)h;
+                enemy.velocity += new Vector2((float)deltaX / dn * 260, (float)deltaY / dn * 260);
             }
         }
 

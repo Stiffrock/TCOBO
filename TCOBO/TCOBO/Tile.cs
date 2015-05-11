@@ -13,9 +13,6 @@ namespace TCOBO
 {
     public class Tile
     {
-        KeyboardState keyboardState, oldkeyboardState;
-        MouseState mouse_state;
-        MouseState old_mouse_state;
         public float msModifier = 1;
         public int tileSize = 50;
         public Texture2D image;
@@ -33,8 +30,8 @@ namespace TCOBO
             if (typeOfTile == "Sand1")
             {
                 msModifier = 0.7F;
-              //  image = TextureManager.sand1;
-                image = TextureManager.sandtile1;
+              //  image = TextureManager.sandtile1;
+                image = TextureManager.watertile1;
                
             }
             else if (typeOfTile == "Sand2")
