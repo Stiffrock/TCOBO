@@ -8,18 +8,15 @@ using System.Text;
 
 namespace TCOBO
 {
-    class Sword : Item
-    {
-        public Color swordColor;
-
-        public Sword(int damage, Texture2D tex, Color color, Vector2 pos)
+    class Armor : Item
+    {       
+        public Armor(int armor, Texture2D tex, Vector2 pos)
             : base()
         {
-            // this.itemTex = TextureManager.goldenSword;
             this.itemTex = tex;
-            this.stat = damage;
-            this.itemColor = color;
             this.pos = pos;
+            this.stat = armor;
+            this.itemColor = Color.Black;
             this.hitBox = new Rectangle((int)pos.X, (int)pos.Y, itemTex.Width, itemTex.Height);
         }
 
@@ -35,8 +32,5 @@ namespace TCOBO
 
         }
 
-
     }
-    
-    }
- 
+}

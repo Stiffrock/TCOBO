@@ -13,6 +13,7 @@ namespace TCOBO
     {
         private Game1 game1;
         private Sword standardSword, goldenSword, blueSword, redSword;
+        public Armor standardArmor;
         private Inventory inventory;
         private GraphicsDevice grahpics;
         private SpriteFont sf;
@@ -28,15 +29,17 @@ namespace TCOBO
             this.sf = game1.Content.Load<SpriteFont>("SpriteFont1");
             grahpics = game1.GraphicsDevice;
 
-            standardSword = new Sword(game1.Content, 10, TextureManager.standardSword, Color.White, new Vector2(0,0));
-            blueSword = new Sword(game1.Content, 20, TextureManager.blueSword, Color.LightBlue, new Vector2(0, 20));
-            redSword = new Sword(game1.Content, 40, TextureManager.redSword, Color.SandyBrown, new Vector2(0, 40));
-            goldenSword = new Sword(game1.Content, 100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 60));
+            standardSword = new Sword(10, TextureManager.standardSword, Color.White, new Vector2(0,0));
+            blueSword = new Sword(20, TextureManager.blueSword, Color.LightBlue, new Vector2(0, 20));
+            redSword = new Sword(40, TextureManager.redSword, Color.SandyBrown, new Vector2(0, 40));
+            goldenSword = new Sword(100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 60));
+            standardArmor = new Armor(50, TextureManager.standardArmor, new Vector2(0, 100));
             inventory = new Inventory(game1.Content, new Vector2(200, 200));  
             ItemList.Add(standardSword);
             ItemList.Add(redSword);
             ItemList.Add(blueSword);
             ItemList.Add(goldenSword);
+            ItemList.Add(standardArmor);
             PickedUp = false;
             Showstats = false;
             IsInventoryshown = false;
@@ -141,6 +144,7 @@ namespace TCOBO
             redSword.Update(gameTime);
             blueSword.Update(gameTime);
             goldenSword.Update(gameTime);
+            standardArmor.Update(gameTime);
             equipItem();
             inventory.Update();
             MoveItem();

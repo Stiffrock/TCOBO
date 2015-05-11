@@ -95,9 +95,7 @@ namespace TCOBO
                     {
                         player.Str += 1;
                         player.newStat -= 1;
-                        soundManager.statseffect.Play();
-
-                        
+                        soundManager.statseffect.Play();                        
                     }                    
                 }
                 else
@@ -181,8 +179,7 @@ namespace TCOBO
                 {
                     item.pos = player.playerPos;
                     itemManager.ItemList.Add(item);
-                    itemManager.InventoryList.Remove(item);
-                    
+                    itemManager.InventoryList.Remove(item);                   
                     break;
                 }
             }
@@ -266,6 +263,12 @@ namespace TCOBO
 
         public void Update(GameTime gameTime)
         {
+            if (itemManager.InventoryList.Count != 0)
+            {
+                Console.WriteLine(itemManager.InventoryList[0].hitBox);
+            }
+          
+
             detectEquip();
             detectItem();
             ClickStats();      

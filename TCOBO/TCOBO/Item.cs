@@ -19,7 +19,7 @@ namespace TCOBO
         public bool hand;
         public bool bagRange = true;
 
-        public Item(ContentManager content)
+        public Item()
         {
 
         }

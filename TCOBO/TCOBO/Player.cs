@@ -440,7 +440,7 @@ namespace TCOBO
                 spriteBatch.Draw(playerTex[animaCount], playerPos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
             }
 
-            spriteBatch.Draw(TextureManager.standardArmor, new Vector2(playerPos.X, playerPos.Y), null, Color.White, rotation, new Vector2(15,15), size, SpriteEffects.None, 0f);
+            spriteBatch.Draw(TextureManager.standardArmor, new Vector2(playerPos.X, playerPos.Y), null, Color.Black, rotation, new Vector2(15,15), size, SpriteEffects.None, 0f);
           
 
             //Show attackHitBox
