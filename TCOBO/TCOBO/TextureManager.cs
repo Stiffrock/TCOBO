@@ -30,6 +30,7 @@ namespace TCOBO
         public static Texture2D goldenSword { get; private set; }
         public static Texture2D statBox { get; private set; }
         public static Texture2D standardArmor { get; private set; }
+        public static Texture2D blankHpBar { get; private set; }
 
 
 
@@ -53,6 +54,7 @@ namespace TCOBO
             goldenSword = Content.Load<Texture2D>("inventorysword_type2");
             statBox = Content.Load<Texture2D>("statbox4");
             standardArmor = Content.Load<Texture2D>("armor_type1");
+            blankHpBar = Content.Load<Texture2D>("blankHp");
         }
 
     }

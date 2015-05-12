@@ -70,7 +70,7 @@ namespace TCOBO
             origin = new Vector2(80, 80);
             color = new Color(255, 30, 30, 255);
             size = Vit / 10;
-            HP = Vit;
+            HP = Vit;            
             LoadPlayerTex();
             HandleLevel();
 
@@ -418,6 +418,13 @@ namespace TCOBO
         {
             if (HP > 0)
             {
+                percentLife = HP / Vit;
+                if (Keyboard.GetState().IsKeyDown(Keys.LeftAlt))
+                {
+                    isHpBarVisible = true;
+                }
+                else isHpBarVisible = false;
+
                 float tempVit = Vit;
                 size = tempVit / 10;
                 HandleLevelUp();
@@ -432,6 +439,9 @@ namespace TCOBO
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+
+           
+           
       
             //spriteBatch.Draw(TextureManager.sand1, boundingBox, Color.Black);
             if (HP > 0)
@@ -464,6 +474,18 @@ namespace TCOBO
             {
                 spriteBatch.Draw(deathTex, playerPos, null, Color.White, 0, origin, size, SpriteEffects.None, 0f);
             }
+            
+            if(isHpBarVisible && HP > 0)
+            {
+                if (percentLife < 1.0f)
+                {
+                    spriteBatch.Draw(TextureManager.blankHpBar, new Rectangle((int)playerPos.X - hitBox.Width / 2,
+                        ((int)playerPos.Y - 4) - hitBox.Height / 2, hitBox.Width, 4), Color.Red); // ritar över en röd bar över den gröna
+                }
+                spriteBatch.Draw(TextureManager.blankHpBar, new Rectangle((int)playerPos.X - hitBox.Width / 2,
+                    ((int)playerPos.Y - 4) - hitBox.Height / 2, (int)(hitBox.Width * percentLife), 4), Color.Green);
+            }
+            
 
           
 
