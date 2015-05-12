@@ -26,7 +26,7 @@ namespace TCOBO
             Vit = 10, Int = 10, maxLvl = 101, newStat = 0;
         private Color color;
         public float speed = 230f, max_speed = 130, slow_speed = 85, slow_speed_2 = 200;
-        public bool swordEquipped = false, swordinHand = false, armorEquip = false;
+        public bool swordEquipped = false, swordinHand = false, armorEquip = false, canAttack = true;
         public Vector2 velocity, velocity2;
         private Vector2 acceleration;
         private Tuple<int, int, int, int, int, int> playerStats;
@@ -332,7 +332,11 @@ namespace TCOBO
                 swordEquipped = !swordEquipped;
             }
 
+<<<<<<< HEAD
             if (KeyMouseReader.LeftClick() == true && swordEquipped == true && strike == false && strike2 == false && swordinHand)
+=======
+            if (KeyMouseReader.LeftClick() == true && canAttack == true && swordEquipped == true && strike == false && strike2 == false && swordinHand)
+>>>>>>> origin/Stoffe
             {
                 strike = true;
                 animaCount = 0;
@@ -340,7 +344,11 @@ namespace TCOBO
                 soundManager.fightSound.Play();
                 
             }
+<<<<<<< HEAD
             else if (KeyMouseReader.LeftClick() == true && swordEquipped == true && strike == true && strike2 == false && swordinHand)
+=======
+            else if (KeyMouseReader.LeftClick() == true && canAttack == true && swordEquipped == true && strike == true && strike2 == false && swordinHand)
+>>>>>>> origin/Stoffe
             {
                 strike = false;
                 strike2 = true;
