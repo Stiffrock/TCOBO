@@ -29,7 +29,7 @@ namespace TCOBO
         public static Texture2D blueSword { get; private set; }
         public static Texture2D goldenSword { get; private set; }
         public static Texture2D statBox { get; private set; }
-  
+        public static Texture2D standardArmor { get; private set; }
 
 
 
@@ -43,7 +43,7 @@ namespace TCOBO
             sandtile1 = Content.Load<Texture2D>("sandtile_type3");
             bushtile1 = Content.Load<Texture2D>("bushtile_type5");
             smalltree = Content.Load<Texture2D>("treetile_type50x50");
-            bigtree = Content.Load<Texture2D>("treetile_type200x200");
+            bigtree = Content.Load<Texture2D>("treetile_blackoutline");
             graveltile1 = Content.Load<Texture2D>("gravel_type1");
             bricktile1 = Content.Load<Texture2D>("brick_type1");
             watertile1 = Content.Load<Texture2D>("watertile_type2");
@@ -52,6 +52,7 @@ namespace TCOBO
             redSword = Content.Load<Texture2D>("inventorysword_type4");
             goldenSword = Content.Load<Texture2D>("inventorysword_type2");
             statBox = Content.Load<Texture2D>("statbox4");
+            standardArmor = Content.Load<Texture2D>("armor_type1");
         }
 
     }

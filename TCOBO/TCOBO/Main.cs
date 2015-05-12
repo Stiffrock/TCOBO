@@ -30,7 +30,9 @@ namespace TCOBO
         private PlayerPanel board;
         private Tuple<int, int, int, int, int, int> playerStats;
         private Tuple<float, float, float> effectiveStats;
+        SoundManager soundManager = new SoundManager();
 
+        //private Song statseffect;
         
         public Main(Game1 game1)
         {
@@ -43,12 +45,18 @@ namespace TCOBO
             camera = new Camera2D(game1.GraphicsDevice.Viewport, player);        
             enemyList = new List<Enemy>();
             inrangeList = new List<Enemy>();
-            enemyList.Add(new Enemy(new Vector2(300, 300), game1.Content));
+
+            //Enemy STR, DEX, VIT, INT, EXPDROP
+            enemyList.Add(new Enemy(new Vector2(300, 300), game1.Content, 2, 0, 10, 0, 10));
+            enemyList.Add(new Enemy(new Vector2(-2000, 300), game1.Content, 5, 0, 75, 0, 500));
             attack = new Attack(player);
             testWorld.ReadLevel("map01");
             testWorld.SetMap();                 
             spriteFont = game1.Content.Load<SpriteFont>("SpriteFont1");
             board = new PlayerPanel(game1.Content, new Vector2(950, 0), spriteFont);
+
+            soundManager.LoadContent(game1.Content);
+
         }
       
         public void Rotation()
@@ -78,7 +86,7 @@ namespace TCOBO
 
         public void ClickStats()
         {
-            if (player.newStat != 0)
+            if (player.newStat != 0 && itemManager.IsInventoryshown)
             {
                 board.statColor = Color.Gold;
                 board.showStatButton = true;
@@ -89,7 +97,12 @@ namespace TCOBO
                     if (KeyMouseReader.LeftClick())
                     {
                         player.Str += 1;
-                        player.newStat -= 1;
+                        player.newStat -= 1;                       
+
+                        soundManager.statSound.Play();
+
+                        
+
                     }                    
                 }
                 else
@@ -105,6 +118,7 @@ namespace TCOBO
                         player.speed += 1;
                         player.max_speed += 3;
                         player.newStat -= 1;
+                        soundManager.statSound.Play();
                     }
                 }
                 else
@@ -118,7 +132,9 @@ namespace TCOBO
                     if (KeyMouseReader.LeftClick())
                     {
                         player.Vit += 1;
+                        player.HP += 1;
                         player.newStat -= 1;
+                        soundManager.statSound.Play();
                     }
                 }
                 else
@@ -133,6 +149,7 @@ namespace TCOBO
                     {
                         player.Int += 1;
                         player.newStat -= 1;
+                        soundManager.statSound.Play();
                     }
                 }
                 else
@@ -153,6 +170,7 @@ namespace TCOBO
 
         public void detectItem()
         {
+
             foreach (Item item in itemManager.ItemList)
             {
                 if (player.attackHitBox.Intersects(item.hitBox)&& KeyMouseReader.LeftClick())
@@ -170,8 +188,7 @@ namespace TCOBO
                 {
                     item.pos = player.playerPos;
                     itemManager.ItemList.Add(item);
-                    itemManager.InventoryList.Remove(item);
-                    
+                    itemManager.InventoryList.Remove(item);                   
                     break;
                 }
             }
@@ -179,70 +196,63 @@ namespace TCOBO
 
         public void detectEquip()
         {
-            foreach (Item item in itemManager.InventoryList)
+            foreach (Item item in itemManager.InventoryList )
             {
-                if (item.hitBox.Contains(KeyMouseReader.MousePos().X, KeyMouseReader.MousePos().Y) && KeyMouseReader.RightClick())
+                if (item.hitBox.Contains(KeyMouseReader.MousePos().X, KeyMouseReader.MousePos().Y) && KeyMouseReader.RightClick() && itemManager.IsInventoryshown)
                 {
                     Color itemCol = item.itemColor;
                     int statAdd = item.stat;
-                    int oldStatAdd = 0;
+                   // int oldStatAdd = 0;
 
+                    soundManager.equipSound.Play();
 
-                    if (item.equip == false && itemManager.swordEquip == true)          //TODO fixxa equippen så den inte buggar runt emd färger. Och så att man kan byta utan att ta av vapen
-                    {
-                        foreach (Item sword in itemManager.EquipList)
-                        {
-                            if (sword is Sword)
-                            {
-                                oldStatAdd = sword.stat;
-                                itemManager.EquipList.Remove(sword);
-                                break;
-                            }
-                        }
-                        player.Str -= oldStatAdd;
-                        player.Str += statAdd;
-                        player.colorswitch(itemCol);
-                        player.swordinHand = true;
-                        player.swordEquipped = true;
-                        itemManager.swordEquip = true;
-                        itemManager.EquipList.Add(item);
-                        return;
-                    }
-
-
-                    if (item is Sword && item.equip == true && itemManager.swordEquip == true)
+                    if (item is Sword && item.equip == true && player.swordinHand == true && itemManager.EquipList.Contains(item))
                     {
                         player.Str -= statAdd;
                         itemCol = Color.White;
                         player.colorswitch(itemCol);
                         player.swordinHand = false;
-                        player.swordEquipped = false;
-                        itemManager.swordEquip = false;
+    
+
                         itemManager.EquipList.Remove(item);
                         return;
                     }
 
-                    if (item.equip == false && itemManager.swordEquip == false)
+                    if (item is Sword && item.equip == false && player.swordinHand == false)
                     {
                         player.Str += statAdd;
                         player.colorswitch(itemCol);
                         player.swordinHand = true;
-                        player.swordEquipped = true;
-                        itemManager.swordEquip = true;
+                 
                         itemManager.EquipList.Add(item);
                         return;
                     }
+
+
+                    if (item is Armor && item.equip == true && itemManager.EquipList.Contains(item))
+                    {
+                        player.Vit -= statAdd;
+                        player.armorEquip = false;                       
+                        itemManager.EquipList.Remove(item);
+                        return;
+                    }
+                    if (item is Armor && item.equip == false)
+                    {
+                        player.Vit += statAdd;
+                        player.armorEquip = true;
+                        itemManager.EquipList.Add(item);
+                        return;
+                    } 
 
                 }
             }
 
         }
-
-
              
 
         private void detectEnemy()
         {
+            if (player.HP > 0)
             foreach (Enemy enemy in enemyList)
             {
                 if (enemy.hitBox.Intersects(player.attackHitBox))
@@ -255,6 +265,12 @@ namespace TCOBO
 
         public void Update(GameTime gameTime)
         {
+            if (itemManager.InventoryList.Count != 0)
+            {
+                Console.WriteLine(itemManager.InventoryList[0].hitBox);
+            }
+          
+
             detectEquip();
             detectItem();
             ClickStats();      
@@ -269,10 +285,63 @@ namespace TCOBO
             effectiveStats = player.GetEffectiveStats();
             board.Update(playerStats, effectiveStats);
             camera.Update(gameTime);
+            Collision();
             foreach (Enemy e in enemyList)
             {
-                e.UpdateEnemy(gameTime, player.GetPos(), testWorld.tiles);          
+                e.UpdateEnemy(gameTime, player, testWorld.tiles);         
             }         
+        }
+
+        public void Collision()
+        {
+            float x1;
+            float y1;
+            float x2;
+            float y2;
+            float radius1;
+            float radius2;
+            foreach (Enemy p in enemyList)
+            {
+                foreach (Enemy p2 in enemyList)
+                {
+                    if (p == p2)
+                        break;
+                    x1 = p.pos.X;
+                    y1 = p.pos.Y;
+                    x2 = p2.pos.X;
+                    y2 = p2.pos.Y;
+                    radius1 = p.playerSize / 2;
+                    radius2 = p2.playerSize / 2;
+                    if (Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1)) < (radius1 + radius2))
+                    {
+                        float moveX = x2 - x1;
+                        float moveY = y2 - y1;
+                        double h = Math.Sqrt(moveX * moveX + moveY * moveY);
+                        float dn = (float)h;
+
+                        float knockback = 25f;
+                        p2.velocity = new Vector2((moveX / dn * knockback), (moveY / dn * knockback));
+                        p.velocity = new Vector2(-(moveX / dn * knockback), -(moveY / dn * knockback));
+                    }
+                }
+                x1 = p.pos.X;
+                y1 = p.pos.Y;
+                x2 = player.GetPos().X;
+                y2 = player.GetPos().Y;
+                radius1 = p.playerSize / 2;
+                radius2 = player.playerSize / 2;
+                if (Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1)) < (radius1 + radius2))
+                {
+                    float moveX = x2 - x1;
+                    float moveY = y2 - y1;
+                    double h = Math.Sqrt(moveX * moveX + moveY * moveY);
+                    float dn = (float)h;
+
+                    float knockback = 25f;
+                    player.velocity = new Vector2((moveX / dn * knockback), (moveY / dn * knockback));
+                    p.velocity = new Vector2(-(moveX / dn * knockback), -(moveY / dn * knockback));
+                }
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -280,7 +349,8 @@ namespace TCOBO
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null,
                 camera.transform);
             testWorld.Draw(spriteBatch);           
-            player.Draw(spriteBatch);
+            
+          
 
             foreach (Enemy e in enemyList)
             {
@@ -290,7 +360,7 @@ namespace TCOBO
             {
                 item.Draw(spriteBatch);
             }
-
+            player.Draw(spriteBatch);
             spriteBatch.End();
             spriteBatch.Begin();
             board.Draw(spriteBatch);

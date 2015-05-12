@@ -12,15 +12,15 @@ namespace TCOBO
     {
         public Color swordColor;
 
-        public Sword(ContentManager content, int damage, Texture2D tex, Color color, Vector2 pos)
-            : base(content)
+        public Sword(int damage, Texture2D tex, Color color, Vector2 pos)
+            : base()
         {
             // this.itemTex = TextureManager.goldenSword;
             this.itemTex = tex;
             this.stat = damage;
             this.itemColor = color;
             this.pos = pos;
-            this.hitBox = hitBox;
+            this.hitBox = new Rectangle((int)pos.X, (int)pos.Y, itemTex.Width, itemTex.Height);
         }
 
         public override void Update(GameTime gameTime)

@@ -18,7 +18,7 @@ namespace TCOBO
         private ContentManager content;
         public Color swordColor, newColor;
         public Rectangle srcRec, attackHitBox;
-        private float deltaTime, Exp = 0, mDamage = 1, sDamage = 1, HP = 10;
+        public float deltaTime, Exp = 0, mDamage = 1, sDamage = 1, HP = 10;
 
         public float rotation = 0f;
         public int 
@@ -26,7 +26,7 @@ namespace TCOBO
             Vit = 10, Int = 10, maxLvl = 101, newStat = 0;
         private Color color;
         public float speed = 230f, max_speed = 130, slow_speed = 85, slow_speed_2 = 200;
-        public bool swordEquipped = false, swordinHand = false;
+        public bool swordEquipped = false, swordinHand = false, armorEquip = false;
         public Vector2 velocity, velocity2;
         private Vector2 acceleration;
         private Tuple<int, int, int, int, int, int> playerStats;
@@ -34,14 +34,16 @@ namespace TCOBO
         private bool move, moveUp, moveDown, moveLeft, moveRight, strike, strike2;
         private List<Texture2D> playerTex = new List<Texture2D>();
         private List<Texture2D> swordTex = new List<Texture2D>();
-        Texture2D strikeTexSword1, strikeTexPlayer1, strikeTexSword2, strikeTexPlayer2;
+        Texture2D strikeTexSword1, strikeTexPlayer1, strikeTexSword2, strikeTexPlayer2, deathTex;
         private List<float> levelList = new List<float>();
-        public Rectangle boundsTop, boundsBot, boundsLeft, boundsRight;
+        public Rectangle boundsTop, boundsBot, boundsLeft, boundsRight, hitBox;
         float attackspeed = 5f;
         float attackProgress = 0f;
-        float playerSize = 36, basePlayerSize = 36;
+        public float playerSize = 36, basePlayerSize = 36;
         public float size;
         public Vector2 strikeVelocity;
+
+        SoundManager soundManager = new SoundManager();
       
         public Vector2 GetPos()
         {
@@ -68,8 +70,11 @@ namespace TCOBO
             origin = new Vector2(80, 80);
             color = new Color(255, 30, 30, 255);
             size = Vit / 10;
+            HP = Vit;
             LoadPlayerTex();
             HandleLevel();
+
+            soundManager.LoadContent(content);
         }
 
         public void HandleLevel()
@@ -104,7 +109,6 @@ namespace TCOBO
             
             mDamage = Str * 0.5f;
             sDamage = Int * 0.5f;        
-            HP = Vit;
 
             if (KeyMouseReader.KeyPressed(Keys.D5))
             {
@@ -128,6 +132,7 @@ namespace TCOBO
             strikeTexPlayer1 = content.Load<Texture2D>("faststrikePlayer1");
             strikeTexSword2 = content.Load<Texture2D>("faststrikeSword2");
             strikeTexPlayer2 = content.Load<Texture2D>("faststrikePlayer2");
+            deathTex = content.Load<Texture2D>("Death");
 
             
         }
@@ -311,7 +316,7 @@ namespace TCOBO
         private void handleAction(GameTime gameTime)
         {   
      
-            if (KeyMouseReader.KeyPressed(Keys.E))
+            if (KeyMouseReader.KeyPressed(Keys.E) && swordinHand)
             {
                 if (swordEquipped)              // HIHIHI SECRET HAX
                 {
@@ -327,13 +332,15 @@ namespace TCOBO
                 swordEquipped = !swordEquipped;
             }
 
-            if (KeyMouseReader.LeftClick() == true && swordEquipped == true && strike == false && strike2 == false)
+            if (KeyMouseReader.LeftClick() == true && swordEquipped == true && strike == false && strike2 == false && swordinHand)
             {
                 strike = true;
                 animaCount = 0;
                 velocity2 += strikeVelocity;
+                soundManager.fightSound.Play();
+                
             }
-            else if (KeyMouseReader.LeftClick() == true && swordEquipped == true && strike == true && strike2 == false)
+            else if (KeyMouseReader.LeftClick() == true && swordEquipped == true && strike == true && strike2 == false && swordinHand)
             {
                 strike = false;
                 strike2 = true;
@@ -348,6 +355,7 @@ namespace TCOBO
         public void Collision (GameTime gameTime, List<Tile> tiles) 
          {
             playerSize = basePlayerSize * size;
+            hitBox = new Rectangle((int)(playerPos.X - playerSize / 2 + playerSize / 10), (int)(playerPos.Y - playerSize / 2 + playerSize / 10), (int)(playerSize - playerSize / 5), (int)(playerSize - playerSize / 5));
             boundsTop = new Rectangle((int)(playerPos.X - playerSize/2 + playerSize / 10), (int)(playerPos.Y - playerSize/2), (int)(playerSize - (playerSize / 5)), (int)(playerSize / 10));
             boundsBot = new Rectangle((int)(playerPos.X - playerSize/2 + playerSize / 10), (int)((playerPos.Y + playerSize / 2 - playerSize / 10)), (int)(playerSize - (playerSize / 5)), (int)(playerSize / 10));
             boundsLeft = new Rectangle((int)(playerPos.X - playerSize / 2), (int)(playerPos.Y - playerSize / 2 + playerSize / 10), (int)(playerSize / 10), (int)(playerSize - playerSize / 5));
@@ -408,37 +416,56 @@ namespace TCOBO
 
         public override void Update(GameTime gameTime)
         {
-           
-            float tempVit = Vit;
-            size = tempVit / 10;
-            HandleLevelUp();
-            HandlePlayerStats();
-            playerDirection();
-            Movement(gameTime);
-            handleAction(gameTime);
-            handleAnimation(gameTime);
+            if (HP > 0)
+            {
+                float tempVit = Vit;
+                size = tempVit / 10;
+                HandleLevelUp();
+                HandlePlayerStats();
+                playerDirection();
+                Movement(gameTime);
+                handleAction(gameTime);
+                handleAnimation(gameTime);
+            }
+
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
       
             //spriteBatch.Draw(TextureManager.sand1, boundingBox, Color.Black);
-            if (swordinHand && swordEquipped && !(strike || strike2))
-                spriteBatch.Draw(swordTex[animaCount], playerPos, null, swordColor, rotation, origin, size, SpriteEffects.None, 0f);
-           
-            if (swordinHand && strike) {
-                spriteBatch.Draw(strikeTexSword1, playerPos, null, swordColor, rotation, origin, size, SpriteEffects.None, 0f);
-                spriteBatch.Draw(strikeTexPlayer1, playerPos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
-            }
-            else if (swordinHand && strike2)
+            if (HP > 0)
             {
-                spriteBatch.Draw(strikeTexSword2, playerPos, null, swordColor, rotation, origin, size, SpriteEffects.None, 0f);
-                spriteBatch.Draw(strikeTexPlayer2, playerPos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
+                if (swordEquipped && !(strike || strike2))
+                    spriteBatch.Draw(swordTex[animaCount], playerPos, null, swordColor, rotation, origin, size, SpriteEffects.None, 0f);
+
+                if (strike)
+                {
+                    spriteBatch.Draw(strikeTexSword1, playerPos, null, swordColor, rotation, origin, size, SpriteEffects.None, 0f);
+                    spriteBatch.Draw(strikeTexPlayer1, playerPos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
+                }
+                else if (strike2)
+                {
+                    spriteBatch.Draw(strikeTexSword2, playerPos, null, swordColor, rotation, origin, size, SpriteEffects.None, 0f);
+                    spriteBatch.Draw(strikeTexPlayer2, playerPos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
+                }
+                else
+                {
+                    spriteBatch.Draw(playerTex[animaCount], playerPos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
+                }
+
+                if (armorEquip)
+                {
+                    spriteBatch.Draw(TextureManager.standardArmor, new Vector2(playerPos.X, playerPos.Y), null, Color.Black, rotation, new Vector2(15, 15), size, SpriteEffects.None, 0f);
+                }
+           
             }
             else
             {
-                spriteBatch.Draw(playerTex[animaCount], playerPos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
+                spriteBatch.Draw(deathTex, playerPos, null, Color.White, 0, origin, size, SpriteEffects.None, 0f);
             }
+
+          
 
             //Show attackHitBox
            // spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
