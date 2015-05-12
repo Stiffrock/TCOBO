@@ -15,6 +15,7 @@ namespace TCOBO
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        MenuManager menuManager;
         Main main;
         SoundManager soundManager = new SoundManager();
       
@@ -38,6 +39,7 @@ namespace TCOBO
         {
             TextureManager.LoadContent(Content);
             soundManager.LoadContent(Content);
+            menuManager = new MenuManager(this);
             main = new Main(this);
        
          
@@ -54,8 +56,17 @@ namespace TCOBO
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            main.Update(gameTime);
-   
+            if (!menuManager.GameOn)
+            {
+                menuManager.Update(gameTime);
+            }
+
+            if (menuManager.GameOn)
+            {
+                main.Update(gameTime);
+            }
+
+           
 
             base.Update(gameTime);
         }
@@ -65,8 +76,17 @@ namespace TCOBO
             GraphicsDevice.Clear(Color.Black);
             base.Draw(gameTime);
 
+            if (!menuManager.GameOn)
+            {
+                menuManager.Draw(spriteBatch);
+            }
+           
+
+            if (menuManager.GameOn)
+            {
+                main.Draw(spriteBatch);
+            }
             
-            main.Draw(spriteBatch);
         
 
 

@@ -96,14 +96,7 @@ Content\StatsLjud.xnb
 Content\FightSound.xnb
 Content\EquipSound.xnb
 Content\InventorySound.xnb
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-Content\TCOBO musik.xnb
 Content\Level up sound.xnb
-=======
-Content\death.xnb
->>>>>>> origin/Stoffe
->>>>>>> origin/Stoffe
+Content\MenuTitleFont.xnb
+Content\MenuFont.xnb
 Content\Ljudeffekt1.wma
-Content\TCOBO musik.wma
