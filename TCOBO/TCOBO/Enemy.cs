@@ -11,7 +11,7 @@ namespace TCOBO
     class Enemy : MovableObject
     {
         public Vector2 pos;
-        Rectangle srcRec;
+        Rectangle attackHitBox;
         private ContentManager content;
         protected SpriteEffects Fx;
         protected float rotation;
@@ -27,12 +27,31 @@ namespace TCOBO
         public int animaCount = 0;
         private float deltaTime = 0;
         float attackspeed = 5f;
+        TimeSpan attack_timer;
+        float attack_seconds;
         float attackProgress = 0f;
-        float playerSize = 36, basePlayerSize = 36;
+        public float playerSize = 36, basePlayerSize = 36;
         public Rectangle boundsTop, boundsBot, boundsLeft, boundsRight;
+        Texture2D strikeTexSword1, strikeTexPlayer1, strikeTexSword2, strikeTexPlayer2, deathTex;
+        public int
+        Str = 1, Dex = 10,
+        Vit = 10, Int = 10, health, expDrop;
+        bool dead = false;
+        Random rnd;
 
-        public Enemy(Vector2 pos, ContentManager content)
+        Vector2 aimRec;
+
+        public Enemy(Vector2 pos, ContentManager content, int Str, int Dex, int Vit, int Int, int expDrop)
         {
+            this.Str = Str;
+            this.Dex = Dex;
+            this.Vit = Vit;
+            this.Int = Int;
+            this.expDrop = expDrop;
+            attack_seconds = 1.5f;
+            attack_timer = TimeSpan.FromSeconds(attack_seconds);
+            rnd = new Random();
+            health = Vit;
             this.content = content;
             this.pos = pos;
             hitBox = new Rectangle((int)pos.X-15, (int)pos.Y-15, 30, 30);
@@ -42,33 +61,79 @@ namespace TCOBO
             {
                 tex.Add(content.Load<Texture2D>("player" + i));
             }
+            strikeTexSword1 = content.Load<Texture2D>("faststrikeSword1");
+            strikeTexPlayer1 = content.Load<Texture2D>("faststrikePlayer1");
+            strikeTexSword2 = content.Load<Texture2D>("faststrikeSword2");
+            strikeTexPlayer2 = content.Load<Texture2D>("faststrikePlayer2");
+            deathTex = content.Load<Texture2D>("Death");
         }
-        public void HuntPlayer(Vector2 playerPos)
+        public void HuntPlayer(Player player, GameTime gameTime)
         {
-            float distance = Vector2.Distance(playerPos, pos);
-            if (distance < 500)
+            float distance = Vector2.Distance(player.playerPos, pos);
+            if (distance < 400 + (Vit *10))
             {
                 move = true;
-                if (playerPos.X > pos.X) {
+                if (player.playerPos.X > pos.X) {
                     moveRight = true;
                     moveLeft = false;
                 }
-                else if (playerPos.X < pos.X) {
+                else if (player.playerPos.X < pos.X) {
                     moveLeft = true;
                     moveRight = false;
                 }
 
-                if (playerPos.Y > pos.Y)
+                if (player.playerPos.Y > pos.Y)
                 {
                     moveDown = true;
                     moveUp = false;
                 }
-                else if (playerPos.Y < pos.Y)
+                else if (player.playerPos.Y < pos.Y)
                 {
                     moveUp = true;
                     moveDown = false;
                 }
-                    
+
+
+                float xDistance = (float)player.playerPos.X - pos.X;
+                float yDistance = (float)player.playerPos.Y - pos.Y;
+
+                aimRec = new Vector2(xDistance, yDistance);
+                aimRec.Normalize();
+                double recX = (double)aimRec.X * 40 * size;
+                double recY = (double)aimRec.Y * 40 * size;
+                attackHitBox = new Rectangle((int)(pos.X + recX - 25 * size), (int)(pos.Y + recY - 25 * player.size), (int)(50 * size), (int)(50 * size));
+
+
+
+                    if (player.hitBox.Intersects(attackHitBox))
+                    {
+                        moveDown = false;
+                        moveUp = false;
+                        moveLeft = false;
+                        moveRight = false;
+                        move = false;
+                        if (attack_timer.TotalSeconds > 0)
+                            attack_timer = attack_timer.Subtract(gameTime.ElapsedGameTime);
+                        else
+                        {
+                            if (!strike && !strike2)
+                            {
+                                strike = true;
+                                player.HP -= Str;
+                            }
+                            else if (strike)
+                            {
+                                player.HP -= Str;
+                                strike2 = true;
+                                attack_seconds = rnd.Next(1, 3);
+                                attack_timer = TimeSpan.FromSeconds(attack_seconds);
+                            }
+                        }
+                    }
+                
+
+                
+
             }
             else
             {
@@ -80,31 +145,60 @@ namespace TCOBO
             }
         }
 
-        public void UpdateEnemy(GameTime gameTime, Vector2 playerPos, List<Tile> tiles)
+        public void UpdateEnemy(GameTime gameTime, Player player, List<Tile> tiles)
         {
-            Fx = SpriteEffects.None;
-            //HuntPlayer(playerPos);
-            hitBox.X = (int)pos.X;
-            hitBox.Y = (int)pos.Y;
-            Movement(gameTime);
-            Rotation(playerPos);
-            HuntPlayer(playerPos);
-            handleAnimation(gameTime);
-            Collision(gameTime, tiles);
+            if (health > 0)
+            {
+
+                float tempVit = Vit;
+                size = tempVit / 10;
+                Fx = SpriteEffects.None;
+                //HuntPlayer(playerPos);
+                hitBox.X = (int)pos.X;
+                hitBox.Y = (int)pos.Y;
+                Movement(gameTime);
+                Rotation(player.GetPos());
+                HuntPlayer(player, gameTime);
+                handleAnimation(gameTime);
+                Collision(gameTime, tiles);
+            }
+
         }
 
         public void Rotation(Vector2 playerPos)
         {
-            float xDistance = (float)pos.X - playerPos.X;
-            float yDistance = (float)pos.Y - playerPos.Y;
+            float xDistance = (float)playerPos.X - pos.X;
+            float yDistance = (float)playerPos.Y - pos.Y;
             rotation = (float)Math.Atan2(yDistance, xDistance);
         }
 
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(tex[animaCount], pos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
-            spriteBatch.Draw(TextureManager.sand1, hitBox, Color.Black);
+            if (health > 0)
+            {
+                if (strike)
+                {
+                    spriteBatch.Draw(strikeTexSword1, pos, null, Color.Azure, rotation, origin, size, SpriteEffects.None, 0f);
+                    spriteBatch.Draw(strikeTexPlayer1, pos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
+                }
+                else if (strike2)
+                {
+                    spriteBatch.Draw(strikeTexSword2, pos, null, Color.Azure, rotation, origin, size, SpriteEffects.None, 0f);
+                    spriteBatch.Draw(strikeTexPlayer2, pos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
+                }
+                else
+                {
+                    spriteBatch.Draw(tex[animaCount], pos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
+                }
+            }
+            else
+            {
+                spriteBatch.Draw(deathTex, pos, null, Color.White, rotation, origin, size, SpriteEffects.None, 0f);
+            }
+
+            //spriteBatch.Draw(TextureManager.sand1, hitBox, Color.Black);
+            //spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
         }
 
         public void handleAnimation(GameTime gameTime)
@@ -223,7 +317,7 @@ namespace TCOBO
 
         public void Collision(GameTime gameTime, List<Tile> tiles)
         {
-            hitBox = new Rectangle((int)pos.X - 15, (int)pos.Y - 15, 30, 30);
+            hitBox = new Rectangle((int)(pos.X - playerSize / 2 + playerSize / 10), (int)(pos.Y - playerSize / 2 + playerSize / 10), (int)(playerSize - playerSize / 5), (int)(playerSize - playerSize / 5));
             playerSize = basePlayerSize * size;
             boundsTop = new Rectangle((int)(pos.X - playerSize / 2 + playerSize / 10), (int)(pos.Y - playerSize / 2), (int)(playerSize - (playerSize / 5)), (int)(playerSize / 10));
             boundsBot = new Rectangle((int)(pos.X - playerSize / 2 + playerSize / 10), (int)((pos.Y + playerSize / 2 - playerSize / 10)), (int)(playerSize - (playerSize / 5)), (int)(playerSize / 10));

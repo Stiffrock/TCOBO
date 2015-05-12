@@ -29,7 +29,6 @@ namespace TCOBO
         public static Texture2D blueSword { get; private set; }
         public static Texture2D goldenSword { get; private set; }
         public static Texture2D statBox { get; private set; }
-
         public static Texture2D standardArmor { get; private set; }
 
 
