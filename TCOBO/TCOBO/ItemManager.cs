@@ -31,11 +31,11 @@ namespace TCOBO
             this.sf = game1.Content.Load<SpriteFont>("SpriteFont1");
             grahpics = game1.GraphicsDevice;
 
-            standardSword = new Sword(10, TextureManager.standardSword, Color.White, new Vector2(0,0));
-            blueSword = new Sword(20, TextureManager.blueSword, Color.LightBlue, new Vector2(0, 20));
-            redSword = new Sword(40, TextureManager.redSword, Color.SandyBrown, new Vector2(0, 40));
-            goldenSword = new Sword(100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 60));
-            standardArmor = new Armor(5, TextureManager.standardArmor, new Vector2(0, 100));
+            standardSword = new Sword(10, TextureManager.standardSword, Color.White, new Vector2(0,0), "Standard sword");
+            blueSword = new Sword(20, TextureManager.blueSword, Color.LightBlue, new Vector2(0, 20),"MAgic Blue sword");
+            redSword = new Sword(40, TextureManager.redSword, Color.SandyBrown, new Vector2(0, 40),"Rusty but vicious sword");
+            goldenSword = new Sword(100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 60),"The super duper golden mega rod");
+            standardArmor = new Armor(5, TextureManager.standardArmor, new Vector2(0, 100),"Standard armor");
             inventory = new Inventory(game1.Content, new Vector2(200, 200));  
             ItemList.Add(standardSword);
             ItemList.Add(redSword);
@@ -160,6 +160,10 @@ namespace TCOBO
                 foreach (Item item in InventoryList)
                 {
                     item.Draw(sb);
+                    if (item.hitBox.Contains(KeyMouseReader.MousePos().X, KeyMouseReader.MousePos().Y))
+                    {
+                        sb.DrawString(TextureManager.uitext, item.info, new Vector2(500, 500), Color.Black);
+                    }
                 }
             }
             sb.End();

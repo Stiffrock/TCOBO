@@ -9,10 +9,11 @@ using System.Text;
 namespace TCOBO
 {
     class Armor : Item
-    {       
-        public Armor(int armor, Texture2D tex, Vector2 pos)
+    {
+        public Armor(int armor, Texture2D tex, Vector2 pos, string info)
             : base()
         {
+            this.info = info;
             this.itemTex = tex;
             this.pos = pos;
             this.stat = armor;

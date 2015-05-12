@@ -11,6 +11,9 @@ namespace TCOBO
     abstract class Item
     {
         public Color itemColor;
+        public Color defaultColor;
+        public string info;
+       
         public Texture2D itemTex;
         public Rectangle hitBox;
         public int stat;

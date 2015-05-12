@@ -84,6 +84,7 @@
     <Compile Include="ItemManager.cs" />
     <Compile Include="KeyMouseReader.cs" />
     <Compile Include="Main.cs" />
+    <Compile Include="MenuManager.cs" />
     <Compile Include="MovableObject.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerPanel.cs" />
