@@ -88,6 +88,7 @@ Content\statbox3.xnb
 Content\statBox4.xnb
 Content\armor_type1.xnb
 Content\treetile_blackoutline.xnb
+Content\death.xnb
 Content\SpriteFont1.xnb
 Content\MOStatFont.xnb
 Content\Ljudeffekt1.xnb
@@ -98,4 +99,3 @@ Content\StatsLjud.xnb
 Content\FightSound.xnb
 Content\EquipSound.xnb
 Content\InventorySound.xnb
-Content\death.xnb

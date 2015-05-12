@@ -49,6 +49,7 @@ namespace TCOBO
             //Enemy STR, DEX, VIT, INT, EXPDROP
             enemyList.Add(new Enemy(new Vector2(300, 300), game1.Content, 2, 0, 10, 0, 10));
             enemyList.Add(new Enemy(new Vector2(-2000, 300), game1.Content, 5, 0, 75, 0, 500));
+            enemyList.Add(new Enemy(new Vector2(-2794, -4474), game1.Content, 35, 0, 125, 0, 3000));
             attack = new Attack(player);
             testWorld.ReadLevel("map01");
             testWorld.SetMap();                 
@@ -265,10 +266,7 @@ namespace TCOBO
 
         public void Update(GameTime gameTime)
         {
-            if (itemManager.InventoryList.Count != 0)
-            {
-                Console.WriteLine(itemManager.InventoryList[0].hitBox);
-            }
+            Console.WriteLine(player.playerPos); // Boss spa
           
 
             detectEquip();
@@ -302,6 +300,8 @@ namespace TCOBO
             float radius2;
             foreach (Enemy p in enemyList)
             {
+                if (p.health < 0)
+                    break;
                 foreach (Enemy p2 in enemyList)
                 {
                     if (p == p2)
@@ -348,8 +348,8 @@ namespace TCOBO
         {     
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null,
                 camera.transform);
-            testWorld.Draw(spriteBatch);           
-            
+            testWorld.Draw(spriteBatch);
+          
           
 
             foreach (Enemy e in enemyList)
@@ -361,6 +361,7 @@ namespace TCOBO
                 item.Draw(spriteBatch);
             }
             player.Draw(spriteBatch);
+            testWorld.DrawDoodad(spriteBatch);
             spriteBatch.End();
             spriteBatch.Begin();
             board.Draw(spriteBatch);

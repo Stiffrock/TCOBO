@@ -51,7 +51,7 @@ namespace TCOBO
             attack_seconds = 1.5f;
             attack_timer = TimeSpan.FromSeconds(attack_seconds);
             rnd = new Random();
-            health = Vit;
+            health = Vit*2;
             this.content = content;
             this.pos = pos;
             hitBox = new Rectangle((int)pos.X-15, (int)pos.Y-15, 30, 30);
@@ -101,7 +101,7 @@ namespace TCOBO
                 aimRec.Normalize();
                 double recX = (double)aimRec.X * 40 * size;
                 double recY = (double)aimRec.Y * 40 * size;
-                attackHitBox = new Rectangle((int)(pos.X + recX - 25 * size), (int)(pos.Y + recY - 25 * player.size), (int)(50 * size), (int)(50 * size));
+                attackHitBox = new Rectangle((int)(pos.X + recX - 25 * size), (int)(pos.Y + recY - 25 * size), (int)(50 * size), (int)(50 * size));
 
 
 
@@ -197,8 +197,8 @@ namespace TCOBO
                 spriteBatch.Draw(deathTex, pos, null, Color.White, rotation, origin, size, SpriteEffects.None, 0f);
             }
 
-            //spriteBatch.Draw(TextureManager.sand1, hitBox, Color.Black);
-            //spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
+            spriteBatch.Draw(TextureManager.sand1, hitBox, Color.Black);
+            spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
         }
 
         public void handleAnimation(GameTime gameTime)
