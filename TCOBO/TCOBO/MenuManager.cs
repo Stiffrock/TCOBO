@@ -35,7 +35,7 @@ namespace TCOBO
 
         public void bgText(SpriteBatch spriteBatch)
         {
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 100; i++)
             {
                 int textmove = rnd.Next(0, 10000);
                 spriteBatch.DrawString(menuText, tcobo, new Vector2(textpos.X + i*15, textpos.Y + textmove), Color.Blue);
