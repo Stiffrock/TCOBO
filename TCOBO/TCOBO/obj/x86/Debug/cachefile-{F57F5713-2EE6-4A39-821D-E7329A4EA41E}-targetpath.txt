@@ -98,3 +98,4 @@ Content\StatsLjud.xnb
 Content\FightSound.xnb
 Content\EquipSound.xnb
 Content\InventorySound.xnb
+Content\death.xnb
