@@ -10,15 +10,18 @@ namespace TCOBO
 {
     class Sword : Item
     {
-        public Color swordColor;
+       
 
-        public Sword(int damage, Texture2D tex, Color color, Vector2 pos)
+        public Sword(int damage, Texture2D tex, Color color, Vector2 pos, string info)
             : base()
         {
+            this.info = info;
             // this.itemTex = TextureManager.goldenSword;
             this.itemTex = tex;
             this.stat = damage;
             this.itemColor = color;
+            this.defaultColor = color;
+    
             this.pos = pos;
             this.hitBox = new Rectangle((int)pos.X, (int)pos.Y, itemTex.Width, itemTex.Height);
         }
@@ -31,8 +34,7 @@ namespace TCOBO
 
         public override void Draw(SpriteBatch sb)
         {
-            sb.Draw(itemTex, pos, new Rectangle(0, 0, 50, 50), itemColor);
-
+            sb.Draw(itemTex, pos, new Rectangle(0, 0, 50, 50), defaultColor);
         }
 
 

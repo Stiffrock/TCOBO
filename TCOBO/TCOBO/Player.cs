@@ -26,7 +26,7 @@ namespace TCOBO
             Vit = 10, Int = 10, maxLvl = 101, newStat = 0;
         private Color color;
         public float speed = 230f, max_speed = 130, slow_speed = 85, slow_speed_2 = 200;
-        public bool swordEquipped = false, swordinHand = false, armorEquip = false;
+        public bool swordEquipped = true, swordinHand = false, armorEquip = false;
         public Vector2 velocity, velocity2;
         private Vector2 acceleration;
         private Tuple<int, int, int, int, int, int> playerStats;
@@ -319,22 +319,6 @@ namespace TCOBO
 
         private void handleAction(GameTime gameTime)
         {   
-     
-            if (KeyMouseReader.KeyPressed(Keys.E) && swordinHand)
-            {
-                if (swordEquipped)              // HIHIHI SECRET HAX
-                {
-                    speed -= 3;
-                    max_speed -= 5;
-                }
-                else
-                {
-                    speed += 3;
-                    max_speed += 5;
-                }
-
-                swordEquipped = !swordEquipped;
-            }
 
             if (KeyMouseReader.LeftClick() == true && swordEquipped == true && strike == false && strike2 == false && swordinHand)
             {

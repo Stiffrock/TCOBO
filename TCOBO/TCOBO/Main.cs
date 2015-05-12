@@ -215,9 +215,12 @@ namespace TCOBO
                     if (item is Sword && item.equip == true && player.swordinHand == true && itemManager.EquipList.Contains(item))
                     {
                         player.Str -= statAdd;
-                        itemCol = Color.White;
+
+                        
+                        item.defaultColor = itemCol;
                         player.colorswitch(itemCol);
                         player.swordinHand = false;
+                        player.swordEquipped = false;
     
 
                         itemManager.EquipList.Remove(item);
@@ -226,9 +229,12 @@ namespace TCOBO
 
                     if (item is Sword && item.equip == false && player.swordinHand == false)
                     {
+                       
+                        item.defaultColor = Color.Green;
                         player.Str += statAdd;
                         player.colorswitch(itemCol);
                         player.swordinHand = true;
+                        player.swordEquipped = true;
                  
                         itemManager.EquipList.Add(item);
                         return;
