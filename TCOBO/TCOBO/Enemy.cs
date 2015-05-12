@@ -44,6 +44,8 @@ namespace TCOBO
 
         Vector2 aimRec;
 
+        SoundManager soundManager = new SoundManager();
+
         public Enemy(Vector2 pos, ContentManager content, int Str, int Dex, int Vit, int Int, int expDrop)
         {
             this.Str = Str;
@@ -54,7 +56,7 @@ namespace TCOBO
             attack_seconds = 1.5f;
             attack_timer = TimeSpan.FromSeconds(attack_seconds);
             rnd = new Random();
-            health = Vit;
+            health = Vit*2;
             this.content = content;
             this.pos = pos;
             hitBox = new Rectangle((int)pos.X-15, (int)pos.Y-15, 30, 30);
@@ -69,6 +71,8 @@ namespace TCOBO
             strikeTexSword2 = content.Load<Texture2D>("faststrikeSword2");
             strikeTexPlayer2 = content.Load<Texture2D>("faststrikePlayer2");
             deathTex = content.Load<Texture2D>("Death");
+
+            soundManager.LoadContent(content);
         }
         public void HuntPlayer(Player player, GameTime gameTime)
         {
@@ -104,7 +108,7 @@ namespace TCOBO
                 aimRec.Normalize();
                 double recX = (double)aimRec.X * 40 * size;
                 double recY = (double)aimRec.Y * 40 * size;
-                attackHitBox = new Rectangle((int)(pos.X + recX - 25 * size), (int)(pos.Y + recY - 25 * player.size), (int)(50 * size), (int)(50 * size));
+                attackHitBox = new Rectangle((int)(pos.X + recX - 25 * size), (int)(pos.Y + recY - 25 * size), (int)(50 * size), (int)(50 * size));
 
 
 
@@ -115,6 +119,9 @@ namespace TCOBO
                         moveLeft = false;
                         moveRight = false;
                         move = false;
+
+                        //soundManager.hitSound.Play();
+
                         if (attack_timer.TotalSeconds > 0)
                             attack_timer = attack_timer.Subtract(gameTime.ElapsedGameTime);
                         else
@@ -217,8 +224,8 @@ namespace TCOBO
            
 
 
-            //spriteBatch.Draw(TextureManager.sand1, hitBox, Color.Black);
-            //spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
+            spriteBatch.Draw(TextureManager.sand1, hitBox, Color.Black);
+            spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
         }
 
         public void handleAnimation(GameTime gameTime)

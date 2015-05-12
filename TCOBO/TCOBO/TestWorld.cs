@@ -32,7 +32,12 @@ namespace TCOBO
             {
                 t.Draw(spriteBatch);
             }
-            foreach(DooDads d in dooDads)
+
+        }
+
+        public void DrawDoodad(SpriteBatch spriteBatch)
+        {
+            foreach (DooDads d in dooDads)
             {
                 d.Draw(spriteBatch);
             }

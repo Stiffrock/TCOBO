@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,7 @@ namespace TCOBO
         public int Str, Dex, Vit, Int;
         public bool showStatButton = false;
         public SpriteFont currentStrFont, currentDexFont, currentVitFont, currentIntFont;
+        SoundManager soundManager = new SoundManager();
 
 
         public PlayerPanel(ContentManager content, Vector2 pos, SpriteFont spriteFont)
@@ -41,7 +43,10 @@ namespace TCOBO
             StrButton = new Rectangle(973, 40, 25, 25);
             DexButton = new Rectangle(1015, 40, 25, 25);
             VitButton = new Rectangle(1058, 40, 25, 25);
-            IntButton = new Rectangle(1100, 40, 25, 25);            
+            IntButton = new Rectangle(1100, 40, 25, 25);
+
+            soundManager.LoadContent(content);
+
         }
 
         private void ShowBoard()
@@ -71,6 +76,11 @@ namespace TCOBO
             Int = playerStats.Item4;
             int Level = playerStats.Item5;
             int newStat = playerStats.Item6;
+
+            //if (HP <= 2)
+            //{
+            //    MediaPlayer.Play(soundManager.deathSound);
+            //}
 
             if (showBoard)
             {

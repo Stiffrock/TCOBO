@@ -26,7 +26,7 @@ namespace TCOBO
             Vit = 10, Int = 10, maxLvl = 101, newStat = 0;
         private Color color;
         public float speed = 230f, max_speed = 130, slow_speed = 85, slow_speed_2 = 200;
-        public bool swordEquipped = false, swordinHand = false, armorEquip = false;
+        public bool swordEquipped = true, swordinHand = false, armorEquip = false;
         public Vector2 velocity, velocity2;
         private Vector2 acceleration;
         private Tuple<int, int, int, int, int, int> playerStats;
@@ -98,7 +98,10 @@ namespace TCOBO
                     newStat += 5;
                     Exp = 0;
                     Console.WriteLine("Level   "+  Level);
-                }               
+
+                    soundManager.levelupSound.Play();
+
+                }
             }
         }
 
@@ -315,22 +318,6 @@ namespace TCOBO
 
         private void handleAction(GameTime gameTime)
         {   
-     
-            if (KeyMouseReader.KeyPressed(Keys.E) && swordinHand)
-            {
-                if (swordEquipped)              // HIHIHI SECRET HAX
-                {
-                    speed -= 3;
-                    max_speed -= 5;
-                }
-                else
-                {
-                    speed += 3;
-                    max_speed += 5;
-                }
-
-                swordEquipped = !swordEquipped;
-            }
 
             if (KeyMouseReader.LeftClick() == true && swordEquipped == true && strike == false && strike2 == false && swordinHand)
             {
@@ -347,6 +334,7 @@ namespace TCOBO
                 animaCount = 0;
                 attackProgress = 0;
                 velocity += strikeVelocity;
+                soundManager.fightSound.Play();
             }
         }
 
@@ -364,8 +352,11 @@ namespace TCOBO
             {
                 if (t.collisionEnabled)
                 {
+                    
+
                     if (t.bounds.Intersects(boundsLeft))
                     {
+                        soundManager.bounceSound.Play();
                         if (velocity.X < 0)
                             velocity.X = (velocity.X * -2) + max_speed / 10;
                         else
@@ -376,6 +367,7 @@ namespace TCOBO
                     }
                     if (t.bounds.Intersects(boundsRight))
                     {
+                        soundManager.bounceSound.Play();
                         if (velocity.X < 0)
                             velocity.X = -max_speed / 10;
                         else
@@ -385,6 +377,7 @@ namespace TCOBO
                     }
                     if(t.bounds.Intersects(boundsBot))
                     {
+                        soundManager.bounceSound.Play();
                         if (velocity.Y < 0) //om påväg uppåt
                             velocity.Y = -max_speed / 10;
                         else
@@ -395,6 +388,7 @@ namespace TCOBO
                     }
                     if (t.bounds.Intersects(boundsTop))
                     {
+                        soundManager.bounceSound.Play();
                         if (velocity.Y < 0) //om påväg neråt
                             velocity.Y = (velocity.Y * -2) + max_speed / 10;
                         else
@@ -412,6 +406,12 @@ namespace TCOBO
             swordColor = newCol;
 
         }
+
+        //public void PlaySound()
+        //{
+        //    MediaPlayer.Play(soundManager.deathSound);
+            
+        //}
 
 
         public override void Update(GameTime gameTime)
@@ -435,6 +435,7 @@ namespace TCOBO
                 handleAnimation(gameTime);
             }
 
+            //PlaySound();
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -472,6 +473,7 @@ namespace TCOBO
             }
             else
             {
+                MediaPlayer.Play(soundManager.deathSound);
                 spriteBatch.Draw(deathTex, playerPos, null, Color.White, 0, origin, size, SpriteEffects.None, 0f);
             }
             
@@ -490,7 +492,7 @@ namespace TCOBO
           
 
             //Show attackHitBox
-           // spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
+            spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
 
             //spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
 
