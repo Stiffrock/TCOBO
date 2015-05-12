@@ -840,16 +840,6 @@
       <Time>2015-05-11T17:34:32.3901795+02:00</Time>
     </Item>
     <Item>
-      <Source>Sleep Away.mp3</Source>
-      <Name>Sleep Away</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Rasmus\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Sleep Away.xnb</Output>
-      <Extra>C:\Users\Rasmus\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Sleep Away.wma</Extra>
-      <Time>2015-05-11T17:34:32.4291817+02:00</Time>
-    </Item>
-    <Item>
       <Source>StatsLjud.wav</Source>
       <Name>StatsLjud</Name>
       <Importer>WavImporter</Importer>
@@ -884,6 +874,15 @@
       <Options>None</Options>
       <Output>C:\Users\Rasmus\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\InventorySound.xnb</Output>
       <Time>2015-05-11T17:34:32.3891794+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Level up sound.wav</Source>
+      <Name>Level up sound</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Rasmus\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Level up sound.xnb</Output>
+      <Time>2015-05-12T11:58:22.6724119+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -559,13 +559,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sleep Away.mp3">
-      <Name>Sleep Away</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="StatsLjud.wav">
       <Name>StatsLjud</Name>
       <Importer>WavImporter</Importer>
@@ -573,7 +566,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-
     <Compile Include="FightSound.wav">
       <Name>FightSound</Name>
       <Importer>WavImporter</Importer>
@@ -597,6 +589,13 @@
       <Name>treetile_blackoutline</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Level up sound.wav">
+      <Name>Level up sound</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

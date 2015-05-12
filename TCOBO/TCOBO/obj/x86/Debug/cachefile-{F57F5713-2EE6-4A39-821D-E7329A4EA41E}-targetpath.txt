@@ -92,9 +92,8 @@ Content\SpriteFont1.xnb
 Content\MOStatFont.xnb
 Content\Ljudeffekt1.xnb
 Content\Ljudeffekt1.wma
-Content\Sleep Away.xnb
-Content\Sleep Away.wma
 Content\StatsLjud.xnb
 Content\FightSound.xnb
 Content\EquipSound.xnb
 Content\InventorySound.xnb
+Content\Level up sound.xnb
