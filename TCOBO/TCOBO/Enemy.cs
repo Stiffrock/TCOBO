@@ -41,6 +41,8 @@ namespace TCOBO
 
         Vector2 aimRec;
 
+        SoundManager soundManager = new SoundManager();
+
         public Enemy(Vector2 pos, ContentManager content, int Str, int Dex, int Vit, int Int, int expDrop)
         {
             this.Str = Str;
@@ -66,6 +68,8 @@ namespace TCOBO
             strikeTexSword2 = content.Load<Texture2D>("faststrikeSword2");
             strikeTexPlayer2 = content.Load<Texture2D>("faststrikePlayer2");
             deathTex = content.Load<Texture2D>("Death");
+
+            soundManager.LoadContent(content);
         }
         public void HuntPlayer(Player player, GameTime gameTime)
         {
@@ -112,6 +116,9 @@ namespace TCOBO
                         moveLeft = false;
                         moveRight = false;
                         move = false;
+
+                        //soundManager.hitSound.Play();
+
                         if (attack_timer.TotalSeconds > 0)
                             attack_timer = attack_timer.Subtract(gameTime.ElapsedGameTime);
                         else

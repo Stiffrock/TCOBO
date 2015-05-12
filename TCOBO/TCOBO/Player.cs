@@ -100,7 +100,6 @@ namespace TCOBO
                     Console.WriteLine("Level   "+  Level);
 
                     soundManager.levelupSound.Play();
-                    //MediaPlayer.Play(soundManager.levelupSound);
 
                 }
             }
@@ -369,8 +368,11 @@ namespace TCOBO
             {
                 if (t.collisionEnabled)
                 {
+                    
+
                     if (t.bounds.Intersects(boundsLeft))
                     {
+                        soundManager.bounceSound.Play();
                         if (velocity.X < 0)
                             velocity.X = (velocity.X * -2) + max_speed / 10;
                         else
@@ -381,6 +383,7 @@ namespace TCOBO
                     }
                     if (t.bounds.Intersects(boundsRight))
                     {
+                        soundManager.bounceSound.Play();
                         if (velocity.X < 0)
                             velocity.X = -max_speed / 10;
                         else
@@ -390,6 +393,7 @@ namespace TCOBO
                     }
                     if(t.bounds.Intersects(boundsBot))
                     {
+                        soundManager.bounceSound.Play();
                         if (velocity.Y < 0) //om påväg uppåt
                             velocity.Y = -max_speed / 10;
                         else
@@ -400,6 +404,7 @@ namespace TCOBO
                     }
                     if (t.bounds.Intersects(boundsTop))
                     {
+                        soundManager.bounceSound.Play();
                         if (velocity.Y < 0) //om påväg neråt
                             velocity.Y = (velocity.Y * -2) + max_speed / 10;
                         else
@@ -418,6 +423,12 @@ namespace TCOBO
 
         }
 
+        //public void PlaySound()
+        //{
+        //    MediaPlayer.Play(soundManager.deathSound);
+            
+        //}
+
 
         public override void Update(GameTime gameTime)
         {
@@ -433,6 +444,7 @@ namespace TCOBO
                 handleAnimation(gameTime);
             }
 
+            //PlaySound();
         }
 
         public override void Draw(SpriteBatch spriteBatch)

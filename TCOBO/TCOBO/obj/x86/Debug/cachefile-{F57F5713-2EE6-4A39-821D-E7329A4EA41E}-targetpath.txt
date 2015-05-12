@@ -88,16 +88,22 @@ Content\statbox3.xnb
 Content\statBox4.xnb
 Content\armor_type1.xnb
 Content\treetile_blackoutline.xnb
+Content\death.xnb
 Content\SpriteFont1.xnb
 Content\MOStatFont.xnb
 Content\Ljudeffekt1.xnb
 Content\Ljudeffekt1.wma
 Content\StatsLjud.xnb
-Content\FightSound.xnb
 Content\EquipSound.xnb
 Content\InventorySound.xnb
-<<<<<<< HEAD
 Content\Level up sound.xnb
-=======
-Content\death.xnb
->>>>>>> origin/Stoffe
+Content\FightSound1.xnb
+Content\TCOBO musik.xnb
+Content\TCOBO musik.wma
+Content\BounceSound.xnb
+Content\EnemySound.xnb
+Content\RunningSound.xnb
+Content\Death sound.xnb
+Content\Death sound.wma
+Content\BouncingSound.xnb
+Content\HitSound.xnb

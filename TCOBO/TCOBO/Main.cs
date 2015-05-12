@@ -57,9 +57,10 @@ namespace TCOBO
 
             soundManager.LoadContent(game1.Content);
 
-            //MediaPlayer.Play(soundManager.bgMusic);
+            MediaPlayer.Play(soundManager.bgMusic);
 
-           
+            //MediaPlayer.Play(soundManager.deathSound);
+
             
 
         }
@@ -267,14 +268,12 @@ namespace TCOBO
                 }                       
             }   
         }
-
         public void Update(GameTime gameTime)
         {
             if (itemManager.InventoryList.Count != 0)
             {
                 Console.WriteLine(itemManager.InventoryList[0].hitBox);
             }
-          
 
             detectEquip();
             detectItem();
