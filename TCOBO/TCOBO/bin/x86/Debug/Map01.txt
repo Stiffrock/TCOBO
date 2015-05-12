@@ -36264,3 +36264,1563 @@ tree1
 -1792:634
 [DOODAD] Big Tree
 -1144:186
+[DOODAD] Big Tree
+-3630:-150
+[DOODAD] Big Tree
+-3510:-110
+[DOODAD] Big Tree
+-3510:-180
+[DOODAD] Big Tree
+-3480:-200
+[DOODAD] Big Tree
+-3500:-200
+[DOODAD] Big Tree
+-3520:-270
+[DOODAD] Big Tree
+-3538:-185
+[DOODAD] Big Tree
+-3584:-225
+[DOODAD] Big Tree
+-3652:-231
+[DOODAD] Big Tree
+-3652:-231
+[DOODAD] Big Tree
+-3658:-242
+[DOODAD] Big Tree
+-3710:-248
+[DOODAD] Big Tree
+-3732:-248
+[DOODAD] Big Tree
+-3732:-139
+[DOODAD] Big Tree
+-3732:-219
+[DOODAD] Big Tree
+-3710:-65
+[DOODAD] Big Tree
+-3698:20
+[DOODAD] Big Tree
+-3692:95
+[DOODAD] Big Tree
+-3418:169
+[DOODAD] Big Tree
+-3475:61
+[DOODAD] Big Tree
+-3504:78
+[DOODAD] Big Tree
+-3504:107
+[DOODAD] Big Tree
+-3495:38
+[DOODAD] Big Tree
+-3541:-24
+[DOODAD] Big Tree
+-3592:-41
+[DOODAD] Big Tree
+-3644:152
+[DOODAD] Big Tree
+-3675:12
+[DOODAD] Big Tree
+-3675:144
+[DOODAD] Big Tree
+-3687:275
+[DOODAD] Big Tree
+-3704:327
+[DOODAD] Big Tree
+-3704:332
+[DOODAD] Big Tree
+-3710:178
+[DOODAD] Big Tree
+-3704:155
+[DOODAD] Big Tree
+-3590:155
+[DOODAD] Big Tree
+-3550:298
+[DOODAD] Big Tree
+-3538:441
+[DOODAD] Big Tree
+-3538:344
+[DOODAD] Big Tree
+-3515:275
+[DOODAD] Big Tree
+-3492:390
+[DOODAD] Big Tree
+-3679:344
+[DOODAD] Big Tree
+-3685:275
+[DOODAD] Big Tree
+-3714:361
+[DOODAD] Big Tree
+-3708:447
+[DOODAD] Big Tree
+-3685:575
+[DOODAD] Big Tree
+-3719:84
+[DOODAD] Big Tree
+-3725:181
+[DOODAD] Big Tree
+-3725:221
+[DOODAD] Big Tree
+-3725:318
+[DOODAD] Big Tree
+-3697:455
+[DOODAD] Big Tree
+-3679:577
+[DOODAD] Big Tree
+-3679:678
+[DOODAD] Big Tree
+-3679:778
+[DOODAD] Big Tree
+-3697:494
+[DOODAD] Big Tree
+-3702:568
+[DOODAD] Big Tree
+-3714:620
+[DOODAD] Big Tree
+-3714:722
+[DOODAD] Big Tree
+-3708:802
+[DOODAD] Big Tree
+-3702:865
+[DOODAD] Big Tree
+-3702:922
+[DOODAD] Big Tree
+-3702:928
+[DOODAD] Big Tree
+-3708:1047
+[DOODAD] Big Tree
+-3708:1142
+[DOODAD] Big Tree
+-3708:1232
+[DOODAD] Big Tree
+-3708:1332
+[DOODAD] Big Tree
+-3708:1412
+[DOODAD] Big Tree
+-3708:1492
+[DOODAD] Big Tree
+-3708:1572
+[DOODAD] Big Tree
+-3439:551
+[DOODAD] Big Tree
+-3439:568
+[DOODAD] Big Tree
+-3439:700
+[DOODAD] Big Tree
+-3439:904
+[DOODAD] Big Tree
+-3439:1000
+[DOODAD] Big Tree
+-3445:1095
+[DOODAD] Big Tree
+-3445:1295
+[DOODAD] Big Tree
+-3445:1465
+[DOODAD] Big Tree
+-3445:1565
+[DOODAD] Big Tree
+-3481:1511
+[DOODAD] Big Tree
+-3611:1381
+[DOODAD] Big Tree
+-3548:1371
+[DOODAD] Big Tree
+-3508:1322
+[DOODAD] Big Tree
+-3508:1212
+[DOODAD] Big Tree
+-3508:1122
+[DOODAD] Big Tree
+-3508:1032
+[DOODAD] Big Tree
+-3508:897
+[DOODAD] Big Tree
+-3508:767
+[DOODAD] Big Tree
+-3508:687
+[DOODAD] Big Tree
+-3508:527
+[DOODAD] Big Tree
+-3548:524
+[DOODAD] Big Tree
+-3565:747
+[DOODAD] Big Tree
+-3565:867
+[DOODAD] Big Tree
+-3565:967
+[DOODAD] Big Tree
+-3565:1057
+[DOODAD] Big Tree
+-3577:1192
+[DOODAD] Big Tree
+-3577:1282
+[DOODAD] Big Tree
+-3577:1382
+[DOODAD] Big Tree
+-3577:1462
+[DOODAD] Big Tree
+-3577:1580
+[DOODAD] Big Tree
+-3565:1675
+[DOODAD] Big Tree
+-3559:1787
+[DOODAD] Big Tree
+-3559:1877
+[DOODAD] Big Tree
+-3559:1967
+[DOODAD] Big Tree
+-3434:1660
+[DOODAD] Big Tree
+-3422:1797
+[DOODAD] Big Tree
+-3417:1877
+[DOODAD] Big Tree
+-3439:1928
+[DOODAD] Big Tree
+-3554:1837
+[DOODAD] Big Tree
+-3571:1740
+[DOODAD] Big Tree
+-3599:1717
+[DOODAD] Big Tree
+-3628:1820
+[DOODAD] Big Tree
+-3639:1871
+[DOODAD] Big Tree
+-4434:1445
+[DOODAD] Big Tree
+-4434:1422
+[DOODAD] Big Tree
+-4457:1428
+[DOODAD] Big Tree
+-4457:1428
+[DOODAD] Big Tree
+-4411:1428
+[DOODAD] Big Tree
+-4399:1417
+[DOODAD] Big Tree
+-4405:1331
+[DOODAD] Big Tree
+-4399:1394
+[DOODAD] Big Tree
+-4485:1388
+[DOODAD] Big Tree
+-4468:1377
+[DOODAD] Big Tree
+-4422:1377
+[DOODAD] Big Tree
+-4320:1394
+[DOODAD] Big Tree
+-4220:1394
+[DOODAD] Big Tree
+-4110:1394
+[DOODAD] Big Tree
+-3920:1394
+[DOODAD] Big Tree
+-3829:1394
+[DOODAD] Big Tree
+-3829:1394
+[DOODAD] Big Tree
+-3852:1405
+[DOODAD] Big Tree
+-3858:1405
+[DOODAD] Big Tree
+-3948:1405
+[DOODAD] Big Tree
+-3988:1405
+[DOODAD] Big Tree
+-3971:1422
+[DOODAD] Big Tree
+-3965:1428
+[DOODAD] Big Tree
+-3585:515
+[DOODAD] Big Tree
+-3562:590
+[DOODAD] Big Tree
+-3562:692
+[DOODAD] Big Tree
+-3557:732
+[DOODAD] Big Tree
+-2797:131
+[DOODAD] Big Tree
+-2797:141
+[DOODAD] Big Tree
+-2797:337
+[DOODAD] Big Tree
+-2797:427
+[DOODAD] Big Tree
+-2802:522
+[DOODAD] Big Tree
+-2802:612
+[DOODAD] Big Tree
+-2802:712
+[DOODAD] Big Tree
+-2802:812
+[DOODAD] Big Tree
+-2802:912
+[DOODAD] Big Tree
+-2802:1022
+[DOODAD] Big Tree
+-2802:1122
+[DOODAD] Big Tree
+-2802:1212
+[DOODAD] Big Tree
+-2802:1392
+[DOODAD] Big Tree
+-2802:1502
+[DOODAD] Big Tree
+-2855:1435
+[DOODAD] Big Tree
+-2855:1441
+[DOODAD] Big Tree
+-2855:1361
+[DOODAD] Big Tree
+-2855:1261
+[DOODAD] Big Tree
+-2855:1161
+[DOODAD] Big Tree
+-2855:1061
+[DOODAD] Big Tree
+-2855:961
+[DOODAD] Big Tree
+-2855:861
+[DOODAD] Big Tree
+-2855:771
+[DOODAD] Big Tree
+-2855:661
+[DOODAD] Big Tree
+-2855:561
+[DOODAD] Big Tree
+-2855:461
+[DOODAD] Big Tree
+-2855:361
+[DOODAD] Big Tree
+-2855:271
+[DOODAD] Big Tree
+-2855:171
+[DOODAD] Big Tree
+-2855:51
+[DOODAD] Big Tree
+-2855:-48
+[DOODAD] Big Tree
+-2855:-148
+[DOODAD] Big Tree
+-2855:-248
+[DOODAD] Big Tree
+-2855:-358
+[DOODAD] Big Tree
+-2769:-319
+[DOODAD] Big Tree
+-2741:-337
+[DOODAD] Big Tree
+-2741:-337
+[DOODAD] Big Tree
+-2691:-367
+[DOODAD] Big Tree
+-2485:-349
+[DOODAD] Big Tree
+-2375:-349
+[DOODAD] Big Tree
+-2275:-349
+[DOODAD] Big Tree
+-2185:-349
+[DOODAD] Big Tree
+-2222:-227
+[DOODAD] Big Tree
+-2421:-107
+[DOODAD] Big Tree
+-2532:-81
+[DOODAD] Big Tree
+-2584:-164
+[DOODAD] Big Tree
+-2544:-181
+[DOODAD] Big Tree
+-2492:-164
+[DOODAD] Big Tree
+-2721:-84
+[DOODAD] Big Tree
+-2715:12
+[DOODAD] Big Tree
+-2595:24
+[DOODAD] Big Tree
+-2498:-15
+[DOODAD] Big Tree
+-2292:-38
+[DOODAD] Big Tree
+-2218:-38
+[DOODAD] Big Tree
+-2167:-95
+[DOODAD] Big Tree
+-2338:-187
+[DOODAD] Big Tree
+-2618:-164
+[DOODAD] Big Tree
+-2709:-152
+[DOODAD] Big Tree
+-2189:-101
+[DOODAD] Big Tree
+-2178:-72
+[DOODAD] Big Tree
+-2395:7
+[DOODAD] Big Tree
+-2321:64
+[DOODAD] Big Tree
+-2155:-72
+[DOODAD] Big Tree
+-1237:-949
+[DOODAD] Big Tree
+-1414:-875
+[DOODAD] Big Tree
+-1477:-772
+[DOODAD] Big Tree
+-1362:-738
+[DOODAD] Big Tree
+-1174:-761
+[DOODAD] Big Tree
+-1265:-898
+[DOODAD] Big Tree
+-1185:-864
+[DOODAD] Big Tree
+-1220:-755
+[DOODAD] Big Tree
+-1368:-984
+[DOODAD] Big Tree
+-1425:-984
+[DOODAD] Big Tree
+-1557:-841
+[DOODAD] Big Tree
+-1562:-721
+[DOODAD] Big Tree
+-1511:-607
+[DOODAD] Big Tree
+-1408:-498
+[DOODAD] Big Tree
+-1362:-555
+[DOODAD] Big Tree
+-1351:-704
+[DOODAD] Big Tree
+-1294:-807
+[DOODAD] Big Tree
+-1322:-915
+[DOODAD] Big Tree
+-1402:-949
+[DOODAD] Big Tree
+-1517:-961
+[DOODAD] Big Tree
+-1602:-949
+[DOODAD] Big Tree
+-1602:-927
+[DOODAD] Big Tree
+-1372:1090
+[DOODAD] Big Tree
+-1470:1152
+[DOODAD] Big Tree
+-1572:1198
+[DOODAD] Big Tree
+-1595:1318
+[DOODAD] Big Tree
+-1504:1392
+[DOODAD] Big Tree
+-1425:1474
+[DOODAD] Big Tree
+-1329:1524
+[DOODAD] Big Tree
+-1332:1371
+[DOODAD] Big Tree
+-1407:1228
+[DOODAD] Big Tree
+-1241:1154
+[DOODAD] Big Tree
+-1127:1188
+[DOODAD] Big Tree
+-1110:1251
+[DOODAD] Big Tree
+-1132:1360
+[DOODAD] Big Tree
+-1150:1371
+[DOODAD] Big Tree
+-1161:1440
+[DOODAD] Big Tree
+-1230:1245
+[DOODAD] Big Tree
+-1184:1240
+[DOODAD] Big Tree
+-1121:1268
+[DOODAD] Big Tree
+-2754:-1687
+[DOODAD] Big Tree
+-2754:-1618
+[DOODAD] Big Tree
+-2765:-1545
+[DOODAD] Big Tree
+-2765:-1445
+[DOODAD] Big Tree
+-2765:-1355
+[DOODAD] Big Tree
+-2765:-1255
+[DOODAD] Big Tree
+-2765:-1165
+[DOODAD] Big Tree
+-2765:-1075
+[DOODAD] Big Tree
+-2765:-975
+[DOODAD] Big Tree
+-2765:-915
+[DOODAD] Big Tree
+-2765:-909
+[DOODAD] Big Tree
+-2849:-955
+[DOODAD] Big Tree
+-2817:-1041
+[DOODAD] Big Tree
+-2817:-1131
+[DOODAD] Big Tree
+-2817:-1241
+[DOODAD] Big Tree
+-2817:-1331
+[DOODAD] Big Tree
+-2817:-1421
+[DOODAD] Big Tree
+-2817:-1521
+[DOODAD] Big Tree
+-2817:-1621
+[DOODAD] Big Tree
+-2817:-1821
+[DOODAD] Big Tree
+-2817:-1921
+[DOODAD] Big Tree
+-2817:-2021
+[DOODAD] Big Tree
+-2817:-2111
+[DOODAD] Big Tree
+-2817:-2211
+[DOODAD] Big Tree
+-2817:-2311
+[DOODAD] Big Tree
+-2817:-2401
+[DOODAD] Big Tree
+-2817:-2511
+[DOODAD] Big Tree
+-2817:-2611
+[DOODAD] Big Tree
+-2817:-2701
+[DOODAD] Big Tree
+-2817:-2801
+[DOODAD] Big Tree
+-2771:-2821
+[DOODAD] Big Tree
+-2765:-2815
+[DOODAD] Big Tree
+-2698:-2704
+[DOODAD] Big Tree
+-2698:-2684
+[DOODAD] Big Tree
+-2698:-2594
+[DOODAD] Big Tree
+-2698:-2494
+[DOODAD] Big Tree
+-2698:-2404
+[DOODAD] Big Tree
+-2698:-2304
+[DOODAD] Big Tree
+-2698:-2214
+[DOODAD] Big Tree
+-2698:-2134
+[DOODAD] Big Tree
+-2698:-2024
+[DOODAD] Big Tree
+-2698:-1914
+[DOODAD] Big Tree
+-2698:-1824
+[DOODAD] Big Tree
+-2698:-1734
+[DOODAD] Big Tree
+-2698:-1614
+[DOODAD] Big Tree
+-2698:-1514
+[DOODAD] Big Tree
+-2698:-1404
+[DOODAD] Big Tree
+-2698:-1344
+[DOODAD] Big Tree
+-2608:-1338
+[DOODAD] Big Tree
+-2498:-1338
+[DOODAD] Big Tree
+-2398:-1338
+[DOODAD] Big Tree
+-2298:-1338
+[DOODAD] Big Tree
+-2188:-1338
+[DOODAD] Big Tree
+-2188:-1418
+[DOODAD] Big Tree
+-2188:-1518
+[DOODAD] Big Tree
+-2188:-1598
+[DOODAD] Big Tree
+-2188:-1698
+[DOODAD] Big Tree
+-2188:-1798
+[DOODAD] Big Tree
+-2188:-1908
+[DOODAD] Big Tree
+-2188:-2018
+[DOODAD] Big Tree
+-2108:-2058
+[DOODAD] Big Tree
+-2008:-2058
+[DOODAD] Big Tree
+-1861:-1989
+[DOODAD] Big Tree
+-1952:-1927
+[DOODAD] Big Tree
+-1952:-1921
+[DOODAD] Big Tree
+-1867:-1921
+[DOODAD] Big Tree
+-1964:-1949
+[DOODAD] Big Tree
+-2010:-1949
+[DOODAD] Big Tree
+-2021:-1944
+[DOODAD] Big Tree
+-1981:-1898
+[DOODAD] Big Tree
+-2027:-1875
+[DOODAD] Big Tree
+-1891:-1915
+[DOODAD] Big Tree
+-1725:-1915
+[DOODAD] Big Tree
+-1625:-1915
+[DOODAD] Big Tree
+-1435:-1915
+[DOODAD] Big Tree
+-1345:-1915
+[DOODAD] Big Tree
+-1145:-1915
+[DOODAD] Big Tree
+-1035:-1915
+[DOODAD] Big Tree
+-935:-1915
+[DOODAD] Big Tree
+-865:-1915
+[DOODAD] Big Tree
+-795:-1915
+[DOODAD] Big Tree
+-655:-1915
+[DOODAD] Big Tree
+-635:-1915
+[DOODAD] Big Tree
+-861:-1921
+[DOODAD] Big Tree
+-971:-1921
+[DOODAD] Big Tree
+-1121:-1921
+[DOODAD] Big Tree
+-1217:-1915
+[DOODAD] Big Tree
+-1322:-1909
+[DOODAD] Big Tree
+-1502:-1909
+[DOODAD] Big Tree
+-3430:-2167
+[DOODAD] Big Tree
+-3458:-2172
+[DOODAD] Big Tree
+-3470:-2224
+[DOODAD] Big Tree
+-3470:-2229
+[DOODAD] Big Tree
+-3521:-2149
+[DOODAD] Big Tree
+-3481:-2098
+[DOODAD] Big Tree
+-3447:-2064
+[DOODAD] Big Tree
+-3441:-1984
+[DOODAD] Big Tree
+-3430:-1808
+[DOODAD] Big Tree
+-3424:-1685
+[DOODAD] Big Tree
+-3424:-1605
+[DOODAD] Big Tree
+-3418:-1515
+[DOODAD] Big Tree
+-3407:-1525
+[DOODAD] Big Tree
+-3412:-1414
+[DOODAD] Big Tree
+-3412:-1324
+[DOODAD] Big Tree
+-3412:-1218
+[DOODAD] Big Tree
+-3412:-1112
+[DOODAD] Big Tree
+-3412:-1022
+[DOODAD] Big Tree
+-3448:-977
+[DOODAD] Big Tree
+-3548:-977
+[DOODAD] Big Tree
+-3437:-1039
+[DOODAD] Big Tree
+-3437:-1162
+[DOODAD] Big Tree
+-3437:-1262
+[DOODAD] Big Tree
+-3437:-1352
+[DOODAD] Big Tree
+-3437:-1432
+[DOODAD] Big Tree
+-3437:-1532
+[DOODAD] Big Tree
+-3437:-1628
+[DOODAD] Big Tree
+-3437:-1728
+[DOODAD] Big Tree
+-3442:-1869
+[DOODAD] Big Tree
+-3460:-1982
+[DOODAD] Big Tree
+-3519:-2102
+[DOODAD] Big Tree
+-3514:-2214
+[DOODAD] Big Tree
+-3565:-2202
+[DOODAD] Big Tree
+-3565:-2191
+[DOODAD] Big Tree
+-3577:-2179
+[DOODAD] Big Tree
+-3605:-2179
+[DOODAD] Big Tree
+-3639:-2185
+[DOODAD] Big Tree
+-3668:-2185
+[DOODAD] Big Tree
+-3674:-2219
+[DOODAD] Big Tree
+-3674:-2231
+[DOODAD] Big Tree
+-3674:-2202
+[DOODAD] Big Tree
+-3674:-2158
+[DOODAD] Big Tree
+-3674:-2068
+[DOODAD] Big Tree
+-3674:-1892
+[DOODAD] Big Tree
+-3674:-1782
+[DOODAD] Big Tree
+-3674:-1682
+[DOODAD] Big Tree
+-3674:-1572
+[DOODAD] Big Tree
+-3674:-1482
+[DOODAD] Big Tree
+-3657:-1964
+[DOODAD] Big Tree
+-3582:-1992
+[DOODAD] Big Tree
+-3514:-1992
+[DOODAD] Big Tree
+-3514:-1878
+[DOODAD] Big Tree
+-3508:-1758
+[DOODAD] Big Tree
+-3508:-1582
+[DOODAD] Big Tree
+-3508:-1492
+[DOODAD] Big Tree
+-3508:-1392
+[DOODAD] Big Tree
+-3508:-1282
+[DOODAD] Big Tree
+-3519:-1558
+[DOODAD] Big Tree
+-3542:-1678
+[DOODAD] Big Tree
+-3554:-1741
+[DOODAD] Big Tree
+-3605:-1638
+[DOODAD] Big Tree
+-3594:-1501
+[DOODAD] Big Tree
+-3594:-1369
+[DOODAD] Big Tree
+-3628:-1289
+[DOODAD] Big Tree
+-3628:-1255
+[DOODAD] Big Tree
+-3697:-1409
+[DOODAD] Big Tree
+-3714:-1329
+[DOODAD] Big Tree
+-3788:-1295
+[DOODAD] Big Tree
+-3834:-1267
+[DOODAD] Big Tree
+-3559:-1164
+[DOODAD] Big Tree
+-3502:-1124
+[DOODAD] Big Tree
+-3571:-1084
+[DOODAD] Big Tree
+-3719:-1124
+[DOODAD] Big Tree
+-3817:-1124
+[DOODAD] Big Tree
+-3777:-1027
+[DOODAD] Big Tree
+-3657:-1192
+[DOODAD] Big Tree
+-3714:-1038
+[DOODAD] Big Tree
+-3651:-941
+[DOODAD] Big Tree
+-3519:-918
+[DOODAD] Big Tree
+-3651:-924
+[DOODAD] Big Tree
+-3824:-929
+[DOODAD] Big Tree
+-3880:-975
+[DOODAD] Big Tree
+-3989:-975
+[DOODAD] Big Tree
+-4089:-975
+[DOODAD] Big Tree
+-4189:-975
+[DOODAD] Big Tree
+-4270:-975
+[DOODAD] Big Tree
+-4858:-1255
+[DOODAD] Big Tree
+-4864:-1255
+[DOODAD] Big Tree
+-4887:-1295
+[DOODAD] Big Tree
+-4887:-1301
+[DOODAD] Big Tree
+-4847:-1301
+[DOODAD] Big Tree
+-4792:-1295
+[DOODAD] Big Tree
+-4682:-1295
+[DOODAD] Big Tree
+-4582:-1295
+[DOODAD] Big Tree
+-4492:-1295
+[DOODAD] Big Tree
+-4392:-1295
+[DOODAD] Big Tree
+-4262:-1295
+[DOODAD] Big Tree
+-4161:-1295
+[DOODAD] Big Tree
+-4071:-1295
+[DOODAD] Big Tree
+-3971:-1295
+[DOODAD] Big Tree
+-3861:-1295
+[DOODAD] Big Tree
+-3791:-1295
+[DOODAD] Big Tree
+-3797:-1285
+[DOODAD] Big Tree
+-3899:-1302
+[DOODAD] Big Tree
+-3960:-1308
+[DOODAD] Big Tree
+-3960:-1308
+[DOODAD] Big Tree
+-3965:-1319
+[DOODAD] Big Tree
+-4065:-1319
+[DOODAD] Big Tree
+-4175:-1319
+[DOODAD] Big Tree
+-4285:-1319
+[DOODAD] Big Tree
+-4385:-1319
+[DOODAD] Big Tree
+-4475:-1319
+[DOODAD] Big Tree
+-4687:-1319
+[DOODAD] Big Tree
+-4797:-1319
+[DOODAD] Big Tree
+-4887:-1319
+[DOODAD] Big Tree
+-4912:-1268
+[DOODAD] Big Tree
+-4912:-1241
+[DOODAD] Big Tree
+-4878:-1152
+[DOODAD] Big Tree
+-4804:-1169
+[DOODAD] Big Tree
+-4735:-1169
+[DOODAD] Big Tree
+-4618:-1164
+[DOODAD] Big Tree
+-4518:-1164
+[DOODAD] Big Tree
+-4438:-1164
+[DOODAD] Big Tree
+-4358:-1164
+[DOODAD] Big Tree
+-4278:-1164
+[DOODAD] Big Tree
+-4058:-1164
+[DOODAD] Big Tree
+-3958:-1164
+[DOODAD] Big Tree
+-3858:-1164
+[DOODAD] Big Tree
+-3861:-1129
+[DOODAD] Big Tree
+-4051:-1048
+[DOODAD] Big Tree
+-4151:-965
+[DOODAD] Big Tree
+-4119:-1164
+[DOODAD] Big Tree
+-3994:-1129
+[DOODAD] Big Tree
+-4177:-1032
+[DOODAD] Big Tree
+-4119:-1015
+[DOODAD] Big Tree
+-4039:-1021
+[DOODAD] Big Tree
+-3937:-1038
+[DOODAD] Big Tree
+-3879:-1038
+[DOODAD] Big Tree
+-4057:-1072
+[DOODAD] Big Tree
+-4211:-1089
+[DOODAD] Big Tree
+-4297:-1061
+[DOODAD] Big Tree
+-4297:-1015
+[DOODAD] Big Tree
+-4297:-952
+[DOODAD] Big Tree
+-4337:-918
+[DOODAD] Big Tree
+-4462:-981
+[DOODAD] Big Tree
+-4554:-1015
+[DOODAD] Big Tree
+-4497:-1044
+[DOODAD] Big Tree
+-4365:-1044
+[DOODAD] Big Tree
+-4274:-895
+[DOODAD] Big Tree
+-4399:-907
+[DOODAD] Big Tree
+-4388:-861
+[DOODAD] Big Tree
+-4371:-809
+[DOODAD] Big Tree
+-4365:-735
+[DOODAD] Big Tree
+-4359:-684
+[DOODAD] Big Tree
+-4365:-655
+[DOODAD] Big Tree
+-4359:-561
+[DOODAD] Big Tree
+-4359:-461
+[DOODAD] Big Tree
+-4359:-381
+[DOODAD] Big Tree
+-4359:-281
+[DOODAD] Big Tree
+-4359:-141
+[DOODAD] Big Tree
+-4359:-51
+[DOODAD] Big Tree
+-4359:58
+[DOODAD] Big Tree
+-4359:158
+[DOODAD] Big Tree
+-4359:398
+[DOODAD] Big Tree
+-4359:488
+[DOODAD] Big Tree
+-4354:515
+[DOODAD] Big Tree
+-4342:624
+[DOODAD] Big Tree
+-4342:670
+[DOODAD] Big Tree
+-4388:681
+[DOODAD] Big Tree
+-4371:635
+[DOODAD] Big Tree
+-4382:567
+[DOODAD] Big Tree
+-4377:292
+[DOODAD] Big Tree
+-4302:201
+[DOODAD] Big Tree
+-4314:241
+[DOODAD] Big Tree
+-4474:424
+[DOODAD] Big Tree
+-4439:550
+[DOODAD] Big Tree
+-4462:630
+[DOODAD] Big Tree
+-4462:652
+[DOODAD] Big Tree
+-4474:635
+[DOODAD] Big Tree
+-4485:670
+[DOODAD] Big Tree
+-4502:698
+[DOODAD] Big Tree
+-4537:641
+[DOODAD] Big Tree
+-4485:447
+[DOODAD] Big Tree
+-4479:304
+[DOODAD] Big Tree
+-4474:240
+[DOODAD] Big Tree
+-4468:120
+[DOODAD] Big Tree
+-4468:30
+[DOODAD] Big Tree
+-4468:-59
+[DOODAD] Big Tree
+-4468:-139
+[DOODAD] Big Tree
+-4468:-229
+[DOODAD] Big Tree
+-4468:-349
+[DOODAD] Big Tree
+-4468:-499
+[DOODAD] Big Tree
+-4468:-589
+[DOODAD] Big Tree
+-4468:-689
+[DOODAD] Big Tree
+-4468:-780
+[DOODAD] Big Tree
+-4495:-780
+[DOODAD] Big Tree
+-4514:-905
+[DOODAD] Big Tree
+-4531:-948
+[DOODAD] Big Tree
+-4681:-1054
+[DOODAD] Big Tree
+-4752:-1154
+[DOODAD] Big Tree
+-3698:-2128
+[DOODAD] Big Tree
+-3824:-2077
+[DOODAD] Big Tree
+-3727:-2271
+[DOODAD] Big Tree
+-3727:-2191
+[DOODAD] Big Tree
+-3727:-2151
+[DOODAD] Big Tree
+-3721:-2048
+[DOODAD] Big Tree
+-3715:-1962
+[DOODAD] Big Tree
+-3727:-1905
+[DOODAD] Big Tree
+-3738:-1825
+[DOODAD] Big Tree
+-3744:-1785
+[DOODAD] Big Tree
+-3744:-1711
+[DOODAD] Big Tree
+-3801:-1922
+[DOODAD] Big Tree
+-3761:-1751
+[DOODAD] Big Tree
+-3755:-1682
+[DOODAD] Big Tree
+-3755:-1574
+[DOODAD] Big Tree
+-3732:-1477
+[DOODAD] Big Tree
+-3744:-1425
+[DOODAD] Big Tree
+-3744:-1391
+[DOODAD] Big Tree
+-2510:-1494
+[DOODAD] Big Tree
+-2567:-1471
+[DOODAD] Big Tree
+-2492:-1454
+[DOODAD] Big Tree
+-2441:-1454
+[DOODAD] Big Tree
+-2378:-1448
+[DOODAD] Big Tree
+-2338:-1442
+[DOODAD] Big Tree
+-2338:-1442
+[DOODAD] Big Tree
+-2350:-1642
+[DOODAD] Big Tree
+-2372:-1659
+[DOODAD] Big Tree
+-2607:-1659
+[DOODAD] Big Tree
+-2584:-1591
+[DOODAD] Big Tree
+-2487:-1568
+[DOODAD] Big Tree
+-2447:-1602
+[DOODAD] Big Tree
+-2401:-1625
+[DOODAD] Big Tree
+-2332:-1551
+[DOODAD] Big Tree
+-2292:-1551
+[DOODAD] Big Tree
+-2492:-1842
+[DOODAD] Big Tree
+-2521:-1882
+[DOODAD] Big Tree
+-2487:-1899
+[DOODAD] Big Tree
+-2412:-1762
+[DOODAD] Big Tree
+-2401:-1682
+[DOODAD] Big Tree
+-2401:-1671
+[DOODAD] Big Tree
+-2241:-1808
+[DOODAD] Big Tree
+-2270:-1842
+[DOODAD] Big Tree
+-2510:-1768
+[DOODAD] Big Tree
+-2544:-1717
+[DOODAD] Big Tree
+-2527:-1677
+[DOODAD] Big Tree
+-3494:-1778
+[DOODAD] Big Tree
+-3511:-1789
+[DOODAD] Big Tree
+-3522:-1801
+[DOODAD] Big Tree
+197:-1931
+[DOODAD] Big Tree
+105:-1914
+[DOODAD] Big Tree
+122:-1919
+[DOODAD] Big Tree
+162:-1919
+[DOODAD] Big Tree
+285:-1919
+[DOODAD] Big Tree
+385:-1919
+[DOODAD] Big Tree
+465:-1919
+[DOODAD] Big Tree
+565:-1919
+[DOODAD] Big Tree
+665:-1919
+[DOODAD] Big Tree
+765:-1919
+[DOODAD] Big Tree
+871:-1914
+[DOODAD] Big Tree
+971:-1914
+[DOODAD] Big Tree
+1071:-1914
+[DOODAD] Big Tree
+1151:-1914
+[DOODAD] Big Tree
+1241:-1914
+[DOODAD] Big Tree
+1371:-1914
+[DOODAD] Big Tree
+1371:-1914
+[DOODAD] Big Tree
+1405:-1959
+[DOODAD] Big Tree
+1422:-2079
+[DOODAD] Big Tree
+1434:-2184
+[DOODAD] Big Tree
+1440:-2192
+[DOODAD] Big Tree
+1365:-2472
+[DOODAD] Big Tree
+1417:-2724
+[DOODAD] Big Tree
+1428:-2735
+[DOODAD] Big Tree
+1445:-2587
+[DOODAD] Big Tree
+1445:-2507
+[DOODAD] Big Tree
+1445:-2489
+[DOODAD] Big Tree
+1445:-2432
+[DOODAD] Big Tree
+1440:-2358
+[DOODAD] Big Tree
+1440:-2278
+[DOODAD] Big Tree
+1422:-2152
+[DOODAD] Big Tree
+168:-3152
+[DOODAD] Big Tree
+140:-3129
+[DOODAD] Big Tree
+145:-3164
+[DOODAD] Big Tree
+151:-3187
+[DOODAD] Big Tree
+151:-3187
+[DOODAD] Big Tree
+145:-3227
+[DOODAD] Big Tree
+140:-3227
+[DOODAD] Big Tree
+140:-3215
+[DOODAD] Big Tree
+140:-3147
+[DOODAD] Big Tree
+157:-3067
+[DOODAD] Big Tree
+157:-3015
+[DOODAD] Big Tree
+157:-2964
+[DOODAD] Big Tree
+157:-2918
+[DOODAD] Big Tree
+157:-2872
+[DOODAD] Big Tree
+157:-2844
+[DOODAD] Big Tree
+168:-2769
+[DOODAD] Big Tree
+168:-2712
+[DOODAD] Big Tree
+162:-2609
+[DOODAD] Big Tree
+162:-2535
+[DOODAD] Big Tree
+157:-2484
+[DOODAD] Big Tree
+157:-2392
+[DOODAD] Big Tree
+157:-2307
+[DOODAD] Big Tree
+180:-2227
+[DOODAD] Big Tree
+174:-2141
+[DOODAD] Big Tree
+162:-2021
+[DOODAD] Big Tree
+157:-1958
+[DOODAD] Big Tree
+134:-2107
+[DOODAD] Big Tree
+140:-2244
+[DOODAD] Big Tree
+111:-2427
+[DOODAD] Big Tree
+77:-2798
+[DOODAD] Big Tree
+231:-3049
+[DOODAD] Big Tree
+322:-3141
+[DOODAD] Big Tree
+362:-3118
+[DOODAD] Big Tree
+357:-3021
+[DOODAD] Big Tree
+345:-2907
+[DOODAD] Big Tree
+340:-2792
+[DOODAD] Big Tree
+334:-2718
+[DOODAD] Big Tree
+328:-2581
+[DOODAD] Big Tree
+328:-2512
+[DOODAD] Big Tree
+334:-2472
+[DOODAD] Big Tree
+334:-2307
+[DOODAD] Big Tree
+334:-2244
+[DOODAD] Big Tree
+282:-3215
+[DOODAD] Big Tree
+294:-3215
+[DOODAD] Big Tree
+305:-3215
+[DOODAD] Big Tree
+395:-3215
+[DOODAD] Big Tree
+495:-3215
+[DOODAD] Big Tree
+585:-3215
+[DOODAD] Big Tree
+685:-3215
+[DOODAD] Big Tree
+765:-3215
+[DOODAD] Big Tree
+885:-3215
+[DOODAD] Big Tree
+995:-3215
+[DOODAD] Big Tree
+1115:-3215
+[DOODAD] Big Tree
+1205:-3215
+[DOODAD] Big Tree
+1315:-3215
+[DOODAD] Big Tree
+1405:-3215
+[DOODAD] Big Tree
+738:-3052
+[DOODAD] Big Tree
+341:-2034
+[DOODAD] Big Tree
+347:-2034
+[DOODAD] Big Tree
+442:-2034
+[DOODAD] Big Tree
+542:-2034
+[DOODAD] Big Tree
+642:-2034
+[DOODAD] Big Tree
+742:-2034
+[DOODAD] Big Tree
+842:-2034
+[DOODAD] Big Tree
+932:-2034
+[DOODAD] Big Tree
+1032:-2028
+[DOODAD] Big Tree
+1142:-2028
+[DOODAD] Big Tree
+1242:-2028
+[DOODAD] Big Tree
+1322:-2028
+[DOODAD] Big Tree
+351:-2084
+[DOODAD] Big Tree
+270:-2078
+[DOODAD] Big Tree
+395:-2351
+[DOODAD] Big Tree
+401:-2547
+[DOODAD] Big Tree
+372:-2545
+[DOODAD] Big Tree
+372:-2401
+[DOODAD] Big Tree
+372:-2384
+[DOODAD] Big Tree
+338:-2664
+[DOODAD] Big Tree
+338:-2675
+[DOODAD] Big Tree
+367:-2908
+[DOODAD] Big Tree
+487:-3152
+[DOODAD] Big Tree
+572:-3020
+[DOODAD] Big Tree
+610:-3020
+[DOODAD] Big Tree
+732:-3037
+[DOODAD] Big Tree
+775:-3105
+[DOODAD] Big Tree
+558:-3105
+[DOODAD] Big Tree
+570:-3105
+[DOODAD] Big Tree
+837:-3094
+[DOODAD] Big Tree
+957:-3094
+[DOODAD] Big Tree
+1057:-3094
+[DOODAD] Big Tree
+1157:-3094
+[DOODAD] Big Tree
+1270:-3094
+[DOODAD] Big Tree
+1470:-3180
+[DOODAD] Big Tree
+1500:-3240
+[DOODAD] Big Tree
+1471:-3339
+[DOODAD] Big Tree
+1471:-3449
+[DOODAD] Big Tree
+1471:-3424
+[DOODAD] Big Tree
+1460:-3332
+[DOODAD] Big Tree
+1437:-3304
+[DOODAD] Big Tree
+1420:-3332
+[DOODAD] Big Tree
+1420:-3424
+[DOODAD] Big Tree
+1420:-3494
+[DOODAD] Big Tree
+1420:-3584
+[DOODAD] Big Tree
+1420:-3654
+[DOODAD] Big Tree
+1420:-3809
+[DOODAD] Big Tree
+1420:-3919
+[DOODAD] Big Tree
+1420:-4030
+[DOODAD] Big Tree
+1420:-4140
+[DOODAD] Big Tree
+1420:-4230
+[DOODAD] Big Tree
+1420:-4320
+[DOODAD] Big Tree
+1420:-4430
+[DOODAD] Big Tree
+1420:-4510
+[DOODAD] Big Tree
+1420:-4570
+[DOODAD] Big Tree
+1420:-4620
+[DOODAD] Big Tree
+1320:-4620
+[DOODAD] Big Tree
+1210:-4620
+[DOODAD] Big Tree
+1100:-4620
+[DOODAD] Big Tree
+1000:-4620
+[DOODAD] Big Tree
+930:-4620
+[DOODAD] Big Tree
+730:-4620
+[DOODAD] Big Tree
+650:-4620
+[DOODAD] Big Tree
+930:-4682
+[DOODAD] Big Tree
+872:-4608
+[DOODAD] Big Tree
+770:-4557
+[DOODAD] Big Tree
+764:-4505
+[DOODAD] Big Tree
+792:-4448
+[DOODAD] Big Tree
+792:-4348
+[DOODAD] Big Tree
+792:-4198
+[DOODAD] Big Tree
+787:-4082
+[DOODAD] Big Tree
+775:-4011
+[DOODAD] Big Tree
+770:-4011
+[DOODAD] Big Tree
+770:-4011
+[DOODAD] Big Tree
+718:-3960
+[DOODAD] Big Tree
+695:-3868
+[DOODAD] Big Tree
+701:-3840
+[DOODAD] Big Tree
+735:-4057
+[DOODAD] Big Tree
+758:-4348
+[DOODAD] Big Tree
+741:-4131
+[DOODAD] Big Tree
+-1842:-3994
+[DOODAD] Big Tree
+-1842:-3977
+[DOODAD] Big Tree
+-1894:-3977
+[DOODAD] Big Tree
+-1894:-3977
+[DOODAD] Big Tree
+-1951:-4017
+[DOODAD] Big Tree
+-1928:-4000
+[DOODAD] Big Tree
+-1899:-3885
+[DOODAD] Big Tree
+-1894:-3845
+[DOODAD] Big Tree
+-1928:-3765
+[DOODAD] Big Tree
+-1928:-3731
+[DOODAD] Big Tree
+-1917:-3560
+[DOODAD] Big Tree
+-1911:-3542
+[DOODAD] Big Tree
+-1905:-3508
+[DOODAD] Big Tree
+-1968:-3674
+[DOODAD] Big Tree
+-1928:-3565
+[DOODAD] Big Tree
+-1899:-3514
+[DOODAD] Big Tree
+-1854:-3497
+[DOODAD] Big Tree
+-1802:-3485
+[DOODAD] Big Tree
+-1757:-3480
+[DOODAD] Big Tree
+-1682:-3542
+[DOODAD] Big Tree
+-1642:-3560
+[DOODAD] Big Tree
+-1608:-3560
+[DOODAD] Big Tree
+-1591:-3611
+[DOODAD] Big Tree
+-1585:-3731
+[DOODAD] Big Tree
+-1671:-3754
+[DOODAD] Big Tree
+-1814:-3668
+[DOODAD] Big Tree
+-1774:-3577
+[DOODAD] Big Tree
+-1745:-3582
+[DOODAD] Big Tree
+-1682:-3588
+[DOODAD] Big Tree
+-1745:-3794
+[DOODAD] Big Tree
+-1699:-3760
+[DOODAD] Big Tree
+-1637:-3668
+[DOODAD] Big Tree
+-1585:-3548
+[DOODAD] Big Tree
+-1534:-3474
+[DOODAD] Big Tree
+-1534:-3474
