@@ -58,6 +58,11 @@ namespace TCOBO
 
             soundManager.LoadContent(game1.Content);
 
+            //MediaPlayer.Play(soundManager.bgMusic);
+
+           
+            
+
         }
       
         public void Rotation()

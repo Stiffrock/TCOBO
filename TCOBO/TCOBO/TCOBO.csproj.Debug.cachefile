@@ -92,10 +92,18 @@ Content\death.xnb
 Content\SpriteFont1.xnb
 Content\MOStatFont.xnb
 Content\Ljudeffekt1.xnb
-Content\Sleep Away.xnb
 Content\StatsLjud.xnb
 Content\FightSound.xnb
 Content\EquipSound.xnb
 Content\InventorySound.xnb
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+Content\TCOBO musik.xnb
+Content\Level up sound.xnb
+=======
+Content\death.xnb
+>>>>>>> origin/Stoffe
+>>>>>>> origin/Stoffe
 Content\Ljudeffekt1.wma
-Content\Sleep Away.wma
+Content\TCOBO musik.wma

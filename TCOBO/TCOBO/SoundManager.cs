@@ -14,6 +14,8 @@ namespace TCOBO
         public SoundEffect fightSound;
         public SoundEffect equipSound;
         public SoundEffect inventorySound;
+        public Song bgMusic;
+        public SoundEffect levelupSound;
 
         public SoundManager()
         {
@@ -21,6 +23,8 @@ namespace TCOBO
             fightSound = null;
             equipSound = null;
             inventorySound = null;
+            levelupSound = null;
+            bgMusic = null;
         }
 
         public void LoadContent(ContentManager Content)
@@ -29,6 +33,8 @@ namespace TCOBO
             fightSound = Content.Load<SoundEffect>("FightSound");
             equipSound = Content.Load<SoundEffect>("EquipSound");
             inventorySound = Content.Load<SoundEffect>("InventorySound");
+            levelupSound = Content.Load<SoundEffect>("Level up sound");
+            //bgMusic = Content.Load<Song>("TCOBO musik");
         }
     }
 }

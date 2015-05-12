@@ -98,7 +98,11 @@ namespace TCOBO
                     newStat += 5;
                     Exp = 0;
                     Console.WriteLine("Level   "+  Level);
-                }               
+
+                    soundManager.levelupSound.Play();
+                    //MediaPlayer.Play(soundManager.levelupSound);
+
+                }
             }
         }
 
@@ -347,6 +351,7 @@ namespace TCOBO
                 animaCount = 0;
                 attackProgress = 0;
                 velocity += strikeVelocity;
+                soundManager.fightSound.Play();
             }
         }
 
