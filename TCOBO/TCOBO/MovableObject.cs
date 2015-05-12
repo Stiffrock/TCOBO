@@ -14,6 +14,8 @@ namespace TCOBO
     abstract class MovableObject
     {
         public MovableObject(){}
+        protected float maxLife;
+        protected float percentLife;
 
         
 

@@ -36,6 +36,11 @@ namespace TCOBO
                 double h = Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
                 float dn = (float)h;
                 enemy.velocity += new Vector2((float)deltaX / dn * 260, (float)deltaY / dn * 260);
+                enemy.health -= (int)player.mDamage;
+                if (enemy.health < 0)
+                {
+                    player.Exp += enemy.expDrop;
+                }
             }
         }
 

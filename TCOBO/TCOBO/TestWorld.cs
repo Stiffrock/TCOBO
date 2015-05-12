@@ -19,6 +19,7 @@ namespace TCOBO
         protected Vector2 pos;
         StreamWriter sw;
         public List<Tile> tiles = new List<Tile>();
+        public List<DooDads> dooDads = new List<DooDads>();
         public List<string> stringList = new List<string>();
 
         public TestWorld(ContentManager content)
@@ -30,6 +31,10 @@ namespace TCOBO
             foreach (Tile t in tiles)
             {
                 t.Draw(spriteBatch);
+            }
+            foreach(DooDads d in dooDads)
+            {
+                d.Draw(spriteBatch);
             }
         }
 
@@ -61,6 +66,14 @@ namespace TCOBO
                         pos_y = pos_y + stringList[i][j];
                         j++;
                     }
+                    if(typeoftile.Length > 7)
+                    {
+                        if (typeoftile.Substring(0, 8) == "[DOODAD]")
+                        {
+                            dooDads.Add(new DooDads(typeoftile, new Microsoft.Xna.Framework.Vector2(float.Parse(pos_x), float.Parse(pos_y))));
+                        }
+                    }
+                    else
                     tiles.Add(new Tile(typeoftile, new Microsoft.Xna.Framework.Vector2(float.Parse(pos_x), float.Parse(pos_y))));
                     skip = 0;
                 }
