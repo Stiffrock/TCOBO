@@ -17,10 +17,16 @@ namespace TCOBO
         private List<Enemy> inrangeList;
         private float write;
 
-        public Attack(Player player)
+        SoundManager soundManager = new SoundManager();
+
+        public Attack(Player player, ContentManager content)
         {
   
             this.player = player;
+
+            soundManager.LoadContent(content);
+
+            
             
         }
 
@@ -32,6 +38,7 @@ namespace TCOBO
                 double deltaX = enemy.pos.X - player.playerPos.X;
                 double deltaY =  enemy.pos.Y - player.playerPos.Y;
 
+                soundManager.hitSound.Play();
 
                 double h = Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
                 float dn = (float)h;

@@ -91,25 +91,20 @@ Content\treetile_blackoutline.xnb
 Content\death.xnb
 Content\SpriteFont1.xnb
 Content\MOStatFont.xnb
+Content\MenuFont.xnb
 Content\Ljudeffekt1.xnb
+Content\TCOBO musik.xnb
+Content\Death sound.xnb
 Content\StatsLjud.xnb
 Content\EquipSound.xnb
 Content\InventorySound.xnb
 Content\Level up sound.xnb
-<<<<<<< HEAD
 Content\FightSound1.xnb
-Content\TCOBO musik.xnb
 Content\BounceSound.xnb
 Content\EnemySound.xnb
 Content\RunningSound.xnb
-Content\Death sound.xnb
 Content\BouncingSound.xnb
 Content\HitSound.xnb
 Content\Ljudeffekt1.wma
 Content\TCOBO musik.wma
 Content\Death sound.wma
-=======
-Content\MenuTitleFont.xnb
-Content\MenuFont.xnb
-Content\Ljudeffekt1.wma
->>>>>>> origin/Stoffe

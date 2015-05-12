@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 C:\Users\Henrik\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\playerSpritePH.xnb
 C:\Users\Henrik\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Bird.xnb
 C:\Users\Henrik\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\weaponPH.xnb
@@ -99,8 +98,6 @@ C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\obj\x86\Debug\TCOBO.exe
 C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\obj\x86\Debug\TCOBO.pdb
 C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\obj\x86\Debug\TCOBO.csprojResolveAssemblyReference.cache
 C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-=======
->>>>>>> origin/Stoffe
 C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\playerSpritePH.xnb
 C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Bird.xnb
 C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\weaponPH.xnb
@@ -203,7 +200,6 @@ C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Level u
 C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Ljudeffekt1.wma
 C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\TCOBO.exe
 C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\TCOBO.pdb
-<<<<<<< HEAD
 C:\Users\Rasmus\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\playerSpritePH.xnb
 C:\Users\Rasmus\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Bird.xnb
 C:\Users\Rasmus\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\weaponPH.xnb
@@ -522,11 +518,6 @@ C:\Users\Rasmus\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Running
 C:\Users\Rasmus\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Death sound.wma
 C:\Users\Rasmus\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\BouncingSound.xnb
 C:\Users\Rasmus\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\HitSound.xnb
-=======
-C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\obj\x86\Debug\TCOBO.csprojResolveAssemblyReference.cache
-C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\obj\x86\Debug\TCOBO.exe
-C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\obj\x86\Debug\TCOBO.pdb
 C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\MenuTitleFont.xnb
 C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\MenuFont.xnb
->>>>>>> origin/Stoffe
+C:\Users\Rasmus\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\MenuFont.xnb

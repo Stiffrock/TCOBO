@@ -77,10 +77,10 @@ namespace TCOBO
             int Level = playerStats.Item5;
             int newStat = playerStats.Item6;
 
-            if (HP < 0)
-            {
-                MediaPlayer.Play(soundManager.deathSound);
-            }
+            //if (HP <= 2)
+            //{
+            //    MediaPlayer.Play(soundManager.deathSound);
+            //}
 
             if (showBoard)
             {

@@ -463,6 +463,7 @@ namespace TCOBO
             }
             else
             {
+                MediaPlayer.Play(soundManager.deathSound);
                 spriteBatch.Draw(deathTex, playerPos, null, Color.White, 0, origin, size, SpriteEffects.None, 0f);
             }
 
