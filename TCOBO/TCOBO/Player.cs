@@ -360,7 +360,7 @@ namespace TCOBO
             {
                 strike = true;
                 animaCount = 0;
-                velocity2 += strikeVelocity;
+                velocity += strikeVelocity;
                 soundManager.fightSound.Play();
                 
             }
@@ -386,7 +386,7 @@ namespace TCOBO
             //spell
         }
 
-
+        
 
         public void Collision (GameTime gameTime, List<Tile> tiles) 
          {
