@@ -32,6 +32,8 @@ namespace TCOBO
         float attackspeed = 5f;
         TimeSpan attack_timer;
         float attack_seconds;
+        float spawnTime = 0;
+        TimeSpan spawn_timer;
         float attackProgress = 0f;
         public float playerSize = 36, basePlayerSize = 36;
         public Rectangle boundsTop, boundsBot, boundsLeft, boundsRight;
@@ -40,14 +42,18 @@ namespace TCOBO
         Str = 10, Dex = 10,
         Vit = 10, Int = 10, health, expDrop;
         bool dead = false;
+        bool spawn = false;
         Random rnd;
 
         Vector2 aimRec;
 
         SoundManager soundManager = new SoundManager();
 
-        public Enemy(Vector2 pos, ContentManager content, int Str, int Dex, int Vit, int Int, int expDrop)
+        public Enemy(Vector2 pos, ContentManager content, int Str, int Dex, int Vit, int Int, int expDrop, int spawnTime)
         {
+            this.spawnTime = spawnTime;
+            if (spawnTime > 0)
+                spawn = true;
             this.Str = Str;
             this.Dex = Dex;
             this.Vit = Vit;
@@ -177,6 +183,20 @@ namespace TCOBO
                 HuntPlayer(player, gameTime);
                 handleAnimation(gameTime);
                 Collision(gameTime, tiles);
+            }
+            else if (spawn == true)
+            {
+                float distance = Vector2.Distance(player.playerPos, pos);
+                if (distance > 1000 + (Vit * 10))
+                {
+                    if (spawn_timer.TotalSeconds > 0)
+                        spawn_timer = spawn_timer.Subtract(gameTime.ElapsedGameTime);
+                    else
+                    {
+                        health = Vit * 2;
+                        spawn_timer = TimeSpan.FromSeconds(spawnTime);
+                    }
+                }
             }
 
         }
