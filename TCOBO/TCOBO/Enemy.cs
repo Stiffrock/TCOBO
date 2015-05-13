@@ -64,7 +64,7 @@ namespace TCOBO
             attack_seconds = 1.5f;
             attack_timer = TimeSpan.FromSeconds(attack_seconds);
             rnd = new Random();
-            health = Vit*2;
+            health = Vit*5;
             this.content = content;
             this.pos = pos;
             hitBox = new Rectangle((int)pos.X-15, (int)pos.Y-15, 30, 30);
@@ -141,9 +141,13 @@ namespace TCOBO
                             }
                             else if (strike)
                             {
-                                player.HP -= Str;
-                                if (1 == rnd.Next(1 , 4))
+
+                                if (1 == rnd.Next(1, 4))
+                                {
                                     strike2 = true;
+                                    player.HP -= Str;
+                                }
+                                    
                                 attack_seconds = rnd.Next(0, 5);
                                 attack_timer = TimeSpan.FromSeconds(attack_seconds);
                             }
@@ -196,7 +200,7 @@ namespace TCOBO
                         spawn_timer = spawn_timer.Subtract(gameTime.ElapsedGameTime);
                     else
                     {
-                        health = Vit * 2;
+                        health = Vit * 5;
                         spawn_timer = TimeSpan.FromSeconds(spawnTime);
                     }
                 }
@@ -239,7 +243,7 @@ namespace TCOBO
             if (isHpBarVisible && health > 0)
             {
                 float tempVit = Vit;
-                percentLife = health / (tempVit * 2);
+                percentLife = health / (tempVit * 5);
                 if (percentLife < 1.0f)
                 {
                     spriteBatch.Draw(TextureManager.blankHpBar, new Rectangle((int)pos.X - hitBox.Width / 2,

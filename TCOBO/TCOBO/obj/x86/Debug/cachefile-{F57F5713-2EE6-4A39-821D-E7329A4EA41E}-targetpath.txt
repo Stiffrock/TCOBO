@@ -98,6 +98,11 @@ Content\inventorytile4.xnb
 Content\inventory_type3.xnb
 Content\inventory4.xnb
 Content\inventory5.xnb
+Content\heal1.xnb
+Content\heal2.xnb
+Content\heal3.xnb
+Content\heal4.xnb
+Content\heal5.xnb
 Content\SpriteFont1.xnb
 Content\MOStatFont.xnb
 Content\MenuFont.xnb
@@ -118,8 +123,3 @@ Content\EnemySound.xnb
 Content\RunningSound.xnb
 Content\BouncingSound.xnb
 Content\HitSound.xnb
-Content\heal1.xnb
-Content\heal2.xnb
-Content\heal3.xnb
-Content\heal4.xnb
-Content\heal5.xnb

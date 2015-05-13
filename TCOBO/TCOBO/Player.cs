@@ -13,7 +13,6 @@ namespace TCOBO
 {
     class Player : MovableObject 
     {
-        public Texture2D playerTex1, weaponPH;
         public Vector2 playerPos, origin, aimRec;
         private ContentManager content;
         public Color swordColor, newColor;
@@ -75,7 +74,7 @@ namespace TCOBO
             origin = new Vector2(80, 80);
             color = new Color(255, 30, 30, 255);
             size = Vit / 10;
-            HP = Vit * 2;
+            HP = Vit * 5;
             MANA = Int;
             LoadPlayerTex();
             HandleLevel();
@@ -474,12 +473,12 @@ namespace TCOBO
 
         public override void Update(GameTime gameTime)
         {
-<<<<<<< HEAD
+
             effectiveStats = Tuple.Create<float, float, float>(mDamage, MANA, HP);
-=======
+
       
 
->>>>>>> origin/Stoffe
+
             if (HP > 0)
             {
                 if (Keyboard.GetState().IsKeyDown(Keys.LeftAlt))
@@ -547,7 +546,7 @@ namespace TCOBO
             if(isHpBarVisible && HP > 0)
             {
                 float tempVit = Vit;
-                percentLife = HP / (tempVit * 2);
+                percentLife = HP / (tempVit * 5);
                 if (percentLife < 1.0f)
                 {
                     spriteBatch.Draw(TextureManager.blankHpBar, new Rectangle((int)playerPos.X - hitBox.Width / 2,
