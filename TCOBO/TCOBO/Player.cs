@@ -454,6 +454,16 @@ namespace TCOBO
             swordColor = newCol;
 
         }
+        public void stopMove()
+        {
+            if (KeyMouseReader.KeyPressed(Keys.Space))
+            {
+                velocity = new Vector2(0, 0);
+                velocity2 = new Vector2(0, 0);
+            }
+        }
+
+   
 
         //public void PlaySound()
         //{
@@ -464,7 +474,12 @@ namespace TCOBO
 
         public override void Update(GameTime gameTime)
         {
+<<<<<<< HEAD
             effectiveStats = Tuple.Create<float, float, float>(mDamage, MANA, HP);
+=======
+      
+
+>>>>>>> origin/Stoffe
             if (HP > 0)
             {
                 if (Keyboard.GetState().IsKeyDown(Keys.LeftAlt))
@@ -475,6 +490,7 @@ namespace TCOBO
 
                 float tempVit = Vit;
                 size = tempVit / 10;
+                stopMove();
                 HandleLevelUp();
                 HandlePlayerStats(gameTime);
                 playerDirection();

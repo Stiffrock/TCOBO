@@ -42,12 +42,6 @@ namespace TCOBO
             }
         }
 
-        private void stringSpeed(SpriteBatch spriteBatch)
-        {
-        }
-
-
-
         public void Update(GameTime gameTime)
         {
             krm.Update();
