@@ -172,6 +172,9 @@ namespace TCOBO
         {
             foreach (Item item in itemManager.ItemList)
             {
+                float offsetX = item.itemTex.Width/5;
+                float offsetY = item.itemTex.Height/5;
+           
        
                 if (player.attackHitBox.Intersects(item.hitBox) && KeyMouseReader.LeftClick())
                 {
@@ -186,7 +189,8 @@ namespace TCOBO
                             }
                             else
                             {
-                                item.pos = itemManager.GetGrid().grid[j, i].pos;
+                                item.pos.X = itemManager.GetGrid().grid[j, i].pos.X + offsetX;
+                                item.pos.Y = itemManager.GetGrid().grid[j, i].pos.Y + offsetY;   
                                 itemManager.GetGrid().grid[j, i].hasItem = true;
                                 itemManager.InventoryList.Add(item);
                                 itemManager.ItemList.Remove(item);

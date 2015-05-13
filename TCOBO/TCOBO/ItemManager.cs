@@ -91,8 +91,8 @@ namespace TCOBO
                     {
                         if (item.hitBox.Intersects(tile.texture_rect) && KeyMouseReader.LeftClick() )
                         {                         
-                            item.pos.X = tile.pos.X;
-                            item.pos.Y = tile.pos.Y + 5;
+                            item.pos.X = tile.pos.X + item.itemTex.Width /5;
+                            item.pos.Y = tile.pos.Y + item.itemTex.Height /5;
                             item.hand = false;                                             
                         }
                 
