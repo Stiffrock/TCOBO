@@ -47,10 +47,10 @@ namespace TCOBO
             enemyList = new List<Enemy>();
             inrangeList = new List<Enemy>();
 
-            //Enemy STR, DEX, VIT, INT, EXPDROP
-            enemyList.Add(new Enemy(new Vector2(300, 300), game1.Content, 1, 0, 100, 0, 10));
-            enemyList.Add(new Enemy(new Vector2(-2000, 300), game1.Content, 5, 0, 75, 0, 500));
-            enemyList.Add(new Enemy(new Vector2(-2794, -4474), game1.Content, 35, 0, 125, 0, 3000));
+            //Enemy STR, DEX, VIT, INT, EXPDROP, SPAWN (0 = ingen spawn)
+            enemyList.Add(new Enemy(new Vector2(300, 300), game1.Content, 1, 0, 100, 0, 10, 1));
+            enemyList.Add(new Enemy(new Vector2(-2000, 300), game1.Content, 5, 0, 75, 0, 500, 720));
+            enemyList.Add(new Enemy(new Vector2(-2794, -4474), game1.Content, 35, 0, 125, 0, 3000, 0));
             attack = new Attack(player, game1.Content);
             testWorld.ReadLevel("map01");
             testWorld.SetMap();                 
