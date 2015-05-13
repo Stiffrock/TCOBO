@@ -100,7 +100,7 @@ namespace TCOBO
 
                 spriteBatch.DrawString(currentStrFont, "Dmg: " + Dmg.ToString(), new Vector2(973, 70), Color.Black);
                 spriteBatch.DrawString(currentDexFont, "Speed: " + Dex.ToString(), new Vector2(1100, 70), Color.Black);
-                spriteBatch.DrawString(currentIntFont, "Spell Dmg: " + SpellDmg.ToString(), new Vector2(973, 80), Color.Black);
+                spriteBatch.DrawString(currentIntFont, "Mana: " + SpellDmg.ToString(), new Vector2(973, 80), Color.Black);
                 spriteBatch.DrawString(currentVitFont, "Hp: " + HP.ToString(), new Vector2(1100, 80), Color.Black);
 
 

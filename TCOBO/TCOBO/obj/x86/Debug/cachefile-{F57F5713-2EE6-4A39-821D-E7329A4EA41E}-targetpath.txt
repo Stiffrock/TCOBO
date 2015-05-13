@@ -118,3 +118,8 @@ Content\EnemySound.xnb
 Content\RunningSound.xnb
 Content\BouncingSound.xnb
 Content\HitSound.xnb
+Content\heal1.xnb
+Content\heal2.xnb
+Content\heal3.xnb
+Content\heal4.xnb
+Content\heal5.xnb

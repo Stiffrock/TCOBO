@@ -250,3 +250,8 @@ C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\obj\x86\Debug\TCOBO.csp
 C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\obj\x86\Debug\TCOBO.exe
 C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\obj\x86\Debug\TCOBO.pdb
+C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal1.xnb
+C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal2.xnb
+C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal3.xnb
+C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal4.xnb
+C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal5.xnb

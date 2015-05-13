@@ -41,7 +41,7 @@ namespace TCOBO
         public int
         Str = 10, Dex = 10,
         Vit = 10, Int = 10, health, expDrop;
-        bool dead = false;
+        public bool dead = false;
         bool spawn = false;
         Random rnd;
 
@@ -56,6 +56,8 @@ namespace TCOBO
                 spawn = true;
             this.Str = Str;
             this.Dex = Dex;
+            speed += Dex;
+            max_speed += Dex*2;
             this.Vit = Vit;
             this.Int = Int;
             this.expDrop = expDrop;
@@ -140,8 +142,9 @@ namespace TCOBO
                             else if (strike)
                             {
                                 player.HP -= Str;
-                                strike2 = true;
-                                attack_seconds = rnd.Next(1, 3);
+                                if (1 == rnd.Next(1 , 4))
+                                    strike2 = true;
+                                attack_seconds = rnd.Next(0, 5);
                                 attack_timer = TimeSpan.FromSeconds(attack_seconds);
                             }
                         }
