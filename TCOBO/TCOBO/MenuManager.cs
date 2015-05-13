@@ -27,7 +27,7 @@ namespace TCOBO
 
         public MenuManager(Game1 game1)
         {
-            menuTitle = game1.Content.Load<SpriteFont>("MenuFont");
+            menuTitle = game1.Content.Load<SpriteFont>("MenuTitleFont");
             menuText = game1.Content.Load<SpriteFont>("MenuFont");
             krm = new KeyMouseReader();
             tcobo = "T\nh\ne\nr\ne\n \nc\na\nn\n \no\nn\nl\ny\n \nb\ne\n \no\nn\ne\n";
