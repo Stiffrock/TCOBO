@@ -836,7 +836,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
-      <Time>2015-05-09T18:50:00.2249953+02:00</Time>
+      <Time>2015-05-13T13:17:34.8575872+02:00</Time>
     </Item>
     <Item>
       <Source>MOStatFont.spritefont</Source>
@@ -845,7 +845,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\MOStatFont.xnb</Output>
-      <Time>2015-05-09T18:49:00.7583964+02:00</Time>
+      <Time>2015-05-13T13:18:09.3905205+02:00</Time>
     </Item>
     <Item>
       <Source>MenuFont.spritefont</Source>
@@ -984,6 +984,78 @@
       <Options>None</Options>
       <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\MenuTitleFont.xnb</Output>
       <Time>2015-05-13T11:25:49.129011+02:00</Time>
+    </Item>
+    <Item>
+      <Source>inventory_type2.png</Source>
+      <Name>inventory_type2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\inventory_type2.xnb</Output>
+      <Time>2015-05-13T12:39:41.0803171+02:00</Time>
+    </Item>
+    <Item>
+      <Source>inventory2.png</Source>
+      <Name>inventory2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\inventory2.xnb</Output>
+      <Time>2015-05-13T12:43:29.2101492+02:00</Time>
+    </Item>
+    <Item>
+      <Source>inventorytile2.png</Source>
+      <Name>inventorytile2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\inventorytile2.xnb</Output>
+      <Time>2015-05-13T12:51:26.2704157+02:00</Time>
+    </Item>
+    <Item>
+      <Source>inventorytile3.png</Source>
+      <Name>inventorytile3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\inventorytile3.xnb</Output>
+      <Time>2015-05-13T12:53:21.4142976+02:00</Time>
+    </Item>
+    <Item>
+      <Source>inventorytile4.png</Source>
+      <Name>inventorytile4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\inventorytile4.xnb</Output>
+      <Time>2015-05-13T12:55:49.8142141+02:00</Time>
+    </Item>
+    <Item>
+      <Source>inventory_type3.png</Source>
+      <Name>inventory_type3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\inventory_type3.xnb</Output>
+      <Time>2015-05-13T13:01:53.9910862+02:00</Time>
+    </Item>
+    <Item>
+      <Source>inventory4.png</Source>
+      <Name>inventory4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\inventory4.xnb</Output>
+      <Time>2015-05-13T13:01:59.8370367+02:00</Time>
+    </Item>
+    <Item>
+      <Source>inventory5.png</Source>
+      <Name>inventory5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\inventory5.xnb</Output>
+      <Time>2015-05-13T13:14:51.5194319+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

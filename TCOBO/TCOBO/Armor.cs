@@ -23,13 +23,13 @@ namespace TCOBO
 
         public override void Update(GameTime gameTime)
         {
-            hitBox = new Rectangle((int)pos.X, (int)pos.Y, itemTex.Width, itemTex.Height);
+            hitBox = new Rectangle((int)pos.X + itemTex.Width/3, (int)pos.Y+ itemTex.Height/3, itemTex.Width, itemTex.Height);
         }
 
 
         public override void Draw(SpriteBatch sb)
         {
-            sb.Draw(itemTex, pos, new Rectangle(0, 0, 50, 50), itemColor);
+            sb.Draw(itemTex, new Vector2(pos.X + itemTex.Width/3, pos.Y + itemTex.Height/3), new Rectangle(0, 0, itemTex.Width, itemTex.Height), itemColor);
 
         }
 

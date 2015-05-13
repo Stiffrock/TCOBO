@@ -33,7 +33,7 @@ namespace TCOBO
 
         public override void Draw(SpriteBatch sb)
         {
-            sb.Draw(itemTex, pos, new Rectangle(0, 0, 50, 50), defaultColor);
+            sb.Draw(itemTex, pos, new Rectangle(0, 0, itemTex.Width, itemTex.Height), defaultColor);
         }
 
 

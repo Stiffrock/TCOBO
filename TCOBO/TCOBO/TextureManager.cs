@@ -58,10 +58,8 @@ namespace TCOBO
             goldenSword = Content.Load<Texture2D>("inventorysword_type2");
             statBox = Content.Load<Texture2D>("statbox4");
             standardArmor = Content.Load<Texture2D>("armor_type1");
-
             blankHpBar = Content.Load<Texture2D>("blankHp");
-
-            uitext = Content.Load<SpriteFont>("MenuFont");
+            uitext = Content.Load<SpriteFont>("Spritefont1");
 
         }
 

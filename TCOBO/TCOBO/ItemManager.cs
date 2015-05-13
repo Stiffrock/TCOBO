@@ -39,12 +39,11 @@ namespace TCOBO
             grahpics = game1.GraphicsDevice;
 
             standardSword = new Sword(10, TextureManager.standardSword, Color.White, new Vector2(0,0), "Standard sword");
-            blueSword = new Sword(20, TextureManager.blueSword, Color.LightBlue, new Vector2(0, 20),"MAgic Blue sword");
+            blueSword = new Sword(20, TextureManager.blueSword, Color.LightBlue, new Vector2(0, 20),"Magic Blue sword");
             redSword = new Sword(40, TextureManager.redSword, Color.SandyBrown, new Vector2(0, 40),"Rusty but vicious sword");
-            goldenSword = new Sword(100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 60),"The super duper golden mega rod");
-            goldenSword1 = new Sword(100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 100), "The super duper golden mega rod");
-            goldenSword2 = new Sword(100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 120), "The super duper golden mega rod");
-            goldenSword3 = new Sword(100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 140), "The super duper golden mega rod");
+            goldenSword = new Sword(100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 60),"The super duper golden\nmega rod of destruction");
+       
+     
             
             standardArmor = new Armor(5, TextureManager.standardArmor, new Vector2(0, 100),"Standard armor");
             inventory = new Inventory(game1.Content, new Vector2(200, 200));  
@@ -53,9 +52,6 @@ namespace TCOBO
             ItemList.Add(blueSword);
             ItemList.Add(goldenSword);
             ItemList.Add(standardArmor);
-            ItemList.Add(goldenSword1);
-            ItemList.Add(goldenSword2);
-            ItemList.Add(goldenSword3);
 
             PickedUp = false;
             Showstats = false;
@@ -93,16 +89,11 @@ namespace TCOBO
                 {
                     foreach (InventoryTile tile in inventory.grid)
                     {
-                        if (item.hitBox.Intersects(tile.texture_rect))
+                        if (item.hitBox.Intersects(tile.texture_rect) && KeyMouseReader.LeftClick() )
                         {                         
                             item.pos.X = tile.pos.X;
-                            item.pos.Y = tile.pos.Y + 5;                       
-                                                                           
-                            if (KeyMouseReader.LeftClick())
-                            {
-                                item.hand = false;
-                                
-                            }
+                            item.pos.Y = tile.pos.Y + 5;
+                            item.hand = false;                                             
                         }
                 
                     }
@@ -136,10 +127,10 @@ namespace TCOBO
             {
                 if (item.hand == true)
                 {
-                    item.pos.X = mousePos.X - 25;
-                    item.pos.Y = mousePos.Y - 25;
-                    item.hitBox.X = (int)mousePos.X - 50;
-                    item.hitBox.Y = (int)mousePos.Y - 50;
+                    item.pos.X = mousePos.X - item.itemTex.Width /2;
+                    item.pos.Y = mousePos.Y - item.itemTex.Height /2;
+                    item.hitBox.X = (int)mousePos.X - item.itemTex.Width;
+                    item.hitBox.Y = (int)mousePos.Y - item.itemTex.Width;
 
                     if (item.hitBox.Intersects(inventory.hitBox))
                     {
@@ -195,7 +186,16 @@ namespace TCOBO
                     item.Draw(sb);
                     if (item.hitBox.Contains(KeyMouseReader.MousePos().X, KeyMouseReader.MousePos().Y))
                     {
-                        sb.DrawString(TextureManager.uitext, item.info, new Vector2(500, 500), Color.Black);
+                        if (item is Sword)
+                        {
+                            sb.DrawString(TextureManager.uitext, item.info + "\n\nStr+ " + item.stat.ToString(), new Vector2(970, 350), Color.Black);
+                        }
+                        if (item is Armor)
+                        {
+                            sb.DrawString(TextureManager.uitext, item.info + "\n\nVit+ " + item.stat.ToString(), new Vector2(970, 350), Color.Black);
+                        }
+                        
+                        
                     }
                 }
             }
