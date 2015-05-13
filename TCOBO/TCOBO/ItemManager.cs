@@ -174,7 +174,7 @@ namespace TCOBO
             }
             foreach (Item item in InventoryList)
             {
-                item.Update(gameTime);
+              //  item.Update(gameTime);
             }
    
             equipItem();

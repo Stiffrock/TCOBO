@@ -68,11 +68,6 @@ namespace TCOBO
             spriteBatch.DrawString(menuTitle, "TCOBO ", new Vector2(540, 260), Color.Blue);
             spriteBatch.DrawString(menuText, "Click to start", new Vector2(540, 360), Color.Blue);
 
-
-
-
-
-
             spriteBatch.End();
         }
 
