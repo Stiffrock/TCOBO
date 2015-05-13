@@ -289,6 +289,7 @@ namespace TCOBO
             }   
         }
         public void Update(GameTime gameTime)
+<<<<<<< HEAD
         {
             if (itemManager.InventoryList.Count() != 0)
             {
@@ -301,6 +302,9 @@ namespace TCOBO
             }
             Console.WriteLine(player.playerPos); // Boss spa
           
+=======
+        {       
+>>>>>>> origin/Stoffe
 
             detectEquip();
             detectItem();
@@ -317,6 +321,7 @@ namespace TCOBO
             board.Update(playerStats, effectiveStats);
             camera.Update(gameTime);
             Collision();
+
             foreach (Enemy e in enemyList)
             {
                 e.UpdateEnemy(gameTime, player, testWorld.tiles);         
@@ -383,8 +388,6 @@ namespace TCOBO
                 camera.transform);
             testWorld.Draw(spriteBatch);
           
-          
-
             foreach (Enemy e in enemyList)
             {
                 e.Draw(spriteBatch);

@@ -30,7 +30,7 @@ namespace TCOBO
 
         public PlayerPanel(ContentManager content, Vector2 pos, SpriteFont spriteFont)
         {
-            this.boardTex = content.Load<Texture2D>("infopanel - stats");
+            this.boardTex = content.Load<Texture2D>("inventory5");
             MOStatFont = content.Load<SpriteFont>("MOStatFont");
             this.hitBox = new Rectangle((int)pos.X, (int)pos.Y, boardTex.Width, boardTex.Height);
             this.boardPos = pos;
@@ -109,10 +109,10 @@ namespace TCOBO
                 if (showStatButton)
                 {
                    // currentFont = MOStatFont;
-                    spriteBatch.Draw(TextureManager.statBox, new Vector2(972, 48), new Rectangle(6, 6, 23, 23), Color.White);
-                    spriteBatch.Draw(TextureManager.statBox, new Vector2(1014, 48), new Rectangle(6, 6, 23, 23), Color.White);
-                    spriteBatch.Draw(TextureManager.statBox, new Vector2(1056, 48), new Rectangle(6, 6, 23, 23), Color.Gold);
-                    spriteBatch.Draw(TextureManager.statBox, new Vector2(1096, 48), new Rectangle(6, 6, 23, 23), Color.Gold);  
+                    spriteBatch.Draw(TextureManager.statBox, new Vector2(975, 48), new Rectangle(6, 6, 23, 23), Color.White);
+                    spriteBatch.Draw(TextureManager.statBox, new Vector2(1017, 48), new Rectangle(6, 6, 23, 23), Color.White);
+                    spriteBatch.Draw(TextureManager.statBox, new Vector2(1059, 48), new Rectangle(6, 6, 23, 23), Color.Gold);
+                    spriteBatch.Draw(TextureManager.statBox, new Vector2(1100, 48), new Rectangle(6, 6, 23, 23), Color.Gold);  
                     
                 }
                 else
