@@ -20,8 +20,7 @@ namespace TCOBO
             this.itemTex = tex;
             this.stat = damage;
             this.itemColor = color;
-            this.defaultColor = color;
-    
+            this.defaultColor = color; 
             this.pos = pos;
             this.hitBox = new Rectangle((int)pos.X, (int)pos.Y, itemTex.Width, itemTex.Height);
         }

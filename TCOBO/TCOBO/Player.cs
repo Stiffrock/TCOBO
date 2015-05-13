@@ -492,7 +492,7 @@ namespace TCOBO
           
 
             //Show attackHitBox
-            spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
+           // spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
 
             //spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
 

@@ -1,8 +1,1 @@
-C:\Users\Henrik\Documents\GitHub\TCOBO\TCOBO\TCOBOContent\obj\x86\Debug\TCOBOContent.contentprojResolveAssemblyReference.cache
-<<<<<<< HEAD
-=======
-C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBOContent\obj\x86\Debug\TCOBOContent.contentprojResolveAssemblyReference.cache
-C:\Users\Rasmus\Documents\GitHub\TCOBO\TCOBO\TCOBOContent\obj\x86\Debug\TCOBOContent.contentprojResolveAssemblyReference.cache
-C:\Users\chris_000\Documents\GitHub\TCOBO\TCOBO\TCOBOContent\obj\x86\Debug\TCOBOContent.contentprojResolveAssemblyReference.cache
-C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\TCOBOContent\obj\x86\Debug\TCOBOContent.contentprojResolveAssemblyReference.cache
->>>>>>> origin/Stoffe
+C:\Users\Henrik\Desktop\nymmo\TCOBO-Stoffe\TCOBO\TCOBOContent\obj\x86\Debug\TCOBOContent.contentprojResolveAssemblyReference.cache

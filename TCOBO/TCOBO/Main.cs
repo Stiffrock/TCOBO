@@ -28,6 +28,7 @@ namespace TCOBO
         private List<Enemy> inrangeList;
         private Vector2 aimVector;
         private PlayerPanel board;
+        private int row = 0, itemcount = 0;
         private Tuple<int, int, int, int, int, int> playerStats;
         private Tuple<float, float, float> effectiveStats;
         SoundManager soundManager = new SoundManager();
@@ -47,7 +48,7 @@ namespace TCOBO
             inrangeList = new List<Enemy>();
 
             //Enemy STR, DEX, VIT, INT, EXPDROP
-            enemyList.Add(new Enemy(new Vector2(300, 300), game1.Content, 2, 0, 10, 0, 10));
+            enemyList.Add(new Enemy(new Vector2(300, 300), game1.Content, 1, 0, 100, 0, 10));
             enemyList.Add(new Enemy(new Vector2(-2000, 300), game1.Content, 5, 0, 75, 0, 500));
             enemyList.Add(new Enemy(new Vector2(-2794, -4474), game1.Content, 35, 0, 125, 0, 3000));
             attack = new Attack(player, game1.Content);
@@ -169,33 +170,53 @@ namespace TCOBO
 
         public void detectItem()
         {
-
             foreach (Item item in itemManager.ItemList)
             {
-                if (player.attackHitBox.Intersects(item.hitBox)&& KeyMouseReader.LeftClick())
+       
+                if (player.attackHitBox.Intersects(item.hitBox) && KeyMouseReader.LeftClick())
                 {
-                    item.pos = new Vector2(1050, 170);
-                    itemManager.InventoryList.Add(item);
-                    itemManager.ItemList.Remove(item);
-                    item.bagRange = true;
-                    break;
+                    for (int i = 0; i < itemManager.GetGrid().grid.GetLength(1); i++)
+                    {
+                        for (int j = 0; j < itemManager.GetGrid().grid.GetLength(0);)
+                        {
+                            if (itemManager.GetGrid().grid[j, i].hasItem == true)
+                            {
+                                j++;
+                                
+                            }
+                            else
+                            {
+                                item.pos = itemManager.GetGrid().grid[j, i].pos;
+                                itemManager.GetGrid().grid[j, i].hasItem = true;
+                                itemManager.InventoryList.Add(item);
+                                itemManager.ItemList.Remove(item);
+                                item.bagRange = true;
+                                return;                                
+                            }                                                                         
+                        }                       
+                    }                
                 }
             }
             foreach (Item item in itemManager.InventoryList)
             {
                 if (!item.bagRange && KeyMouseReader.LeftClick() && !item.equip)
                 {
+                   
+                    item.hand = false;
                     item.pos = player.playerPos;
                     itemManager.ItemList.Add(item);
                     itemManager.InventoryList.Remove(item);                   
                     break;
                 }
             }
+
+
+       
         }
 
         public void detectEquip()
         {
-            foreach (Item item in itemManager.InventoryList )
+            foreach (Item item in itemManager.InventoryList)
             {
                 if (item.hitBox.Contains(KeyMouseReader.MousePos().X, KeyMouseReader.MousePos().Y) && KeyMouseReader.RightClick() && itemManager.IsInventoryshown)
                 {
@@ -269,6 +290,11 @@ namespace TCOBO
         }
         public void Update(GameTime gameTime)
         {
+            if (itemManager.InventoryList.Count() != 0)
+            {
+                Console.WriteLine(itemManager.InventoryList[0].hitBox); 
+            }
+           
             if (itemManager.InventoryList.Count != 0)
             {
                 Console.WriteLine(itemManager.InventoryList[0].hitBox);

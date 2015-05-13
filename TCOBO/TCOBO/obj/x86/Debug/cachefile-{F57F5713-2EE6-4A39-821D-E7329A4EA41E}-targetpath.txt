@@ -89,6 +89,7 @@ Content\statBox4.xnb
 Content\armor_type1.xnb
 Content\treetile_blackoutline.xnb
 Content\death.xnb
+Content\blankHp.xnb
 Content\SpriteFont1.xnb
 Content\MOStatFont.xnb
 Content\MenuFont.xnb
@@ -101,9 +102,6 @@ Content\Death sound.wma
 Content\StatsLjud.xnb
 Content\EquipSound.xnb
 Content\InventorySound.xnb
-<<<<<<< HEAD
-Content\blankHp.xnb
-=======
 Content\Level up sound.xnb
 Content\FightSound1.xnb
 Content\BounceSound.xnb
@@ -111,4 +109,3 @@ Content\EnemySound.xnb
 Content\RunningSound.xnb
 Content\BouncingSound.xnb
 Content\HitSound.xnb
->>>>>>> origin/Stoffe
