@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCOBO", "TCOBO\TCOBO\TCOBO.csproj", "{1AAB3F23-38A5-4D95-84BF-4E2335311267}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "TCOBOContent", "TCOBO\TCOBOContent\TCOBOContent.contentproj", "{F57F5713-2EE6-4A39-821D-E7329A4EA41E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCOBOContent", "TCOBO\TCOBOContent\TCOBOContent.contentproj", "{F57F5713-2EE6-4A39-821D-E7329A4EA41E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

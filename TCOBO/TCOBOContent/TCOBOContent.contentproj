@@ -601,7 +601,11 @@
       <Name>blankHp</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+<<<<<<< HEAD
+	</Compile>
+=======
     </Compile>
+>>>>>>> origin/Stoffe
     <Compile Include="FightSound1.wav">
       <Name>FightSound1</Name>
       <Importer>WavImporter</Importer>
@@ -662,6 +666,8 @@
       <Name>HitSound</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
+<<<<<<< HEAD
+=======
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -725,6 +731,7 @@
       <Name>inventory5</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+>>>>>>> origin/Stoffe
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

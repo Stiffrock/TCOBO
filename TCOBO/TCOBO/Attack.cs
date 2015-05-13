@@ -33,7 +33,7 @@ namespace TCOBO
         public void inRange(Enemy enemy, Vector2 aimVector)
         {
 
-            if (KeyMouseReader.LeftClick() == true && player.swordEquipped)
+            if (KeyMouseReader.LeftClick() == true && player.swordinHand)
             {
                 double deltaX = enemy.pos.X - player.playerPos.X;
                 double deltaY =  enemy.pos.Y - player.playerPos.Y;

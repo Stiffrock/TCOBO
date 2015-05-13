@@ -109,6 +109,8 @@ Content\EnemySound.xnb
 Content\RunningSound.xnb
 Content\BouncingSound.xnb
 Content\HitSound.xnb
+<<<<<<< HEAD
+=======
 Content\MenuTitleFont.xnb
 Content\inventory_type2.xnb
 Content\inventory2.xnb
@@ -118,3 +120,4 @@ Content\inventorytile4.xnb
 Content\inventory_type3.xnb
 Content\inventory4.xnb
 Content\inventory5.xnb
+>>>>>>> origin/Stoffe

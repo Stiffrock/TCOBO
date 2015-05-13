@@ -48,7 +48,7 @@ namespace TCOBO
             inrangeList = new List<Enemy>();
 
             //Enemy STR, DEX, VIT, INT, EXPDROP
-            enemyList.Add(new Enemy(new Vector2(300, 300), game1.Content, 2, 0, 10, 0, 10));
+            enemyList.Add(new Enemy(new Vector2(300, 300), game1.Content, 1, 0, 100, 0, 10));
             enemyList.Add(new Enemy(new Vector2(-2000, 300), game1.Content, 5, 0, 75, 0, 500));
             enemyList.Add(new Enemy(new Vector2(-2794, -4474), game1.Content, 35, 0, 125, 0, 3000));
             attack = new Attack(player, game1.Content);
@@ -293,7 +293,22 @@ namespace TCOBO
             }   
         }
         public void Update(GameTime gameTime)
+<<<<<<< HEAD
+        {
+            if (itemManager.InventoryList.Count() != 0)
+            {
+                Console.WriteLine(itemManager.InventoryList[0].hitBox); 
+            }
+           
+            if (itemManager.InventoryList.Count != 0)
+            {
+                Console.WriteLine(itemManager.InventoryList[0].hitBox);
+            }
+            Console.WriteLine(player.playerPos); // Boss spa
+          
+=======
         {       
+>>>>>>> origin/Stoffe
 
             detectEquip();
             detectItem();
