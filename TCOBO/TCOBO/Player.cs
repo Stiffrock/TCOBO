@@ -406,6 +406,16 @@ namespace TCOBO
             swordColor = newCol;
 
         }
+        public void stopMove()
+        {
+            if (KeyMouseReader.KeyPressed(Keys.Space))
+            {
+                velocity = new Vector2(0, 0);
+                velocity2 = new Vector2(0, 0);
+            }
+        }
+
+   
 
         //public void PlaySound()
         //{
@@ -416,6 +426,8 @@ namespace TCOBO
 
         public override void Update(GameTime gameTime)
         {
+      
+
             if (HP > 0)
             {
                 percentLife = HP / Vit;
@@ -427,6 +439,7 @@ namespace TCOBO
 
                 float tempVit = Vit;
                 size = tempVit / 10;
+                stopMove();
                 HandleLevelUp();
                 HandlePlayerStats();
                 playerDirection();
