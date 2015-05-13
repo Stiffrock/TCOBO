@@ -48,8 +48,8 @@ namespace TCOBO
             inrangeList = new List<Enemy>();
 
             //Enemy STR, DEX, VIT, INT, EXPDROP, SPAWN (0 = ingen spawn)
-            enemyList.Add(new Enemy(new Vector2(300, 300), game1.Content, 1, 0, 100, 0, 10, 1));
-            enemyList.Add(new Enemy(new Vector2(-2000, 300), game1.Content, 5, 0, 75, 0, 500, 720));
+            enemyList.Add(new Enemy(new Vector2(300, 300), game1.Content, 1, 50, 10, 0, 10, 1));
+            enemyList.Add(new Enemy(new Vector2(-2000, 300), game1.Content, 5, -25, 75, 0, 500, 720));
             enemyList.Add(new Enemy(new Vector2(-2794, -4474), game1.Content, 35, 0, 125, 0, 3000, 0));
             attack = new Attack(player, game1.Content);
             testWorld.ReadLevel("map01");
@@ -147,6 +147,7 @@ namespace TCOBO
                     board.currentIntFont = board.MOStatFont;
                     if (KeyMouseReader.LeftClick())
                     {
+                        player.MANA += 1;
                         player.Int += 1;
                         player.newStat -= 1;
                         soundManager.statSound.Play();

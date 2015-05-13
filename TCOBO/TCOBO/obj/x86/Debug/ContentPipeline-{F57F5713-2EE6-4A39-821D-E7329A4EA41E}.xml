@@ -1057,6 +1057,51 @@
       <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\HitSound.xnb</Output>
       <Time>2015-05-13T11:14:54.6832408+02:00</Time>
     </Item>
+    <Item>
+      <Source>heal1.png</Source>
+      <Name>heal1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal1.xnb</Output>
+      <Time>2015-05-13T16:46:47.9367456+02:00</Time>
+    </Item>
+    <Item>
+      <Source>heal2.png</Source>
+      <Name>heal2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal2.xnb</Output>
+      <Time>2015-05-13T16:46:47.9377465+02:00</Time>
+    </Item>
+    <Item>
+      <Source>heal3.png</Source>
+      <Name>heal3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal3.xnb</Output>
+      <Time>2015-05-13T16:46:47.9387477+02:00</Time>
+    </Item>
+    <Item>
+      <Source>heal4.png</Source>
+      <Name>heal4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal4.xnb</Output>
+      <Time>2015-05-13T16:46:47.9397486+02:00</Time>
+    </Item>
+    <Item>
+      <Source>heal5.png</Source>
+      <Name>heal5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal5.xnb</Output>
+      <Time>2015-05-13T16:46:47.9357447+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{F57F5713-2EE6-4A39-821D-E7329A4EA41E}</ContentProjectGUID>

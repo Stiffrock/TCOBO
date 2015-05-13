@@ -601,8 +601,7 @@
       <Name>blankHp</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
-	</Compile>
-
+    </Compile>
     <Compile Include="FightSound1.wav">
       <Name>FightSound1</Name>
       <Importer>WavImporter</Importer>
@@ -724,6 +723,33 @@
   <ItemGroup>
     <Compile Include="inventory5.png">
       <Name>inventory5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="heal1.png">
+      <Name>heal1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="heal2.png">
+      <Name>heal2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="heal3.png">
+      <Name>heal3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="heal4.png">
+      <Name>heal4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="heal5.png">
+      <Name>heal5</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
