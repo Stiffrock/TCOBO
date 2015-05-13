@@ -16,6 +16,7 @@ namespace TCOBO
         public MovableObject(){}
         protected float maxLife;
         protected float percentLife;
+        protected bool isHpBarVisible;
 
         
 

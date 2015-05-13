@@ -70,7 +70,7 @@ namespace TCOBO
             origin = new Vector2(80, 80);
             color = new Color(255, 30, 30, 255);
             size = Vit / 10;
-            HP = Vit;
+            HP = Vit;            
             LoadPlayerTex();
             HandleLevel();
 
@@ -100,7 +100,6 @@ namespace TCOBO
                     Console.WriteLine("Level   "+  Level);
 
                     soundManager.levelupSound.Play();
-                    //MediaPlayer.Play(soundManager.levelupSound);
 
                 }
             }
@@ -353,8 +352,11 @@ namespace TCOBO
             {
                 if (t.collisionEnabled)
                 {
+                    
+
                     if (t.bounds.Intersects(boundsLeft))
                     {
+                        soundManager.bounceSound.Play();
                         if (velocity.X < 0)
                             velocity.X = (velocity.X * -2) + max_speed / 10;
                         else
@@ -365,6 +367,7 @@ namespace TCOBO
                     }
                     if (t.bounds.Intersects(boundsRight))
                     {
+                        soundManager.bounceSound.Play();
                         if (velocity.X < 0)
                             velocity.X = -max_speed / 10;
                         else
@@ -374,6 +377,7 @@ namespace TCOBO
                     }
                     if(t.bounds.Intersects(boundsBot))
                     {
+                        soundManager.bounceSound.Play();
                         if (velocity.Y < 0) //om påväg uppåt
                             velocity.Y = -max_speed / 10;
                         else
@@ -384,6 +388,7 @@ namespace TCOBO
                     }
                     if (t.bounds.Intersects(boundsTop))
                     {
+                        soundManager.bounceSound.Play();
                         if (velocity.Y < 0) //om påväg neråt
                             velocity.Y = (velocity.Y * -2) + max_speed / 10;
                         else
@@ -402,11 +407,24 @@ namespace TCOBO
 
         }
 
+        //public void PlaySound()
+        //{
+        //    MediaPlayer.Play(soundManager.deathSound);
+            
+        //}
+
 
         public override void Update(GameTime gameTime)
         {
             if (HP > 0)
             {
+                percentLife = HP / Vit;
+                if (Keyboard.GetState().IsKeyDown(Keys.LeftAlt))
+                {
+                    isHpBarVisible = true;
+                }
+                else isHpBarVisible = false;
+
                 float tempVit = Vit;
                 size = tempVit / 10;
                 HandleLevelUp();
@@ -417,10 +435,14 @@ namespace TCOBO
                 handleAnimation(gameTime);
             }
 
+            //PlaySound();
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+
+           
+           
       
             //spriteBatch.Draw(TextureManager.sand1, boundingBox, Color.Black);
             if (HP > 0)
@@ -451,8 +473,21 @@ namespace TCOBO
             }
             else
             {
+                MediaPlayer.Play(soundManager.deathSound);
                 spriteBatch.Draw(deathTex, playerPos, null, Color.White, 0, origin, size, SpriteEffects.None, 0f);
             }
+            
+            if(isHpBarVisible && HP > 0)
+            {
+                if (percentLife < 1.0f)
+                {
+                    spriteBatch.Draw(TextureManager.blankHpBar, new Rectangle((int)playerPos.X - hitBox.Width / 2,
+                        ((int)playerPos.Y - 4) - hitBox.Height / 2, hitBox.Width, 4), Color.Red); // ritar över en röd bar över den gröna
+                }
+                spriteBatch.Draw(TextureManager.blankHpBar, new Rectangle((int)playerPos.X - hitBox.Width / 2,
+                    ((int)playerPos.Y - 4) - hitBox.Height / 2, (int)(hitBox.Width * percentLife), 4), Color.Green);
+            }
+            
 
           
 

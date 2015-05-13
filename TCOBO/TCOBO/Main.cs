@@ -51,18 +51,14 @@ namespace TCOBO
             enemyList.Add(new Enemy(new Vector2(300, 300), game1.Content, 2, 0, 10, 0, 10));
             enemyList.Add(new Enemy(new Vector2(-2000, 300), game1.Content, 5, 0, 75, 0, 500));
             enemyList.Add(new Enemy(new Vector2(-2794, -4474), game1.Content, 35, 0, 125, 0, 3000));
-            attack = new Attack(player);
+            attack = new Attack(player, game1.Content);
             testWorld.ReadLevel("map01");
             testWorld.SetMap();                 
             spriteFont = game1.Content.Load<SpriteFont>("SpriteFont1");
             board = new PlayerPanel(game1.Content, new Vector2(950, 0), spriteFont);
 
             soundManager.LoadContent(game1.Content);
-
-            //MediaPlayer.Play(soundManager.bgMusic);
-
-           
-            
+            MediaPlayer.Play(soundManager.bgMusic);
 
         }
       
@@ -107,9 +103,6 @@ namespace TCOBO
                         player.newStat -= 1;                       
 
                         soundManager.statSound.Play();
-
-                        
-
                     }                    
                 }
                 else
@@ -295,14 +288,21 @@ namespace TCOBO
                 }                       
             }   
         }
-
         public void Update(GameTime gameTime)
         {
+<<<<<<< HEAD
             if (itemManager.InventoryList.Count() != 0)
             {
                 Console.WriteLine(itemManager.InventoryList[0].hitBox); 
             }
            
+=======
+            if (itemManager.InventoryList.Count != 0)
+            {
+                Console.WriteLine(itemManager.InventoryList[0].hitBox);
+            }
+            Console.WriteLine(player.playerPos); // Boss spa
+>>>>>>> origin/Stoffe
           
 
             detectEquip();

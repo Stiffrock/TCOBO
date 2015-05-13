@@ -1,10 +1,13 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Graphics;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 
 namespace TCOBO
 {
@@ -34,12 +37,14 @@ namespace TCOBO
         public Rectangle boundsTop, boundsBot, boundsLeft, boundsRight;
         Texture2D strikeTexSword1, strikeTexPlayer1, strikeTexSword2, strikeTexPlayer2, deathTex;
         public int
-        Str = 1, Dex = 10,
-        Vit = 10, Int = 10, health, expDrop;
+        Str = 100, Dex = 10,
+        Vit = 100, Int = 10, health, expDrop;
         bool dead = false;
         Random rnd;
 
         Vector2 aimRec;
+
+        SoundManager soundManager = new SoundManager();
 
         public Enemy(Vector2 pos, ContentManager content, int Str, int Dex, int Vit, int Int, int expDrop)
         {
@@ -66,6 +71,8 @@ namespace TCOBO
             strikeTexSword2 = content.Load<Texture2D>("faststrikeSword2");
             strikeTexPlayer2 = content.Load<Texture2D>("faststrikePlayer2");
             deathTex = content.Load<Texture2D>("Death");
+
+            soundManager.LoadContent(content);
         }
         public void HuntPlayer(Player player, GameTime gameTime)
         {
@@ -112,6 +119,9 @@ namespace TCOBO
                         moveLeft = false;
                         moveRight = false;
                         move = false;
+
+                        //soundManager.hitSound.Play();
+
                         if (attack_timer.TotalSeconds > 0)
                             attack_timer = attack_timer.Subtract(gameTime.ElapsedGameTime);
                         else
@@ -149,7 +159,12 @@ namespace TCOBO
         {
             if (health > 0)
             {
-
+                if (Keyboard.GetState().IsKeyDown(Keys.LeftAlt))
+                {
+                    isHpBarVisible = true;
+                }
+                else isHpBarVisible = false;
+                percentLife = health / Vit;
                 float tempVit = Vit;
                 size = tempVit / 10;
                 Fx = SpriteEffects.None;
@@ -196,6 +211,18 @@ namespace TCOBO
             {
                 spriteBatch.Draw(deathTex, pos, null, Color.White, rotation, origin, size, SpriteEffects.None, 0f);
             }
+            if (isHpBarVisible && health > 0)
+            {
+                if (percentLife < 1.0f)
+                {
+                    spriteBatch.Draw(TextureManager.blankHpBar, new Rectangle((int)pos.X - hitBox.Width / 2,
+                        ((int)pos.Y - 4) - hitBox.Height / 2, hitBox.Width, 4), Color.Red); // ritar över en röd bar över den gröna
+                }
+                spriteBatch.Draw(TextureManager.blankHpBar, new Rectangle((int)pos.X - hitBox.Width / 2,
+                    ((int)pos.Y - 4) - hitBox.Height / 2, (int)(hitBox.Width * percentLife), 4), Color.Green);
+            }
+           
+
 
             spriteBatch.Draw(TextureManager.sand1, hitBox, Color.Black);
             spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
