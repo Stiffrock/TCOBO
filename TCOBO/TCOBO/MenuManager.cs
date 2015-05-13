@@ -14,7 +14,7 @@ namespace TCOBO
 
     class MenuManager
     {
-        public bool GameOn = false;
+        public bool GameOn = false, drawTime = false;
         private SpriteFont menuTitle;
         private SpriteFont menuText;
         private KeyMouseReader krm;
@@ -22,6 +22,7 @@ namespace TCOBO
         private string tcobo;
         private List<string> stringList = new List<string>();
         private Random rnd = new Random();
+        private int counter = 10;
         
 
 
@@ -33,17 +34,33 @@ namespace TCOBO
             tcobo = "T\nh\ne\nr\ne\n \nc\na\nn\n \no\nn\nl\ny\n \nb\ne\n \no\nn\ne\n";
         }
 
+     
+
         public void bgText(SpriteBatch spriteBatch)
         {
+            
             for (int i = 0; i < 100; i++)
             {
-                int textmove = rnd.Next(0, 10000);
-                spriteBatch.DrawString(menuText, tcobo, new Vector2(textpos.X + i*15, textpos.Y + textmove), Color.Blue);
+                if (drawTime == true)
+                {
+                    int textmove = rnd.Next(0, 10000);
+                    spriteBatch.DrawString(menuText, tcobo, new Vector2(textpos.X + i * 15, textpos.Y + textmove), Color.Blue);
+                }
+               
             }
         }
 
+
+
         public void Update(GameTime gameTime)
         {
+
+            if (gameTime.ElapsedGameTime.Milliseconds >= counter)
+            {
+                drawTime = true;
+                counter = 0;
+            }
+
             krm.Update();
             Console.WriteLine(stringList.Count);
 

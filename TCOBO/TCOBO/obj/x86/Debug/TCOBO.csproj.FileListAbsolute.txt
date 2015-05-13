@@ -255,3 +255,8 @@ C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\H
 C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Ljudeffekt1.wma
 C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\TCOBO musik.wma
 C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Death sound.wma
+C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal1.xnb
+C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal2.xnb
+C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal3.xnb
+C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal4.xnb
+C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal5.xnb
