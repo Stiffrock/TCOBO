@@ -85,8 +85,7 @@ namespace TCOBO
                     
                 if (item.hitBox.Contains(Mouse.GetState().X, Mouse.GetState().Y) && KeyMouseReader.LeftClick())
                 {
-                    item.hand = true;
-                 
+                    item.hand = true;                 
                     return;
                 }
 
@@ -174,7 +173,7 @@ namespace TCOBO
             }
             foreach (Item item in InventoryList)
             {
-              //  item.Update(gameTime);
+                item.Update(gameTime);
             }
    
             equipItem();

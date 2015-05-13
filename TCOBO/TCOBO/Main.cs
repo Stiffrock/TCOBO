@@ -373,8 +373,6 @@ namespace TCOBO
                 camera.transform);
             testWorld.Draw(spriteBatch);
           
-          
-
             foreach (Enemy e in enemyList)
             {
                 e.Draw(spriteBatch);
