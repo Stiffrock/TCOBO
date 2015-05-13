@@ -303,8 +303,8 @@ namespace TCOBO
                     {
                         healing = false;
                         HP += Int / 2;
-                        if (HP > Vit * 2)
-                            HP = Vit * 2;
+                        if (HP > Vit * 5)
+                            HP = Vit * 5;
                         animaCount = 0;
                         attackProgress = 0;
                     }

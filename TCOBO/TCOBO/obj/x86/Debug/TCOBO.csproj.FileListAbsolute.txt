@@ -124,6 +124,12 @@ C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\TCOBO m
 C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Death sound.wma
 C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\TCOBO.exe
 C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\TCOBO.pdb
+C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\TCOBO.exe
+C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\TCOBO.pdb
+C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\obj\x86\Debug\TCOBO.csprojResolveAssemblyReference.cache
+C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\obj\x86\Debug\TCOBO.exe
+C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\obj\x86\Debug\TCOBO.pdb
 C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\playerSpritePH.xnb
 C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Bird.xnb
 C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\weaponPH.xnb
@@ -224,6 +230,11 @@ C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\i
 C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\inventory_type3.xnb
 C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\inventory4.xnb
 C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\inventory5.xnb
+C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal1.xnb
+C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal2.xnb
+C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal3.xnb
+C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal4.xnb
+C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal5.xnb
 C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\SpriteFont1.xnb
 C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\MOStatFont.xnb
 C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\MenuFont.xnb
@@ -244,14 +255,3 @@ C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\H
 C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Ljudeffekt1.wma
 C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\TCOBO musik.wma
 C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Death sound.wma
-C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\TCOBO.exe
-C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\TCOBO.pdb
-C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\obj\x86\Debug\TCOBO.csprojResolveAssemblyReference.cache
-C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\obj\x86\Debug\TCOBO.exe
-C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\obj\x86\Debug\TCOBO.pdb
-C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal1.xnb
-C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal2.xnb
-C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal3.xnb
-C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal4.xnb
-C:\Users\Balder\Documents\GitHub\TCOBO\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\heal5.xnb
