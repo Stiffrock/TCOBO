@@ -46,11 +46,7 @@ namespace TCOBO
             camera = new Camera2D(game1.GraphicsDevice.Viewport, player);        
             enemyList = new List<Enemy>();
             inrangeList = new List<Enemy>();
-
-            //Enemy STR, DEX, VIT, INT, EXPDROP, SPAWN (0 = ingen spawn)
-            enemyList.Add(new Enemy(new Vector2(300, 300), game1.Content, 1, 50, 10, 0, 10, 1));
-            enemyList.Add(new Enemy(new Vector2(-2000, 300), game1.Content, 5, -25, 75, 0, 500, 720));
-            enemyList.Add(new Enemy(new Vector2(-2794, -4474), game1.Content, 20, 0, 125, 0, 3000, 0));
+            spawnEnemies();           
             attack = new Attack(player, game1.Content);
             testWorld.ReadLevel("map01");
             testWorld.SetMap();                 
@@ -59,6 +55,30 @@ namespace TCOBO
 
             soundManager.LoadContent(game1.Content);
             MediaPlayer.Play(soundManager.bgMusic);
+
+        }
+
+        public void spawnEnemies()
+        {
+            //Enemy STR, DEX, VIT, INT, EXPDROP, SPAWN (0 = ingen spawn)
+            for (int i = 0; i < 5; i++)
+            {
+                enemyList.Add(new Enemy(new Vector2(500 - i * 100, 300), game1.Content, 1, 50, 10, 0, 10, 1));
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                enemyList.Add(new Enemy(new Vector2(-300, 0-i*100), game1.Content, 1, 50, 10, 0, 10, 1));
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                enemyList.Add(new Enemy(new Vector2(-300+i*100, -1000), game1.Content, 1, 50, 10, 0, 10, 1));
+            }
+           
+          
+            enemyList.Add(new Enemy(new Vector2(-2000, 300), game1.Content, 5, -25, 75, 0, 500, 720));
+            enemyList.Add(new Enemy(new Vector2(-2794, -4474), game1.Content, 20, 0, 125, 0, 3000, 0));
 
         }
       
@@ -295,6 +315,7 @@ namespace TCOBO
         }
         public void Update(GameTime gameTime)
         {
+            Console.WriteLine(player.playerPos);
 
             detectEquip();
             detectItem();

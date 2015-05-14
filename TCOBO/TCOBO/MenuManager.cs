@@ -22,7 +22,16 @@ namespace TCOBO
         private string tcobo;
         private List<string> stringList = new List<string>();
         private Random rnd = new Random();
-        private int counter = 10;
+        private float deltaTime = 200f;
+        private float time;
+        private int textmoveY = 0;
+        private int textmoveX = 0;
+        private int textmoveY2 = 0;
+        private int textmoveX2 = 0;
+        private int textmoveY3 = 0;
+        private int textmoveX3 = 0;
+        private int textmoveY4 = 0;
+        private int textmoveX4 = 0;
         
 
 
@@ -34,32 +43,40 @@ namespace TCOBO
             tcobo = "T\nh\ne\nr\ne\n \nc\na\nn\n \no\nn\nl\ny\n \nb\ne\n \no\nn\ne\n";
         }
 
-     
-
         public void bgText(SpriteBatch spriteBatch)
         {
-            
-            for (int i = 0; i < 100; i++)
-            {
-                if (drawTime == true)
-                {
-                    int textmove = rnd.Next(0, 10000);
-                    spriteBatch.DrawString(menuText, tcobo, new Vector2(textpos.X + i * 15, textpos.Y + textmove), Color.Blue);
-                }
-               
+              for (int i = 0; i < 100; i++)
+              {
+                int textmove = rnd.Next(0, 10000);
+                 spriteBatch.DrawString(menuText, tcobo, new Vector2(textpos.X + i * 15, textpos.Y + textmove), Color.Blue);
+              }
+
+         
+            if (time >= deltaTime)
+            {              
+                textmoveY = rnd.Next(0, 1280);
+                textmoveX = rnd.Next(0, 1280);
+                textmoveY2 = rnd.Next(0, 1280);
+                textmoveX2 = rnd.Next(0, 1280);
+                textmoveY3 = rnd.Next(0, 1280);
+                textmoveX3 = rnd.Next(0, 1280);
+                textmoveY4 = rnd.Next(0, 1280);
+                textmoveX4 = rnd.Next(0, 1280);
+                time = 0;
             }
+                spriteBatch.DrawString(menuText, tcobo, new Vector2(textpos.X + textmoveX, textpos.Y + textmoveY), Color.Blue);
+                spriteBatch.DrawString(menuText, tcobo, new Vector2(textpos.X + textmoveX2, textpos.Y + textmoveY2), Color.Blue);
+                spriteBatch.DrawString(menuText, tcobo, new Vector2(textpos.X + textmoveX3, textpos.Y + textmoveY3), Color.Blue);
+                spriteBatch.DrawString(menuText, tcobo, new Vector2(textpos.X + textmoveX4, textpos.Y + textmoveY4), Color.Blue); 
+            
+            
+             
         }
-
-
 
         public void Update(GameTime gameTime)
         {
-
-            if (gameTime.ElapsedGameTime.Milliseconds >= counter)
-            {
-                drawTime = true;
-                counter = 0;
-            }
+  
+            time += gameTime.ElapsedGameTime.Milliseconds;
 
             krm.Update();
             Console.WriteLine(stringList.Count);
@@ -73,7 +90,6 @@ namespace TCOBO
 
         public void Draw(SpriteBatch spriteBatch)
         {
-           
             spriteBatch.Begin();
             bgText(spriteBatch);
             spriteBatch.DrawString(menuTitle, "TCOBO ", new Vector2(540, 260), Color.Blue);
