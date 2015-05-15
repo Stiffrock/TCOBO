@@ -46,11 +46,7 @@ namespace TCOBO
             camera = new Camera2D(game1.GraphicsDevice.Viewport, player);        
             enemyList = new List<Enemy>();
             inrangeList = new List<Enemy>();
-
-            //Enemy STR, DEX, VIT, INT, EXPDROP
-            enemyList.Add(new Enemy(new Vector2(300, 300), game1.Content, 1, 0, 100, 0, 10));
-            enemyList.Add(new Enemy(new Vector2(-2000, 300), game1.Content, 5, 0, 75, 0, 500));
-            enemyList.Add(new Enemy(new Vector2(-2794, -4474), game1.Content, 35, 0, 125, 0, 3000));
+            spawnEnemies();           
             attack = new Attack(player, game1.Content);
             testWorld.ReadLevel("map01");
             testWorld.SetMap();                 
@@ -59,6 +55,30 @@ namespace TCOBO
 
             soundManager.LoadContent(game1.Content);
             MediaPlayer.Play(soundManager.bgMusic);
+
+        }
+
+        public void spawnEnemies()
+        {
+            //Enemy STR, DEX, VIT, INT, EXPDROP, SPAWN (0 = ingen spawn)
+            for (int i = 0; i < 5; i++)
+            {
+                enemyList.Add(new Enemy(new Vector2(500 - i * 100, 300), game1.Content, 1, 50, 10, 0, 10, 1));
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                enemyList.Add(new Enemy(new Vector2(-300, 0-i*100), game1.Content, 1, 50, 10, 0, 10, 1));
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                enemyList.Add(new Enemy(new Vector2(-300+i*100, -1000), game1.Content, 1, 50, 10, 0, 10, 1));
+            }
+           
+          
+            enemyList.Add(new Enemy(new Vector2(-2000, 300), game1.Content, 5, -25, 75, 0, 500, 720));
+            enemyList.Add(new Enemy(new Vector2(-2794, -4474), game1.Content, 20, 0, 125, 0, 3000, 0));
 
         }
       
@@ -132,7 +152,7 @@ namespace TCOBO
                     if (KeyMouseReader.LeftClick())
                     {
                         player.Vit += 1;
-                        player.HP += 1;
+                        player.HP += 5;
                         player.newStat -= 1;
                         soundManager.statSound.Play();
                     }
@@ -147,6 +167,7 @@ namespace TCOBO
                     board.currentIntFont = board.MOStatFont;
                     if (KeyMouseReader.LeftClick())
                     {
+                        player.MANA += 1;
                         player.Int += 1;
                         player.newStat -= 1;
                         soundManager.statSound.Play();
@@ -172,6 +193,9 @@ namespace TCOBO
         {
             foreach (Item item in itemManager.ItemList)
             {
+                float offsetX = item.itemTex.Width/5;
+                float offsetY = item.itemTex.Height/5;
+           
        
                 if (player.attackHitBox.Intersects(item.hitBox) && KeyMouseReader.LeftClick())
                 {
@@ -186,7 +210,8 @@ namespace TCOBO
                             }
                             else
                             {
-                                item.pos = itemManager.GetGrid().grid[j, i].pos;
+                                item.pos.X = itemManager.GetGrid().grid[j, i].pos.X + offsetX;
+                                item.pos.Y = itemManager.GetGrid().grid[j, i].pos.Y + offsetY;   
                                 itemManager.GetGrid().grid[j, i].hasItem = true;
                                 itemManager.InventoryList.Add(item);
                                 itemManager.ItemList.Remove(item);
@@ -290,6 +315,7 @@ namespace TCOBO
         }
         public void Update(GameTime gameTime)
         {
+<<<<<<< HEAD
             if (itemManager.InventoryList.Count() != 0)
             {
                 Console.WriteLine(itemManager.InventoryList[0].hitBox);
@@ -300,8 +326,34 @@ namespace TCOBO
                 Console.WriteLine(itemManager.InventoryList[0].hitBox);
             }
             Console.WriteLine(player.playerPos); // Boss spa
+=======
+            Console.WriteLine(player.playerPos);
+
+            detectEquip();
+            detectItem();
+            ClickStats();
+            itemManager.Update(gameTime);
+            krm.Update();
+            attack.Update(gameTime);
+            player.Update(gameTime);
+            player.Collision(gameTime, testWorld.tiles);
+            detectEnemy();
+            Rotation();
+            playerStats = player.GetPlayerStats();
+            effectiveStats = player.GetEffectiveStats();
+            board.Update(playerStats, effectiveStats);
+            camera.Update(gameTime);
+            Collision();
+>>>>>>> origin/Stoffe
 
             {
+<<<<<<< HEAD
+=======
+                e.UpdateEnemy(gameTime, player, testWorld.tiles);
+            }
+        }
+        
+>>>>>>> origin/Stoffe
 
 
                 detectEquip();

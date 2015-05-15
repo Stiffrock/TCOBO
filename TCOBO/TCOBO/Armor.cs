@@ -29,7 +29,8 @@ namespace TCOBO
 
         public override void Draw(SpriteBatch sb)
         {
-            sb.Draw(itemTex, new Vector2(pos.X + itemTex.Width/3, pos.Y + itemTex.Height/3), new Rectangle(0, 0, itemTex.Width, itemTex.Height), itemColor);
+            sb.Draw(itemTex, new Vector2(pos.X + itemTex.Width/5, pos.Y + itemTex.Height/5), new Rectangle(0, 0, itemTex.Width, itemTex.Height), itemColor);
+          //  sb.Draw(itemTex, pos, new Rectangle(0, 0, itemTex.Width, itemTex.Height), defaultColor, 0, new Vector2(0, 0), 0.7f, SpriteEffects.None, 0f);
 
         }
 
