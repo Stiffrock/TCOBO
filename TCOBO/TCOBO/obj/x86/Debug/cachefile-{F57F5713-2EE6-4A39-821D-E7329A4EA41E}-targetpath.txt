@@ -90,9 +90,18 @@ Content\armor_type1.xnb
 Content\treetile_blackoutline.xnb
 Content\death.xnb
 Content\blankHp.xnb
+Content\inventory_type2.xnb
+Content\inventory2.xnb
+Content\inventorytile2.xnb
+Content\inventorytile3.xnb
+Content\inventorytile4.xnb
+Content\inventory_type3.xnb
+Content\inventory4.xnb
+Content\inventory5.xnb
 Content\SpriteFont1.xnb
 Content\MOStatFont.xnb
 Content\MenuFont.xnb
+Content\MenuTitleFont.xnb
 Content\Ljudeffekt1.xnb
 Content\Ljudeffekt1.wma
 Content\TCOBO musik.xnb
@@ -109,15 +118,3 @@ Content\EnemySound.xnb
 Content\RunningSound.xnb
 Content\BouncingSound.xnb
 Content\HitSound.xnb
-<<<<<<< HEAD
-=======
-Content\MenuTitleFont.xnb
-Content\inventory_type2.xnb
-Content\inventory2.xnb
-Content\inventorytile2.xnb
-Content\inventorytile3.xnb
-Content\inventorytile4.xnb
-Content\inventory_type3.xnb
-Content\inventory4.xnb
-Content\inventory5.xnb
->>>>>>> origin/Stoffe

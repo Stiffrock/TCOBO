@@ -41,16 +41,15 @@ namespace TCOBO
             standardSword = new Sword(10, TextureManager.standardSword, Color.White, new Vector2(0,0), "Standard sword");
             blueSword = new Sword(20, TextureManager.blueSword, Color.LightBlue, new Vector2(0, 20),"Magic Blue sword");
             redSword = new Sword(40, TextureManager.redSword, Color.SandyBrown, new Vector2(0, 40),"Rusty but vicious sword");
-<<<<<<< HEAD
+
             goldenSword = new Sword(100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 60),"The super duper golden mega rod");
             goldenSword1 = new Sword(100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 100), "The super duper golden mega rod");
             goldenSword2 = new Sword(100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 120), "The super duper golden mega rod");
             goldenSword3 = new Sword(100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 140), "The super duper golden mega rod");
-=======
+
             goldenSword = new Sword(100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 60),"The super duper golden\nmega rod of destruction");
        
      
->>>>>>> origin/Stoffe
             
             standardArmor = new Armor(5, TextureManager.standardArmor, new Vector2(0, 100),"Standard armor");
             inventory = new Inventory(game1.Content, new Vector2(200, 200));  
@@ -59,12 +58,11 @@ namespace TCOBO
             ItemList.Add(blueSword);
             ItemList.Add(goldenSword);
             ItemList.Add(standardArmor);
-<<<<<<< HEAD
+
             ItemList.Add(goldenSword1);
             ItemList.Add(goldenSword2);
             ItemList.Add(goldenSword3);
-=======
->>>>>>> origin/Stoffe
+
 
             PickedUp = false;
             Showstats = false;
@@ -78,7 +76,7 @@ namespace TCOBO
             foreach (Item item in InventoryList)
             {
                 foreach (InventoryTile tile in inventory.grid)
-                {                    
+                {
                     if (tile.texture_rect.Intersects(item.hitBox))
                     {
                         if (item.hand)
@@ -88,18 +86,17 @@ namespace TCOBO
                         else
                         {
                             tile.hasItem = true;
-                        }                    
-                    }                                                      
+                        }
+                    }
                 }
-                    
+
                 if (item.hitBox.Contains(Mouse.GetState().X, Mouse.GetState().Y) && KeyMouseReader.LeftClick())
                 {
-<<<<<<< HEAD
+
                     item.hand = true;
-                 
-=======
-                    item.hand = true;                 
->>>>>>> origin/Stoffe
+
+                    item.hand = true;
+
                     return;
                 }
 
@@ -107,26 +104,27 @@ namespace TCOBO
                 {
                     foreach (InventoryTile tile in inventory.grid)
                     {
-<<<<<<< HEAD
+
                         if (item.hitBox.Intersects(tile.texture_rect))
-                        {                         
+                        {
                             item.pos.X = tile.pos.X;
-                            item.pos.Y = tile.pos.Y + 5;                       
-                                                                           
+                            item.pos.Y = tile.pos.Y + 5;
+
                             if (KeyMouseReader.LeftClick())
                             {
                                 item.hand = false;
-                                
+
                             }
-=======
-                        if (item.hitBox.Intersects(tile.texture_rect) && KeyMouseReader.LeftClick() )
-                        {                         
-                            item.pos.X = tile.pos.X;
-                            item.pos.Y = tile.pos.Y + 5;
-                            item.hand = false;                                             
->>>>>>> origin/Stoffe
+
+                            if (item.hitBox.Intersects(tile.texture_rect) && KeyMouseReader.LeftClick())
+                            {
+                                item.pos.X = tile.pos.X;
+                                item.pos.Y = tile.pos.Y + 5;
+                                item.hand = false;
+
+                            }
+
                         }
-                
                     }
                 }
             }

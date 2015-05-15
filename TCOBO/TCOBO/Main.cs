@@ -289,45 +289,43 @@ namespace TCOBO
             }   
         }
         public void Update(GameTime gameTime)
-<<<<<<< HEAD
         {
             if (itemManager.InventoryList.Count() != 0)
             {
-                Console.WriteLine(itemManager.InventoryList[0].hitBox); 
+                Console.WriteLine(itemManager.InventoryList[0].hitBox);
             }
-           
+
             if (itemManager.InventoryList.Count != 0)
             {
                 Console.WriteLine(itemManager.InventoryList[0].hitBox);
             }
             Console.WriteLine(player.playerPos); // Boss spa
-          
-=======
-        {       
->>>>>>> origin/Stoffe
 
-            detectEquip();
-            detectItem();
-            ClickStats();      
-            itemManager.Update(gameTime);
-            krm.Update();
-            attack.Update(gameTime);
-            player.Update(gameTime);
-            player.Collision(gameTime, testWorld.tiles);
-            detectEnemy();
-            Rotation();
-            playerStats = player.GetPlayerStats();
-            effectiveStats = player.GetEffectiveStats();
-            board.Update(playerStats, effectiveStats);
-            camera.Update(gameTime);
-            Collision();
-
-            foreach (Enemy e in enemyList)
             {
-                e.UpdateEnemy(gameTime, player, testWorld.tiles);         
-            }         
-        }
 
+
+                detectEquip();
+                detectItem();
+                ClickStats();
+                itemManager.Update(gameTime);
+                krm.Update();
+                attack.Update(gameTime);
+                player.Update(gameTime);
+                player.Collision(gameTime, testWorld.tiles);
+                detectEnemy();
+                Rotation();
+                playerStats = player.GetPlayerStats();
+                effectiveStats = player.GetEffectiveStats();
+                board.Update(playerStats, effectiveStats);
+                camera.Update(gameTime);
+                Collision();
+
+                foreach (Enemy e in enemyList)
+                {
+                    e.UpdateEnemy(gameTime, player, testWorld.tiles);
+                }
+            }
+        }
         public void Collision()
         {
             float x1;
