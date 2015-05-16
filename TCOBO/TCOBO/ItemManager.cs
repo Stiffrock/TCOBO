@@ -37,24 +37,10 @@ namespace TCOBO
             this.game1 = game1;
             this.sf = game1.Content.Load<SpriteFont>("SpriteFont1");
             grahpics = game1.GraphicsDevice;
-
             standardSword = new Sword(10, TextureManager.standardSword, Color.White, new Vector2(0,0), "Standard sword");
             blueSword = new Sword(20, TextureManager.blueSword, Color.LightBlue, new Vector2(0, 20),"Magic Blue sword");
             redSword = new Sword(40, TextureManager.redSword, Color.SandyBrown, new Vector2(0, 40),"Rusty but vicious sword");
-<<<<<<< HEAD
-
-            goldenSword = new Sword(100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 60),"The super duper golden mega rod");
-            goldenSword1 = new Sword(100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 100), "The super duper golden mega rod");
-            goldenSword2 = new Sword(100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 120), "The super duper golden mega rod");
-            goldenSword3 = new Sword(100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 140), "The super duper golden mega rod");
-
             goldenSword = new Sword(100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 60),"The super duper golden\nmega rod of destruction");
-       
-     
-            
-=======
-            goldenSword = new Sword(100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 60),"The super duper golden\nmega rod of destruction");         
->>>>>>> origin/Stoffe
             standardArmor = new Armor(5, TextureManager.standardArmor, new Vector2(0, 100),"Standard armor");
             inventory = new Inventory(game1.Content, new Vector2(200, 200));  
             ItemList.Add(standardSword);
@@ -62,19 +48,9 @@ namespace TCOBO
             ItemList.Add(blueSword);
             ItemList.Add(goldenSword);
             ItemList.Add(standardArmor);
-
-<<<<<<< HEAD
-            ItemList.Add(goldenSword1);
-            ItemList.Add(goldenSword2);
-            ItemList.Add(goldenSword3);
-=======
->>>>>>> origin/Stoffe
-
-
             PickedUp = false;
             Showstats = false;
             IsInventoryshown = false;
-
             soundManager.LoadContent(game1.Content);
         }
 
@@ -99,15 +75,7 @@ namespace TCOBO
 
                 if (item.hitBox.Contains(Mouse.GetState().X, Mouse.GetState().Y) && KeyMouseReader.LeftClick())
                 {
-<<<<<<< HEAD
-
                     item.hand = true;
-
-                    item.hand = true;
-
-=======
-                    item.hand = true;
->>>>>>> origin/Stoffe
                     return;
                 }
 
@@ -115,7 +83,6 @@ namespace TCOBO
                 {
                     foreach (InventoryTile tile in inventory.grid)
                     {
-<<<<<<< HEAD
 
                         if (item.hitBox.Intersects(tile.texture_rect))
                         {
@@ -123,16 +90,15 @@ namespace TCOBO
                             item.pos.Y = tile.pos.Y + 5;
 
                             if (KeyMouseReader.LeftClick())
-=======
+
                         if (item.hitBox.Intersects(tile.texture_rect))
                         {
                             if (item.hitBox.Intersects(tile.texture_rect) && KeyMouseReader.LeftClick())
->>>>>>> origin/Stoffe
+
                             {
                                 item.pos.X = tile.pos.X + item.itemTex.Width / 5;
                                 item.pos.Y = tile.pos.Y + item.itemTex.Height / 5;
                                 item.hand = false;
-<<<<<<< HEAD
 
                             }
 
@@ -144,9 +110,8 @@ namespace TCOBO
 
                             }
 
-=======
                             }
->>>>>>> origin/Stoffe
+
                         }
                     }
                 }
