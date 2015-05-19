@@ -27,27 +27,8 @@ namespace TCOBO
 
         }
 
-        public virtual void Update(GameTime gameTime) { }
+        public virtual void Update(GameTime gameTime) {}
 
-        //public bool PickUp(int x, int y)
-        //{
-        //    if (hitBox.Contains(x, y))
-        //    {
-        //        return true;
-        //    }
-        //    return false;
-        //}
-
-        //public void Move(int x, int y)
-        //{
-        //    itemPos.X = x;
-        //    itemPos.Y = y;
-
-        //    hitBox.X = x;
-        //    hitBox.Y = y;
-        //}
-
-
-        public virtual void Draw(SpriteBatch sb) { }
+        public virtual void Draw(SpriteBatch sb) {}
     }
 }

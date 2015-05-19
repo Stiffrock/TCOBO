@@ -13,7 +13,6 @@ namespace TCOBO
 {
     class Player : MovableObject 
     {
-        public Texture2D playerTex1, weaponPH;
         public Vector2 playerPos, origin, aimRec;
         private ContentManager content;
         public Color swordColor, newColor;
@@ -34,6 +33,7 @@ namespace TCOBO
         private bool move, moveUp, moveDown, moveLeft, moveRight, strike, strike2;
         private List<Texture2D> playerTex = new List<Texture2D>();
         private List<Texture2D> swordTex = new List<Texture2D>();
+        private List<Texture2D> heal = new List<Texture2D>();
         Texture2D strikeTexSword1, strikeTexPlayer1, strikeTexSword2, strikeTexPlayer2, deathTex;
         private List<float> levelList = new List<float>();
         public Rectangle boundsTop, boundsBot, boundsLeft, boundsRight, hitBox;
@@ -41,6 +41,10 @@ namespace TCOBO
         float attackProgress = 0f;
         public float playerSize = 36, basePlayerSize = 36;
         public float size;
+        bool healing = false;
+        public int MANA;
+        float manaTicDelay = 10f;
+        TimeSpan manaTimer;
         public Vector2 strikeVelocity;
 
         SoundManager soundManager = new SoundManager();
@@ -70,7 +74,8 @@ namespace TCOBO
             origin = new Vector2(80, 80);
             color = new Color(255, 30, 30, 255);
             size = Vit / 10;
-            HP = Vit;
+            HP = Vit * 5;
+            MANA = Int;
             LoadPlayerTex();
             HandleLevel();
 
@@ -105,13 +110,23 @@ namespace TCOBO
             }
         }
 
-        public void HandlePlayerStats() // Bör göra all stat förändring här
+        public void HandlePlayerStats(GameTime gameTime) // Bör göra all stat förändring här
         {
             playerStats = Tuple.Create<int, int, int, int, int, int>(Str, Dex, Vit, Int, Level, newStat);
-            effectiveStats = Tuple.Create<float, float, float>(mDamage, sDamage, HP);
+            effectiveStats = Tuple.Create<float, float, float>(mDamage, MANA, HP);
             
             mDamage = Str * 0.5f;
-            sDamage = Int * 0.5f;        
+            sDamage = Int * 0.5f;
+
+            if (manaTimer.TotalSeconds > 0)
+                manaTimer = manaTimer.Subtract(gameTime.ElapsedGameTime);
+            else
+            {
+                MANA += 1;
+                if (MANA > Int)
+                    MANA = Int;
+                manaTimer = TimeSpan.FromSeconds(manaTicDelay);
+            }
 
             if (KeyMouseReader.KeyPressed(Keys.D5))
             {
@@ -129,6 +144,10 @@ namespace TCOBO
             for (int i = 1; i < 22; i++)
             {
                 swordTex.Add(content.Load<Texture2D>("sword" + i));
+            }
+            for (int i = 1; i < 6; i++)
+            {
+                heal.Add(content.Load<Texture2D>("heal" + i));
             }
             
             strikeTexSword1 = content.Load<Texture2D>("faststrikeSword1");
@@ -274,6 +293,23 @@ namespace TCOBO
                     }
                 }
             }
+            else if (healing == true)
+            {
+                if (deltaTime >= 130)
+                {
+                    deltaTime = 0;
+                    animaCount++;
+                    if (animaCount > 4)
+                    {
+                        healing = false;
+                        HP += Int / 2;
+                        if (HP > Vit * 5)
+                            HP = Vit * 5;
+                        animaCount = 0;
+                        attackProgress = 0;
+                    }
+                }
+            }
             else if (move == true)
             {
                 if (deltaTime >= 60)
@@ -319,15 +355,15 @@ namespace TCOBO
         private void handleAction(GameTime gameTime)
         {   
 
-            if (KeyMouseReader.LeftClick() == true && swordEquipped == true && strike == false && strike2 == false && swordinHand)
+            if (KeyMouseReader.LeftClick() == true && swordEquipped == true && strike == false && strike2 == false && swordinHand && !healing)
             {
                 strike = true;
                 animaCount = 0;
-                velocity2 += strikeVelocity;
+                velocity += strikeVelocity;
                 soundManager.fightSound.Play();
                 
             }
-            else if (KeyMouseReader.LeftClick() == true && swordEquipped == true && strike == true && strike2 == false && swordinHand)
+            else if (KeyMouseReader.LeftClick() == true && swordEquipped == true && strike == true && strike2 == false && swordinHand && !healing)
             {
                 strike = false;
                 strike2 = true;
@@ -336,9 +372,20 @@ namespace TCOBO
                 velocity += strikeVelocity;
                 soundManager.fightSound.Play();
             }
+
+            if (Keyboard.GetState().IsKeyDown(Keys.Q))
+            {
+                if (!strike && !strike2 && !healing && MANA >= 4)
+                {
+                    animaCount = 0;
+                    healing = true;
+                    MANA -= 4;
+                }
+            }
+            //spell
         }
 
-
+        
 
         public void Collision (GameTime gameTime, List<Tile> tiles) 
          {
@@ -406,6 +453,16 @@ namespace TCOBO
             swordColor = newCol;
 
         }
+        public void stopMove()
+        {
+            if (KeyMouseReader.KeyPressed(Keys.Space))
+            {
+                velocity = new Vector2(0, 0);
+                velocity2 = new Vector2(0, 0);
+            }
+        }
+
+   
 
         //public void PlaySound()
         //{
@@ -416,28 +473,43 @@ namespace TCOBO
 
         public override void Update(GameTime gameTime)
         {
+
+            effectiveStats = Tuple.Create<float, float, float>(mDamage, MANA, HP);
+
+      
+
+
             if (HP > 0)
             {
+                if (Keyboard.GetState().IsKeyDown(Keys.LeftAlt))
+                {
+                    isHpBarVisible = true;
+                }
+                else isHpBarVisible = false;
+
                 float tempVit = Vit;
                 size = tempVit / 10;
+                stopMove();
                 HandleLevelUp();
-                HandlePlayerStats();
+                HandlePlayerStats(gameTime);
                 playerDirection();
                 Movement(gameTime);
                 handleAction(gameTime);
                 handleAnimation(gameTime);
             }
 
-            //PlaySound();
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+
+           
+           
       
             //spriteBatch.Draw(TextureManager.sand1, boundingBox, Color.Black);
             if (HP > 0)
             {
-                if (swordEquipped && !(strike || strike2))
+                if (swordEquipped && !(strike || strike2 || healing))
                     spriteBatch.Draw(swordTex[animaCount], playerPos, null, swordColor, rotation, origin, size, SpriteEffects.None, 0f);
 
                 if (strike)
@@ -449,6 +521,10 @@ namespace TCOBO
                 {
                     spriteBatch.Draw(strikeTexSword2, playerPos, null, swordColor, rotation, origin, size, SpriteEffects.None, 0f);
                     spriteBatch.Draw(strikeTexPlayer2, playerPos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
+                }
+                else if (healing)
+                {
+                    spriteBatch.Draw(heal[animaCount], playerPos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
                 }
                 else
                 {
@@ -466,11 +542,25 @@ namespace TCOBO
                 MediaPlayer.Play(soundManager.deathSound);
                 spriteBatch.Draw(deathTex, playerPos, null, Color.White, 0, origin, size, SpriteEffects.None, 0f);
             }
+            
+            if(isHpBarVisible && HP > 0)
+            {
+                float tempVit = Vit;
+                percentLife = HP / (tempVit * 5);
+                if (percentLife < 1.0f)
+                {
+                    spriteBatch.Draw(TextureManager.blankHpBar, new Rectangle((int)playerPos.X - hitBox.Width / 2,
+                        ((int)playerPos.Y - 4) - hitBox.Height / 2, hitBox.Width, 4), Color.Red); // ritar över en röd bar över den gröna
+                }
+                spriteBatch.Draw(TextureManager.blankHpBar, new Rectangle((int)playerPos.X - hitBox.Width / 2,
+                    ((int)playerPos.Y - 4) - hitBox.Height / 2, (int)(hitBox.Width * percentLife), 4), Color.Green);
+            }
+            
 
           
 
             //Show attackHitBox
-            spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
+           // spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
 
             //spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
 

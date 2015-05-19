@@ -20,22 +20,28 @@ namespace TCOBO
             this.itemTex = tex;
             this.stat = damage;
             this.itemColor = color;
-            this.defaultColor = color;
-    
+            this.defaultColor = color; 
             this.pos = pos;
             this.hitBox = new Rectangle((int)pos.X, (int)pos.Y, itemTex.Width, itemTex.Height);
         }
 
         public override void Update(GameTime gameTime)
         {
-            hitBox = new Rectangle((int)pos.X, (int)pos.Y, itemTex.Width, itemTex.Height);
+            hitBox = new Rectangle((int)pos.X, (int)pos.Y, itemTex.Width - itemTex.Width/5, itemTex.Height - itemTex.Height/5);
         }
 
-
+         
         public override void Draw(SpriteBatch sb)
         {
-            sb.Draw(itemTex, pos, new Rectangle(0, 0, 50, 50), defaultColor);
+           // sb.Draw(itemTex, pos, new Rectangle(0, 0, itemTex.Width, itemTex.Height), defaultColor);
+
+
+
+
+
+            sb.Draw(itemTex, pos, new Rectangle(0, 0, itemTex.Width, itemTex.Height), defaultColor, 0, new Vector2(0, 0), 0.7f, SpriteEffects.None, 0f);
         }
+        
 
 
     }

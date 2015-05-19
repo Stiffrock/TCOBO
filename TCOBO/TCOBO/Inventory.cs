@@ -23,7 +23,7 @@ namespace TCOBO
 
         public Inventory(ContentManager content, Vector2 pos)
         {
-            inventoryTex = content.Load<Texture2D>("mah_logo");
+            inventoryTex = content.Load<Texture2D>("inventorytile4");
 
             this.pos = pos;
             //this.sf = sf;

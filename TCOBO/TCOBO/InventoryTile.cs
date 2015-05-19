@@ -11,6 +11,7 @@ namespace TCOBO
     {
         public Vector2 pos;
         public Rectangle texture_rect;
+        public bool hasItem = false;
         //Vector2 playerPos;
         //public bool isCollided = false;
 

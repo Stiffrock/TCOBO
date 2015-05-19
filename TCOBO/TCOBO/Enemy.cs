@@ -1,14 +1,17 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Graphics;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 
 namespace TCOBO
 {
-    class Enemy : MovableObject
+    class Enemy : MovableObject 
     {
         public Vector2 pos;
         Rectangle attackHitBox;
@@ -29,31 +32,39 @@ namespace TCOBO
         float attackspeed = 5f;
         TimeSpan attack_timer;
         float attack_seconds;
+        float spawnTime = 0;
+        TimeSpan spawn_timer;
         float attackProgress = 0f;
         public float playerSize = 36, basePlayerSize = 36;
         public Rectangle boundsTop, boundsBot, boundsLeft, boundsRight;
         Texture2D strikeTexSword1, strikeTexPlayer1, strikeTexSword2, strikeTexPlayer2, deathTex;
         public int
-        Str = 1, Dex = 10,
+        Str = 10, Dex = 10,
         Vit = 10, Int = 10, health, expDrop;
-        bool dead = false;
+        public bool dead = false;
+        bool spawn = false;
         Random rnd;
 
         Vector2 aimRec;
 
         SoundManager soundManager = new SoundManager();
 
-        public Enemy(Vector2 pos, ContentManager content, int Str, int Dex, int Vit, int Int, int expDrop)
+        public Enemy(Vector2 pos, ContentManager content, int Str, int Dex, int Vit, int Int, int expDrop, int spawnTime)
         {
+            this.spawnTime = spawnTime;
+            if (spawnTime > 0)
+                spawn = true;
             this.Str = Str;
             this.Dex = Dex;
+            speed += Dex;
+            max_speed += Dex*2;
             this.Vit = Vit;
             this.Int = Int;
             this.expDrop = expDrop;
             attack_seconds = 1.5f;
             attack_timer = TimeSpan.FromSeconds(attack_seconds);
             rnd = new Random();
-            health = Vit*2;
+            health = Vit*5;
             this.content = content;
             this.pos = pos;
             hitBox = new Rectangle((int)pos.X-15, (int)pos.Y-15, 30, 30);
@@ -130,9 +141,14 @@ namespace TCOBO
                             }
                             else if (strike)
                             {
-                                player.HP -= Str;
-                                strike2 = true;
-                                attack_seconds = rnd.Next(1, 3);
+
+                                if (1 == rnd.Next(1, 4))
+                                {
+                                    strike2 = true;
+                                    player.HP -= Str;
+                                }
+                                    
+                                attack_seconds = rnd.Next(0, 5);
                                 attack_timer = TimeSpan.FromSeconds(attack_seconds);
                             }
                         }
@@ -156,6 +172,12 @@ namespace TCOBO
         {
             if (health > 0)
             {
+                if (Keyboard.GetState().IsKeyDown(Keys.LeftAlt))
+                {
+                    isHpBarVisible = true;
+                }
+                else 
+                    isHpBarVisible = false;
 
                 float tempVit = Vit;
                 size = tempVit / 10;
@@ -168,6 +190,20 @@ namespace TCOBO
                 HuntPlayer(player, gameTime);
                 handleAnimation(gameTime);
                 Collision(gameTime, tiles);
+            }
+            else if (spawn == true)
+            {
+                float distance = Vector2.Distance(player.playerPos, pos);
+                if (distance > 1000 + (Vit * 10))
+                {
+                    if (spawn_timer.TotalSeconds > 0)
+                        spawn_timer = spawn_timer.Subtract(gameTime.ElapsedGameTime);
+                    else
+                    {
+                        health = Vit * 5;
+                        spawn_timer = TimeSpan.FromSeconds(spawnTime);
+                    }
+                }
             }
 
         }
@@ -204,8 +240,23 @@ namespace TCOBO
                 spriteBatch.Draw(deathTex, pos, null, Color.White, rotation, origin, size, SpriteEffects.None, 0f);
             }
 
-            spriteBatch.Draw(TextureManager.sand1, hitBox, Color.Black);
-            spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
+            if (isHpBarVisible && health > 0)
+            {
+                float tempVit = Vit;
+                percentLife = health / (tempVit * 5);
+                if (percentLife < 1.0f)
+                {
+                    spriteBatch.Draw(TextureManager.blankHpBar, new Rectangle((int)pos.X - hitBox.Width / 2,
+                        ((int)pos.Y - 4) - hitBox.Height / 2, hitBox.Width, 4), Color.Red); // ritar över en röd bar över den gröna
+                }
+                spriteBatch.Draw(TextureManager.blankHpBar, new Rectangle((int)pos.X - hitBox.Width / 2,
+                    ((int)pos.Y - 4) - hitBox.Height / 2, (int)(hitBox.Width * percentLife), 4), Color.Green);
+            }
+           
+
+
+            //spriteBatch.Draw(TextureManager.sand1, hitBox, Color.Black);
+            //spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
         }
 
         public void handleAnimation(GameTime gameTime)
