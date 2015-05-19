@@ -476,8 +476,6 @@ namespace TCOBO
 
             effectiveStats = Tuple.Create<float, float, float>(mDamage, MANA, HP);
 
-      
-
 
             if (HP > 0)
             {

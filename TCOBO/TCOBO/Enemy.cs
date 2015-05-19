@@ -170,7 +170,8 @@ namespace TCOBO
 
         public void UpdateEnemy(GameTime gameTime, Player player, List<Tile> tiles)
         {
-            if (health > 0)
+            float distance = Vector2.Distance(player.playerPos, pos);
+            if (health > 0 && distance < 400 + (Vit *10))
             {
                 if (Keyboard.GetState().IsKeyDown(Keys.LeftAlt))
                 {
@@ -193,7 +194,6 @@ namespace TCOBO
             }
             else if (spawn == true)
             {
-                float distance = Vector2.Distance(player.playerPos, pos);
                 if (distance > 1000 + (Vit * 10))
                 {
                     if (spawn_timer.TotalSeconds > 0)

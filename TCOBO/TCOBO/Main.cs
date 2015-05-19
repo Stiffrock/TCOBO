@@ -347,12 +347,14 @@ namespace TCOBO
             float radius2;
             foreach (Enemy p in enemyList)
             {
-                if (p.health < 0)
-                    break;
+                if (p.health <= 0)
+                    continue;
                 foreach (Enemy p2 in enemyList)
                 {
                     if (p == p2)
                         break;
+                    if (p2.health <= 0)
+                        continue;
                     x1 = p.pos.X;
                     y1 = p.pos.Y;
                     x2 = p2.pos.X;
