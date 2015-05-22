@@ -70,6 +70,24 @@ namespace TCOBO
                 image = TextureManager.grasstile1;
 
             }
+            else if (typeOfTile == "redwall")
+            {
+                //image = TextureManager.road1;
+                collisionEnabled = true;
+                image = TextureManager.RedWall;
+            }
+            else if (typeOfTile == "bluewall")
+            {
+                //image = TextureManager.road1;
+                collisionEnabled = true;
+                image = TextureManager.BlueWall;
+            }
+            else if (typeOfTile == "yellowwall")
+            {
+                //image = TextureManager.road1;
+                collisionEnabled = true;
+                image = TextureManager.YellowWall;
+            }
         }
 
 

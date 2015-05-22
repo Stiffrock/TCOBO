@@ -203,7 +203,7 @@ namespace TCOBO
                 float offsetY = item.itemTex.Height/5;
            
        
-                if (player.attackHitBox.Intersects(item.hitBox) && KeyMouseReader.LeftClick())
+                if (player.hitBox.Intersects(item.hitBox))
                 {
                     for (int i = 0; i < itemManager.GetGrid().grid.GetLength(1); i++)
                     {
@@ -216,6 +216,12 @@ namespace TCOBO
                             }
                             else
                             {
+                                if (item.info == "Red Key")
+                                    player.hasRedKey = true;
+                                else if (item.info == "Blue Key")
+                                    player.hasBlueKey = true;
+                                else if (item.info == "Yellow Key")
+                                    player.hasYellowKey = true;
                                 item.pos.X = itemManager.GetGrid().grid[j, i].pos.X + offsetX;
                                 item.pos.Y = itemManager.GetGrid().grid[j, i].pos.Y + offsetY;   
                                 itemManager.GetGrid().grid[j, i].hasItem = true;

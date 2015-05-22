@@ -13,6 +13,7 @@ namespace TCOBO
 {
     public static class TextureManager
     {
+
         public static Texture2D sand1 { get; private set; }
         public static Texture2D tree1 { get; private set; }
         public static Texture2D road1 { get; private set; }
@@ -33,7 +34,12 @@ namespace TCOBO
         public static Texture2D blankHpBar { get; private set; }
         public static SpriteFont uitext { get; private set; }
         public static Texture2D redScreen { get; private set; }
-
+        public static Texture2D RedKey { get; private set; }
+        public static Texture2D RedWall { get; private set; }
+        public static Texture2D BlueKey { get; private set; }
+        public static Texture2D BlueWall { get; private set; }
+        public static Texture2D YellowKey { get; private set; }
+        public static Texture2D YellowWall { get; private set; }
 
 
 
@@ -62,8 +68,12 @@ namespace TCOBO
             blankHpBar = Content.Load<Texture2D>("blankHp");
             redScreen = Content.Load<Texture2D>("screenBlink");
             uitext = Content.Load<SpriteFont>("SpriteFont1");
-
-
+            RedKey = Content.Load<Texture2D>("redkey");
+            RedWall = Content.Load<Texture2D>("redwall");
+            BlueKey = Content.Load<Texture2D>("bluekey");
+            BlueWall = Content.Load<Texture2D>("bluewall");
+            YellowKey = Content.Load<Texture2D>("yellowkey");
+            YellowWall = Content.Load<Texture2D>("yellowwall");
 
         }
 
