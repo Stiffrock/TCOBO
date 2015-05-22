@@ -18,6 +18,8 @@ namespace TCOBO
         private ItemManager itemManager;
         private GraphicsDevice graphics;
         public Player player;
+        public Player scenePlayer;
+        private Scene scene1;
         private Attack attack;
         private Camera2D camera;        
         private SpriteFont spriteFont;
@@ -32,27 +34,29 @@ namespace TCOBO
         private Tuple<int, int, int, int, int, int> playerStats;
         private Tuple<float, float, float> effectiveStats;
         SoundManager soundManager = new SoundManager();
-
+        private bool cutScene = true;
         //private Song statseffect;
         
         public Main(Game1 game1)
         {
             this.game1 = game1;
+            
             graphics = game1.GraphicsDevice;
             krm = new KeyMouseReader();
             itemManager = new ItemManager(game1);
             player = new Player(game1.Content);
+            scenePlayer = new Player(game1.Content);
             testWorld = new TestWorld(game1.Content);
             camera = new Camera2D(game1.GraphicsDevice.Viewport, player);        
             enemyList = new List<Enemy>();
             inrangeList = new List<Enemy>();
+            scene1 = new Scene(this, scenePlayer);
             spawnEnemies();           
             attack = new Attack(player, game1.Content);
             testWorld.ReadLevel("map01");
             testWorld.SetMap();                 
             spriteFont = game1.Content.Load<SpriteFont>("SpriteFont1");
             board = new PlayerPanel(game1.Content, new Vector2(950, 0), spriteFont);
-
             soundManager.LoadContent(game1.Content);
             MediaPlayer.Play(soundManager.bgMusic);
 
@@ -318,25 +322,41 @@ namespace TCOBO
         }
         public void Update(GameTime gameTime)
         {
-            detectEquip();
-            detectItem();
-            ClickStats();
-            itemManager.Update(gameTime);
-            krm.Update();
-            attack.Update(gameTime);
-            player.Update(gameTime);
-            player.Collision(gameTime, testWorld.tiles);
-            detectEnemy();
-            Rotation();
-            playerStats = player.GetPlayerStats();
-            effectiveStats = player.GetEffectiveStats();
-            board.Update(playerStats, effectiveStats);
-            camera.Update(gameTime);
-            Collision();         
-            foreach (Enemy e in enemyList)
+            if (scene1.sceneOver)
             {
-                e.UpdateEnemy(gameTime, player, testWorld.tiles);
+                cutScene = false;
             }
+            if (!cutScene)
+            {
+                detectEquip();
+                detectItem();
+                ClickStats();
+                itemManager.Update(gameTime);
+                krm.Update();
+                attack.Update(gameTime);
+                player.Update(gameTime);
+                player.Collision(gameTime, testWorld.tiles);
+                detectEnemy();
+                Rotation();
+                playerStats = player.GetPlayerStats();
+                effectiveStats = player.GetEffectiveStats();
+                board.Update(playerStats, effectiveStats);
+                camera.Update(gameTime);
+                Collision();
+                foreach (Enemy e in enemyList)
+                {
+                    e.UpdateEnemy(gameTime, player, testWorld.tiles);
+                }
+                
+            }
+            else
+            {
+                krm.Update();
+                player.scene1 = true;
+                scene1.Update(gameTime);
+             
+            }
+
      
             
         }
@@ -397,29 +417,40 @@ namespace TCOBO
         }
 
         public void Draw(SpriteBatch spriteBatch)
-        {     
-            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null,
+        {
+            if (!cutScene)
+            {
+                spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null,
                 camera.transform);
-            testWorld.Draw(spriteBatch);
+                testWorld.Draw(spriteBatch);
 
-            foreach (Enemy e in enemyList)
-            {
-                e.DrawBlood(spriteBatch);
-            }      
-            foreach (Enemy e in enemyList)
-            {
-                e.Draw(spriteBatch);
-            }      
-            foreach (Item item in itemManager.ItemList)
-            {
-                item.Draw(spriteBatch);
+                foreach (Enemy e in enemyList)
+                {
+                    e.DrawBlood(spriteBatch);
+                }
+                foreach (Enemy e in enemyList)
+                {
+                    e.Draw(spriteBatch);
+                }
+                foreach (Item item in itemManager.ItemList)
+                {
+                    item.Draw(spriteBatch);
+                }
+                player.Draw(spriteBatch);
+                testWorld.DrawDoodad(spriteBatch);
+                spriteBatch.End();
+                spriteBatch.Begin();
+                board.Draw(spriteBatch);
+                itemManager.Draw(spriteBatch);
+                
             }
-            player.Draw(spriteBatch);
-            testWorld.DrawDoodad(spriteBatch);
-            spriteBatch.End();
-            spriteBatch.Begin();
-            board.Draw(spriteBatch);
-            itemManager.Draw(spriteBatch);
+            else
+            {
+                spriteBatch.Begin();
+                scene1.Draw(spriteBatch);
+                spriteBatch.End();
+            }
+
         }
 
         }        

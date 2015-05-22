@@ -397,3 +397,10 @@ C:\Users\Spellabbet\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fir
 C:\Users\Spellabbet\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire4.xnb
 C:\Users\Spellabbet\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire5.xnb
 C:\Users\Spellabbet\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire6.xnb
+C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire1.xnb
+C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire2.xnb
+C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire3.xnb
+C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire4.xnb
+C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire5.xnb
+C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire6.xnb
+C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\screenBlink.xnb
