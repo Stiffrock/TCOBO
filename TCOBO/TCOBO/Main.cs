@@ -60,25 +60,26 @@ namespace TCOBO
 
         public void spawnEnemies()
         {
-            //Enemy STR, DEX, VIT, INT, EXPDROP, SPAWN (0 = ingen spawn)
-            for (int i = 0; i < 5; i++)
-            {
-                enemyList.Add(new Enemy(new Vector2(500 - i * 100, 300), game1.Content, 1, 50, 10, 0, 10, 1));
-            }
+            ////Enemy STR, DEX, VIT, INT, EXPDROP, SPAWN (0 = ingen spawn)
+            //for (int i = 0; i < 5; i++)
+            //{
+            enemyList.Add(new Enemy(new Vector2(500, 300), game1.Content, 1, 50, 50, 0, 10, 1));
+            enemyList.Add(new Enemy(new Vector2(580, 300), game1.Content, 1, 50, 10, 0, 10, 1));
+            //}
 
-            for (int i = 0; i < 5; i++)
-            {
-                enemyList.Add(new Enemy(new Vector2(-300, 0-i*100), game1.Content, 1, 50, 10, 0, 10, 1));
-            }
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    enemyList.Add(new Enemy(new Vector2(-300, 0-i*100), game1.Content, 1, 50, 10, 0, 10, 1));
+            //}
 
-            for (int i = 0; i < 5; i++)
-            {
-                enemyList.Add(new Enemy(new Vector2(-300+i*100, -1000), game1.Content, 1, 50, 10, 0, 10, 1));
-            }
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    enemyList.Add(new Enemy(new Vector2(-300+i*100, -1000), game1.Content, 1, 50, 10, 0, 10, 1));
+            //}
            
           
-            enemyList.Add(new Enemy(new Vector2(-2000, 300), game1.Content, 5, -25, 75, 0, 500, 720));
-            enemyList.Add(new Enemy(new Vector2(-2794, -4474), game1.Content, 20, 0, 125, 0, 3000, 0));
+            //enemyList.Add(new Enemy(new Vector2(-2000, 300), game1.Content, 5, -25, 75, 0, 500, 720));
+            //enemyList.Add(new Enemy(new Vector2(-2794, -4474), game1.Content, 20, 0, 125, 0, 3000, 0));
 
         }
       
@@ -137,6 +138,7 @@ namespace TCOBO
                         player.Dex += 1;
                         player.speed += 1;
                         player.max_speed += 3;
+                        player.attackspeed += 0.1f;
                         player.newStat -= 1;
                         soundManager.statSound.Play();
                     }
@@ -333,7 +335,7 @@ namespace TCOBO
             Collision();         
             foreach (Enemy e in enemyList)
             {
-             e.UpdateEnemy(gameTime, player, testWorld.tiles);
+                e.UpdateEnemy(gameTime, player, testWorld.tiles);
             }
      
             
@@ -399,7 +401,11 @@ namespace TCOBO
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null,
                 camera.transform);
             testWorld.Draw(spriteBatch);
-          
+
+            foreach (Enemy e in enemyList)
+            {
+                e.DrawBlood(spriteBatch);
+            }      
             foreach (Enemy e in enemyList)
             {
                 e.Draw(spriteBatch);

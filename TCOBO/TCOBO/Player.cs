@@ -37,7 +37,7 @@ namespace TCOBO
         Texture2D strikeTexSword1, strikeTexPlayer1, strikeTexSword2, strikeTexPlayer2, deathTex;
         private List<float> levelList = new List<float>();
         public Rectangle boundsTop, boundsBot, boundsLeft, boundsRight, hitBox;
-        float attackspeed = 5f;
+        public float attackspeed = 5f;
         float attackProgress = 0f;
         public float playerSize = 36, basePlayerSize = 36;
         public float size;
@@ -73,7 +73,7 @@ namespace TCOBO
             srcRec = new Rectangle(0, 0, 100, 100);
             origin = new Vector2(80, 80);
             color = new Color(255, 30, 30, 255);
-            size = Vit / 10;
+            size = 1 + ((Vit-10) / 30);
             HP = Vit * 5;
             MANA = Int;
             LoadPlayerTex();
@@ -391,10 +391,11 @@ namespace TCOBO
          {
             playerSize = basePlayerSize * size;
             hitBox = new Rectangle((int)(playerPos.X - playerSize / 2 + playerSize / 10), (int)(playerPos.Y - playerSize / 2 + playerSize / 10), (int)(playerSize - playerSize / 5), (int)(playerSize - playerSize / 5));
-            boundsTop = new Rectangle((int)(playerPos.X - playerSize/2 + playerSize / 10), (int)(playerPos.Y - playerSize/2), (int)(playerSize - (playerSize / 5)), (int)(playerSize / 10));
-            boundsBot = new Rectangle((int)(playerPos.X - playerSize/2 + playerSize / 10), (int)((playerPos.Y + playerSize / 2 - playerSize / 10)), (int)(playerSize - (playerSize / 5)), (int)(playerSize / 10));
-            boundsLeft = new Rectangle((int)(playerPos.X - playerSize / 2), (int)(playerPos.Y - playerSize / 2 + playerSize / 10), (int)(playerSize / 10), (int)(playerSize - playerSize / 5));
-            boundsRight = new Rectangle((int)(playerPos.X + playerSize / 2 - playerSize / 10), (int)(playerPos.Y - playerSize / 2 + playerSize / 10), (int)(playerSize / 10), (int)(playerSize - playerSize / 5));
+
+            boundsTop = new Rectangle((int)(playerPos.X - playerSize/2 + playerSize / 5), (int)(playerPos.Y - playerSize/2 + playerSize/10), (int)(playerSize - (playerSize / 2.5f)), (int)(playerSize / 8));
+            boundsBot = new Rectangle((int)(playerPos.X - playerSize/2 + playerSize / 5), (int)((playerPos.Y + playerSize / 2 - playerSize / 4f)), (int)(playerSize - (playerSize / 2.5f)), (int)(playerSize / 8));
+            boundsLeft = new Rectangle((int)(playerPos.X - playerSize / 2 + playerSize / 8), (int)(playerPos.Y - playerSize / 2 + playerSize / 4.5f), (int)(playerSize / 8), (int)(playerSize - playerSize / 2));
+            boundsRight = new Rectangle((int)(playerPos.X + playerSize / 2 - playerSize / 4), (int)(playerPos.Y - playerSize / 2 + playerSize / 4.5f), (int)(playerSize / 8), (int)(playerSize - playerSize / 2));
             foreach (Tile t in tiles)
             {
                 if (t.collisionEnabled)
@@ -405,9 +406,9 @@ namespace TCOBO
                     {
                         soundManager.bounceSound.Play();
                         if (velocity.X < 0)
-                            velocity.X = (velocity.X * -2) + max_speed / 10;
+                            velocity.X = (velocity.X * -0.8f) + 10;
                         else
-                            velocity.X = max_speed / 10;
+                            velocity.X = 10;
                         velocity.Y = velocity.Y * 1.1f;
                         break;
                         
@@ -416,19 +417,19 @@ namespace TCOBO
                     {
                         soundManager.bounceSound.Play();
                         if (velocity.X < 0)
-                            velocity.X = -max_speed / 10;
+                            velocity.X = -10;
                         else
-                            velocity.X = (velocity.X * -2) - max_speed / 10;
+                            velocity.X = (velocity.X * -0.8f) - 10;
                         velocity.Y = velocity.Y * 1.1f;
                         break;
                     }
                     if(t.bounds.Intersects(boundsBot))
                     {
                         soundManager.bounceSound.Play();
-                        if (velocity.Y < 0) //om påväg uppåt
-                            velocity.Y = -max_speed / 10;
+                        if (velocity.Y < 0)
+                            velocity.Y = -10;
                         else
-                            velocity.Y = (velocity.Y * -2) - max_speed / 10;
+                            velocity.Y = (velocity.Y * -0.8f) - 10;
                         velocity.X = velocity.X * 1.1f;
                         break;
 
@@ -436,10 +437,10 @@ namespace TCOBO
                     if (t.bounds.Intersects(boundsTop))
                     {
                         soundManager.bounceSound.Play();
-                        if (velocity.Y < 0) //om påväg neråt
-                            velocity.Y = (velocity.Y * -2) + max_speed / 10;
+                        if (velocity.Y < 0)
+                            velocity.Y = (velocity.Y * -0.8f) + 10;
                         else
-                            velocity.Y = max_speed / 10;
+                            velocity.Y = 10;
                         velocity.X = velocity.X * 1.1f;
                         break;
                     }
@@ -486,7 +487,7 @@ namespace TCOBO
                 else isHpBarVisible = false;
 
                 float tempVit = Vit;
-                size = tempVit / 10;
+                size = 1 + ((tempVit - 10) / 30);
                 stopMove();
                 HandleLevelUp();
                 HandlePlayerStats(gameTime);
@@ -562,12 +563,12 @@ namespace TCOBO
 
             //spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
 
-            
 
-              //spriteBatch.Draw(TextureManager.sand1, boundsTop, Color.Black);
-              //spriteBatch.Draw(TextureManager.sand1, boundsBot, Color.Black);
-              //spriteBatch.Draw(TextureManager.sand1, boundsLeft, Color.Black);
-              //spriteBatch.Draw(TextureManager.sand1, boundsRight, Color.Black);
+
+            //spriteBatch.Draw(TextureManager.sand1, boundsTop, Color.Black);
+            //spriteBatch.Draw(TextureManager.sand1, boundsBot, Color.Black);
+            //spriteBatch.Draw(TextureManager.sand1, boundsLeft, Color.Black);
+            //spriteBatch.Draw(TextureManager.sand1, boundsRight, Color.Black);
         }
     }
 }

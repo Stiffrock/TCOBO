@@ -16,7 +16,6 @@ namespace TCOBO
         private Player player;
         private List<Enemy> inrangeList;
         private float write;
-
         SoundManager soundManager = new SoundManager();
 
         public Attack(Player player, ContentManager content)
@@ -39,7 +38,7 @@ namespace TCOBO
                 double deltaY =  enemy.pos.Y - player.playerPos.Y;
 
                 soundManager.hitSound.Play();
-
+                enemy.StartParticleEffect();
                 double h = Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
                 float dn = (float)h;
                 enemy.velocity += new Vector2((float)deltaX / dn * 260, (float)deltaY / dn * 260);
