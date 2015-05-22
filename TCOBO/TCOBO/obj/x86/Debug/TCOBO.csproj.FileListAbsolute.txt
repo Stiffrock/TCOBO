@@ -397,6 +397,7 @@ C:\Users\Spellabbet\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fir
 C:\Users\Spellabbet\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire4.xnb
 C:\Users\Spellabbet\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire5.xnb
 C:\Users\Spellabbet\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire6.xnb
+<<<<<<< HEAD
 C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\playerSpritePH.xnb
 C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Bird.xnb
 C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\weaponPH.xnb
@@ -534,3 +535,12 @@ C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\obj\x86\Debug\TCOBO.csp
 C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\obj\x86\Debug\TCOBO.exe
 C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\obj\x86\Debug\TCOBO.pdb
+=======
+C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire1.xnb
+C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire2.xnb
+C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire3.xnb
+C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire4.xnb
+C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire5.xnb
+C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire6.xnb
+C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\screenBlink.xnb
+>>>>>>> origin/Stoffe

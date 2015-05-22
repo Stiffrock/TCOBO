@@ -126,6 +126,10 @@ Content\EnemySound.xnb
 Content\RunningSound.xnb
 Content\BouncingSound.xnb
 Content\HitSound.xnb
+<<<<<<< HEAD
+=======
+Content\screenBlink.xnb
+>>>>>>> origin/Stoffe
 Content\Ljudeffekt1.wma
 Content\TCOBO musik.wma
 Content\Death sound.wma

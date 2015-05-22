@@ -31,7 +31,7 @@ namespace TCOBO
         private Tuple<int, int, int, int, int, int> playerStats;
         private Tuple<float, float, float> effectiveStats;
         private bool move, moveUp, moveDown, moveLeft, moveRight, strike, strike2;
-        private List<Texture2D> playerTex = new List<Texture2D>();
+        public List<Texture2D> playerTex = new List<Texture2D>();
         private List<Texture2D> swordTex = new List<Texture2D>();
         private List<Texture2D> heal = new List<Texture2D>();
         Texture2D strikeTexSword1, strikeTexPlayer1, strikeTexSword2, strikeTexPlayer2, deathTex;
@@ -41,7 +41,7 @@ namespace TCOBO
         float attackProgress = 0f;
         public float playerSize = 36, basePlayerSize = 36;
         public float size;
-        bool healing = false;
+        public bool healing = false, scene1 = false;
         public int MANA;
         float manaTicDelay = 10f;
         TimeSpan manaTimer;
@@ -329,6 +329,7 @@ namespace TCOBO
             moveUp = false;
             moveDown = false;
             move = false;
+
             if (Keyboard.GetState().IsKeyDown(Keys.D))
             {
                 move = true;
@@ -350,6 +351,8 @@ namespace TCOBO
                 move = true;
                 moveDown = true;
             }
+                
+            
         }
 
         private void handleAction(GameTime gameTime)
@@ -463,8 +466,6 @@ namespace TCOBO
             }
         }
 
-   
-
         //public void PlaySound()
         //{
         //    MediaPlayer.Play(soundManager.deathSound);
@@ -476,8 +477,6 @@ namespace TCOBO
         {
 
             effectiveStats = Tuple.Create<float, float, float>(mDamage, MANA, HP);
-
-
             if (HP > 0)
             {
                 if (Keyboard.GetState().IsKeyDown(Keys.LeftAlt))
@@ -501,10 +500,7 @@ namespace TCOBO
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-
-           
-           
-      
+    
             //spriteBatch.Draw(TextureManager.sand1, boundingBox, Color.Black);
             if (HP > 0)
             {
