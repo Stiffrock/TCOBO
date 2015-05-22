@@ -228,6 +228,7 @@ namespace TCOBO
                 {
                    
                     item.hand = false;
+                    itemManager.PickedUp = false;
                     item.pos = player.playerPos;
                     itemManager.ItemList.Add(item);
                     itemManager.InventoryList.Remove(item);                   

@@ -12,13 +12,12 @@ namespace TCOBO
     class ItemManager 
     {
         private Game1 game1;
-        private Sword standardSword, goldenSword, goldenSword1, goldenSword2, goldenSword3, blueSword, redSword;
+        private Sword standardSword, goldenSword, blueSword, redSword;
         public Armor standardArmor;
         private Inventory inventory;
         private GraphicsDevice grahpics;
         private SpriteFont sf;
         public bool Showstats,IsInventoryshown,PickedUp;
-        public bool swordEquip;
         public List<Item> ItemList = new List<Item>();
         public List<Item> InventoryList = new List<Item>();
         public List<Item> EquipList = new List<Item>();
@@ -60,63 +59,54 @@ namespace TCOBO
             {
                 foreach (InventoryTile tile in inventory.grid)
                 {
-                    if (tile.texture_rect.Intersects(item.hitBox))
+                    if (item.hitBox.Contains(Mouse.GetState().X, Mouse.GetState().Y) && KeyMouseReader.LeftClick() && !PickedUp && tile.texture_rect.Contains(Mouse.GetState().X, Mouse.GetState().Y))
                     {
-                        if (item.hand)
-                        {
-                            tile.hasItem = false;
-                        }
-                        else
-                        {
-                            tile.hasItem = true;
-                        }
+                        item.hand = true;
+                        PickedUp = true;
+                        tile.hasItem = false;
+                        return;
                     }
-                }
 
-                if (item.hitBox.Contains(Mouse.GetState().X, Mouse.GetState().Y) && KeyMouseReader.LeftClick())
-                {
-                    item.hand = true;
-                    return;
-                }
-
-                if (item.hand == true)
-                {
-                    foreach (InventoryTile tile in inventory.grid)
-                    {
-
+                    if (item.hand == true)
+                    {                                            
                         if (item.hitBox.Intersects(tile.texture_rect))
                         {
-                            item.pos.X = tile.pos.X;
-                            item.pos.Y = tile.pos.Y + 5;
-
-                            if (KeyMouseReader.LeftClick())
-
-                        if (item.hitBox.Intersects(tile.texture_rect))
-                        {
-                            if (item.hitBox.Intersects(tile.texture_rect) && KeyMouseReader.LeftClick())
-
+                            if (tile.texture_rect.Contains(Mouse.GetState().X, Mouse.GetState().Y) && KeyMouseReader.LeftClick() && tile.hasItem == false) // Drop item to tile
                             {
                                 item.pos.X = tile.pos.X + item.itemTex.Width / 5;
                                 item.pos.Y = tile.pos.Y + item.itemTex.Height / 5;
                                 item.hand = false;
-
+                                tile.hasItem = true;
+                                PickedUp = false;
                             }
+                        }                       
+                    }
 
-                            if (item.hitBox.Intersects(tile.texture_rect) && KeyMouseReader.LeftClick())
+
+
+                }
+
+                /*if (item.hand == true)
+                {
+                    foreach (InventoryTile tile in inventory.grid)
+                    {
+                        if (item.hitBox.Intersects(tile.texture_rect))
+                        {
+                            if (item.hitBox.Intersects(tile.texture_rect) && KeyMouseReader.LeftClick() && tile.hasItem == false) // Drop item to tile
                             {
-                                item.pos.X = tile.pos.X;
-                                item.pos.Y = tile.pos.Y + 5;
+                                item.pos.X = tile.pos.X + item.itemTex.Width / 5;
+                                item.pos.Y = tile.pos.Y + item.itemTex.Height / 5;
                                 item.hand = false;
+                                tile.hasItem = true;
+                                PickedUp = false;
 
                             }
-
-                            }
-
                         }
                     }
-                }
+                }*/
             }
         }
+                
 
         public void equipItem()
         {
@@ -148,6 +138,7 @@ namespace TCOBO
                     item.pos.Y = mousePos.Y - item.itemTex.Height /2;
                     item.hitBox.X = (int)mousePos.X - item.itemTex.Width;
                     item.hitBox.Y = (int)mousePos.Y - item.itemTex.Width;
+                    PickedUp = true;
 
                     if (item.hitBox.Intersects(inventory.hitBox))
                     {
