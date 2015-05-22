@@ -11,11 +11,11 @@ namespace TCOBO
     {
         private Random random;
         public Vector2 EmitterLocation { get; set; }
-        private List<Particle> particles;
+        public List<Particle> particles;
         private List<Texture2D> textures;
         public bool drawBlood = false;
         public TimeSpan bloodTimer;
-        public float bloodTime = 0.3f;
+        public float bloodTime = 0.4f;
         float Vit;
 
         public ParticleEngine(List<Texture2D> textures, Vector2 location, int Vit)
@@ -32,8 +32,8 @@ namespace TCOBO
             Texture2D texture = textures[random.Next(textures.Count)];
             Vector2 position = EmitterLocation;
             Vector2 velocity = new Vector2(
-                    (5+Vit)/2 * (float)(random.NextDouble() * 2 - 1),
-                    (5+Vit)/2 * (float)(random.NextDouble() * 2 - 1));
+                    (5+random.Next(5, (int)Vit))/2 * (float)(random.NextDouble() * 2 - 1),
+                    (5 + random.Next(5, (int)Vit)) / 2 * (float)(random.NextDouble() * 2 - 1));
             float angle = 0;
             float angularVelocity = 0.1f * (float)(random.NextDouble() * 2 - 1);
             Color color = new Color(

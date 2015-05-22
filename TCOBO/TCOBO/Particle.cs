@@ -35,6 +35,7 @@ namespace TCOBO
         public void Update()
         {
             Position += Velocity;
+            Velocity *= 0.90f;
             Angle += AngularVelocity;
         }
 

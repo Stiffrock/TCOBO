@@ -103,6 +103,12 @@ Content\heal2.xnb
 Content\heal3.xnb
 Content\heal4.xnb
 Content\heal5.xnb
+Content\fire1.xnb
+Content\fire2.xnb
+Content\fire3.xnb
+Content\fire4.xnb
+Content\fire5.xnb
+Content\fire6.xnb
 Content\SpriteFont1.xnb
 Content\MOStatFont.xnb
 Content\MenuFont.xnb
@@ -123,9 +129,3 @@ Content\EnemySound.xnb
 Content\RunningSound.xnb
 Content\BouncingSound.xnb
 Content\HitSound.xnb
-Content\fire1.xnb
-Content\fire2.xnb
-Content\fire3.xnb
-Content\fire4.xnb
-Content\fire5.xnb
-Content\fire6.xnb

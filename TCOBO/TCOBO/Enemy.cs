@@ -251,6 +251,12 @@ namespace TCOBO
                 else if (!PE.drawBlood)
                 {
                     PE.KillParticles();
+                    if (PE.particles.Count == 0)
+                    {
+                        particleEngine.Remove(PE);
+                        break;
+                    }
+                       
                 }
             }
 
