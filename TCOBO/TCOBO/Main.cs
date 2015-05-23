@@ -31,13 +31,15 @@ namespace TCOBO
         private List<Enemy> inrangeList;
         private Vector2 aimVector;
         private PlayerPanel board;
-        private int row = 0, itemcount = 0;
+        private int row = 0, itemcount = 0, i = 0;
         private Tuple<int, int, int, int, int, int> playerStats;
         private Tuple<float, float, float> effectiveStats;
-        private float deltaTime = 0;
+        private float deltaTime = 8000;
         SoundManager soundManager = new SoundManager();
         private bool cutScene = true, enemiesSpawned = false;
         public bool loss = false;
+        private string activeTooltip;
+        private List<string> ttList = new List<string>();
         //private Song statseffect;
         
         public Main(Game1 game1)
@@ -123,6 +125,31 @@ namespace TCOBO
                 }
               
             }
+        }
+
+        public void handleTooltip(SpriteBatch spriteBatch)
+        {
+            string tooltip1 = "Tip: Walk over items to pick them up, press I to enter Inventory and Right click on item to equip it.";
+            string tooltip2 = "Tip: Hold ALT to show HP bars";
+            string tooltip3 = "Tip: Press Q to use HEAL spell";
+            string tooltip4 = "Tip: Find hidden keys to unlock doors";
+            ttList.Add(tooltip1);
+            ttList.Add(tooltip2);
+            ttList.Add(tooltip3);
+            ttList.Add(tooltip4);
+
+            if (deltaTime > 8000 && i != 5)
+            {
+                activeTooltip = ttList[i];
+                i += 1;
+                deltaTime = 0;
+            }
+
+            if (i < 5)
+            {
+                spriteBatch.DrawString(TextureManager.uitext, activeTooltip, new Vector2(300, 200), Color.Black);
+            }
+            
         }
 
 
@@ -353,7 +380,8 @@ namespace TCOBO
                 cutScene = false;
             }
             if (!cutScene)
-            {          
+            {
+                deltaTime += gameTime.ElapsedGameTime.Milliseconds;
                 handleLoss();
                 detectEquip();
                 detectItem();
@@ -468,6 +496,7 @@ namespace TCOBO
                 }
                 spriteBatch.End();
                 spriteBatch.Begin();
+                handleTooltip(spriteBatch);
          
                 board.Draw(spriteBatch);
                 itemManager.Draw(spriteBatch);

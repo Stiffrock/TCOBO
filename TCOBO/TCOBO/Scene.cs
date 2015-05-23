@@ -142,10 +142,7 @@ namespace TCOBO
 
                    // sceneOver = true;
                     redScreen = true;
-                }
-
-               
-
+                }             
             }
             
             if (monolog1)
