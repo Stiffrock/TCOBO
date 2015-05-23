@@ -78,7 +78,7 @@ namespace TCOBO
                 int Vit = rnd.Next(5, 40); // Måste va över 5
                 int Exp = (Vit/2) + (Str/2);
                 enemyList.Add(new Enemy(testWorld.enemyposList[i], game1.Content, Str, Dex, Vit, 0, Exp, 720));
-                i += 50; // Bestämmer hur många fiender som spawnar, ju mindre värde desto tätare spawnar som
+                i += 80; // Bestämmer hur många fiender som spawnar, ju mindre värde desto tätare spawnar som
             }
 
         }

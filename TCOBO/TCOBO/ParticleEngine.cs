@@ -42,7 +42,11 @@ namespace TCOBO
                 0.1f + (float)random.NextDouble(),
                 0,
                  0);
+<<<<<<< HEAD
             float size = (float)random.NextDouble();
+=======
+            float size = (float)random.NextDouble()/2;
+>>>>>>> origin/Stoffe
 
             int ttl = 100 + random.Next((int)1500);
 
