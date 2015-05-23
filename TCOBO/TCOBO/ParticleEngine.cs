@@ -42,11 +42,8 @@ namespace TCOBO
                 0.1f + (float)random.NextDouble(),
                 0,
                  0);
-<<<<<<< HEAD
-            float size = (float)random.NextDouble()/4;
-=======
-            float size = (float)random.NextDouble()+0.1f;
->>>>>>> origin/Stoffe
+            float size = (float)random.NextDouble()/2;
+
             int ttl = 100 + random.Next((int)1500);
 
             return new Particle(texture, position, velocity, angle, angularVelocity, color, size, ttl);
