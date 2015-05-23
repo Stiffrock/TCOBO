@@ -71,7 +71,6 @@ namespace TCOBO
 
             enemyList.Add(new Enemy(new Vector2(-100, -1430), game1.Content, 1, 10, 300, 0, 10, 1)); // Main boss
 
-
             for (int i = 0; i < testWorld.enemyposList.Count; i++)          // Kan basicly helt ställa in svårighetsgrad här
             {
                 int Str = rnd.Next(1, 5);
@@ -94,13 +93,10 @@ namespace TCOBO
             float xDistance = (float)ms.X - player.playerPos.X;
             float yDistance = (float)ms.Y - player.playerPos.Y;
             player.rotation = (float)Math.Atan2(yDistance, xDistance);
-
             double h = Math.Sqrt(xDistance * xDistance + yDistance * yDistance);
             float dn = (float)h;
             player.strikeVelocity = new Vector2(xDistance / dn * 70, yDistance / dn * 70);
-
             aimVector = new Vector2(xDistance, yDistance);
-
             player.aimRec = new Vector2(xDistance, yDistance);
             player.aimRec.Normalize();
             double recX = (double)player.aimRec.X * 40 * player.size;
@@ -307,9 +303,7 @@ namespace TCOBO
 
                     if (item is Sword && item.equip == true && player.swordinHand == true && itemManager.EquipList.Contains(item))
                     {
-                        player.Str -= statAdd;
-
-                        
+                        player.Str -= statAdd;                        
                         item.defaultColor = itemCol;
                         player.colorswitch(itemCol);
                         player.swordinHand = false;
