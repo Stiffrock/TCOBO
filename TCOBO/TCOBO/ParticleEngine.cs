@@ -39,10 +39,10 @@ namespace TCOBO
             float angularVelocity = 0.1f * (float)(random.NextDouble() * 2 - 1);
          //   Color color = Color.Blue;
             Color color = new Color(
+                0.1f + (float)random.NextDouble(),
                 0,
-                0,
-                 0.9f + (float)random.NextDouble());
-            float size = (float)random.NextDouble() - 0.5f;
+                 0);
+            float size = (float)random.NextDouble()+0.1f;
             int ttl = 100 + random.Next((int)1500);
 
             return new Particle(texture, position, velocity, angle, angularVelocity, color, size, ttl);

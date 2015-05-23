@@ -116,6 +116,8 @@ Content\bluekey.xnb
 Content\bluewall.xnb
 Content\yellowkey.xnb
 Content\yellowwall.xnb
+Content\blood.xnb
+Content\blood3.xnb
 Content\SpriteFont1.xnb
 Content\MOStatFont.xnb
 Content\MenuFont.xnb
@@ -134,8 +136,7 @@ Content\RunningSound.xnb
 Content\BouncingSound.xnb
 Content\HitSound.xnb
 Content\Bloodsplat.xnb
-Content\blood.xnb
-Content\blood3.xnb
+Content\blood4.xnb
 Content\Ljudeffekt1.wma
 Content\TCOBO musik.wma
 Content\Death sound.wma
