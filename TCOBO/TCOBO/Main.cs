@@ -67,14 +67,14 @@ namespace TCOBO
             ////Enemy STR, DEX, VIT, INT, EXPDROP, SPAWN (0 = ingen spawn)
             //for (int i = 0; i < 5; i++)
             //{
-            enemyList.Add(new Enemy(new Vector2(500, 300), game1.Content, 1, 10, 300, 0, 10, 1));
-            enemyList.Add(new Enemy(new Vector2(580, 300), game1.Content, 1, 10, 10, 0, 10, 1));
+       //     enemyList.Add(new Enemy(new Vector2(500, 300), game1.Content, 1, 10, 300, 0, 10, 1));
+        //    enemyList.Add(new Enemy(new Vector2(580, 300), game1.Content, 1, 10, 10, 0, 10, 1));
 
             for (int i = 0; i < testWorld.enemyposList.Count; i++)          // Kan basicly helt ställa in svårighetsgrad här
             {
-                int Str = rnd.Next(1, 10);
+                int Str = rnd.Next(1, 5);
                 int Dex = rnd.Next(10, 30);
-                int Vit = rnd.Next(2, 20);
+                int Vit = rnd.Next(5, 20);
                 int Exp = Vit;
                 enemyList.Add(new Enemy(testWorld.enemyposList[i], game1.Content, Str, Dex, Vit, 0, Exp, 1));
                 i += 50; // Bestämmer hur många fiender som spawnar
