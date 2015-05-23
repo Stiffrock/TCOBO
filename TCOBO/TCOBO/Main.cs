@@ -339,7 +339,7 @@ namespace TCOBO
                     }
                     if (item is Armor && item.equip == false)
                     {
-                        player.Vit += statAdd;
+                        player.HP += statAdd;
                         player.armorEquip = true;
                         itemManager.EquipList.Add(item);
                         return;

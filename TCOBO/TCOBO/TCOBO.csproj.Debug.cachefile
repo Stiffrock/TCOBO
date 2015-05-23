@@ -120,6 +120,13 @@ Content\blood.xnb
 Content\blood3.xnb
 Content\blood4.xnb
 Content\blood5.xnb
+Content\shield.xnb
+Content\faststrikesword3.xnb
+Content\faststrikesword4.xnb
+Content\faststrikesword5.xnb
+Content\faststrikesword4.1.xnb
+Content\faststrikesword6.xnb
+Content\faststrikesword7.xnb
 Content\SpriteFont1.xnb
 Content\MOStatFont.xnb
 Content\MenuFont.xnb
@@ -138,21 +145,8 @@ Content\RunningSound.xnb
 Content\BouncingSound.xnb
 Content\HitSound.xnb
 Content\Bloodsplat.xnb
-<<<<<<< HEAD
-Content\faststrikesword3.xnb
-Content\faststrikesword4.xnb
-Content\faststrikesword5.xnb
-Content\faststrikesword4.1.xnb
-Content\faststrikesword6.xnb
-Content\faststrikesword7.xnb
-=======
-Content\shield.xnb
 Content\051.xnb
 Content\020.xnb
-faststrikesword3.xnb
-faststrikesword4.xnb
-faststrikesword5.xnb
->>>>>>> origin/Stoffe
 Content\Ljudeffekt1.wma
 Content\TCOBO musik.wma
 Content\Death sound.wma
