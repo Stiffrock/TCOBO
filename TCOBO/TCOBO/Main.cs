@@ -34,7 +34,7 @@ namespace TCOBO
         private Tuple<int, int, int, int, int, int> playerStats;
         private Tuple<float, float, float> effectiveStats;
         SoundManager soundManager = new SoundManager();
-        private bool cutScene = true;
+        private bool cutScene = true, enemiesSpawned = false;
         //private Song statseffect;
         
         public Main(Game1 game1)
@@ -51,7 +51,7 @@ namespace TCOBO
             enemyList = new List<Enemy>();
             inrangeList = new List<Enemy>();
             scene1 = new Scene(this, scenePlayer);
-            spawnEnemies();           
+                      
             attack = new Attack(player, game1.Content);
             testWorld.ReadLevel("map01");
             testWorld.SetMap();                 
@@ -59,6 +59,7 @@ namespace TCOBO
             board = new PlayerPanel(game1.Content, new Vector2(950, 0), spriteFont);
             soundManager.LoadContent(game1.Content);
             MediaPlayer.Play(soundManager.bgMusic);
+           // spawnEnemies(); 
 
         }
 
@@ -69,6 +70,17 @@ namespace TCOBO
             //{
             enemyList.Add(new Enemy(new Vector2(500, 300), game1.Content, 1, 10, 300, 0, 10, 1));
             enemyList.Add(new Enemy(new Vector2(580, 300), game1.Content, 1, 10, 10, 0, 10, 1));
+
+            for (int i = 0; i < testWorld.enemyposList.Count; i++)
+            {
+                enemyList.Add(new Enemy(testWorld.enemyposList[i], game1.Content, 1, 10, 10, 0, 10, 1));
+                i += 50;
+            }
+
+     
+               
+            
+            
             //}
 
             //for (int i = 0; i < 5; i++)
@@ -358,6 +370,9 @@ namespace TCOBO
                 {
                     e.UpdateEnemy(gameTime, player, testWorld.tiles);
                 }
+
+  
+
                 
             }
             else
@@ -453,6 +468,11 @@ namespace TCOBO
                 spriteBatch.Begin();
                 board.Draw(spriteBatch);
                 itemManager.Draw(spriteBatch);
+                if (!enemiesSpawned)
+                {
+                    spawnEnemies();
+                    enemiesSpawned = true;
+                }
                 
             }
             else

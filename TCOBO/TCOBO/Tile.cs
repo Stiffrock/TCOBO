@@ -20,7 +20,10 @@ namespace TCOBO
         public Vector2 position;
         public string typeOfTile;
         public Rectangle bounds;
-        public bool collisionEnabled = false;
+        public bool collisionEnabled = false, enemyTile = false;
+        private int grassCount = 0;
+        public List<Vector2> enemyPosList = new List<Vector2>();
+        
 
         public Tile(string typeOfTile, Vector2 position)
         {
@@ -67,7 +70,14 @@ namespace TCOBO
             else if (typeOfTile == "grass")
             {
                 //image = TextureManager.road1;
+           
                 image = TextureManager.grasstile1;
+             
+                    enemyTile = true;
+    
+               
+
+               
 
             }
             else if (typeOfTile == "redwall")

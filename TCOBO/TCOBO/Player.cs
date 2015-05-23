@@ -103,7 +103,6 @@ namespace TCOBO
                     Level += 1;
                     newStat += 5;
                     Exp = 0;
-                    Console.WriteLine("Level   "+  Level);
 
                     soundManager.levelupSound.Play();
 
@@ -132,7 +131,6 @@ namespace TCOBO
             if (KeyMouseReader.KeyPressed(Keys.D5))
             {
                 Exp += 5;
-                Console.WriteLine("Exp   "+Exp);
             }
         }
 
@@ -488,7 +486,7 @@ namespace TCOBO
 
         public override void Update(GameTime gameTime)
         {
-
+            Console.WriteLine(playerPos);
             effectiveStats = Tuple.Create<float, float, float>(mDamage, MANA, HP);
             if (HP > 0)
             {

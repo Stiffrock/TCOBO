@@ -21,6 +21,10 @@ namespace TCOBO
         public List<Tile> tiles = new List<Tile>();
         public List<DooDads> dooDads = new List<DooDads>();
         public List<string> stringList = new List<string>();
+        public List<Vector2> enemyposList = new List<Vector2>();
+
+
+   
 
         public TestWorld(ContentManager content)
         {
@@ -30,6 +34,10 @@ namespace TCOBO
         {
             foreach (Tile t in tiles)
             {
+                if (t.enemyTile)
+                {
+                    enemyposList.Add(t.position);
+                }
                 t.Draw(spriteBatch);
             }
 
