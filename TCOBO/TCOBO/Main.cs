@@ -76,7 +76,7 @@ namespace TCOBO
             {
                 int Str = rnd.Next(1, 5);
                 int Dex = rnd.Next(10, 30);
-                int Vit = rnd.Next(5, 20); // Måste va över 5
+                int Vit = rnd.Next(5, 30); // Måste va över 5
                 int Exp = Vit;
                 enemyList.Add(new Enemy(testWorld.enemyposList[i], game1.Content, Str, Dex, Vit, 0, Exp, 1));
                 i += 50; // Bestämmer hur många fiender som spawnar, ju mindre värde desto tätare spawnar som
@@ -125,20 +125,22 @@ namespace TCOBO
             string tooltip1 = "Tip: Walk over items to pick them up, press I to enter Inventory and Right click on item to equip it.";
             string tooltip2 = "Tip: Hold ALT to show HP bars";
             string tooltip3 = "Tip: Press Q to use HEAL spell";
-            string tooltip4 = "Tip: Find hidden keys to unlock doors";
+            string tooltip4 = "Tip: You will level up by killing enemies, this will give you points that you can distribute in your inventorys statpanel";
+            string tooltip5 = "Tip: Find hidden keys to unlock doors";
             ttList.Add(tooltip1);
             ttList.Add(tooltip2);
             ttList.Add(tooltip3);
             ttList.Add(tooltip4);
+            ttList.Add(tooltip5);
 
-            if (deltaTime > 8000 && i != 5)
+            if (deltaTime > 8000 && i != 6)
             {
                 activeTooltip = ttList[i];
                 i += 1;
                 deltaTime = 0;
             }
 
-            if (i < 5)
+            if (i < 6)
             {
                 spriteBatch.DrawString(TextureManager.uitext, activeTooltip, new Vector2(300, 200), Color.Silver);
             }
