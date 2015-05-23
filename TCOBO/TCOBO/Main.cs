@@ -63,13 +63,15 @@ namespace TCOBO
             board = new PlayerPanel(game1.Content, new Vector2(950, 0), spriteFont);
             soundManager.LoadContent(game1.Content);
             MediaPlayer.Play(soundManager.bgMusic);
+            MediaPlayer.Volume = 0.4f;
+            MediaPlayer.IsRepeating = true;
 
         }
 
         public void spawnEnemies()
         {
-            enemyList.Add(new Enemy(new Vector2(-200, -1300), game1.Content, 55, 1, 350, 0, 10, 1)); // Main boss
-            enemyList.Add(new Enemy(new Vector2(-2240, 500), game1.Content, 25, 1, 200, 0, 10, 1)); // Red Key boss
+            enemyList.Add(new Enemy(new Vector2(-200, -1300), game1.Content, 55, 1, 300, 0, 10, 1)); // Main boss
+            enemyList.Add(new Enemy(new Vector2(-2240, 500), game1.Content, 25, 1, 150, 0, 10, 1)); // Red Key boss
 
             for (int i = 0; i < testWorld.enemyposList.Count; i++)          // Kan basicly helt ställa in svårighetsgrad här
             {

@@ -147,21 +147,33 @@ namespace TCOBO
                         if (!strike && !strike2)
                         {
                             strike = true;
-                            player.HP -= Str;
+                            if (!player.shieldUp)
+                            {
+                                player.HP -= Str;
+                                soundManager.hitSound.Play();
+                            } 
+                            else if (player.shieldUp)
+                                soundManager.ShieldHitSound.Play();
                         }
                         else if (strike)
                         {
 
-                            if (1 == rnd.Next(1, 3))
+                            if (1 == rnd.Next(1, 7))
                             {
                                 strike2 = true;
-                                player.HP -= Str;
+                                if (!player.shieldUp)
+                                {
+                                    player.HP -= Str;
+                                    soundManager.hitSound.Play();
+                                }
+                                else if (player.shieldUp)
+                                    soundManager.ShieldHitSound.Play();
                             }
 
-                            attack_seconds = rnd.Next(0, 3);
+                            attack_seconds = rnd.Next(0, 4);
                             attack_timer = TimeSpan.FromSeconds(attack_seconds);
                         }
-                        //soundManager.hitSound.Play();
+                        
                     }
                 }
 
@@ -184,7 +196,7 @@ namespace TCOBO
         {
             UpdateParticle(gameTime);
             float distance = Vector2.Distance(player.pos, pos);
-            if (health > 0 && distance < 400 + (Vit *10))
+            if (health > 0 && distance < 400 + (Vit * 2))
             {
                 if (Keyboard.GetState().IsKeyDown(Keys.LeftAlt))
                 {
@@ -309,10 +321,10 @@ namespace TCOBO
 
             //spriteBatch.Draw(TextureManager.sand1, hitBox, Color.Black);
             //spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
-            spriteBatch.Draw(TextureManager.sand1, boundsTop, Color.White);
-            spriteBatch.Draw(TextureManager.sand1, boundsBot, Color.White);
-            spriteBatch.Draw(TextureManager.sand1, boundsLeft, Color.White);
-            spriteBatch.Draw(TextureManager.sand1, boundsRight, Color.White);
+            //spriteBatch.Draw(TextureManager.sand1, boundsTop, Color.White);
+            //spriteBatch.Draw(TextureManager.sand1, boundsBot, Color.White);
+            //spriteBatch.Draw(TextureManager.sand1, boundsLeft, Color.White);
+            //spriteBatch.Draw(TextureManager.sand1, boundsRight, Color.White);
         }
 
         public void DrawBlood(SpriteBatch sb)

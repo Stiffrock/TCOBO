@@ -18,6 +18,8 @@ namespace TCOBO
         public SoundEffect bounceSound;
         public SoundEffect runningSound;
         public SoundEffect hitSound;
+        public SoundEffect ShieldSound;
+        public SoundEffect ShieldHitSound;
 
         public Song bgMusic;
         public Song deathSound;
@@ -50,6 +52,8 @@ namespace TCOBO
             hitSound = Content.Load<SoundEffect>("bloodsplat");
             bgMusic = Content.Load<Song>("TCOBO musik");
             deathSound = Content.Load<Song>("Death sound");
+            ShieldSound = Content.Load<SoundEffect>("051");
+            ShieldHitSound = Content.Load<SoundEffect>("020");
         }
     }
 }
