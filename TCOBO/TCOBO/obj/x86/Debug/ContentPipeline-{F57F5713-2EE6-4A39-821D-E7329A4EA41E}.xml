@@ -953,7 +953,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire1.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Time>2015-05-22T21:31:46.0711583+02:00</Time>
     </Item>
     <Item>
       <Source>fire2.png</Source>
@@ -1228,7 +1228,7 @@
       <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Bloodsplat.xnb</Output>
       <Time>2015-05-23T09:22:36.3386307+02:00</Time>
     </Item>
-    <BuildSuccessful>false</BuildSuccessful>
+    <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{F57F5713-2EE6-4A39-821D-E7329A4EA41E}</ContentProjectGUID>
       <TargetPlatform>Windows</TargetPlatform>
