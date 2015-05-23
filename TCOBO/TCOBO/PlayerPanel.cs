@@ -47,6 +47,8 @@ namespace TCOBO
 
             soundManager.LoadContent(content);
 
+            
+
         }
 
         private void ShowBoard()
@@ -63,7 +65,6 @@ namespace TCOBO
             this.effectiveStats = effectiveStats;
             ShowBoard();
         }
-          
 
         public void Draw(SpriteBatch spriteBatch)
         {
@@ -77,7 +78,7 @@ namespace TCOBO
             int Level = playerStats.Item5;
             int newStat = playerStats.Item6;
 
-            //if (HP <= 2)
+            //if (HP <= 0)
             //{
             //    MediaPlayer.Play(soundManager.deathSound);
             //}
