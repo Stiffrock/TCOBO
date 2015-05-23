@@ -144,3 +144,6 @@ Content\Bloodsplat.xnb
 Content\faststrikesword3.xnb
 Content\faststrikesword4.xnb
 Content\faststrikesword5.xnb
+Content\faststrikesword4.1.xnb
+Content\faststrikesword6.xnb
+Content\faststrikesword7.xnb

@@ -1280,7 +1280,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\faststrikesword4.xnb</Output>
-      <Time>2015-05-23T18:24:06.5391935+02:00</Time>
+      <Time>2015-05-23T18:56:32.0145136+02:00</Time>
     </Item>
     <Item>
       <Source>faststrikesword5.png</Source>
@@ -1289,7 +1289,34 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\faststrikesword5.xnb</Output>
-      <Time>2015-05-23T18:26:30.0847499+02:00</Time>
+      <Time>2015-05-23T19:01:03.137675+02:00</Time>
+    </Item>
+    <Item>
+      <Source>faststrikesword4.1.png</Source>
+      <Name>faststrikesword4.1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\faststrikesword4.1.xnb</Output>
+      <Time>2015-05-23T19:03:24.9735349+02:00</Time>
+    </Item>
+    <Item>
+      <Source>faststrikesword6.png</Source>
+      <Name>faststrikesword6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\faststrikesword6.xnb</Output>
+      <Time>2015-05-23T19:12:15.5698335+02:00</Time>
+    </Item>
+    <Item>
+      <Source>faststrikesword7.png</Source>
+      <Name>faststrikesword7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\faststrikesword7.xnb</Output>
+      <Time>2015-05-23T19:20:53.8997029+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
