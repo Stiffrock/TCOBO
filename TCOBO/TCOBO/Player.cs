@@ -122,7 +122,7 @@ namespace TCOBO
                 manaTimer = manaTimer.Subtract(gameTime.ElapsedGameTime);
             else
             {
-                MANA += 1;
+                MANA += Int/10;
                 if (MANA > Int)
                     MANA = Int;
                 manaTimer = TimeSpan.FromSeconds(manaTicDelay);
