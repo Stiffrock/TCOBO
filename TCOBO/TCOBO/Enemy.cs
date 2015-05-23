@@ -297,7 +297,7 @@ namespace TCOBO
                         ((int)pos.Y - 4) - hitBox.Height / 2, hitBox.Width, 4), Color.Red); // ritar över en röd bar över den gröna
                 }
                 spriteBatch.Draw(TextureManager.blankHpBar, new Rectangle((int)pos.X - hitBox.Width / 2,
-                    ((int)pos.Y - 4) - hitBox.Height / 2, (int)(hitBox.Width * percentLife), 4), Color.Green);
+                    ((int)pos.Y - 4) - hitBox.Height / 2, (int)(hitBox.Width * percentLife), 4), Color.Black);
             }
 
 
