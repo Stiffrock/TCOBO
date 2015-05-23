@@ -139,3 +139,7 @@ Content\RunningSound.xnb
 Content\BouncingSound.xnb
 Content\HitSound.xnb
 Content\Bloodsplat.xnb
+<<<<<<< HEAD
+=======
+Content\blood4.xnb
+>>>>>>> origin/Stoffe
