@@ -140,3 +140,4 @@ Content\BouncingSound.xnb
 Content\HitSound.xnb
 Content\Bloodsplat.xnb
 Content\blood4.xnb
+Content\blood5.xnb
