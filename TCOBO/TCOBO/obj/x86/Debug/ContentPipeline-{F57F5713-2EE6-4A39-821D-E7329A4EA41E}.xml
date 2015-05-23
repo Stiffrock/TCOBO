@@ -952,13 +952,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-<<<<<<< HEAD
       <Output>C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire1.xnb</Output>
       <Time>2015-05-23T13:26:43.5332031+02:00</Time>
-=======
-      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire1.xnb</Output>
-      <Time>2015-05-22T21:31:46.0711583+02:00</Time>
->>>>>>> origin/Stoffe
     </Item>
     <Item>
       <Source>fire2.png</Source>
@@ -1067,6 +1062,24 @@
       <Options>None</Options>
       <Output>C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\yellowwall.xnb</Output>
       <Time>2015-05-23T13:26:43.6464843+02:00</Time>
+    </Item>
+    <Item>
+      <Source>blood.png</Source>
+      <Name>blood</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\blood.xnb</Output>
+      <Time>2015-05-23T15:35:06.4912109+02:00</Time>
+    </Item>
+    <Item>
+      <Source>blood3.png</Source>
+      <Name>blood3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\blood3.xnb</Output>
+      <Time>2015-05-23T15:35:06.4921875+02:00</Time>
     </Item>
     <Item>
       <Source>SpriteFont1.spritefont</Source>
@@ -1233,27 +1246,6 @@
       <Output>C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Bloodsplat.xnb</Output>
       <Time>2015-05-23T13:26:43.4052734+02:00</Time>
     </Item>
-<<<<<<< HEAD
-=======
-    <Item>
-      <Source>blood.png</Source>
-      <Name>blood</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\blood.xnb</Output>
-      <Time>2015-05-23T15:15:54.5191744+02:00</Time>
-    </Item>
-    <Item>
-      <Source>blood3.png</Source>
-      <Name>blood3</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\blood3.xnb</Output>
-      <Time>2015-05-23T15:22:18.8648623+02:00</Time>
-    </Item>
->>>>>>> origin/Stoffe
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{F57F5713-2EE6-4A39-821D-E7329A4EA41E}</ContentProjectGUID>
