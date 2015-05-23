@@ -85,9 +85,9 @@ namespace TCOBO
                     }
                 }
 
-                if (time >= deltaTime2 && textCount != 0 && yposList.Count != 0 && xposList.Count != 0)
+                if (time >= deltaTime2 && textCount != 0 && yposList.Count >= 0 && xposList.Count >= 0)
                 {
-                    for (int i = 0; i < textCount; i++)
+                    for (int i = 0; i < xposList.Count; i++)
                     {
                         xposList.Remove(xposList[i]);
                         yposList.Remove(yposList[i]);
@@ -103,10 +103,10 @@ namespace TCOBO
 
         private void textposUpdate()
         {
-            if (yposList.Count != 0)
+           if (yposList.Count != 0)
             {
                 float textspeed;
-                for (int i = 0; i < 40; i++)
+                for (int i = 0; i < yposList.Count; i++)
                 {
                     textspeed = rnd.Next(25, 50);
                     yposList[i] += textspeed;

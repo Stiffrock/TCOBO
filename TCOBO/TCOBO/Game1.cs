@@ -54,10 +54,12 @@ namespace TCOBO
         {
             if (main.loss)
             {
+                main.loss = false;
                 main = null;
                 menuManager = null;
                 menuManager = new MenuManager(this);
                 main = new Main(this);
+               
             }
 
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
