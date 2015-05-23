@@ -24,6 +24,7 @@ namespace TCOBO
         private Camera2D camera;        
         private SpriteFont spriteFont;
         private Color swordColor;
+        private Random rnd = new Random();
         private Color newSwordColor;
         private KeyMouseReader krm;
         private List<Enemy> enemyList;
@@ -50,16 +51,14 @@ namespace TCOBO
             camera = new Camera2D(game1.GraphicsDevice.Viewport, player);        
             enemyList = new List<Enemy>();
             inrangeList = new List<Enemy>();
-            scene1 = new Scene(this, scenePlayer);
-                      
+            scene1 = new Scene(this, scenePlayer);                      
             attack = new Attack(player, game1.Content);
             testWorld.ReadLevel("map01");
             testWorld.SetMap();                 
             spriteFont = game1.Content.Load<SpriteFont>("SpriteFont1");
             board = new PlayerPanel(game1.Content, new Vector2(950, 0), spriteFont);
             soundManager.LoadContent(game1.Content);
-            MediaPlayer.Play(soundManager.bgMusic);
-           // spawnEnemies(); 
+            MediaPlayer.Play(soundManager.bgMusic); 
 
         }
 
@@ -71,10 +70,14 @@ namespace TCOBO
             enemyList.Add(new Enemy(new Vector2(500, 300), game1.Content, 1, 10, 300, 0, 10, 1));
             enemyList.Add(new Enemy(new Vector2(580, 300), game1.Content, 1, 10, 10, 0, 10, 1));
 
-            for (int i = 0; i < testWorld.enemyposList.Count; i++)
+            for (int i = 0; i < testWorld.enemyposList.Count; i++)          // Kan basicly helt ställa in svårighetsgrad här
             {
-                enemyList.Add(new Enemy(testWorld.enemyposList[i], game1.Content, 1, 10, 10, 0, 10, 1));
-                i += 50;
+                int Str = rnd.Next(1, 10);
+                int Dex = rnd.Next(10, 30);
+                int Vit = rnd.Next(1, 20);
+                int Exp = Vit;
+                enemyList.Add(new Enemy(testWorld.enemyposList[i], game1.Content, Str, Dex, Vit, 0, Exp, 1));
+                i += 50; // Bestämmer hur många fiender som spawnar
             }
 
      
