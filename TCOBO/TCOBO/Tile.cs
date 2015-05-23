@@ -98,6 +98,12 @@ namespace TCOBO
                 collisionEnabled = true;
                 image = TextureManager.YellowWall;
             }
+            else if (typeOfTile == "greenwall")
+            {
+                //image = TextureManager.road1;
+                collisionEnabled = true;
+                image = TextureManager.GreenWall;
+            }
         }
 
 

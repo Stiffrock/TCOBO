@@ -13,7 +13,7 @@ namespace TCOBO
     {
         private Game1 game1;
         private Sword standardSword, goldenSword, blueSword, redSword;
-        public Key redKey, blueKey, yellowKey;
+        public Key redKey, blueKey, yellowKey, greenKey;
         public Armor standardArmor;
         private Inventory inventory;
         private GraphicsDevice grahpics;
@@ -43,8 +43,9 @@ namespace TCOBO
             goldenSword = new Sword(100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 60),"The super duper golden\nmega rod of destruction");
             standardArmor = new Armor(5, TextureManager.standardArmor, new Vector2(-3440, 1592),"Standard armor");
             redKey = new Key(TextureManager.RedKey, new Vector2(-2550, 190), "Red Key");
-            blueKey = new Key(TextureManager.BlueKey, new Vector2(-200, 20), "Blue Key");
-            yellowKey = new Key(TextureManager.YellowKey, new Vector2(-200, 40), "Yellow Key");
+            blueKey = new Key(TextureManager.BlueKey, new Vector2(5922, -3537), "Blue Key");
+            yellowKey = new Key(TextureManager.YellowKey, new Vector2(5327, -2133), "Yellow Key");
+            greenKey = new Key(TextureManager.GreenKey, new Vector2(3975, 270), "Green Key");
             inventory = new Inventory(game1.Content, new Vector2(200, 200));  
             ItemList.Add(standardSword);
             ItemList.Add(redSword);
@@ -54,6 +55,7 @@ namespace TCOBO
             ItemList.Add(redKey);
             ItemList.Add(blueKey);
             ItemList.Add(yellowKey);
+            ItemList.Add(greenKey);
             PickedUp = false;
             Showstats = false;
             IsInventoryshown = false;

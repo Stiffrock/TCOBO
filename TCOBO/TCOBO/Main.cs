@@ -70,8 +70,9 @@ namespace TCOBO
 
         public void spawnEnemies()
         {
-            enemyList.Add(new Enemy(new Vector2(-200, -1300), game1.Content, 55, 1, 300, 0, 10, 1)); // Main boss
-            enemyList.Add(new Enemy(new Vector2(-2240, 500), game1.Content, 25, 1, 150, 0, 10, 1)); // Red Key boss
+            enemyList.Add(new Enemy(new Vector2(-200, -1300), game1.Content, 65, 1, 250, 0, 200, 0)); // Main boss
+            enemyList.Add(new Enemy(new Vector2(-2240, 500), game1.Content, 25, 1, 200, 0, 150, 0)); // Red Key boss
+            enemyList.Add(new Enemy(new Vector2(3652, 357), game1.Content, 35, 1, 100, 0, 150, 0)); // Green Key boss
 
             for (int i = 0; i < testWorld.enemyposList.Count; i++)          // Kan basicly helt ställa in svårighetsgrad här
             {
@@ -271,6 +272,8 @@ namespace TCOBO
                     player.hasBlueKey = true;
                 else if (item.info == "Yellow Key")
                     player.hasYellowKey = true;
+                else if (item.info == "Green Key")
+                    player.hasGreenKey = true;
 
 
                 if (!item.bagRange && KeyMouseReader.LeftClick() && !item.equip)
@@ -281,6 +284,8 @@ namespace TCOBO
                         player.hasBlueKey = false;
                     else if (item.info == "Yellow Key")
                         player.hasYellowKey = false;
+                    else if (item.info == "Green Key")
+                        player.hasGreenKey = false;
                     item.hand = false;
                     itemManager.PickedUp = false;
                     item.pos = new Vector2(player.pos.X + 50, player.pos.Y);

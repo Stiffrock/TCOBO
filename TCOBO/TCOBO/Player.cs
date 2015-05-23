@@ -43,9 +43,9 @@ namespace TCOBO
         public float size;
         public bool healing = false, scene1 = false, dead = false;
         public int MANA;
-        float manaTicDelay = 0.5f;
+        float manaTicDelay = 1.5f;
         TimeSpan manaTimer;
-        public bool hasRedKey, hasBlueKey, hasYellowKey;
+        public bool hasRedKey, hasBlueKey, hasYellowKey, hasGreenKey;
         public Vector2 strikeVelocity;
         public bool shieldUp = false;
         public Rectangle drawRec;
@@ -425,12 +425,16 @@ namespace TCOBO
                     t.collisionEnabled = false;
                 else if (t.typeOfTile == "yellowwall" && hasYellowKey == true)
                     t.collisionEnabled = false;
+                else if (t.typeOfTile == "greenwall" && hasGreenKey == true)
+                    t.collisionEnabled = false;
 
                 if (t.typeOfTile == "redwall" && hasRedKey == false)
                     t.collisionEnabled = true;
                 else if (t.typeOfTile == "bluewall" && hasBlueKey == false)
                     t.collisionEnabled = true;
                 else if (t.typeOfTile == "yellowwall" && hasYellowKey == false)
+                    t.collisionEnabled = true;
+                else if (t.typeOfTile == "greenwall" && hasGreenKey == false)
                     t.collisionEnabled = true;
 
                 if (t.collisionEnabled)
@@ -444,7 +448,7 @@ namespace TCOBO
                             velocity.X = 10;
                         velocity.Y = velocity.Y * 1.1f;
                         break;
-                        
+
                     }
                     if (t.bounds.Intersects(boundsRight))
                     {
@@ -456,7 +460,7 @@ namespace TCOBO
                         velocity.Y = velocity.Y * 1.1f;
                         break;
                     }
-                    if(t.bounds.Intersects(boundsBot))
+                    if (t.bounds.Intersects(boundsBot))
                     {
                         soundManager.bounceSound.Play();
                         if (velocity.Y < 0)
@@ -477,7 +481,6 @@ namespace TCOBO
                         velocity.X = velocity.X * 1.1f;
                         break;
                     }
-                    
                 }
             }
         }
@@ -590,7 +593,7 @@ namespace TCOBO
             //Show attackHitBox
            // spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
 
-            //spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
+            //spriteBatch.Draw(TextureManager.bricktile1, hitBox, Color.Black);
 
 
 

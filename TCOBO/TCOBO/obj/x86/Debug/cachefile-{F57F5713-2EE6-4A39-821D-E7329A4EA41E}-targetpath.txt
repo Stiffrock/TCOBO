@@ -147,3 +147,5 @@ Content\020.xnb
 faststrikesword3.xnb
 faststrikesword4.xnb
 faststrikesword5.xnb
+Content\greenkey.xnb
+Content\greenwall.xnb

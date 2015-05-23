@@ -1318,6 +1318,24 @@
       <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\faststrikesword5.xnb</Output>
       <Time>2015-05-23T18:32:39.0263671+02:00</Time>
     </Item>
+    <Item>
+      <Source>greenkey.png</Source>
+      <Name>greenkey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\greenkey.xnb</Output>
+      <Time>2015-05-23T20:49:32.9960937+02:00</Time>
+    </Item>
+    <Item>
+      <Source>greenwall.png</Source>
+      <Name>greenwall</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\greenwall.xnb</Output>
+      <Time>2015-05-23T20:49:33.0029296+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{F57F5713-2EE6-4A39-821D-E7329A4EA41E}</ContentProjectGUID>
