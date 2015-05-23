@@ -31,20 +31,21 @@ namespace TCOBO
         private Tuple<int, int, int, int, int, int> playerStats;
         private Tuple<float, float, float> effectiveStats;
         private bool move, moveUp, moveDown, moveLeft, moveRight, strike, strike2;
-        private List<Texture2D> playerTex = new List<Texture2D>();
+        public List<Texture2D> playerTex = new List<Texture2D>();
         private List<Texture2D> swordTex = new List<Texture2D>();
         private List<Texture2D> heal = new List<Texture2D>();
         Texture2D strikeTexSword1, strikeTexPlayer1, strikeTexSword2, strikeTexPlayer2, deathTex;
         private List<float> levelList = new List<float>();
         public Rectangle boundsTop, boundsBot, boundsLeft, boundsRight, hitBox;
-        float attackspeed = 5f;
+        public float attackspeed = 5f;
         float attackProgress = 0f;
         public float playerSize = 36, basePlayerSize = 36;
         public float size;
-        bool healing = false;
+        public bool healing = false, scene1 = false, dead = false;
         public int MANA;
         float manaTicDelay = 10f;
         TimeSpan manaTimer;
+        public bool hasRedKey, hasBlueKey, hasYellowKey;
         public Vector2 strikeVelocity;
 
         SoundManager soundManager = new SoundManager();
@@ -73,7 +74,7 @@ namespace TCOBO
             srcRec = new Rectangle(0, 0, 100, 100);
             origin = new Vector2(80, 80);
             color = new Color(255, 30, 30, 255);
-            size = Vit / 10;
+            size = 1 + ((Vit-10) / 30);
             HP = Vit * 5;
             MANA = Int;
             LoadPlayerTex();
@@ -102,7 +103,6 @@ namespace TCOBO
                     Level += 1;
                     newStat += 5;
                     Exp = 0;
-                    Console.WriteLine("Level   "+  Level);
 
                     soundManager.levelupSound.Play();
 
@@ -131,7 +131,6 @@ namespace TCOBO
             if (KeyMouseReader.KeyPressed(Keys.D5))
             {
                 Exp += 5;
-                Console.WriteLine("Exp   "+Exp);
             }
         }
 
@@ -329,6 +328,7 @@ namespace TCOBO
             moveUp = false;
             moveDown = false;
             move = false;
+
             if (Keyboard.GetState().IsKeyDown(Keys.D))
             {
                 move = true;
@@ -350,6 +350,8 @@ namespace TCOBO
                 move = true;
                 moveDown = true;
             }
+                
+            
         }
 
         private void handleAction(GameTime gameTime)
@@ -391,23 +393,36 @@ namespace TCOBO
          {
             playerSize = basePlayerSize * size;
             hitBox = new Rectangle((int)(playerPos.X - playerSize / 2 + playerSize / 10), (int)(playerPos.Y - playerSize / 2 + playerSize / 10), (int)(playerSize - playerSize / 5), (int)(playerSize - playerSize / 5));
-            boundsTop = new Rectangle((int)(playerPos.X - playerSize/2 + playerSize / 10), (int)(playerPos.Y - playerSize/2), (int)(playerSize - (playerSize / 5)), (int)(playerSize / 10));
-            boundsBot = new Rectangle((int)(playerPos.X - playerSize/2 + playerSize / 10), (int)((playerPos.Y + playerSize / 2 - playerSize / 10)), (int)(playerSize - (playerSize / 5)), (int)(playerSize / 10));
-            boundsLeft = new Rectangle((int)(playerPos.X - playerSize / 2), (int)(playerPos.Y - playerSize / 2 + playerSize / 10), (int)(playerSize / 10), (int)(playerSize - playerSize / 5));
-            boundsRight = new Rectangle((int)(playerPos.X + playerSize / 2 - playerSize / 10), (int)(playerPos.Y - playerSize / 2 + playerSize / 10), (int)(playerSize / 10), (int)(playerSize - playerSize / 5));
+
+            boundsTop = new Rectangle((int)(playerPos.X - playerSize/2 + playerSize / 5), (int)(playerPos.Y - playerSize/2 + playerSize/10), (int)(playerSize - (playerSize / 2.5f)), (int)(playerSize / 8));
+            boundsBot = new Rectangle((int)(playerPos.X - playerSize/2 + playerSize / 5), (int)((playerPos.Y + playerSize / 2 - playerSize / 4f)), (int)(playerSize - (playerSize / 2.5f)), (int)(playerSize / 8));
+            boundsLeft = new Rectangle((int)(playerPos.X - playerSize / 2 + playerSize / 8), (int)(playerPos.Y - playerSize / 2 + playerSize / 4.5f), (int)(playerSize / 8), (int)(playerSize - playerSize / 2));
+            boundsRight = new Rectangle((int)(playerPos.X + playerSize / 2 - playerSize / 4), (int)(playerPos.Y - playerSize / 2 + playerSize / 4.5f), (int)(playerSize / 8), (int)(playerSize - playerSize / 2));
             foreach (Tile t in tiles)
             {
+                if (t.typeOfTile == "redwall" && hasRedKey == true)
+                    t.collisionEnabled = false;
+                else if (t.typeOfTile == "bluewall" && hasBlueKey == true)
+                    t.collisionEnabled = false;
+                else if (t.typeOfTile == "yellowwall" && hasYellowKey == true)
+                    t.collisionEnabled = false;
+
+                if (t.typeOfTile == "redwall" && hasRedKey == false)
+                    t.collisionEnabled = true;
+                else if (t.typeOfTile == "bluewall" && hasBlueKey == false)
+                    t.collisionEnabled = true;
+                else if (t.typeOfTile == "yellowwall" && hasYellowKey == false)
+                    t.collisionEnabled = true;
+
                 if (t.collisionEnabled)
                 {
-                    
-
                     if (t.bounds.Intersects(boundsLeft))
                     {
                         soundManager.bounceSound.Play();
                         if (velocity.X < 0)
-                            velocity.X = (velocity.X * -2) + max_speed / 10;
+                            velocity.X = (velocity.X * -0.8f) + 10;
                         else
-                            velocity.X = max_speed / 10;
+                            velocity.X = 10;
                         velocity.Y = velocity.Y * 1.1f;
                         break;
                         
@@ -416,19 +431,19 @@ namespace TCOBO
                     {
                         soundManager.bounceSound.Play();
                         if (velocity.X < 0)
-                            velocity.X = -max_speed / 10;
+                            velocity.X = -10;
                         else
-                            velocity.X = (velocity.X * -2) - max_speed / 10;
+                            velocity.X = (velocity.X * -0.8f) - 10;
                         velocity.Y = velocity.Y * 1.1f;
                         break;
                     }
                     if(t.bounds.Intersects(boundsBot))
                     {
                         soundManager.bounceSound.Play();
-                        if (velocity.Y < 0) //om påväg uppåt
-                            velocity.Y = -max_speed / 10;
+                        if (velocity.Y < 0)
+                            velocity.Y = -10;
                         else
-                            velocity.Y = (velocity.Y * -2) - max_speed / 10;
+                            velocity.Y = (velocity.Y * -0.8f) - 10;
                         velocity.X = velocity.X * 1.1f;
                         break;
 
@@ -436,10 +451,10 @@ namespace TCOBO
                     if (t.bounds.Intersects(boundsTop))
                     {
                         soundManager.bounceSound.Play();
-                        if (velocity.Y < 0) //om påväg neråt
-                            velocity.Y = (velocity.Y * -2) + max_speed / 10;
+                        if (velocity.Y < 0)
+                            velocity.Y = (velocity.Y * -0.8f) + 10;
                         else
-                            velocity.Y = max_speed / 10;
+                            velocity.Y = 10;
                         velocity.X = velocity.X * 1.1f;
                         break;
                     }
@@ -462,8 +477,6 @@ namespace TCOBO
             }
         }
 
-   
-
         //public void PlaySound()
         //{
         //    MediaPlayer.Play(soundManager.deathSound);
@@ -473,12 +486,8 @@ namespace TCOBO
 
         public override void Update(GameTime gameTime)
         {
-
+            Console.WriteLine(playerPos);
             effectiveStats = Tuple.Create<float, float, float>(mDamage, MANA, HP);
-
-      
-
-
             if (HP > 0)
             {
                 if (Keyboard.GetState().IsKeyDown(Keys.LeftAlt))
@@ -488,7 +497,7 @@ namespace TCOBO
                 else isHpBarVisible = false;
 
                 float tempVit = Vit;
-                size = tempVit / 10;
+                size = 1 + ((tempVit - 10) / 30);
                 stopMove();
                 HandleLevelUp();
                 HandlePlayerStats(gameTime);
@@ -502,10 +511,7 @@ namespace TCOBO
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-
-           
-           
-      
+    
             //spriteBatch.Draw(TextureManager.sand1, boundingBox, Color.Black);
             if (HP > 0)
             {
@@ -539,6 +545,7 @@ namespace TCOBO
             }
             else
             {
+                dead = true;
                 MediaPlayer.Play(soundManager.deathSound);
                 spriteBatch.Draw(deathTex, playerPos, null, Color.White, 0, origin, size, SpriteEffects.None, 0f);
             }
@@ -553,7 +560,7 @@ namespace TCOBO
                         ((int)playerPos.Y - 4) - hitBox.Height / 2, hitBox.Width, 4), Color.Red); // ritar över en röd bar över den gröna
                 }
                 spriteBatch.Draw(TextureManager.blankHpBar, new Rectangle((int)playerPos.X - hitBox.Width / 2,
-                    ((int)playerPos.Y - 4) - hitBox.Height / 2, (int)(hitBox.Width * percentLife), 4), Color.Green);
+                    ((int)playerPos.Y - 4) - hitBox.Height / 2, (int)(hitBox.Width * percentLife), 4), Color.Black);
             }
             
 
@@ -564,12 +571,12 @@ namespace TCOBO
 
             //spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
 
-            
 
-              //spriteBatch.Draw(TextureManager.sand1, boundsTop, Color.Black);
-              //spriteBatch.Draw(TextureManager.sand1, boundsBot, Color.Black);
-              //spriteBatch.Draw(TextureManager.sand1, boundsLeft, Color.Black);
-              //spriteBatch.Draw(TextureManager.sand1, boundsRight, Color.Black);
+
+            //spriteBatch.Draw(TextureManager.sand1, boundsTop, Color.Black);
+            //spriteBatch.Draw(TextureManager.sand1, boundsBot, Color.Black);
+            //spriteBatch.Draw(TextureManager.sand1, boundsLeft, Color.Black);
+            //spriteBatch.Draw(TextureManager.sand1, boundsRight, Color.Black);
         }
     }
 }

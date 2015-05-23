@@ -18,41 +18,49 @@ namespace TCOBO
         private ItemManager itemManager;
         private GraphicsDevice graphics;
         public Player player;
+        public Player scenePlayer;
+        private Scene scene1;
         private Attack attack;
         private Camera2D camera;        
         private SpriteFont spriteFont;
         private Color swordColor;
+        private Random rnd = new Random();
         private Color newSwordColor;
         private KeyMouseReader krm;
         private List<Enemy> enemyList;
         private List<Enemy> inrangeList;
         private Vector2 aimVector;
         private PlayerPanel board;
-        private int row = 0, itemcount = 0;
+        private int row = 0, itemcount = 0, i = 0;
         private Tuple<int, int, int, int, int, int> playerStats;
         private Tuple<float, float, float> effectiveStats;
+        private float deltaTime = 8000;
         SoundManager soundManager = new SoundManager();
-
+        private bool cutScene = true, enemiesSpawned = false;
+        public bool loss = false;
+        private string activeTooltip;
+        private List<string> ttList = new List<string>();
         //private Song statseffect;
         
         public Main(Game1 game1)
         {
             this.game1 = game1;
+            
             graphics = game1.GraphicsDevice;
             krm = new KeyMouseReader();
             itemManager = new ItemManager(game1);
             player = new Player(game1.Content);
+            scenePlayer = new Player(game1.Content);
             testWorld = new TestWorld(game1.Content);
             camera = new Camera2D(game1.GraphicsDevice.Viewport, player);        
             enemyList = new List<Enemy>();
             inrangeList = new List<Enemy>();
-            spawnEnemies();           
+            scene1 = new Scene(this, scenePlayer);                      
             attack = new Attack(player, game1.Content);
             testWorld.ReadLevel("map01");
             testWorld.SetMap();                 
             spriteFont = game1.Content.Load<SpriteFont>("SpriteFont1");
             board = new PlayerPanel(game1.Content, new Vector2(950, 0), spriteFont);
-
             soundManager.LoadContent(game1.Content);
             MediaPlayer.Play(soundManager.bgMusic);
 
@@ -60,25 +68,19 @@ namespace TCOBO
 
         public void spawnEnemies()
         {
-            //Enemy STR, DEX, VIT, INT, EXPDROP, SPAWN (0 = ingen spawn)
-            for (int i = 0; i < 5; i++)
-            {
-                enemyList.Add(new Enemy(new Vector2(500 - i * 100, 300), game1.Content, 1, 50, 10, 0, 10, 1));
-            }
 
-            for (int i = 0; i < 5; i++)
-            {
-                enemyList.Add(new Enemy(new Vector2(-300, 0-i*100), game1.Content, 1, 50, 10, 0, 10, 1));
-            }
+            enemyList.Add(new Enemy(new Vector2(-100, -1430), game1.Content, 1, 10, 300, 0, 10, 1)); // Main boss
 
-            for (int i = 0; i < 5; i++)
+
+            for (int i = 0; i < testWorld.enemyposList.Count; i++)          // Kan basicly helt ställa in svårighetsgrad här
             {
-                enemyList.Add(new Enemy(new Vector2(-300+i*100, -1000), game1.Content, 1, 50, 10, 0, 10, 1));
+                int Str = rnd.Next(1, 5);
+                int Dex = rnd.Next(10, 30);
+                int Vit = rnd.Next(5, 30); // Måste va över 5
+                int Exp = Vit;
+                enemyList.Add(new Enemy(testWorld.enemyposList[i], game1.Content, Str, Dex, Vit, 0, Exp, 1));
+                i += 50; // Bestämmer hur många fiender som spawnar, ju mindre värde desto tätare spawnar som
             }
-           
-          
-            enemyList.Add(new Enemy(new Vector2(-2000, 300), game1.Content, 5, -25, 75, 0, 500, 720));
-            enemyList.Add(new Enemy(new Vector2(-2794, -4474), game1.Content, 20, 0, 125, 0, 3000, 0));
 
         }
       
@@ -104,6 +106,45 @@ namespace TCOBO
             double recX = (double)player.aimRec.X * 40 * player.size;
             double recY = (double)player.aimRec.Y * 40 * player.size;
             player.attackHitBox = new Rectangle((int)(player.playerPos.X + recX - 25 * player.size), (int)(player.playerPos.Y + recY - 25 * player.size), (int)(50*player.size), (int)(50*player.size));
+        }
+
+        public void handleLoss()
+        {
+            if (player.dead)
+            {
+                if (KeyMouseReader.LeftClick())
+                {
+                    loss = true; 
+                }
+              
+            }
+        }
+
+        public void handleTooltip(SpriteBatch spriteBatch)
+        {
+            string tooltip1 = "Tip: Walk over items to pick them up, press I to enter Inventory and Right click on item to equip it.";
+            string tooltip2 = "Tip: Hold ALT to show HP bars";
+            string tooltip3 = "Tip: Press Q to use HEAL spell";
+            string tooltip4 = "Tip: You will level up by killing enemies, this will give you points that you can distribute in your inventorys statpanel";
+            string tooltip5 = "Tip: Find hidden keys to unlock doors";
+            ttList.Add(tooltip1);
+            ttList.Add(tooltip2);
+            ttList.Add(tooltip3);
+            ttList.Add(tooltip4);
+            ttList.Add(tooltip5);
+
+            if (deltaTime > 8000 && i != 6)
+            {
+                activeTooltip = ttList[i];
+                i += 1;
+                deltaTime = 0;
+            }
+
+            if (i < 6)
+            {
+                spriteBatch.DrawString(TextureManager.uitext, activeTooltip, new Vector2(300, 200), Color.Silver);
+            }
+            
         }
 
 
@@ -137,6 +178,7 @@ namespace TCOBO
                         player.Dex += 1;
                         player.speed += 1;
                         player.max_speed += 3;
+                        player.attackspeed += 0.1f;
                         player.newStat -= 1;
                         soundManager.statSound.Play();
                     }
@@ -194,10 +236,9 @@ namespace TCOBO
             foreach (Item item in itemManager.ItemList)
             {
                 float offsetX = item.itemTex.Width/5;
-                float offsetY = item.itemTex.Height/5;
-           
+                float offsetY = item.itemTex.Height/5;          
        
-                if (player.attackHitBox.Intersects(item.hitBox) && KeyMouseReader.LeftClick())
+                if (player.hitBox.Intersects(item.hitBox))
                 {
                     for (int i = 0; i < itemManager.GetGrid().grid.GetLength(1); i++)
                     {
@@ -205,8 +246,7 @@ namespace TCOBO
                         {
                             if (itemManager.GetGrid().grid[j, i].hasItem == true)
                             {
-                                j++;
-                                
+                                j++;                                
                             }
                             else
                             {
@@ -222,21 +262,35 @@ namespace TCOBO
                     }                
                 }
             }
-            foreach (Item item in itemManager.InventoryList)
+
+            
+
+            foreach (Item item in itemManager.InventoryList)   
             {
+                if (item.info == "Red Key")
+                    player.hasRedKey = true;
+                else if (item.info == "Blue Key")
+                    player.hasBlueKey = true;
+                else if (item.info == "Yellow Key")
+                    player.hasYellowKey = true;
+
+
                 if (!item.bagRange && KeyMouseReader.LeftClick() && !item.equip)
                 {
-                   
+                    if (item.info == "Red Key")
+                        player.hasRedKey = false;
+                    else if (item.info == "Blue Key")
+                        player.hasBlueKey = false;
+                    else if (item.info == "Yellow Key")
+                        player.hasYellowKey = false;
                     item.hand = false;
-                    item.pos = player.playerPos;
+                    itemManager.PickedUp = false;
+                    item.pos = new Vector2(player.playerPos.X + 50, player.playerPos.Y);
                     itemManager.ItemList.Add(item);
                     itemManager.InventoryList.Remove(item);                   
                     break;
-                }
-            }
-
-
-       
+                }  
+            }      
         }
 
         public void detectEquip()
@@ -315,27 +369,41 @@ namespace TCOBO
         }
         public void Update(GameTime gameTime)
         {
-            detectEquip();
-            detectItem();
-            ClickStats();
-            itemManager.Update(gameTime);
-            krm.Update();
-            attack.Update(gameTime);
-            player.Update(gameTime);
-            player.Collision(gameTime, testWorld.tiles);
-            detectEnemy();
-            Rotation();
-            playerStats = player.GetPlayerStats();
-            effectiveStats = player.GetEffectiveStats();
-            board.Update(playerStats, effectiveStats);
-            camera.Update(gameTime);
-            Collision();         
-            foreach (Enemy e in enemyList)
+
+            if (scene1.sceneOver)
             {
-             e.UpdateEnemy(gameTime, player, testWorld.tiles);
+                cutScene = false;
             }
-     
-            
+            if (!cutScene)
+            {
+                deltaTime += gameTime.ElapsedGameTime.Milliseconds;
+                handleLoss();
+                detectEquip();
+                detectItem();
+                ClickStats();
+                itemManager.Update(gameTime);
+                krm.Update();
+                attack.Update(gameTime);
+                player.Update(gameTime);
+                player.Collision(gameTime, testWorld.tiles);
+                detectEnemy();
+                Rotation();
+                playerStats = player.GetPlayerStats();
+                effectiveStats = player.GetEffectiveStats();
+                board.Update(playerStats, effectiveStats);
+                camera.Update(gameTime);
+                Collision();
+                foreach (Enemy e in enemyList)
+                {
+                    e.UpdateEnemy(gameTime, player, testWorld.tiles);
+                }               
+            }
+            else
+            {
+                krm.Update();
+                player.scene1 = true;
+                scene1.Update(gameTime);             
+            }            
         }
         public void Collision()
         {
@@ -347,12 +415,14 @@ namespace TCOBO
             float radius2;
             foreach (Enemy p in enemyList)
             {
-                if (p.health < 0)
-                    break;
+                if (p.health <= 0)
+                    continue;
                 foreach (Enemy p2 in enemyList)
                 {
                     if (p == p2)
                         break;
+                    if (p2.health <= 0)
+                        continue;
                     x1 = p.pos.X;
                     y1 = p.pos.Y;
                     x2 = p2.pos.X;
@@ -392,25 +462,56 @@ namespace TCOBO
         }
 
         public void Draw(SpriteBatch spriteBatch)
-        {     
-            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null,
+        {
+            if (!cutScene)
+            {
+                spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null,
                 camera.transform);
-            testWorld.Draw(spriteBatch);
-          
-            foreach (Enemy e in enemyList)
-            {
-                e.Draw(spriteBatch);
-            }      
-            foreach (Item item in itemManager.ItemList)
-            {
-                item.Draw(spriteBatch);
+                testWorld.Draw(spriteBatch);
+
+         
+                foreach (Enemy e in enemyList)
+                {
+                    e.DrawBlood(spriteBatch);
+                }
+                foreach (Enemy e in enemyList)
+                {
+                    e.Draw(spriteBatch);
+                }
+                foreach (Item item in itemManager.ItemList)
+                {
+                    item.Draw(spriteBatch);
+                }
+                player.Draw(spriteBatch);
+
+                testWorld.DrawDoodad(spriteBatch);
+                if (player.dead)
+                {
+                    spriteBatch.DrawString(TextureManager.uitext, "You are dead\nClick to restart\nPathetic...", new Vector2(player.playerPos.X - 50, player.playerPos.Y - 100), Color.White);
+                }
+                spriteBatch.End();
+                spriteBatch.Begin();
+                handleTooltip(spriteBatch);
+         
+                board.Draw(spriteBatch);
+                itemManager.Draw(spriteBatch);
+                if (!enemiesSpawned)
+                {
+                    spawnEnemies();
+                    enemiesSpawned = true;
+                    testWorld.initial = false;
+                }
+           
+
+                
             }
-            player.Draw(spriteBatch);
-            testWorld.DrawDoodad(spriteBatch);
-            spriteBatch.End();
-            spriteBatch.Begin();
-            board.Draw(spriteBatch);
-            itemManager.Draw(spriteBatch);
+            else
+            {
+                spriteBatch.Begin();
+                scene1.Draw(spriteBatch);
+                spriteBatch.End();
+            }
+
         }
 
         }        

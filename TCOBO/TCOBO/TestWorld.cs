@@ -21,6 +21,11 @@ namespace TCOBO
         public List<Tile> tiles = new List<Tile>();
         public List<DooDads> dooDads = new List<DooDads>();
         public List<string> stringList = new List<string>();
+        public List<Vector2> enemyposList = new List<Vector2>();
+        public bool initial = true;
+
+
+   
 
         public TestWorld(ContentManager content)
         {
@@ -30,7 +35,12 @@ namespace TCOBO
         {
             foreach (Tile t in tiles)
             {
+                if (t.enemyTile && initial)
+                {
+                    enemyposList.Add(t.position);                   
+                }
                 t.Draw(spriteBatch);
+               
             }
 
         }
@@ -77,6 +87,8 @@ namespace TCOBO
                         {
                             dooDads.Add(new DooDads(typeoftile, new Microsoft.Xna.Framework.Vector2(float.Parse(pos_x), float.Parse(pos_y))));
                         }
+                        else
+                            tiles.Add(new Tile(typeoftile, new Microsoft.Xna.Framework.Vector2(float.Parse(pos_x), float.Parse(pos_y))));
                     }
                     else
                     tiles.Add(new Tile(typeoftile, new Microsoft.Xna.Framework.Vector2(float.Parse(pos_x), float.Parse(pos_y))));

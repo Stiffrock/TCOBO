@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TCOBO.Abilities" Collapsed="true">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abilities.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCOBO.Armor" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Armor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCOBO.Attack" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAACAAAAAEAAAAAABAQAAAAIAAAA=</HashCode>
+      <FileName>Attack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCOBO.Camera2D" Collapsed="true">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAQAAAAAAAAAAAAAAAAAAAEAAABAQAAAAAIAAA=</HashCode>
+      <FileName>Camera2D.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCOBO.DooDads" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAgAAABAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>DooDads.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCOBO.Enemy" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DAAXgEQBDIEAQoCABZCQAIABIEAAgQ2qAgQMCEAEEi4=</HashCode>
+      <FileName>Enemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCOBO.Game1" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQQEEAAAAAAAwAAAACAAAAAAAAAAAgAAAAAAAAAAAQ=</HashCode>
+      <FileName>Game1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCOBO.Inventory" Collapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BQQAAAEAEAIAAgAAAAAAAYAAAAAAAAIBAAAAAAAAAAA=</HashCode>
+      <FileName>Inventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCOBO.InventoryTile" Collapsed="true">
+    <Position X="8" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAgAAAAAAAIAAAAAAQAACAAAAAAAAAAA=</HashCode>
+      <FileName>InventoryTile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCOBO.Item" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAQAAAAAAAAgQgAAAAAIAAAAAAAgAAQAAAIABIAAA=</HashCode>
+      <FileName>Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCOBO.ItemManager" Collapsed="true">
+    <Position X="9.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIwwAAAQAAgAIgAAAACAwABADQkAAAACABBAAAQAAAA=</HashCode>
+      <FileName>ItemManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCOBO.KeyMouseReader" Collapsed="true">
+    <Position X="11.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBQCAAAAAAAAAAEAAAAAAAACAAAAAAAAAQAIAABAAAA=</HashCode>
+      <FileName>KeyMouseReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCOBO.Main" Collapsed="true">
+    <Position X="13.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BASAAAQAA4AAAoAAAGCIAAECFwgDAAiBIAAgEAAgAAA=</HashCode>
+      <FileName>Main.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCOBO.MenuManager" Collapsed="true">
+    <Position X="8" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQFEAAIYCEAAgACBAAAwAkEAQACAMAAQOwAACAAAgg=</HashCode>
+      <FileName>MenuManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCOBO.MovableObject" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAACAAAAAgAAAAAAAAEAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>MovableObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCOBO.Player" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DaQqgEUBDIkhQiSATZCRAEkAYEhAgQ2hhiQoCUQIEyQ=</HashCode>
+      <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCOBO.PlayerPanel" Collapsed="true">
+    <Position X="9.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BQQAAAWEoIAAggCAAKCAAAEAKgAAAABCAAACACAAAGA=</HashCode>
+      <FileName>PlayerPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCOBO.Program" Collapsed="true">
+    <Position X="11.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCOBO.SoundManager" Collapsed="true">
+    <Position X="13.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAIAAAAAAAAAICCAAAAAAAAAACwgAAAAQ=</HashCode>
+      <FileName>SoundManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCOBO.Sword" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sword.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCOBO.TestWorld" Collapsed="true">
+    <Position X="8" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAABAAQAAAgAAAAAAAIEACgAAAAEAAAgAAAAAAAA=</HashCode>
+      <FileName>TestWorld.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCOBO.TextureManager" Collapsed="true">
+    <Position X="9.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIgoDgAAEAAAKAAAAAEEAAAAAgAAAAAAgAJAAAAQAAY=</HashCode>
+      <FileName>TextureManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCOBO.Tile" Collapsed="true">
+    <Position X="11.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SAQAAAAAAQAAAgAAAAAAIAAAEAJAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Tile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

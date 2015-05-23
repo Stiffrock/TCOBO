@@ -947,6 +947,123 @@
       <Time>2015-05-19T13:14:55.6957153+02:00</Time>
     </Item>
     <Item>
+      <Source>fire1.png</Source>
+      <Name>fire1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire1.xnb</Output>
+      <Time>2015-05-22T21:31:46.0711583+02:00</Time>
+    </Item>
+    <Item>
+      <Source>fire2.png</Source>
+      <Name>fire2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire2.xnb</Output>
+      <Time>2015-05-22T21:31:46.0711583+02:00</Time>
+    </Item>
+    <Item>
+      <Source>fire3.png</Source>
+      <Name>fire3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire3.xnb</Output>
+      <Time>2015-05-22T21:31:46.0721596+02:00</Time>
+    </Item>
+    <Item>
+      <Source>fire4.png</Source>
+      <Name>fire4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire4.xnb</Output>
+      <Time>2015-05-22T21:31:46.0731607+02:00</Time>
+    </Item>
+    <Item>
+      <Source>fire5.png</Source>
+      <Name>fire5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire5.xnb</Output>
+      <Time>2015-05-22T21:31:46.0731607+02:00</Time>
+    </Item>
+    <Item>
+      <Source>fire6.png</Source>
+      <Name>fire6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\fire6.xnb</Output>
+      <Time>2015-05-22T21:31:46.0741623+02:00</Time>
+    </Item>
+    <Item>
+      <Source>screenBlink.png</Source>
+      <Name>screenBlink</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\screenBlink.xnb</Output>
+      <Time>2015-05-22T23:17:52.0579315+02:00</Time>
+    </Item>
+    <Item>
+      <Source>redkey.png</Source>
+      <Name>redkey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\redkey.xnb</Output>
+      <Time>2015-05-23T09:22:36.3426345+02:00</Time>
+    </Item>
+    <Item>
+      <Source>redwall.png</Source>
+      <Name>redwall</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\redwall.xnb</Output>
+      <Time>2015-05-23T09:22:36.3426345+02:00</Time>
+    </Item>
+    <Item>
+      <Source>bluekey.png</Source>
+      <Name>bluekey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\bluekey.xnb</Output>
+      <Time>2015-05-23T09:22:36.3406327+02:00</Time>
+    </Item>
+    <Item>
+      <Source>bluewall.png</Source>
+      <Name>bluewall</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\bluewall.xnb</Output>
+      <Time>2015-05-23T09:22:36.3406327+02:00</Time>
+    </Item>
+    <Item>
+      <Source>yellowkey.png</Source>
+      <Name>yellowkey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\yellowkey.xnb</Output>
+      <Time>2015-05-23T09:22:36.3436355+02:00</Time>
+    </Item>
+    <Item>
+      <Source>yellowwall.png</Source>
+      <Name>yellowwall</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\yellowwall.xnb</Output>
+      <Time>2015-05-23T09:22:36.3436355+02:00</Time>
+    </Item>
+    <Item>
       <Source>SpriteFont1.spritefont</Source>
       <Name>SpriteFont1</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -1101,6 +1218,15 @@
       <Options>None</Options>
       <Output>C:\Users\Rasmus\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\HitSound.xnb</Output>
       <Time>2015-05-19T13:14:55.6487126+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Bloodsplat.wav</Source>
+      <Name>Bloodsplat</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Bloodsplat.xnb</Output>
+      <Time>2015-05-23T09:22:36.3386307+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

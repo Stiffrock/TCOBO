@@ -47,7 +47,7 @@ namespace TCOBO
             levelupSound = Content.Load<SoundEffect>("Level up sound");
             bounceSound = Content.Load<SoundEffect>("BouncingSound");
             runningSound = Content.Load<SoundEffect>("RunningSound");
-            hitSound = Content.Load<SoundEffect>("HitSound");
+            hitSound = Content.Load<SoundEffect>("bloodsplat");
 
             bgMusic = Content.Load<Song>("TCOBO musik");
             deathSound = Content.Load<Song>("Death sound");

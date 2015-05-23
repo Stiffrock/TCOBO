@@ -22,6 +22,7 @@ namespace TCOBO
         public float speed = 230f, max_speed = 130, slow_speed = 85, slow_speed_2 = 200;
         private bool move, moveUp, moveDown, moveLeft, moveRight, strike, strike2;
         private List<Texture2D> tex = new List<Texture2D>();
+        private List<Texture2D> blood = new List<Texture2D>();
         public Vector2 velocity, velocity2;
         private Vector2 acceleration;
         public float size = 1;
@@ -38,13 +39,14 @@ namespace TCOBO
         public float playerSize = 36, basePlayerSize = 36;
         public Rectangle boundsTop, boundsBot, boundsLeft, boundsRight;
         Texture2D strikeTexSword1, strikeTexPlayer1, strikeTexSword2, strikeTexPlayer2, deathTex;
+        bool drawBlood = false;
         public int
         Str = 10, Dex = 10,
         Vit = 10, Int = 10, health, expDrop;
         public bool dead = false;
         bool spawn = false;
         Random rnd;
-
+        List<ParticleEngine> particleEngine = new List<ParticleEngine>();
         Vector2 aimRec;
 
         SoundManager soundManager = new SoundManager();
@@ -58,6 +60,7 @@ namespace TCOBO
             this.Dex = Dex;
             speed += Dex;
             max_speed += Dex*2;
+            
             this.Vit = Vit;
             this.Int = Int;
             this.expDrop = expDrop;
@@ -73,6 +76,10 @@ namespace TCOBO
             for (int i = 1; i < 22; i++)
             {
                 tex.Add(content.Load<Texture2D>("player" + i));
+            }
+            for (int i = 1; i < 7; i++)
+            {
+                blood.Add(content.Load<Texture2D>("fire" + i));
             }
             strikeTexSword1 = content.Load<Texture2D>("faststrikeSword1");
             strikeTexPlayer1 = content.Load<Texture2D>("faststrikePlayer1");
@@ -170,7 +177,9 @@ namespace TCOBO
 
         public void UpdateEnemy(GameTime gameTime, Player player, List<Tile> tiles)
         {
-            if (health > 0)
+            UpdateParticle(gameTime);
+            float distance = Vector2.Distance(player.playerPos, pos);
+            if (health > 0 && distance < 400 + (Vit *10))
             {
                 if (Keyboard.GetState().IsKeyDown(Keys.LeftAlt))
                 {
@@ -180,7 +189,7 @@ namespace TCOBO
                     isHpBarVisible = false;
 
                 float tempVit = Vit;
-                size = tempVit / 10;
+                size = 1 + ((tempVit-10) / 30);
                 Fx = SpriteEffects.None;
                 //HuntPlayer(playerPos);
                 hitBox.X = (int)pos.X;
@@ -190,16 +199,17 @@ namespace TCOBO
                 HuntPlayer(player, gameTime);
                 handleAnimation(gameTime);
                 Collision(gameTime, tiles);
+                
             }
             else if (spawn == true)
             {
-                float distance = Vector2.Distance(player.playerPos, pos);
                 if (distance > 1000 + (Vit * 10))
                 {
                     if (spawn_timer.TotalSeconds > 0)
                         spawn_timer = spawn_timer.Subtract(gameTime.ElapsedGameTime);
                     else
                     {
+                        dead = false;
                         health = Vit * 5;
                         spawn_timer = TimeSpan.FromSeconds(spawnTime);
                     }
@@ -215,9 +225,46 @@ namespace TCOBO
             rotation = (float)Math.Atan2(yDistance, xDistance);
         }
 
+        public void StartParticleEffect()
+        {
+            ParticleEngine NPE = new ParticleEngine(blood, new Vector2(pos.X, pos.Y), Vit);
+            NPE.bloodTimer = TimeSpan.FromSeconds(NPE.bloodTime);
+            NPE.drawBlood = true;
+            particleEngine.Add(NPE);
+        }
+
+        public void UpdateParticle(GameTime gameTime)
+        {
+            foreach (ParticleEngine PE in particleEngine) {
+                if (PE.drawBlood)
+                {
+                    if (PE.bloodTimer.TotalSeconds > 0)
+                        PE.bloodTimer = PE.bloodTimer.Subtract(gameTime.ElapsedGameTime);
+                    else
+                    {
+                        PE.drawBlood = false;
+                        PE.bloodTimer = TimeSpan.FromSeconds(PE.bloodTime);
+                    }
+                    PE.EmitterLocation = new Vector2(pos.X, pos.Y);
+                    PE.Update();
+                }
+                else if (!PE.drawBlood)
+                {
+                    PE.KillParticles();
+                    if (PE.particles.Count == 0)
+                    {
+                        particleEngine.Remove(PE);
+                        break;
+                    }
+                       
+                }
+            }
+
+        }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+           
             if (health > 0)
             {
                 if (strike)
@@ -237,7 +284,7 @@ namespace TCOBO
             }
             else
             {
-                spriteBatch.Draw(deathTex, pos, null, Color.White, rotation, origin, size, SpriteEffects.None, 0f);
+                //spriteBatch.Draw(deathTex, pos, null, Color.White, rotation, origin, size, SpriteEffects.None, 0f);
             }
 
             if (isHpBarVisible && health > 0)
@@ -250,13 +297,21 @@ namespace TCOBO
                         ((int)pos.Y - 4) - hitBox.Height / 2, hitBox.Width, 4), Color.Red); // ritar över en röd bar över den gröna
                 }
                 spriteBatch.Draw(TextureManager.blankHpBar, new Rectangle((int)pos.X - hitBox.Width / 2,
-                    ((int)pos.Y - 4) - hitBox.Height / 2, (int)(hitBox.Width * percentLife), 4), Color.Green);
+                    ((int)pos.Y - 4) - hitBox.Height / 2, (int)(hitBox.Width * percentLife), 4), Color.Black);
             }
-           
 
 
             //spriteBatch.Draw(TextureManager.sand1, hitBox, Color.Black);
             //spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
+        }
+
+        public void DrawBlood(SpriteBatch sb)
+        {
+            foreach (ParticleEngine PE in particleEngine)
+            {
+                PE.Draw(sb);
+            }
+            
         }
 
         public void handleAnimation(GameTime gameTime)
