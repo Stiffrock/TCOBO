@@ -126,7 +126,10 @@ namespace TCOBO
                 attackHitBox = new Rectangle((int)(pos.X + recX - 25 * size), (int)(pos.Y + recY - 25 * size), (int)(50 * size), (int)(50 * size));
 
 
-
+                if (attack_timer.TotalSeconds > 0)
+                    attack_timer = attack_timer.Subtract(gameTime.ElapsedGameTime);
+                else
+                {
                     if (player.hitBox.Intersects(attackHitBox))
                     {
                         moveDown = false;
@@ -135,31 +138,27 @@ namespace TCOBO
                         moveRight = false;
                         move = false;
 
-                        //soundManager.hitSound.Play();
-
-                        if (attack_timer.TotalSeconds > 0)
-                            attack_timer = attack_timer.Subtract(gameTime.ElapsedGameTime);
-                        else
+                        if (!strike && !strike2)
                         {
-                            if (!strike && !strike2)
+                            strike = true;
+                            player.HP -= Str;
+                        }
+                        else if (strike)
+                        {
+
+                            if (1 == rnd.Next(1, 3))
                             {
-                                strike = true;
+                                strike2 = true;
                                 player.HP -= Str;
                             }
-                            else if (strike)
-                            {
 
-                                if (1 == rnd.Next(1, 4))
-                                {
-                                    strike2 = true;
-                                    player.HP -= Str;
-                                }
-                                    
-                                attack_seconds = rnd.Next(0, 5);
-                                attack_timer = TimeSpan.FromSeconds(attack_seconds);
-                            }
+                            attack_seconds = rnd.Next(0, 3);
+                            attack_timer = TimeSpan.FromSeconds(attack_seconds);
                         }
+                        //soundManager.hitSound.Play();
                     }
+                }
+
                 
 
                 
