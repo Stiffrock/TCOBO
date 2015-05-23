@@ -22,7 +22,7 @@ namespace TCOBO
         public float rotation = 0f;
         public int 
             animaCount = 0, Level = 1, Str = 10, Dex = 10, 
-            Vit = 10, Int = 10, maxLvl = 101, newStat = 0;
+            Vit = 10, Int = 10, maxLvl = 101, newStat = 5;
         private Color color;
         public float speed = 230f, max_speed = 130, slow_speed = 85, slow_speed_2 = 200;
         public bool swordEquipped = true, swordinHand = false, armorEquip = false;
@@ -34,7 +34,7 @@ namespace TCOBO
         public List<Texture2D> playerTex = new List<Texture2D>();
         private List<Texture2D> swordTex = new List<Texture2D>();
         private List<Texture2D> heal = new List<Texture2D>();
-        Texture2D strikeTexSword1, strikeTexPlayer1, strikeTexSword2, strikeTexPlayer2, deathTex;
+        Texture2D strikeTexSword1, strikeTexPlayer1, strikeTexSword2, strikeTexPlayer2, deathTex, shieldTex;
         private List<float> levelList = new List<float>();
         public Rectangle boundsTop, boundsBot, boundsLeft, boundsRight, hitBox;
         public float attackspeed = 5f;
@@ -43,13 +43,15 @@ namespace TCOBO
         public float size;
         public bool healing = false, scene1 = false, dead = false;
         public int MANA;
-        float manaTicDelay = 10f;
+        float manaTicDelay = 0.5f;
         TimeSpan manaTimer;
         public bool hasRedKey, hasBlueKey, hasYellowKey;
         public Vector2 strikeVelocity;
+        public bool shieldUp = false;
         public Rectangle drawRec;
 
         SoundManager soundManager = new SoundManager();
+        SoundEffectInstance instance;
       
         public Vector2 GetPos()
         {
@@ -78,11 +80,14 @@ namespace TCOBO
             size = 1 + ((Vit-10) / 30);
             
             HP = Vit * 5;
-            MANA = Int;
+            MANA = Int*10;
             LoadPlayerTex();
             HandleLevel();
 
             soundManager.LoadContent(content);
+            instance = soundManager.ShieldSound.CreateInstance();
+            instance.IsLooped = true;
+            instance.Volume = 1f;
         }
 
         public void HandleLevel()
@@ -124,9 +129,9 @@ namespace TCOBO
                 manaTimer = manaTimer.Subtract(gameTime.ElapsedGameTime);
             else
             {
-                MANA += Int/10;
-                if (MANA > Int)
-                    MANA = Int;
+                MANA += Int/5;
+                if (MANA > Int*10)
+                    MANA = Int*10;
                 manaTimer = TimeSpan.FromSeconds(manaTicDelay);
             }
 
@@ -156,7 +161,7 @@ namespace TCOBO
             strikeTexSword2 = content.Load<Texture2D>("faststrikeSword5");
             strikeTexPlayer2 = content.Load<Texture2D>("faststrikePlayer2");
             deathTex = content.Load<Texture2D>("Death");
-
+            shieldTex = content.Load<Texture2D>("shield");
             
         }
 
@@ -377,13 +382,25 @@ namespace TCOBO
                 soundManager.fightSound.Play();
             }
 
+            if (KeyMouseReader.mouseState.RightButton == ButtonState.Pressed && MANA > 0)
+            {
+                instance.Play();
+                shieldUp = true;
+                MANA--;
+            }
+            else
+            {
+                instance.Stop();
+                shieldUp = false;
+            }
+                
             if (Keyboard.GetState().IsKeyDown(Keys.Q))
             {
-                if (!strike && !strike2 && !healing && MANA >= 4)
+                if (!strike && !strike2 && !healing && MANA >= 40)
                 {
                     animaCount = 0;
                     healing = true;
-                    MANA -= 4;
+                    MANA -= 40;
                 }
             }
             //spell
@@ -516,6 +533,9 @@ namespace TCOBO
             //spriteBatch.Draw(TextureManager.sand1, boundingBox, Color.Black);
             if (HP > 0)
             {
+                if (shieldUp)
+                    spriteBatch.Draw(shieldTex, pos, null, new Color(155,20,20), rotation, origin, size, SpriteEffects.None, 0f);
+
                 if (swordEquipped && !(strike || strike2 || healing))
                     spriteBatch.Draw(swordTex[animaCount], pos, null, swordColor, rotation, origin, size, SpriteEffects.None, 0f);
 

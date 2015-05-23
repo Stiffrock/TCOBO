@@ -865,6 +865,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="shield.png">
+      <Name>shield</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <Compile Include="faststrikesword3.png">
       <Name>faststrikesword3</Name>
       <Importer>TextureImporter</Importer>
@@ -872,6 +877,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="051.wav">
+      <Name>051</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="020.wav">
+      <Name>020</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
     <Compile Include="faststrikesword4.png">
       <Name>faststrikesword4</Name>
       <Importer>TextureImporter</Importer>

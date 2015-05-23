@@ -87,9 +87,9 @@ namespace TCOBO
                 blood.Add(content.Load<Texture2D>("fire" + i));
             }*/
             blood.Add(TextureManager.blood2);
-            strikeTexSword1 = content.Load<Texture2D>("faststrikeSword1");
+            strikeTexSword1 = content.Load<Texture2D>("faststrikeSword4");
             strikeTexPlayer1 = content.Load<Texture2D>("faststrikePlayer1");
-            strikeTexSword2 = content.Load<Texture2D>("faststrikeSword2");
+            strikeTexSword2 = content.Load<Texture2D>("faststrikeSword5");
             strikeTexPlayer2 = content.Load<Texture2D>("faststrikePlayer2");
             deathTex = content.Load<Texture2D>("Death");
 
@@ -147,21 +147,33 @@ namespace TCOBO
                         if (!strike && !strike2)
                         {
                             strike = true;
-                            player.HP -= Str;
+                            if (!player.shieldUp)
+                            {
+                                player.HP -= Str;
+                                soundManager.hitSound.Play();
+                            } 
+                            else if (player.shieldUp)
+                                soundManager.ShieldHitSound.Play();
                         }
                         else if (strike)
                         {
 
-                            if (1 == rnd.Next(1, 3))
+                            if (1 == rnd.Next(1, 7))
                             {
                                 strike2 = true;
-                                player.HP -= Str;
+                                if (!player.shieldUp)
+                                {
+                                    player.HP -= Str;
+                                    soundManager.hitSound.Play();
+                                }
+                                else if (player.shieldUp)
+                                    soundManager.ShieldHitSound.Play();
                             }
 
-                            attack_seconds = rnd.Next(0, 3);
+                            attack_seconds = rnd.Next(0, 4);
                             attack_timer = TimeSpan.FromSeconds(attack_seconds);
                         }
-                        //soundManager.hitSound.Play();
+                        
                     }
                 }
 
@@ -184,7 +196,7 @@ namespace TCOBO
         {
             UpdateParticle(gameTime);
             float distance = Vector2.Distance(player.pos, pos);
-            if (health > 0 && distance < 400 + (Vit *10))
+            if (health > 0 && distance < 400 + (Vit * 2))
             {
                 if (Keyboard.GetState().IsKeyDown(Keys.LeftAlt))
                 {
@@ -274,17 +286,17 @@ namespace TCOBO
             {
                 if (strike)
                 {
-                    spriteBatch.Draw(strikeTexSword1, pos, null, Color.Azure, rotation, origin, size, SpriteEffects.None, 0f);
+                    spriteBatch.Draw(strikeTexSword1, pos, null, new Color(235,10,10), rotation, origin, size, SpriteEffects.None, 0f);
                     spriteBatch.Draw(strikeTexPlayer1, pos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
                 }
                 else if (strike2)
                 {
-                    spriteBatch.Draw(strikeTexSword2, pos, null, Color.Azure, rotation, origin, size, SpriteEffects.None, 0f);
+                    spriteBatch.Draw(strikeTexSword2, pos, null, new Color(235, 10, 10), rotation, origin, size, SpriteEffects.None, 0f);
                     spriteBatch.Draw(strikeTexPlayer2, pos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
                 }
                 else
                 {
-                    spriteBatch.Draw(swordTex[animaCount], pos, null, Color.White, rotation, origin, size, SpriteEffects.None, 0f);
+                    spriteBatch.Draw(swordTex[animaCount], pos, null, new Color(235, 10, 10), rotation, origin, size, SpriteEffects.None, 0f);
                     spriteBatch.Draw(tex[animaCount], pos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
                 }
             }
@@ -309,10 +321,10 @@ namespace TCOBO
 
             //spriteBatch.Draw(TextureManager.sand1, hitBox, Color.Black);
             //spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
-            spriteBatch.Draw(TextureManager.sand1, boundsTop, Color.White);
-            spriteBatch.Draw(TextureManager.sand1, boundsBot, Color.White);
-            spriteBatch.Draw(TextureManager.sand1, boundsLeft, Color.White);
-            spriteBatch.Draw(TextureManager.sand1, boundsRight, Color.White);
+            //spriteBatch.Draw(TextureManager.sand1, boundsTop, Color.White);
+            //spriteBatch.Draw(TextureManager.sand1, boundsBot, Color.White);
+            //spriteBatch.Draw(TextureManager.sand1, boundsLeft, Color.White);
+            //spriteBatch.Draw(TextureManager.sand1, boundsRight, Color.White);
         }
 
         public void DrawBlood(SpriteBatch sb)
