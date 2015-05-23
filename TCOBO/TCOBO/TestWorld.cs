@@ -23,10 +23,7 @@ namespace TCOBO
         public List<string> stringList = new List<string>();
         public List<Vector2> enemyposList = new List<Vector2>();
         public bool initial = true;
-
-
-   
-
+ 
         public TestWorld(ContentManager content)
         {
             this.content = content;
