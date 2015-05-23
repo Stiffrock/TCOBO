@@ -1091,6 +1091,15 @@
       <Time>2015-05-23T16:08:53.5253906+02:00</Time>
     </Item>
     <Item>
+      <Source>blood5.png</Source>
+      <Name>blood5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\blood5.xnb</Output>
+      <Time>2015-05-23T16:13:22.0917968+02:00</Time>
+    </Item>
+    <Item>
       <Source>SpriteFont1.spritefont</Source>
       <Name>SpriteFont1</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -1255,22 +1264,6 @@
       <Output>C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Bloodsplat.xnb</Output>
       <Time>2015-05-23T13:26:43.4052734+02:00</Time>
     </Item>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    <Item>
-      <Source>blood5.png</Source>
-      <Name>blood5</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\blood5.xnb</Output>
-      <Time>2015-05-23T16:08:21.626897+02:00</Time>
-    </Item>
-=======
->>>>>>> origin/Stoffe
->>>>>>> origin/Stoffe
->>>>>>> origin/Stoffe
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{F57F5713-2EE6-4A39-821D-E7329A4EA41E}</ContentProjectGUID>

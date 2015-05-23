@@ -42,7 +42,7 @@ namespace TCOBO
                 0.1f + (float)random.NextDouble(),
                 0,
                  0);
-            float size = (float)random.NextDouble()/2;
+            float size = (float)random.NextDouble();
 
             int ttl = 100 + random.Next((int)1500);
 
@@ -51,7 +51,7 @@ namespace TCOBO
 
         public void Update()
         {
-            int total = (int)(Vit);
+            int total = (int)(Vit*1.5f);
 
             for (int i = 0; i < total; i++)
             {

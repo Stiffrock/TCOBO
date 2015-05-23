@@ -119,6 +119,7 @@ Content\yellowwall.xnb
 Content\blood.xnb
 Content\blood3.xnb
 Content\blood4.xnb
+Content\blood5.xnb
 Content\SpriteFont1.xnb
 Content\MOStatFont.xnb
 Content\MenuFont.xnb
@@ -140,14 +141,3 @@ Content\RunningSound.xnb
 Content\BouncingSound.xnb
 Content\HitSound.xnb
 Content\Bloodsplat.xnb
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-Content\blood4.xnb
-<<<<<<< HEAD
-Content\blood5.xnb
-=======
->>>>>>> origin/Stoffe
->>>>>>> origin/Stoffe
->>>>>>> origin/Stoffe
