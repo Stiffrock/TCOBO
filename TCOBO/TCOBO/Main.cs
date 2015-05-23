@@ -108,7 +108,7 @@ namespace TCOBO
         {
             if (player.dead)
             {
-                if (KeyMouseReader.LeftClick())
+                if (KeyMouseReader.KeyPressed(Keys.Space))
                 {
                     loss = true; 
                 }
@@ -481,7 +481,7 @@ namespace TCOBO
                 testWorld.DrawDoodad(spriteBatch);
                 if (player.dead)
                 {
-                    spriteBatch.DrawString(TextureManager.uitext, "You are dead\nClick to restart\nPathetic...", new Vector2(player.playerPos.X - 50, player.playerPos.Y - 100), Color.White);
+                    spriteBatch.DrawString(TextureManager.uitext, "You are dead\nPress Space to restart\nPathetic...", new Vector2(player.playerPos.X - 50, player.playerPos.Y - 100), Color.White);
                 }
                 spriteBatch.End();
                 spriteBatch.Begin();

@@ -1228,6 +1228,24 @@
       <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Bloodsplat.xnb</Output>
       <Time>2015-05-23T09:22:36.3386307+02:00</Time>
     </Item>
+    <Item>
+      <Source>blood.png</Source>
+      <Name>blood</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\blood.xnb</Output>
+      <Time>2015-05-23T15:15:54.5191744+02:00</Time>
+    </Item>
+    <Item>
+      <Source>blood3.png</Source>
+      <Name>blood3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\blood3.xnb</Output>
+      <Time>2015-05-23T15:22:18.8648623+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{F57F5713-2EE6-4A39-821D-E7329A4EA41E}</ContentProjectGUID>

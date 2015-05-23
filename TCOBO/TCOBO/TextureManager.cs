@@ -40,6 +40,7 @@ namespace TCOBO
         public static Texture2D BlueWall { get; private set; }
         public static Texture2D YellowKey { get; private set; }
         public static Texture2D YellowWall { get; private set; }
+        public static Texture2D blood2 { get; private set; }
 
 
 
@@ -74,6 +75,7 @@ namespace TCOBO
             BlueWall = Content.Load<Texture2D>("bluewall");
             YellowKey = Content.Load<Texture2D>("yellowkey");
             YellowWall = Content.Load<Texture2D>("yellowwall");
+            blood2 = Content.Load<Texture2D>("blood3");
 
         }
 
