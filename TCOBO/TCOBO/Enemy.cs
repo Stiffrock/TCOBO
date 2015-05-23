@@ -87,9 +87,9 @@ namespace TCOBO
                 blood.Add(content.Load<Texture2D>("fire" + i));
             }*/
             blood.Add(TextureManager.blood2);
-            strikeTexSword1 = content.Load<Texture2D>("faststrikeSword1");
+            strikeTexSword1 = content.Load<Texture2D>("faststrikeSword4");
             strikeTexPlayer1 = content.Load<Texture2D>("faststrikePlayer1");
-            strikeTexSword2 = content.Load<Texture2D>("faststrikeSword2");
+            strikeTexSword2 = content.Load<Texture2D>("faststrikeSword5");
             strikeTexPlayer2 = content.Load<Texture2D>("faststrikePlayer2");
             deathTex = content.Load<Texture2D>("Death");
 
@@ -286,17 +286,17 @@ namespace TCOBO
             {
                 if (strike)
                 {
-                    spriteBatch.Draw(strikeTexSword1, pos, null, Color.Azure, rotation, origin, size, SpriteEffects.None, 0f);
+                    spriteBatch.Draw(strikeTexSword1, pos, null, new Color(235,10,10), rotation, origin, size, SpriteEffects.None, 0f);
                     spriteBatch.Draw(strikeTexPlayer1, pos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
                 }
                 else if (strike2)
                 {
-                    spriteBatch.Draw(strikeTexSword2, pos, null, Color.Azure, rotation, origin, size, SpriteEffects.None, 0f);
+                    spriteBatch.Draw(strikeTexSword2, pos, null, new Color(235, 10, 10), rotation, origin, size, SpriteEffects.None, 0f);
                     spriteBatch.Draw(strikeTexPlayer2, pos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
                 }
                 else
                 {
-                    spriteBatch.Draw(swordTex[animaCount], pos, null, Color.White, rotation, origin, size, SpriteEffects.None, 0f);
+                    spriteBatch.Draw(swordTex[animaCount], pos, null, new Color(235, 10, 10), rotation, origin, size, SpriteEffects.None, 0f);
                     spriteBatch.Draw(tex[animaCount], pos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
                 }
             }

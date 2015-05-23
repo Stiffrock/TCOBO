@@ -1271,7 +1271,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\shield.xnb</Output>
-      <Time>2015-05-23T17:47:19.9121093+02:00</Time>
+      <Time>2015-05-23T18:32:36.7998046+02:00</Time>
     </Item>
     <Item>
       <Source>051.wav</Source>
@@ -1280,7 +1280,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\051.xnb</Output>
-      <Time>2015-05-23T18:18:06.8769531+02:00</Time>
+      <Time>2015-05-23T18:32:36.7958984+02:00</Time>
     </Item>
     <Item>
       <Source>020.wav</Source>
@@ -1289,7 +1289,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\020.xnb</Output>
-      <Time>2015-05-23T18:26:01.5693359+02:00</Time>
+      <Time>2015-05-23T18:32:36.7949218+02:00</Time>
     </Item>
     <Item>
       <Source>faststrikesword3.png</Source>
@@ -1298,7 +1298,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\faststrikesword3.xnb</Output>
-      <Time>2015-05-23T18:06:56.9661629+02:00</Time>
+      <Time>2015-05-23T18:32:39.0205078+02:00</Time>
     </Item>
     <Item>
       <Source>faststrikesword4.png</Source>
@@ -1307,7 +1307,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\faststrikesword4.xnb</Output>
-      <Time>2015-05-23T18:24:06.5391935+02:00</Time>
+      <Time>2015-05-23T18:32:39.024414+02:00</Time>
     </Item>
     <Item>
       <Source>faststrikesword5.png</Source>
@@ -1316,7 +1316,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\faststrikesword5.xnb</Output>
-      <Time>2015-05-23T18:26:30.0847499+02:00</Time>
+      <Time>2015-05-23T18:32:39.0263671+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

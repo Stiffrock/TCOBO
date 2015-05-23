@@ -47,12 +47,9 @@ namespace TCOBO
         TimeSpan manaTimer;
         public bool hasRedKey, hasBlueKey, hasYellowKey;
         public Vector2 strikeVelocity;
-<<<<<<< HEAD
         public bool shieldUp = false;
-=======
         public Rectangle drawRec;
 
->>>>>>> origin/Stoffe
         SoundManager soundManager = new SoundManager();
         SoundEffectInstance instance;
       
