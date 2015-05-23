@@ -308,7 +308,7 @@ namespace TCOBO
                     if (animaCount > 4)
                     {
                         healing = false;
-                        HP += Int * 2;
+                        HP += Int;
                         if (HP > Vit * 5)
                             HP = Vit * 5;
                         animaCount = 0;
