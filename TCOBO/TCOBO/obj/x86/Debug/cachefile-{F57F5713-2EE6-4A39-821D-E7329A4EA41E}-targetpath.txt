@@ -136,3 +136,4 @@ Content\bluekey.xnb
 Content\bluewall.xnb
 Content\yellowkey.xnb
 Content\yellowwall.xnb
+Content\Bloodsplat.xnb

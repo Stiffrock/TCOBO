@@ -1219,6 +1219,15 @@
       <Output>C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\yellowwall.xnb</Output>
       <Time>2015-05-23T01:25:33.4199218+02:00</Time>
     </Item>
+    <Item>
+      <Source>Bloodsplat.wav</Source>
+      <Name>Bloodsplat</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Bloodsplat.xnb</Output>
+      <Time>2015-05-23T02:01:10.2304687+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{F57F5713-2EE6-4A39-821D-E7329A4EA41E}</ContentProjectGUID>

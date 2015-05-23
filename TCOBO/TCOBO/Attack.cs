@@ -37,8 +37,7 @@ namespace TCOBO
                 double deltaX = enemy.pos.X - player.playerPos.X;
                 double deltaY =  enemy.pos.Y - player.playerPos.Y;
 
-                soundManager.hitSound.Play();
-                enemy.StartParticleEffect();
+
                 double h = Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
                 float dn = (float)h;
                 enemy.velocity += new Vector2((float)deltaX / dn * 260, (float)deltaY / dn * 260);
@@ -47,6 +46,11 @@ namespace TCOBO
                 {
                     player.Exp += enemy.expDrop;
                     enemy.dead = true;
+                }
+                else if (!enemy.dead)
+                {
+                    soundManager.hitSound.Play();
+                    enemy.StartParticleEffect();
                 }
             }
         }

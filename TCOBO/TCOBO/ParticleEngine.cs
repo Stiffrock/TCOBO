@@ -32,8 +32,8 @@ namespace TCOBO
             Texture2D texture = textures[random.Next(textures.Count)];
             Vector2 position = EmitterLocation;
             Vector2 velocity = new Vector2(
-                    (5+random.Next(5, (int)Vit))/2 * (float)(random.NextDouble() * 2 - 1),
-                    (5 + random.Next(5, (int)Vit)) / 2 * (float)(random.NextDouble() * 2 - 1));
+                    (random.Next(1, (int)Vit))* (float)(random.NextDouble() * 2 - 1),
+                    (random.Next(1, (int)Vit)) * (float)(random.NextDouble() * 2 - 1));
             float angle = 0;
             float angularVelocity = 0.1f * (float)(random.NextDouble() * 2 - 1);
             Color color = new Color(
@@ -41,7 +41,7 @@ namespace TCOBO
                 0,
                 0);
             float size = (float)random.NextDouble();
-            int ttl = 100 + random.Next((int)2000);
+            int ttl = 100 + random.Next((int)1500);
 
             return new Particle(texture, position, velocity, angle, angularVelocity, color, size, ttl);
         }
@@ -65,6 +65,8 @@ namespace TCOBO
             for (int particle = 0; particle < particles.Count; particle++)
             {
                 particles[particle].TTL--;
+                particles[particle].Position += particles[particle].Velocity;
+                particles[particle].Velocity *= 0.94f;
                 if (particles[particle].TTL <= 0)
                 {
                     particles.RemoveAt(particle);

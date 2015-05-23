@@ -284,7 +284,7 @@ namespace TCOBO
             }
             else
             {
-                spriteBatch.Draw(deathTex, pos, null, Color.White, rotation, origin, size, SpriteEffects.None, 0f);
+                //spriteBatch.Draw(deathTex, pos, null, Color.White, rotation, origin, size, SpriteEffects.None, 0f);
             }
 
             if (isHpBarVisible && health > 0)

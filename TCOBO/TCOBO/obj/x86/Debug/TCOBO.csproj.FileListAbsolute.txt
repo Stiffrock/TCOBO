@@ -142,3 +142,4 @@ C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\b
 C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\bluewall.xnb
 C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\yellowkey.xnb
 C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\yellowwall.xnb
+C:\Users\Bruce MF LEE\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Bloodsplat.xnb
