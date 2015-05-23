@@ -76,10 +76,10 @@ namespace TCOBO
             {
                 int Str = rnd.Next(1, 5);
                 int Dex = rnd.Next(10, 30);
-                int Vit = rnd.Next(5, 20);
+                int Vit = rnd.Next(5, 20); // Måste va över 5
                 int Exp = Vit;
                 enemyList.Add(new Enemy(testWorld.enemyposList[i], game1.Content, Str, Dex, Vit, 0, Exp, 1));
-                i += 50; // Bestämmer hur många fiender som spawnar
+                i += 50; // Bestämmer hur många fiender som spawnar, ju mindre värde desto tätare spawnar som
             }
 
         }
@@ -140,7 +140,7 @@ namespace TCOBO
 
             if (i < 5)
             {
-                spriteBatch.DrawString(TextureManager.uitext, activeTooltip, new Vector2(300, 200), Color.Black);
+                spriteBatch.DrawString(TextureManager.uitext, activeTooltip, new Vector2(300, 200), Color.Silver);
             }
             
         }
