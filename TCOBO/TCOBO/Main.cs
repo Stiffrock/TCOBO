@@ -71,7 +71,6 @@ namespace TCOBO
 
             enemyList.Add(new Enemy(new Vector2(-100, -1430), game1.Content, 55, 1, 300, 0, 10, 1)); // Main boss
 
-
             for (int i = 0; i < testWorld.enemyposList.Count; i++)          // Kan basicly helt ställa in svårighetsgrad här
             {
                 int Str = rnd.Next(1, 20);
@@ -94,13 +93,10 @@ namespace TCOBO
             float xDistance = (float)ms.X - player.playerPos.X;
             float yDistance = (float)ms.Y - player.playerPos.Y;
             player.rotation = (float)Math.Atan2(yDistance, xDistance);
-
             double h = Math.Sqrt(xDistance * xDistance + yDistance * yDistance);
             float dn = (float)h;
             player.strikeVelocity = new Vector2(xDistance / dn * 70, yDistance / dn * 70);
-
             aimVector = new Vector2(xDistance, yDistance);
-
             player.aimRec = new Vector2(xDistance, yDistance);
             player.aimRec.Normalize();
             double recX = (double)player.aimRec.X * 40 * player.size;
@@ -112,7 +108,7 @@ namespace TCOBO
         {
             if (player.dead)
             {
-                if (KeyMouseReader.LeftClick())
+                if (KeyMouseReader.KeyPressed(Keys.Space))
                 {
                     loss = true; 
                 }
@@ -307,9 +303,7 @@ namespace TCOBO
 
                     if (item is Sword && item.equip == true && player.swordinHand == true && itemManager.EquipList.Contains(item))
                     {
-                        player.Str -= statAdd;
-
-                        
+                        player.Str -= statAdd;                        
                         item.defaultColor = itemCol;
                         player.colorswitch(itemCol);
                         player.swordinHand = false;
@@ -487,7 +481,7 @@ namespace TCOBO
                 testWorld.DrawDoodad(spriteBatch);
                 if (player.dead)
                 {
-                    spriteBatch.DrawString(TextureManager.uitext, "You are dead\nClick to restart\nPathetic...", new Vector2(player.playerPos.X - 50, player.playerPos.Y - 100), Color.White);
+                    spriteBatch.DrawString(TextureManager.uitext, "You are dead\nPress Space to restart\nPathetic...", new Vector2(player.playerPos.X - 50, player.playerPos.Y - 100), Color.White);
                 }
                 spriteBatch.End();
                 spriteBatch.Begin();

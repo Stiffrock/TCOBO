@@ -30,17 +30,19 @@ namespace TCOBO
         private Particle GenerateNewParticle()
         {
             Texture2D texture = textures[random.Next(textures.Count)];
+         //   Texture texture = TextureManager.blood2;
             Vector2 position = EmitterLocation;
             Vector2 velocity = new Vector2(
                     (5+random.Next(1, (int)(Vit/3)))* (float)(random.NextDouble() * 2 - 1),
                     (5+random.Next(1, (int)(Vit/3))) * (float)(random.NextDouble() * 2 - 1));
             float angle = 0;
             float angularVelocity = 0.1f * (float)(random.NextDouble() * 2 - 1);
+         //   Color color = Color.Blue;
             Color color = new Color(
-                0.1f + (float)random.NextDouble(),
                 0,
-                0);
-            float size = (float)random.NextDouble();
+                0,
+                 0.9f + (float)random.NextDouble());
+            float size = (float)random.NextDouble() - 0.5f;
             int ttl = 100 + random.Next((int)1500);
 
             return new Particle(texture, position, velocity, angle, angularVelocity, color, size, ttl);

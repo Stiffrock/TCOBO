@@ -137,3 +137,5 @@ Content\RunningSound.xnb
 Content\BouncingSound.xnb
 Content\HitSound.xnb
 Content\Bloodsplat.xnb
+Content\blood.xnb
+Content\blood3.xnb

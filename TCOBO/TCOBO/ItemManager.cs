@@ -36,12 +36,13 @@ namespace TCOBO
             this.game1 = game1;
             this.sf = game1.Content.Load<SpriteFont>("SpriteFont1");
             grahpics = game1.GraphicsDevice;
-            standardSword = new Sword(10, TextureManager.standardSword, Color.White, new Vector2(0,0), "Standard sword");
-            blueSword = new Sword(20, TextureManager.blueSword, Color.LightBlue, new Vector2(0, 20),"Magic Blue sword");
-            redSword = new Sword(40, TextureManager.redSword, Color.SandyBrown, new Vector2(0, 40),"Rusty but vicious sword");
+            standardSword = new Sword(10, TextureManager.standardSword, Color.White, new Vector2(-100,0), "Standard sword");
+
+            blueSword = new Sword(20, TextureManager.blueSword, Color.LightBlue, new Vector2(-40, 3045),"Blue sword infused by magic");
+            redSword = new Sword(40, TextureManager.redSword, Color.SandyBrown, new Vector2(-3065, 2563),"Vicious bloodthirsty sword");
             goldenSword = new Sword(100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 60),"The super duper golden\nmega rod of destruction");
-            standardArmor = new Armor(5, TextureManager.standardArmor, new Vector2(0, 100),"Standard armor");
-            redKey = new Key(TextureManager.RedKey, new Vector2(-200, 0), "Red Key");
+            standardArmor = new Armor(5, TextureManager.standardArmor, new Vector2(-3440, 1592),"Standard armor");
+            redKey = new Key(TextureManager.RedKey, new Vector2(-2550, 190), "Red Key");
             blueKey = new Key(TextureManager.BlueKey, new Vector2(-200, 20), "Blue Key");
             yellowKey = new Key(TextureManager.YellowKey, new Vector2(-200, 40), "Yellow Key");
             inventory = new Inventory(game1.Content, new Vector2(200, 200));  
