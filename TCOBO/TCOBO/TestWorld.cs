@@ -22,6 +22,7 @@ namespace TCOBO
         public List<DooDads> dooDads = new List<DooDads>();
         public List<string> stringList = new List<string>();
         public List<Vector2> enemyposList = new List<Vector2>();
+        public bool initial = true;
 
 
    
@@ -34,11 +35,12 @@ namespace TCOBO
         {
             foreach (Tile t in tiles)
             {
-                if (t.enemyTile)
+                if (t.enemyTile && initial)
                 {
-                    enemyposList.Add(t.position);
+                    enemyposList.Add(t.position);                   
                 }
                 t.Draw(spriteBatch);
+               
             }
 
         }

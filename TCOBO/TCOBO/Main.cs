@@ -74,7 +74,7 @@ namespace TCOBO
             {
                 int Str = rnd.Next(1, 10);
                 int Dex = rnd.Next(10, 30);
-                int Vit = rnd.Next(1, 20);
+                int Vit = rnd.Next(2, 20);
                 int Exp = Vit;
                 enemyList.Add(new Enemy(testWorld.enemyposList[i], game1.Content, Str, Dex, Vit, 0, Exp, 1));
                 i += 50; // Bestämmer hur många fiender som spawnar
@@ -475,6 +475,7 @@ namespace TCOBO
                 {
                     spawnEnemies();
                     enemiesSpawned = true;
+                    testWorld.initial = false;
                 }
                 
             }
