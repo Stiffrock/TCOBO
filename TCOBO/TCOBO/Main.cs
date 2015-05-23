@@ -379,6 +379,7 @@ namespace TCOBO
                 krm.Update();
                 attack.Update(gameTime);
                 player.Update(gameTime);
+
                 player.Collision(gameTime, testWorld.tiles);
                 detectEnemy();
                 Rotation();
@@ -388,8 +389,8 @@ namespace TCOBO
                 camera.Update(gameTime);
                 Collision();
                 foreach (Enemy e in enemyList)
-                {
-                    e.UpdateEnemy(gameTime, player, testWorld.tiles);
+                {               
+                  e.UpdateEnemy(gameTime, player, testWorld.tiles);                 
                 }               
             }
             else
@@ -459,6 +460,7 @@ namespace TCOBO
         {
             if (!cutScene)
             {
+
                 spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null,
                 camera.transform);
                 testWorld.Draw(spriteBatch);

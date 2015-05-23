@@ -153,3 +153,6 @@ C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\obj\x86\Debug\TCOBO.csprojRes
 C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\obj\x86\Debug\TCOBO.exe
 C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\obj\x86\Debug\TCOBO.pdb
+C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\faststrikesword3.xnb
+C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\faststrikesword4.xnb
+C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\faststrikesword5.xnb

@@ -1264,6 +1264,33 @@
       <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\Bloodsplat.xnb</Output>
       <Time>2015-05-23T09:22:36.3386307+02:00</Time>
     </Item>
+    <Item>
+      <Source>faststrikesword3.png</Source>
+      <Name>faststrikesword3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\faststrikesword3.xnb</Output>
+      <Time>2015-05-23T18:06:56.9661629+02:00</Time>
+    </Item>
+    <Item>
+      <Source>faststrikesword4.png</Source>
+      <Name>faststrikesword4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\faststrikesword4.xnb</Output>
+      <Time>2015-05-23T18:24:06.5391935+02:00</Time>
+    </Item>
+    <Item>
+      <Source>faststrikesword5.png</Source>
+      <Name>faststrikesword5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\faststrikesword5.xnb</Output>
+      <Time>2015-05-23T18:26:30.0847499+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{F57F5713-2EE6-4A39-821D-E7329A4EA41E}</ContentProjectGUID>

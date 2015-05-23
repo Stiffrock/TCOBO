@@ -141,3 +141,6 @@ Content\RunningSound.xnb
 Content\BouncingSound.xnb
 Content\HitSound.xnb
 Content\Bloodsplat.xnb
+Content\faststrikesword3.xnb
+Content\faststrikesword4.xnb
+Content\faststrikesword5.xnb

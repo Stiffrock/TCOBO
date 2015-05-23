@@ -47,6 +47,7 @@ namespace TCOBO
         TimeSpan manaTimer;
         public bool hasRedKey, hasBlueKey, hasYellowKey;
         public Vector2 strikeVelocity;
+        public Rectangle drawRec;
 
         SoundManager soundManager = new SoundManager();
       
@@ -75,6 +76,7 @@ namespace TCOBO
             origin = new Vector2(80, 80);
             color = new Color(255, 30, 30, 255);
             size = 1 + ((Vit-10) / 30);
+            
             HP = Vit * 5;
             MANA = Int;
             LoadPlayerTex();
@@ -149,9 +151,9 @@ namespace TCOBO
                 heal.Add(content.Load<Texture2D>("heal" + i));
             }
             
-            strikeTexSword1 = content.Load<Texture2D>("faststrikeSword1");
+            strikeTexSword1 = content.Load<Texture2D>("faststrikesword4");
             strikeTexPlayer1 = content.Load<Texture2D>("faststrikePlayer1");
-            strikeTexSword2 = content.Load<Texture2D>("faststrikeSword2");
+            strikeTexSword2 = content.Load<Texture2D>("faststrikeSword5");
             strikeTexPlayer2 = content.Load<Texture2D>("faststrikePlayer2");
             deathTex = content.Load<Texture2D>("Death");
 
@@ -486,7 +488,7 @@ namespace TCOBO
 
         public override void Update(GameTime gameTime)
         {
-            Console.WriteLine(pos);
+            drawRec = new Rectangle((int)pos.X - 1000, (int)pos.Y - 1000, 2000, 2000);
             effectiveStats = Tuple.Create<float, float, float>(mDamage, MANA, HP);
             if (HP > 0)
             {
@@ -510,8 +512,7 @@ namespace TCOBO
         }
 
         public override void Draw(SpriteBatch spriteBatch)
-        {
-    
+        {       
             //spriteBatch.Draw(TextureManager.sand1, boundingBox, Color.Black);
             if (HP > 0)
             {
