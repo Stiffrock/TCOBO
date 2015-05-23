@@ -156,7 +156,7 @@ namespace TCOBO
                 heal.Add(content.Load<Texture2D>("heal" + i));
             }
             
-            strikeTexSword1 = content.Load<Texture2D>("faststrikesword4");
+            strikeTexSword1 = content.Load<Texture2D>("faststrikesword4.1");
             strikeTexPlayer1 = content.Load<Texture2D>("faststrikePlayer1");
             strikeTexSword2 = content.Load<Texture2D>("faststrikeSword5");
             strikeTexPlayer2 = content.Load<Texture2D>("faststrikePlayer2");
