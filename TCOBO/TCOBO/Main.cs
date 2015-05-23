@@ -68,11 +68,9 @@ namespace TCOBO
 
         public void spawnEnemies()
         {
-            ////Enemy STR, DEX, VIT, INT, EXPDROP, SPAWN (0 = ingen spawn)
-            //for (int i = 0; i < 5; i++)
-            //{
-       //     enemyList.Add(new Enemy(new Vector2(500, 300), game1.Content, 1, 10, 300, 0, 10, 1));
-        //    enemyList.Add(new Enemy(new Vector2(580, 300), game1.Content, 1, 10, 10, 0, 10, 1));
+
+            enemyList.Add(new Enemy(new Vector2(-100, -1430), game1.Content, 1, 10, 300, 0, 10, 1)); // Main boss
+
 
             for (int i = 0; i < testWorld.enemyposList.Count; i++)          // Kan basicly helt ställa in svårighetsgrad här
             {
@@ -83,11 +81,6 @@ namespace TCOBO
                 enemyList.Add(new Enemy(testWorld.enemyposList[i], game1.Content, Str, Dex, Vit, 0, Exp, 1));
                 i += 50; // Bestämmer hur många fiender som spawnar
             }
-
-           
-          
-            //enemyList.Add(new Enemy(new Vector2(-2000, 300), game1.Content, 5, -25, 75, 0, 500, 720));
-            //enemyList.Add(new Enemy(new Vector2(-2794, -4474), game1.Content, 20, 0, 125, 0, 3000, 0));
 
         }
       
