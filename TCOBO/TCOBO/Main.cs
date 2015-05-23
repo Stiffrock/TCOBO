@@ -34,8 +34,10 @@ namespace TCOBO
         private int row = 0, itemcount = 0;
         private Tuple<int, int, int, int, int, int> playerStats;
         private Tuple<float, float, float> effectiveStats;
+        private float deltaTime = 0;
         SoundManager soundManager = new SoundManager();
         private bool cutScene = true, enemiesSpawned = false;
+        public bool loss = false;
         //private Song statseffect;
         
         public Main(Game1 game1)
@@ -58,7 +60,7 @@ namespace TCOBO
             spriteFont = game1.Content.Load<SpriteFont>("SpriteFont1");
             board = new PlayerPanel(game1.Content, new Vector2(950, 0), spriteFont);
             soundManager.LoadContent(game1.Content);
-            MediaPlayer.Play(soundManager.bgMusic); 
+            MediaPlayer.Play(soundManager.bgMusic);
 
         }
 
@@ -80,21 +82,6 @@ namespace TCOBO
                 i += 50; // Bestämmer hur många fiender som spawnar
             }
 
-     
-               
-            
-            
-            //}
-
-            //for (int i = 0; i < 5; i++)
-            //{
-            //    enemyList.Add(new Enemy(new Vector2(-300, 0-i*100), game1.Content, 1, 50, 10, 0, 10, 1));
-            //}
-
-            //for (int i = 0; i < 5; i++)
-            //{
-            //    enemyList.Add(new Enemy(new Vector2(-300+i*100, -1000), game1.Content, 1, 50, 10, 0, 10, 1));
-            //}
            
           
             //enemyList.Add(new Enemy(new Vector2(-2000, 300), game1.Content, 5, -25, 75, 0, 500, 720));
@@ -124,6 +111,18 @@ namespace TCOBO
             double recX = (double)player.aimRec.X * 40 * player.size;
             double recY = (double)player.aimRec.Y * 40 * player.size;
             player.attackHitBox = new Rectangle((int)(player.playerPos.X + recX - 25 * player.size), (int)(player.playerPos.Y + recY - 25 * player.size), (int)(50*player.size), (int)(50*player.size));
+        }
+
+        public void handleLoss()
+        {
+            if (player.dead)
+            {
+                if (KeyMouseReader.LeftClick())
+                {
+                    loss = true; 
+                }
+              
+            }
         }
 
 
@@ -348,12 +347,14 @@ namespace TCOBO
         }
         public void Update(GameTime gameTime)
         {
+
             if (scene1.sceneOver)
             {
                 cutScene = false;
             }
             if (!cutScene)
-            {
+            {          
+                handleLoss();
                 detectEquip();
                 detectItem();
                 ClickStats();
@@ -372,22 +373,14 @@ namespace TCOBO
                 foreach (Enemy e in enemyList)
                 {
                     e.UpdateEnemy(gameTime, player, testWorld.tiles);
-                }
-
-  
-
-                
+                }               
             }
             else
             {
                 krm.Update();
                 player.scene1 = true;
-                scene1.Update(gameTime);
-             
-            }
-
-     
-            
+                scene1.Update(gameTime);             
+            }            
         }
         public void Collision()
         {
@@ -453,6 +446,7 @@ namespace TCOBO
                 camera.transform);
                 testWorld.Draw(spriteBatch);
 
+         
                 foreach (Enemy e in enemyList)
                 {
                     e.DrawBlood(spriteBatch);
@@ -466,9 +460,15 @@ namespace TCOBO
                     item.Draw(spriteBatch);
                 }
                 player.Draw(spriteBatch);
+
                 testWorld.DrawDoodad(spriteBatch);
+                if (player.dead)
+                {
+                    spriteBatch.DrawString(TextureManager.uitext, "You are dead\nClick to restart\nPathetic...", new Vector2(player.playerPos.X - 50, player.playerPos.Y - 100), Color.White);
+                }
                 spriteBatch.End();
                 spriteBatch.Begin();
+         
                 board.Draw(spriteBatch);
                 itemManager.Draw(spriteBatch);
                 if (!enemiesSpawned)
@@ -477,6 +477,8 @@ namespace TCOBO
                     enemiesSpawned = true;
                     testWorld.initial = false;
                 }
+           
+
                 
             }
             else

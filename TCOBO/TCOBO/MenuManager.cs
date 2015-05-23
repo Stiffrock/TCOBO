@@ -43,7 +43,6 @@ namespace TCOBO
             krm = new KeyMouseReader();
             flowColor = Color.Blue;
             tcobo = "T\nh\ne\nr\ne\n \nc\na\nn\n \no\nn\nl\ny\n \nb\ne\n \no\nn\ne\n";
-
         }
 
 
@@ -86,7 +85,7 @@ namespace TCOBO
                     }
                 }
 
-                if (time >= deltaTime2)
+                if (time >= deltaTime2 && textCount != 0 && yposList.Count != 0 && xposList.Count != 0)
                 {
                     for (int i = 0; i < textCount; i++)
                     {
@@ -118,6 +117,7 @@ namespace TCOBO
 
         public void Update(GameTime gameTime)
         {
+   
             if (textCount <= 0 )
             {
                 GameOn = true;

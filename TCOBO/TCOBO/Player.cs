@@ -41,7 +41,7 @@ namespace TCOBO
         float attackProgress = 0f;
         public float playerSize = 36, basePlayerSize = 36;
         public float size;
-        public bool healing = false, scene1 = false;
+        public bool healing = false, scene1 = false, dead = false;
         public int MANA;
         float manaTicDelay = 10f;
         TimeSpan manaTimer;
@@ -545,6 +545,7 @@ namespace TCOBO
             }
             else
             {
+                dead = true;
                 MediaPlayer.Play(soundManager.deathSound);
                 spriteBatch.Draw(deathTex, playerPos, null, Color.White, 0, origin, size, SpriteEffects.None, 0f);
             }
