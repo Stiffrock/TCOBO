@@ -75,7 +75,7 @@ namespace TCOBO
             BlueWall = Content.Load<Texture2D>("bluewall");
             YellowKey = Content.Load<Texture2D>("yellowkey");
             YellowWall = Content.Load<Texture2D>("yellowwall");
-            blood2 = Content.Load<Texture2D>("blood4");
+            blood2 = Content.Load<Texture2D>("blood5");
 
         }
 
