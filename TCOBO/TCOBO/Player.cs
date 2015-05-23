@@ -45,6 +45,7 @@ namespace TCOBO
         public int MANA;
         float manaTicDelay = 10f;
         TimeSpan manaTimer;
+        public bool hasRedKey, hasBlueKey, hasYellowKey;
         public Vector2 strikeVelocity;
 
         SoundManager soundManager = new SoundManager();
@@ -401,10 +402,15 @@ namespace TCOBO
             boundsRight = new Rectangle((int)(playerPos.X + playerSize / 2 - playerSize / 4), (int)(playerPos.Y - playerSize / 2 + playerSize / 4.5f), (int)(playerSize / 8), (int)(playerSize - playerSize / 2));
             foreach (Tile t in tiles)
             {
+                if (t.typeOfTile == "redwall" && hasRedKey == true)
+                    t.collisionEnabled = false;
+                else if (t.typeOfTile == "bluewall" && hasBlueKey == true)
+                    t.collisionEnabled = false;
+                else if (t.typeOfTile == "yellowwall" && hasYellowKey == true)
+                    t.collisionEnabled = false;
+
                 if (t.collisionEnabled)
                 {
-                    
-
                     if (t.bounds.Intersects(boundsLeft))
                     {
                         soundManager.bounceSound.Play();

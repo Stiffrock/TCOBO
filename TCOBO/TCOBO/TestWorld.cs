@@ -77,6 +77,8 @@ namespace TCOBO
                         {
                             dooDads.Add(new DooDads(typeoftile, new Microsoft.Xna.Framework.Vector2(float.Parse(pos_x), float.Parse(pos_y))));
                         }
+                        else
+                            tiles.Add(new Tile(typeoftile, new Microsoft.Xna.Framework.Vector2(float.Parse(pos_x), float.Parse(pos_y))));
                     }
                     else
                     tiles.Add(new Tile(typeoftile, new Microsoft.Xna.Framework.Vector2(float.Parse(pos_x), float.Parse(pos_y))));

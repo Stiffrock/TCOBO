@@ -127,6 +127,16 @@ Content\EnemySound.xnb
 Content\RunningSound.xnb
 Content\BouncingSound.xnb
 Content\HitSound.xnb
+<<<<<<< HEAD
+=======
+Content\redkey.xnb
+Content\redwall.xnb
+Content\bluekey.xnb
+Content\bluewall.xnb
+Content\yellowkey.xnb
+Content\yellowwall.xnb
+Content\Bloodsplat.xnb
+>>>>>>> origin/Stoffe
 Content\Ljudeffekt1.wma
 Content\TCOBO musik.wma
 Content\Death sound.wma

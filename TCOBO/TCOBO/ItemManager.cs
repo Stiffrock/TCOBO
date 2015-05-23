@@ -13,6 +13,7 @@ namespace TCOBO
     {
         private Game1 game1;
         private Sword standardSword, goldenSword, blueSword, redSword;
+        public Key redKey, blueKey, yellowKey;
         public Armor standardArmor;
         private Inventory inventory;
         private GraphicsDevice grahpics;
@@ -21,7 +22,6 @@ namespace TCOBO
         public List<Item> ItemList = new List<Item>();
         public List<Item> InventoryList = new List<Item>();
         public List<Item> EquipList = new List<Item>();
-
         SoundManager soundManager = new SoundManager();
 
 
@@ -41,12 +41,18 @@ namespace TCOBO
             redSword = new Sword(40, TextureManager.redSword, Color.SandyBrown, new Vector2(0, 40),"Rusty but vicious sword");
             goldenSword = new Sword(100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 60),"The super duper golden\nmega rod of destruction");
             standardArmor = new Armor(5, TextureManager.standardArmor, new Vector2(0, 100),"Standard armor");
+            redKey = new Key(TextureManager.RedKey, new Vector2(-200, 0), "Red Key");
+            blueKey = new Key(TextureManager.BlueKey, new Vector2(-200, 20), "Blue Key");
+            yellowKey = new Key(TextureManager.YellowKey, new Vector2(-200, 40), "Yellow Key");
             inventory = new Inventory(game1.Content, new Vector2(200, 200));  
             ItemList.Add(standardSword);
             ItemList.Add(redSword);
             ItemList.Add(blueSword);
             ItemList.Add(goldenSword);
             ItemList.Add(standardArmor);
+            ItemList.Add(redKey);
+            ItemList.Add(blueKey);
+            ItemList.Add(yellowKey);
             PickedUp = false;
             Showstats = false;
             IsInventoryshown = false;
@@ -82,7 +88,7 @@ namespace TCOBO
                         }                       
                     }
 
-
+                    
 
                 }
 
@@ -202,8 +208,10 @@ namespace TCOBO
                         {
                             sb.DrawString(TextureManager.uitext, item.info + "\n\nVit+ " + item.stat.ToString(), new Vector2(970, 350), Color.Black);
                         }
-                        
-                        
+                        if (item is Key)
+                        {
+                            sb.DrawString(TextureManager.uitext, item.info, new Vector2(970, 350), Color.Black);
+                        }
                     }
                 }
             }
