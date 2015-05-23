@@ -136,8 +136,14 @@ Content\RunningSound.xnb
 Content\BouncingSound.xnb
 Content\HitSound.xnb
 Content\Bloodsplat.xnb
+<<<<<<< HEAD
+=======
 Content\blood4.xnb
+<<<<<<< HEAD
 Content\blood5.xnb
+=======
+>>>>>>> origin/Stoffe
+>>>>>>> origin/Stoffe
 Content\Ljudeffekt1.wma
 Content\TCOBO musik.wma
 Content\Death sound.wma
