@@ -409,6 +409,13 @@ namespace TCOBO
                 else if (t.typeOfTile == "yellowwall" && hasYellowKey == true)
                     t.collisionEnabled = false;
 
+                if (t.typeOfTile == "redwall" && hasRedKey == false)
+                    t.collisionEnabled = true;
+                else if (t.typeOfTile == "bluewall" && hasBlueKey == false)
+                    t.collisionEnabled = true;
+                else if (t.typeOfTile == "yellowwall" && hasYellowKey == false)
+                    t.collisionEnabled = true;
+
                 if (t.collisionEnabled)
                 {
                     if (t.bounds.Intersects(boundsLeft))

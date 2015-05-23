@@ -200,8 +200,7 @@ namespace TCOBO
             foreach (Item item in itemManager.ItemList)
             {
                 float offsetX = item.itemTex.Width/5;
-                float offsetY = item.itemTex.Height/5;
-           
+                float offsetY = item.itemTex.Height/5;          
        
                 if (player.hitBox.Intersects(item.hitBox))
                 {
@@ -211,17 +210,10 @@ namespace TCOBO
                         {
                             if (itemManager.GetGrid().grid[j, i].hasItem == true)
                             {
-                                j++;
-                                
+                                j++;                                
                             }
                             else
                             {
-                                if (item.info == "Red Key")
-                                    player.hasRedKey = true;
-                                else if (item.info == "Blue Key")
-                                    player.hasBlueKey = true;
-                                else if (item.info == "Yellow Key")
-                                    player.hasYellowKey = true;
                                 item.pos.X = itemManager.GetGrid().grid[j, i].pos.X + offsetX;
                                 item.pos.Y = itemManager.GetGrid().grid[j, i].pos.Y + offsetY;   
                                 itemManager.GetGrid().grid[j, i].hasItem = true;
@@ -234,22 +226,35 @@ namespace TCOBO
                     }                
                 }
             }
-            foreach (Item item in itemManager.InventoryList)
+
+            
+
+            foreach (Item item in itemManager.InventoryList)   
             {
+                if (item.info == "Red Key")
+                    player.hasRedKey = true;
+                else if (item.info == "Blue Key")
+                    player.hasBlueKey = true;
+                else if (item.info == "Yellow Key")
+                    player.hasYellowKey = true;
+
+
                 if (!item.bagRange && KeyMouseReader.LeftClick() && !item.equip)
                 {
-                   
+                    if (item.info == "Red Key")
+                        player.hasRedKey = false;
+                    else if (item.info == "Blue Key")
+                        player.hasBlueKey = false;
+                    else if (item.info == "Yellow Key")
+                        player.hasYellowKey = false;
                     item.hand = false;
                     itemManager.PickedUp = false;
-                    item.pos = player.playerPos;
+                    item.pos = new Vector2(player.playerPos.X + 50, player.playerPos.Y);
                     itemManager.ItemList.Add(item);
                     itemManager.InventoryList.Remove(item);                   
                     break;
-                }
-            }
-
-
-       
+                }  
+            }      
         }
 
         public void detectEquip()
