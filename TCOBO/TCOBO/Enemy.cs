@@ -189,7 +189,7 @@ namespace TCOBO
                     isHpBarVisible = false;
 
                 float tempVit = Vit;
-                size = tempVit / 10;
+                size = 1 + ((tempVit-10) / 30);
                 Fx = SpriteEffects.None;
                 //HuntPlayer(playerPos);
                 hitBox.X = (int)pos.X;
@@ -209,7 +209,7 @@ namespace TCOBO
                         spawn_timer = spawn_timer.Subtract(gameTime.ElapsedGameTime);
                     else
                     {
-                        dead = true;
+                        dead = false;
                         health = Vit * 5;
                         spawn_timer = TimeSpan.FromSeconds(spawnTime);
                     }

@@ -32,8 +32,8 @@ namespace TCOBO
             Texture2D texture = textures[random.Next(textures.Count)];
             Vector2 position = EmitterLocation;
             Vector2 velocity = new Vector2(
-                    (random.Next(1, (int)Vit))* (float)(random.NextDouble() * 2 - 1),
-                    (random.Next(1, (int)Vit)) * (float)(random.NextDouble() * 2 - 1));
+                    (5+random.Next(1, (int)(Vit/3)))* (float)(random.NextDouble() * 2 - 1),
+                    (5+random.Next(1, (int)(Vit/3))) * (float)(random.NextDouble() * 2 - 1));
             float angle = 0;
             float angularVelocity = 0.1f * (float)(random.NextDouble() * 2 - 1);
             Color color = new Color(
@@ -48,7 +48,7 @@ namespace TCOBO
 
         public void Update()
         {
-            int total = (int)Vit/2;
+            int total = (int)(Vit/2);
 
             for (int i = 0; i < total; i++)
             {

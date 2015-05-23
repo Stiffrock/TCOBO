@@ -67,8 +67,8 @@ namespace TCOBO
             ////Enemy STR, DEX, VIT, INT, EXPDROP, SPAWN (0 = ingen spawn)
             //for (int i = 0; i < 5; i++)
             //{
-            enemyList.Add(new Enemy(new Vector2(500, 300), game1.Content, 1, 50, 50, 0, 10, 1));
-            enemyList.Add(new Enemy(new Vector2(580, 300), game1.Content, 1, 50, 10, 0, 10, 1));
+            enemyList.Add(new Enemy(new Vector2(500, 300), game1.Content, 1, 10, 300, 0, 10, 1));
+            enemyList.Add(new Enemy(new Vector2(580, 300), game1.Content, 1, 10, 10, 0, 10, 1));
             //}
 
             //for (int i = 0; i < 5; i++)

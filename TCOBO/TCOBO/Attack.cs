@@ -42,15 +42,15 @@ namespace TCOBO
                 float dn = (float)h;
                 enemy.velocity += new Vector2((float)deltaX / dn * 260, (float)deltaY / dn * 260);
                 enemy.health -= (int)player.mDamage;
+                if (!enemy.dead)
+                {
+                    soundManager.hitSound.Play();
+                    enemy.StartParticleEffect();
+                }
                 if (enemy.health < 0 && !enemy.dead)
                 {
                     player.Exp += enemy.expDrop;
                     enemy.dead = true;
-                }
-                else if (!enemy.dead)
-                {
-                    soundManager.hitSound.Play();
-                    enemy.StartParticleEffect();
                 }
             }
         }
