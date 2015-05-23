@@ -109,6 +109,7 @@ Content\fire3.xnb
 Content\fire4.xnb
 Content\fire5.xnb
 Content\fire6.xnb
+Content\screenBlink.xnb
 Content\SpriteFont1.xnb
 Content\MOStatFont.xnb
 Content\MenuFont.xnb
@@ -126,10 +127,6 @@ Content\EnemySound.xnb
 Content\RunningSound.xnb
 Content\BouncingSound.xnb
 Content\HitSound.xnb
-<<<<<<< HEAD
-=======
-Content\screenBlink.xnb
->>>>>>> origin/Stoffe
 Content\Ljudeffekt1.wma
 Content\TCOBO musik.wma
 Content\Death sound.wma

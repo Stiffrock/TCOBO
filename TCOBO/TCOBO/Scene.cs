@@ -45,7 +45,7 @@ namespace TCOBO
             {
                 moveX = false;
             }
-            if (bossPos.Y <500 && !moveX)
+            if (bossPos.Y < 500 && !moveX)
             {
                 moveY = true;
             }
