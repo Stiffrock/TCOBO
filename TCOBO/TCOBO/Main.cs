@@ -68,8 +68,8 @@ namespace TCOBO
 
         public void spawnEnemies()
         {
-
-            enemyList.Add(new Enemy(new Vector2(-100, -1430), game1.Content, 55, 1, 300, 0, 10, 1)); // Main boss
+            enemyList.Add(new Enemy(new Vector2(-200, -1300), game1.Content, 55, 1, 350, 0, 10, 1)); // Main boss
+            enemyList.Add(new Enemy(new Vector2(-2240, 500), game1.Content, 25, 1, 200, 0, 10, 1)); // Red Key boss
 
             for (int i = 0; i < testWorld.enemyposList.Count; i++)          // Kan basicly helt ställa in svårighetsgrad här
             {
@@ -90,8 +90,8 @@ namespace TCOBO
             mousePosition.Y = Mouse.GetState().Y;
             Vector2 worldPosition = Vector2.Transform(mousePosition, Matrix.Invert(camera.GetTransformation(graphics)));
             Vector2 ms = worldPosition;
-            float xDistance = (float)ms.X - player.playerPos.X;
-            float yDistance = (float)ms.Y - player.playerPos.Y;
+            float xDistance = (float)ms.X - player.pos.X;
+            float yDistance = (float)ms.Y - player.pos.Y;
             player.rotation = (float)Math.Atan2(yDistance, xDistance);
             double h = Math.Sqrt(xDistance * xDistance + yDistance * yDistance);
             float dn = (float)h;
@@ -101,7 +101,7 @@ namespace TCOBO
             player.aimRec.Normalize();
             double recX = (double)player.aimRec.X * 40 * player.size;
             double recY = (double)player.aimRec.Y * 40 * player.size;
-            player.attackHitBox = new Rectangle((int)(player.playerPos.X + recX - 25 * player.size), (int)(player.playerPos.Y + recY - 25 * player.size), (int)(50*player.size), (int)(50*player.size));
+            player.attackHitBox = new Rectangle((int)(player.pos.X + recX - 25 * player.size), (int)(player.pos.Y + recY - 25 * player.size), (int)(50*player.size), (int)(50*player.size));
         }
 
         public void handleLoss()
@@ -281,7 +281,7 @@ namespace TCOBO
                         player.hasYellowKey = false;
                     item.hand = false;
                     itemManager.PickedUp = false;
-                    item.pos = new Vector2(player.playerPos.X + 50, player.playerPos.Y);
+                    item.pos = new Vector2(player.pos.X + 50, player.pos.Y);
                     itemManager.ItemList.Add(item);
                     itemManager.InventoryList.Remove(item);                   
                     break;
@@ -481,7 +481,7 @@ namespace TCOBO
                 testWorld.DrawDoodad(spriteBatch);
                 if (player.dead)
                 {
-                    spriteBatch.DrawString(TextureManager.uitext, "You are dead\nPress Space to restart\nPathetic...", new Vector2(player.playerPos.X - 50, player.playerPos.Y - 100), Color.White);
+                    spriteBatch.DrawString(TextureManager.uitext, "You are dead\nPress Space to restart\nPathetic...", new Vector2(player.pos.X - 50, player.pos.Y - 100), Color.White);
                 }
                 spriteBatch.End();
                 spriteBatch.Begin();

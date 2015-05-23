@@ -13,7 +13,7 @@ namespace TCOBO
 {
     class Player : MovableObject 
     {
-        public Vector2 playerPos, origin, aimRec;
+        public Vector2 pos, origin, aimRec;
         private ContentManager content;
         public Color swordColor, newColor;
         public Rectangle srcRec, attackHitBox;
@@ -52,7 +52,7 @@ namespace TCOBO
       
         public Vector2 GetPos()
         {
-            return playerPos;
+            return pos;
         }
 
         public Tuple<int, int, int, int, int, int> GetPlayerStats()
@@ -69,7 +69,7 @@ namespace TCOBO
         {
             this.content = content;
           //  swordColor = Color.White;
-            playerPos = new Vector2(-145, 0);
+            pos = new Vector2(-145, -50);
             //attackHitBox = new Rectangle(0, 0, 0, 0);
             srcRec = new Rectangle(0, 0, 100, 100);
             origin = new Vector2(80, 80);
@@ -226,8 +226,8 @@ namespace TCOBO
 
 
             velocity += Vector2.Multiply(acceleration, (float)gameTime.ElapsedGameTime.TotalSeconds);
-            playerPos += Vector2.Multiply(velocity, (float)gameTime.ElapsedGameTime.TotalSeconds);
-            playerPos += Vector2.Multiply(velocity2, (float)gameTime.ElapsedGameTime.TotalSeconds);
+            pos += Vector2.Multiply(velocity, (float)gameTime.ElapsedGameTime.TotalSeconds);
+            pos += Vector2.Multiply(velocity2, (float)gameTime.ElapsedGameTime.TotalSeconds);
 
             if (velocity2.Y > 0)
             {
@@ -301,7 +301,7 @@ namespace TCOBO
                     if (animaCount > 4)
                     {
                         healing = false;
-                        HP += Int / 2;
+                        HP += Int * 2;
                         if (HP > Vit * 5)
                             HP = Vit * 5;
                         animaCount = 0;
@@ -392,12 +392,12 @@ namespace TCOBO
         public void Collision (GameTime gameTime, List<Tile> tiles) 
          {
             playerSize = basePlayerSize * size;
-            hitBox = new Rectangle((int)(playerPos.X - playerSize / 2 + playerSize / 10), (int)(playerPos.Y - playerSize / 2 + playerSize / 10), (int)(playerSize - playerSize / 5), (int)(playerSize - playerSize / 5));
+            hitBox = new Rectangle((int)(pos.X - playerSize / 2 + playerSize / 10), (int)(pos.Y - playerSize / 2 + playerSize / 10), (int)(playerSize - playerSize / 5), (int)(playerSize - playerSize / 5));
 
-            boundsTop = new Rectangle((int)(playerPos.X - playerSize/2 + playerSize / 5), (int)(playerPos.Y - playerSize/2 + playerSize/10), (int)(playerSize - (playerSize / 2.5f)), (int)(playerSize / 8));
-            boundsBot = new Rectangle((int)(playerPos.X - playerSize/2 + playerSize / 5), (int)((playerPos.Y + playerSize / 2 - playerSize / 4f)), (int)(playerSize - (playerSize / 2.5f)), (int)(playerSize / 8));
-            boundsLeft = new Rectangle((int)(playerPos.X - playerSize / 2 + playerSize / 8), (int)(playerPos.Y - playerSize / 2 + playerSize / 4.5f), (int)(playerSize / 8), (int)(playerSize - playerSize / 2));
-            boundsRight = new Rectangle((int)(playerPos.X + playerSize / 2 - playerSize / 4), (int)(playerPos.Y - playerSize / 2 + playerSize / 4.5f), (int)(playerSize / 8), (int)(playerSize - playerSize / 2));
+            boundsTop = new Rectangle((int)(pos.X - playerSize/2 + playerSize / 5), (int)(pos.Y - playerSize/2 + playerSize/10), (int)(playerSize - (playerSize / 2.5f)), (int)(playerSize / 8));
+            boundsBot = new Rectangle((int)(pos.X - playerSize/2 + playerSize / 5), (int)((pos.Y + playerSize / 2 - playerSize / 4f)), (int)(playerSize - (playerSize / 2.5f)), (int)(playerSize / 8));
+            boundsLeft = new Rectangle((int)(pos.X - playerSize / 2 + playerSize / 8), (int)(pos.Y - playerSize / 2 + playerSize / 4.5f), (int)(playerSize / 8), (int)(playerSize - playerSize / 2));
+            boundsRight = new Rectangle((int)(pos.X + playerSize / 2 - playerSize / 4), (int)(pos.Y - playerSize / 2 + playerSize / 4.5f), (int)(playerSize / 8), (int)(playerSize - playerSize / 2));
             foreach (Tile t in tiles)
             {
                 if (t.typeOfTile == "redwall" && hasRedKey == true)
@@ -486,7 +486,7 @@ namespace TCOBO
 
         public override void Update(GameTime gameTime)
         {
-            Console.WriteLine(playerPos);
+            Console.WriteLine(pos);
             effectiveStats = Tuple.Create<float, float, float>(mDamage, MANA, HP);
             if (HP > 0)
             {
@@ -516,30 +516,30 @@ namespace TCOBO
             if (HP > 0)
             {
                 if (swordEquipped && !(strike || strike2 || healing))
-                    spriteBatch.Draw(swordTex[animaCount], playerPos, null, swordColor, rotation, origin, size, SpriteEffects.None, 0f);
+                    spriteBatch.Draw(swordTex[animaCount], pos, null, swordColor, rotation, origin, size, SpriteEffects.None, 0f);
 
                 if (strike)
                 {
-                    spriteBatch.Draw(strikeTexSword1, playerPos, null, swordColor, rotation, origin, size, SpriteEffects.None, 0f);
-                    spriteBatch.Draw(strikeTexPlayer1, playerPos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
+                    spriteBatch.Draw(strikeTexSword1, pos, null, swordColor, rotation, origin, size, SpriteEffects.None, 0f);
+                    spriteBatch.Draw(strikeTexPlayer1, pos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
                 }
                 else if (strike2)
                 {
-                    spriteBatch.Draw(strikeTexSword2, playerPos, null, swordColor, rotation, origin, size, SpriteEffects.None, 0f);
-                    spriteBatch.Draw(strikeTexPlayer2, playerPos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
+                    spriteBatch.Draw(strikeTexSword2, pos, null, swordColor, rotation, origin, size, SpriteEffects.None, 0f);
+                    spriteBatch.Draw(strikeTexPlayer2, pos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
                 }
                 else if (healing)
                 {
-                    spriteBatch.Draw(heal[animaCount], playerPos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
+                    spriteBatch.Draw(heal[animaCount], pos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
                 }
                 else
                 {
-                    spriteBatch.Draw(playerTex[animaCount], playerPos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
+                    spriteBatch.Draw(playerTex[animaCount], pos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
                 }
 
                 if (armorEquip)
                 {
-                    spriteBatch.Draw(TextureManager.standardArmor, new Vector2(playerPos.X, playerPos.Y), null, Color.Black, rotation, new Vector2(15, 15), size, SpriteEffects.None, 0f);
+                    spriteBatch.Draw(TextureManager.standardArmor, new Vector2(pos.X, pos.Y), null, Color.Black, rotation, new Vector2(15, 15), size, SpriteEffects.None, 0f);
                 }
            
             }
@@ -547,7 +547,7 @@ namespace TCOBO
             {
                 dead = true;
                 MediaPlayer.Play(soundManager.deathSound);
-                spriteBatch.Draw(deathTex, playerPos, null, Color.White, 0, origin, size, SpriteEffects.None, 0f);
+                spriteBatch.Draw(deathTex, pos, null, Color.White, 0, origin, size, SpriteEffects.None, 0f);
             }
             
             if(isHpBarVisible && HP > 0)
@@ -556,11 +556,11 @@ namespace TCOBO
                 percentLife = HP / (tempVit * 5);
                 if (percentLife < 1.0f)
                 {
-                    spriteBatch.Draw(TextureManager.blankHpBar, new Rectangle((int)playerPos.X - hitBox.Width / 2,
-                        ((int)playerPos.Y - 4) - hitBox.Height / 2, hitBox.Width, 4), Color.Red); // ritar över en röd bar över den gröna
+                    spriteBatch.Draw(TextureManager.blankHpBar, new Rectangle((int)pos.X - hitBox.Width / 2,
+                        ((int)pos.Y - 4) - hitBox.Height / 2, hitBox.Width, 4), Color.Red); // ritar över en röd bar över den gröna
                 }
-                spriteBatch.Draw(TextureManager.blankHpBar, new Rectangle((int)playerPos.X - hitBox.Width / 2,
-                    ((int)playerPos.Y - 4) - hitBox.Height / 2, (int)(hitBox.Width * percentLife), 4), Color.Black);
+                spriteBatch.Draw(TextureManager.blankHpBar, new Rectangle((int)pos.X - hitBox.Width / 2,
+                    ((int)pos.Y - 4) - hitBox.Height / 2, (int)(hitBox.Width * percentLife), 4), Color.Black);
             }
             
 

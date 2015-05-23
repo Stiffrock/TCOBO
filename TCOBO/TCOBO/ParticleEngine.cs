@@ -52,7 +52,7 @@ namespace TCOBO
 
         public void Update()
         {
-            int total = (int)(Vit*1.5f);
+            int total = (int)(Vit*0.8f);
 
             for (int i = 0; i < total; i++)
             {

@@ -34,8 +34,8 @@ namespace TCOBO
 
             if (KeyMouseReader.LeftClick() == true && player.swordinHand)
             {
-                double deltaX = enemy.pos.X - player.playerPos.X;
-                double deltaY =  enemy.pos.Y - player.playerPos.Y;
+                double deltaX = enemy.pos.X - player.pos.X;
+                double deltaY =  enemy.pos.Y - player.pos.Y;
 
 
                 double h = Math.Sqrt(deltaX * deltaX + deltaY * deltaY);

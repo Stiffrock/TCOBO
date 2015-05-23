@@ -27,7 +27,7 @@ namespace TCOBO
         {
             this.main = main;
             this.scenePlayer = scenePlayer;
-            scenePlayer.playerPos = new Vector2(500, 500);
+            scenePlayer.pos = new Vector2(500, 500);
             bossPos = new Vector2(50, 50);
             sceneText = TextureManager.uitext;
         }
@@ -102,21 +102,21 @@ namespace TCOBO
 
         public void cameraBounds()
         {
-            if (scenePlayer.playerPos.X >= 1330)
+            if (scenePlayer.pos.X >= 1330)
             {
-                scenePlayer.playerPos.X = 0;
+                scenePlayer.pos.X = 0;
             }
-            if (scenePlayer.playerPos.X <= -50)
+            if (scenePlayer.pos.X <= -50)
             {
-                scenePlayer.playerPos.X = 1280;
+                scenePlayer.pos.X = 1280;
             }
-            if (scenePlayer.playerPos.Y >= 770)
+            if (scenePlayer.pos.Y >= 770)
             {
-                scenePlayer.playerPos.Y = 0;
+                scenePlayer.pos.Y = 0;
             }
-            if (scenePlayer.playerPos.Y <= -50)
+            if (scenePlayer.pos.Y <= -50)
             {
-                scenePlayer.playerPos.Y = 720;
+                scenePlayer.pos.Y = 720;
             }
 
         }
@@ -131,11 +131,11 @@ namespace TCOBO
             {
                 screenBlink = true;
 
-                if (scenePlayer.playerPos.X <= 650 || scenePlayer.playerPos.Y <= 150)
+                if (scenePlayer.pos.X <= 650 || scenePlayer.pos.Y <= 150)
                 {
 
-                    scenePlayer.playerPos.X += 0.5f;
-                    scenePlayer.playerPos.Y -= 0.5f;                    
+                    scenePlayer.pos.X += 0.5f;
+                    scenePlayer.pos.Y -= 0.5f;                    
                 }
                 else
                 {

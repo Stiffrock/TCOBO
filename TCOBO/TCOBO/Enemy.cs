@@ -22,6 +22,7 @@ namespace TCOBO
         public float speed = 230f, max_speed = 130, slow_speed = 85, slow_speed_2 = 200;
         private bool move, moveUp, moveDown, moveLeft, moveRight, strike, strike2;
         private List<Texture2D> tex = new List<Texture2D>();
+        private List<Texture2D> swordTex = new List<Texture2D>();
         private List<Texture2D> blood = new List<Texture2D>();
         public Vector2 velocity, velocity2;
         private Vector2 acceleration;
@@ -72,10 +73,14 @@ namespace TCOBO
             this.pos = pos;
             hitBox = new Rectangle((int)pos.X-15, (int)pos.Y-15, 30, 30);
             Fx = SpriteEffects.None;
-            color = new Color(30, 30, 235);
+            color = new Color(0, 0, 255 - (Str * 10));
             for (int i = 1; i < 22; i++)
             {
                 tex.Add(content.Load<Texture2D>("player" + i));
+            }
+            for (int i = 1; i < 22; i++)
+            {
+                swordTex.Add(content.Load<Texture2D>("sword" + i));
             }
           /*  for (int i = 1; i < 7; i++)
             {
@@ -92,33 +97,33 @@ namespace TCOBO
         }
         public void HuntPlayer(Player player, GameTime gameTime)
         {
-            float distance = Vector2.Distance(player.playerPos, pos);
+            float distance = Vector2.Distance(player.pos, pos);
             if (distance < 400 + (Vit *10))
             {
                 move = true;
-                if (player.playerPos.X > pos.X) {
+                if (player.pos.X > pos.X) {
                     moveRight = true;
                     moveLeft = false;
                 }
-                else if (player.playerPos.X < pos.X) {
+                else if (player.pos.X < pos.X) {
                     moveLeft = true;
                     moveRight = false;
                 }
 
-                if (player.playerPos.Y > pos.Y)
+                if (player.pos.Y > pos.Y)
                 {
                     moveDown = true;
                     moveUp = false;
                 }
-                else if (player.playerPos.Y < pos.Y)
+                else if (player.pos.Y < pos.Y)
                 {
                     moveUp = true;
                     moveDown = false;
                 }
 
 
-                float xDistance = (float)player.playerPos.X - pos.X;
-                float yDistance = (float)player.playerPos.Y - pos.Y;
+                float xDistance = (float)player.pos.X - pos.X;
+                float yDistance = (float)player.pos.Y - pos.Y;
 
                 aimRec = new Vector2(xDistance, yDistance);
                 aimRec.Normalize();
@@ -178,7 +183,7 @@ namespace TCOBO
         public void UpdateEnemy(GameTime gameTime, Player player, List<Tile> tiles)
         {
             UpdateParticle(gameTime);
-            float distance = Vector2.Distance(player.playerPos, pos);
+            float distance = Vector2.Distance(player.pos, pos);
             if (health > 0 && distance < 400 + (Vit *10))
             {
                 if (Keyboard.GetState().IsKeyDown(Keys.LeftAlt))
@@ -279,6 +284,7 @@ namespace TCOBO
                 }
                 else
                 {
+                    spriteBatch.Draw(swordTex[animaCount], pos, null, Color.White, rotation, origin, size, SpriteEffects.None, 0f);
                     spriteBatch.Draw(tex[animaCount], pos, null, color, rotation, origin, size, SpriteEffects.None, 0f);
                 }
             }
@@ -303,6 +309,10 @@ namespace TCOBO
 
             //spriteBatch.Draw(TextureManager.sand1, hitBox, Color.Black);
             //spriteBatch.Draw(TextureManager.bricktile1, attackHitBox, Color.Black);
+            spriteBatch.Draw(TextureManager.sand1, boundsTop, Color.White);
+            spriteBatch.Draw(TextureManager.sand1, boundsBot, Color.White);
+            spriteBatch.Draw(TextureManager.sand1, boundsLeft, Color.White);
+            spriteBatch.Draw(TextureManager.sand1, boundsRight, Color.White);
         }
 
         public void DrawBlood(SpriteBatch sb)
@@ -432,50 +442,51 @@ namespace TCOBO
         {
             hitBox = new Rectangle((int)(pos.X - playerSize / 2 + playerSize / 10), (int)(pos.Y - playerSize / 2 + playerSize / 10), (int)(playerSize - playerSize / 5), (int)(playerSize - playerSize / 5));
             playerSize = basePlayerSize * size;
-            boundsTop = new Rectangle((int)(pos.X - playerSize / 2 + playerSize / 10), (int)(pos.Y - playerSize / 2), (int)(playerSize - (playerSize / 5)), (int)(playerSize / 10));
-            boundsBot = new Rectangle((int)(pos.X - playerSize / 2 + playerSize / 10), (int)((pos.Y + playerSize / 2 - playerSize / 10)), (int)(playerSize - (playerSize / 5)), (int)(playerSize / 10));
-            boundsLeft = new Rectangle((int)(pos.X - playerSize / 2), (int)(pos.Y - playerSize / 2 + playerSize / 10), (int)(playerSize / 10), (int)(playerSize - playerSize / 5));
-            boundsRight = new Rectangle((int)(pos.X + playerSize / 2 - playerSize / 10), (int)(pos.Y - playerSize / 2 + playerSize / 10), (int)(playerSize / 10), (int)(playerSize - playerSize / 5));
+            boundsTop = new Rectangle((int)(pos.X - playerSize / 2 + playerSize / 5), (int)(pos.Y - playerSize / 2 + playerSize / 10), (int)(playerSize - (playerSize / 2.5f)), (int)(playerSize / 8));
+            boundsBot = new Rectangle((int)(pos.X - playerSize / 2 + playerSize / 5), (int)((pos.Y + playerSize / 2 - playerSize / 4f)), (int)(playerSize - (playerSize / 2.5f)), (int)(playerSize / 8));
+            boundsLeft = new Rectangle((int)(pos.X - playerSize / 2 + playerSize / 8), (int)(pos.Y - playerSize / 2 + playerSize / 4.5f), (int)(playerSize / 8), (int)(playerSize - playerSize / 2));
+            boundsRight = new Rectangle((int)(pos.X + playerSize / 2 - playerSize / 4), (int)(pos.Y - playerSize / 2 + playerSize / 4.5f), (int)(playerSize / 8), (int)(playerSize - playerSize / 2));
             foreach (Tile t in tiles)
             {
+
                 if (t.collisionEnabled)
                 {
                     if (t.bounds.Intersects(boundsLeft))
                     {
                         if (velocity.X < 0)
-                            velocity.X = (velocity.X * -2) + max_speed / 10;
+                            velocity.X = (velocity.X * -0.8f) + 10;
                         else
-                            velocity.X = max_speed / 10;
-                        velocity.Y = velocity.Y * 1.1f;
+                            velocity.X = 10;
+                        velocity.Y = velocity.Y * 0.9f;
                         break;
 
                     }
                     if (t.bounds.Intersects(boundsRight))
                     {
                         if (velocity.X < 0)
-                            velocity.X = -max_speed / 10;
+                            velocity.X = -10;
                         else
-                            velocity.X = (velocity.X * -2) - max_speed / 10;
-                        velocity.Y = velocity.Y * 1.1f;
+                            velocity.X = (velocity.X * -0.8f) - 10;
+                        velocity.Y = velocity.Y * 0.9f;
                         break;
                     }
                     if (t.bounds.Intersects(boundsBot))
                     {
-                        if (velocity.Y < 0) //om påväg uppåt
-                            velocity.Y = -max_speed / 10;
+                        if (velocity.Y < 0)
+                            velocity.Y = -10;
                         else
-                            velocity.Y = (velocity.Y * -2) - max_speed / 10;
-                        velocity.X = velocity.X * 1.1f;
+                            velocity.Y = (velocity.Y * -0.8f) - 10;
+                        velocity.X = velocity.X * 0.9f;
                         break;
 
                     }
                     if (t.bounds.Intersects(boundsTop))
                     {
-                        if (velocity.Y < 0) //om påväg neråt
-                            velocity.Y = (velocity.Y * -2) + max_speed / 10;
+                        if (velocity.Y < 0)
+                            velocity.Y = (velocity.Y * -0.8f) + 10;
                         else
-                            velocity.Y = max_speed / 10;
-                        velocity.X = velocity.X * 1.1f;
+                            velocity.Y = 10;
+                        velocity.X = velocity.X * 0.9f;
                         break;
                     }
 
