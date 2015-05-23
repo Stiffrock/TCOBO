@@ -865,13 +865,19 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="shield.png">
       <Name>shield</Name>
+=======
+    <Compile Include="faststrikesword3.png">
+      <Name>faststrikesword3</Name>
+>>>>>>> origin/Stoffe
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="051.wav">
       <Name>051</Name>
       <Importer>WavImporter</Importer>
@@ -883,6 +889,19 @@
       <Name>020</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
+=======
+    <Compile Include="faststrikesword4.png">
+      <Name>faststrikesword4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="faststrikesword5.png">
+      <Name>faststrikesword5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+>>>>>>> origin/Stoffe
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

@@ -138,9 +138,15 @@ Content\RunningSound.xnb
 Content\BouncingSound.xnb
 Content\HitSound.xnb
 Content\Bloodsplat.xnb
+<<<<<<< HEAD
 Content\shield.xnb
 Content\051.xnb
 Content\020.xnb
+=======
+Content\faststrikesword3.xnb
+Content\faststrikesword4.xnb
+Content\faststrikesword5.xnb
+>>>>>>> origin/Stoffe
 Content\Ljudeffekt1.wma
 Content\TCOBO musik.wma
 Content\Death sound.wma
