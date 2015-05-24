@@ -158,3 +158,4 @@ Content\HUD1.3.xnb
 Content\HUD2.xnb
 Content\HUD2.1.xnb
 Content\HUD5.xnb
+Content\HUD2.2.xnb

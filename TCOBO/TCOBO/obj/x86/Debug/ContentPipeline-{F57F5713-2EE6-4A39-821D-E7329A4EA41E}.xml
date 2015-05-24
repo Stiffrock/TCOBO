@@ -1417,6 +1417,15 @@
       <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\HUD5.xnb</Output>
       <Time>2015-05-24T16:36:14.9224136+02:00</Time>
     </Item>
+    <Item>
+      <Source>HUD2.2.png</Source>
+      <Name>HUD2.2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\HUD2.2.xnb</Output>
+      <Time>2015-05-24T17:04:21.8136724+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{F57F5713-2EE6-4A39-821D-E7329A4EA41E}</ContentProjectGUID>

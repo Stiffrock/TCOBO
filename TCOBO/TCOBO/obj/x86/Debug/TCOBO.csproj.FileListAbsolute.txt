@@ -324,3 +324,4 @@ C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\HUD1.3.
 C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\HUD2.xnb
 C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\HUD2.1.xnb
 C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\HUD5.xnb
+C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\HUD2.2.xnb
