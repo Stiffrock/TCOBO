@@ -1426,6 +1426,33 @@
       <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\020.xnb</Output>
       <Time>2015-05-23T19:23:18.7077217+02:00</Time>
     </Item>
+    <Item>
+      <Source>screenBlood.png</Source>
+      <Name>screenBlood</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\screenBlood.xnb</Output>
+      <Time>2015-05-24T17:59:36.8611014+02:00</Time>
+    </Item>
+    <Item>
+      <Source>screenBlood2.png</Source>
+      <Name>screenBlood2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\screenBlood2.xnb</Output>
+      <Time>2015-05-24T18:04:08.5919594+02:00</Time>
+    </Item>
+    <Item>
+      <Source>screenBlood3.png</Source>
+      <Name>screenBlood3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\screenBlood3.xnb</Output>
+      <Time>2015-05-24T18:07:58.8869433+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{F57F5713-2EE6-4A39-821D-E7329A4EA41E}</ContentProjectGUID>

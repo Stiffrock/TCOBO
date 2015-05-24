@@ -159,3 +159,6 @@ Content\HitSound.xnb
 Content\Bloodsplat.xnb
 Content\051.xnb
 Content\020.xnb
+Content\screenBlood.xnb
+Content\screenBlood2.xnb
+Content\screenBlood3.xnb
