@@ -161,7 +161,7 @@ namespace TCOBO
                 levelUpTex.Add(content.Load<Texture2D>("fire" + i));
             }
             
-            strikeTexSword1 = content.Load<Texture2D>("faststrikesword4.1");
+            strikeTexSword1 = content.Load<Texture2D>("faststrikesword4");
             strikeTexPlayer1 = content.Load<Texture2D>("faststrikePlayer1");
             strikeTexSword2 = content.Load<Texture2D>("faststrikeSword5");
             strikeTexPlayer2 = content.Load<Texture2D>("faststrikePlayer2");

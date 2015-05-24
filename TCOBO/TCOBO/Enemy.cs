@@ -86,7 +86,7 @@ namespace TCOBO
                 blood.Add(content.Load<Texture2D>("fire" + i));
             }*/
             blood.Add(TextureManager.blood2);
-            strikeTexSword1 = content.Load<Texture2D>("faststrikeSword4.1");
+            strikeTexSword1 = content.Load<Texture2D>("faststrikeSword4");
             strikeTexPlayer1 = content.Load<Texture2D>("faststrikePlayer1");
             strikeTexSword2 = content.Load<Texture2D>("faststrikeSword5");
             strikeTexPlayer2 = content.Load<Texture2D>("faststrikePlayer2");
