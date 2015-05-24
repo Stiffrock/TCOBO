@@ -129,6 +129,13 @@ Content\greenwall.xnb
 Content\faststrikesword4.1.xnb
 Content\faststrikesword6.xnb
 Content\faststrikesword7.xnb
+Content\HUD1.xnb
+Content\HUD1.1.xnb
+Content\HUD1.3.xnb
+Content\HUD2.xnb
+Content\HUD2.1.xnb
+Content\HUD5.xnb
+Content\HUD2.2.xnb
 Content\SpriteFont1.xnb
 Content\MOStatFont.xnb
 Content\MenuFont.xnb
@@ -149,13 +156,6 @@ Content\HitSound.xnb
 Content\Bloodsplat.xnb
 Content\051.xnb
 Content\020.xnb
-Content\HUD1.xnb
-Content\HUD1.1.xnb
-Content\HUD1.3.xnb
-Content\HUD2.xnb
-Content\HUD2.1.xnb
-Content\HUD5.xnb
-Content\HUD2.2.xnb
 Content\Ljudeffekt1.wma
 Content\TCOBO musik.wma
 Content\Death sound.wma

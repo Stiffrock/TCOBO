@@ -81,7 +81,7 @@ namespace TCOBO
             GreenKey = Content.Load<Texture2D>("greenkey");
             GreenWall = Content.Load<Texture2D>("greenwall");
             blood2 = Content.Load<Texture2D>("blood5");
-            HUD1 = Content.Load<Texture2D>("HUD2.2");
+            HUD1 = Content.Load<Texture2D>("HUD2.1");
 
         }
 
