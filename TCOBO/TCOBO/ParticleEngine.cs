@@ -64,7 +64,11 @@ namespace TCOBO
 
         public void Update()
         {
-            int total = (int)(Vit*0.8f);
+            int total;
+            if (blood)
+                total = (int)(Vit * 0.8f);
+            else
+                total = 5;
 
             for (int i = 0; i < total; i++)
             {

@@ -413,7 +413,7 @@ namespace TCOBO
 
         public void StartParticleEffect()
         {
-            ParticleEngine NPE = new ParticleEngine(levelUpTex, new Vector2(pos.X, pos.Y), 30, false);
+            ParticleEngine NPE = new ParticleEngine(levelUpTex, new Vector2(pos.X, pos.Y), 60, false);
             NPE.bloodTimer = TimeSpan.FromSeconds(NPE.bloodTime);
             NPE.drawBlood = true;
             particleEngine.Add(NPE);
