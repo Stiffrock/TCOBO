@@ -34,7 +34,7 @@ namespace TCOBO
         private int row = 0, itemcount = 0, i = 0;
         private Tuple<int, int, int, int, int, int> playerStats;
         private Tuple<float, float, float> effectiveStats;
-        private float deltaTime = 8000;
+        private float deltaTime = 8000, bloodtrans = 0;
         SoundManager soundManager = new SoundManager();
         private bool cutScene = true, enemiesSpawned = false;
         public bool loss = false;
@@ -354,7 +354,29 @@ namespace TCOBO
             }
 
         }
-             
+
+        public void handleScreenBlood()
+        {
+            if (player.HP < (player.Vit * 5)/1.5 )
+            {
+                bloodtrans = 0.2f;
+            }
+
+            if (player.HP <= (player.Vit * 5) / 2)
+            {
+                bloodtrans = 0.4f;
+            }
+
+            if (player.HP <= (player.Vit * 5) / 4)
+            {
+                bloodtrans = 0.6f;
+            }
+
+            if (player.HP <= (player.Vit * 5)/5)
+            {
+                bloodtrans = 0.8f;
+            }
+        }
 
         private void detectEnemy()
         {
@@ -382,6 +404,7 @@ namespace TCOBO
                 detectEquip();
                 detectItem();
                 ClickStats();
+                handleScreenBlood();
                 itemManager.Update(gameTime);
                 krm.Update();
                 attack.Update(gameTime);
@@ -503,7 +526,11 @@ namespace TCOBO
                 spriteBatch.DrawString(TextureManager.uitext, "Mana: " + player.MANA.ToString() + " / " + player.Int * 10, new Vector2(250, 25), Color.White);
                
                 handleTooltip(spriteBatch);
-                spriteBatch.Draw(TextureManager.screenBlood, Vector2.Zero, new Color(1, 0, 0, 0.8f));
+                if (bloodtrans != 0)
+                {
+                    spriteBatch.Draw(TextureManager.screenBlood, Vector2.Zero, new Color(bloodtrans, 0, 0, bloodtrans));
+                }
+                
                 board.Draw(spriteBatch);
                 itemManager.Draw(spriteBatch);
              
