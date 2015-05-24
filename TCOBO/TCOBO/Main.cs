@@ -208,7 +208,7 @@ namespace TCOBO
                     board.currentIntFont = board.MOStatFont;
                     if (KeyMouseReader.LeftClick())
                     {
-                        player.MANA += 1;
+                        player.MANA += 10;
                         player.Int += 1;
                         player.newStat -= 1;
                         soundManager.statSound.Play();

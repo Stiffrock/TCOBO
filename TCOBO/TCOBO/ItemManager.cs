@@ -39,9 +39,9 @@ namespace TCOBO
             standardSword = new Sword(10, TextureManager.standardSword, Color.White, new Vector2(-100,0), "Standard sword");
 
             blueSword = new Sword(20, TextureManager.blueSword, Color.LightBlue, new Vector2(-40, 3045),"Blue sword infused by magic");
-            redSword = new Sword(40, TextureManager.redSword, Color.SandyBrown, new Vector2(-3065, 2563),"Vicious bloodthirsty sword");
+            redSword = new Sword(30, TextureManager.redSword, Color.SandyBrown, new Vector2(-3065, 2563),"Vicious bloodthirsty sword");
             goldenSword = new Sword(100, TextureManager.goldenSword, Color.Gold, new Vector2(0, 60),"The super duper golden\nmega rod of destruction");
-            standardArmor = new Armor(50, TextureManager.standardArmor, new Vector2(-3440, 1592),"Standard armor");
+            standardArmor = new Armor(10, TextureManager.standardArmor, new Vector2(-3440, 1592),"Standard armor");
             redKey = new Key(TextureManager.RedKey, new Vector2(-2550, 190), "Red Key");
             blueKey = new Key(TextureManager.BlueKey, new Vector2(5922, -3537), "Blue Key");
             yellowKey = new Key(TextureManager.YellowKey, new Vector2(5327, -2133), "Yellow Key");
