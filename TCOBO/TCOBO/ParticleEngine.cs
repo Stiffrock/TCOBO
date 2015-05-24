@@ -65,8 +65,14 @@ namespace TCOBO
         public void Update()
         {
             int total;
-            if (blood)
-                total = (int)(Vit * 0.8f);
+            if (blood) 
+            {
+                if (Vit > 30)
+                    Vit = 35;
+
+                total = (int)Vit;
+            }
+                
             else
                 total = 5;
 
