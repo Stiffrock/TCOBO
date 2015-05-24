@@ -490,7 +490,7 @@ namespace TCOBO
                 testWorld.DrawDoodad(spriteBatch);
                 if (player.dead)
                 {
-                    spriteBatch.DrawString(TextureManager.uitext, "You are dead\nPress Space to restart\nPathetic...", new Vector2(player.pos.X - 50, player.pos.Y - 100), Color.White);
+                    spriteBatch.DrawString(TextureManager.uitext, "You died at level: "+player.Level.ToString()+"\nPress Space to restart\nPathetic...", new Vector2(player.pos.X - 50, player.pos.Y - 100), Color.White);
                 }
                 spriteBatch.End();
                 spriteBatch.Begin();
