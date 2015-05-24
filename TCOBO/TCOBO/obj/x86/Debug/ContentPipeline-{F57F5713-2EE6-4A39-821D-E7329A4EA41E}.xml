@@ -1453,6 +1453,15 @@
       <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\screenBlood3.xnb</Output>
       <Time>2015-05-24T18:07:58.8869433+02:00</Time>
     </Item>
+    <Item>
+      <Source>deadPlayer2.png</Source>
+      <Name>deadPlayer2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\deadPlayer2.xnb</Output>
+      <Time>2015-05-24T19:09:43.1276077+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{F57F5713-2EE6-4A39-821D-E7329A4EA41E}</ContentProjectGUID>

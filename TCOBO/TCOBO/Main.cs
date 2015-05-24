@@ -494,6 +494,10 @@ namespace TCOBO
                 spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null,
                 camera.transform);
                 testWorld.Draw(spriteBatch);
+                if (player.dead)
+                {
+                        spriteBatch.Draw(player.deathTex, player.pos, null, Color.Red, 0, player.origin, player.size, SpriteEffects.None, 0f);
+                }
 
          
                 foreach (Enemy e in enemyList)

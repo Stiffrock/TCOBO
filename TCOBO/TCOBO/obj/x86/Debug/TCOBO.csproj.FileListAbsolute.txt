@@ -168,3 +168,4 @@ C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\obj\x86\Debug\TCOBO.pdb
 C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\screenBlood.xnb
 C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\screenBlood2.xnb
 C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\screenBlood3.xnb
+C:\Users\Stoffe\Documents\GitHub\TCOBO\TCOBO\TCOBO\bin\x86\Debug\Content\deadPlayer2.xnb

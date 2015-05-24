@@ -34,7 +34,7 @@ namespace TCOBO
         public List<Texture2D> playerTex = new List<Texture2D>();
         private List<Texture2D> swordTex = new List<Texture2D>();
         private List<Texture2D> heal = new List<Texture2D>();
-        Texture2D strikeTexSword1, strikeTexPlayer1, strikeTexSword2, strikeTexPlayer2, deathTex, shieldTex;
+        public Texture2D strikeTexSword1, strikeTexPlayer1, strikeTexSword2, strikeTexPlayer2, deathTex, shieldTex;
         private List<float> levelList = new List<float>();
         public Rectangle boundsTop, boundsBot, boundsLeft, boundsRight, hitBox;
         public float attackspeed = 5f;
@@ -160,7 +160,7 @@ namespace TCOBO
             strikeTexPlayer1 = content.Load<Texture2D>("faststrikePlayer1");
             strikeTexSword2 = content.Load<Texture2D>("faststrikeSword5");
             strikeTexPlayer2 = content.Load<Texture2D>("faststrikePlayer2");
-            deathTex = content.Load<Texture2D>("Death");
+            deathTex = content.Load<Texture2D>("deadPlayer2");
             shieldTex = content.Load<Texture2D>("shield");
             
         }
@@ -571,7 +571,7 @@ namespace TCOBO
             {
                 dead = true;
                 MediaPlayer.Play(soundManager.deathSound);
-                spriteBatch.Draw(deathTex, pos, null, Color.White, 0, origin, size, SpriteEffects.None, 0f);
+            
             }
             
             if(isHpBarVisible && HP > 0)
