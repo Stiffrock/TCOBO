@@ -18,7 +18,7 @@ namespace TCOBO
         public Color swordColor, newColor;
         public Rectangle srcRec, attackHitBox;
         public float deltaTime, Exp = 0, mDamage = 1, sDamage = 1, HP = 10;
-
+        private List<Texture2D> levelUpTex = new List<Texture2D>();
         public float rotation = 0f;
         public int 
             animaCount = 0, Level = 1, Str = 10, Dex = 10, 
@@ -49,7 +49,7 @@ namespace TCOBO
         public Vector2 strikeVelocity;
         public bool shieldUp = false;
         public Rectangle drawRec;
-
+        List<ParticleEngine> particleEngine = new List<ParticleEngine>();
         SoundManager soundManager = new SoundManager();
         SoundEffectInstance instance;
       
@@ -110,6 +110,7 @@ namespace TCOBO
                     Level += 1;
                     newStat += 5;
                     Exp = 0;
+                    StartParticleEffect();
 
                     soundManager.levelupSound.Play();
 
@@ -154,6 +155,10 @@ namespace TCOBO
             for (int i = 1; i < 6; i++)
             {
                 heal.Add(content.Load<Texture2D>("heal" + i));
+            }
+            for (int i = 1; i < 7; i++)
+            {
+                levelUpTex.Add(content.Load<Texture2D>("fire" + i));
             }
             
             strikeTexSword1 = content.Load<Texture2D>("faststrikesword4.1");
@@ -406,6 +411,33 @@ namespace TCOBO
             //spell
         }
 
+        public void StartParticleEffect()
+        {
+            ParticleEngine NPE = new ParticleEngine(levelUpTex, new Vector2(pos.X, pos.Y), 30, false);
+            NPE.bloodTimer = TimeSpan.FromSeconds(NPE.bloodTime);
+            NPE.drawBlood = true;
+            particleEngine.Add(NPE);
+        }
+
+        public void UpdateParticle(GameTime gameTime)
+        {
+            foreach (ParticleEngine PE in particleEngine)
+            {
+                if (PE.drawBlood)
+                {
+                    if (PE.bloodTimer.TotalSeconds > 0)
+                        PE.bloodTimer = PE.bloodTimer.Subtract(gameTime.ElapsedGameTime);
+                    else
+                    {
+                        PE.drawBlood = false;
+                        PE.bloodTimer = TimeSpan.FromSeconds(PE.bloodTime);
+                    }
+                    PE.EmitterLocation = new Vector2(pos.X, pos.Y);
+                    PE.Update();
+                }
+            }
+
+        }
         
 
         public void Collision (GameTime gameTime, List<Tile> tiles) 
@@ -512,6 +544,7 @@ namespace TCOBO
             effectiveStats = Tuple.Create<float, float, float>(mDamage, MANA, HP);
             if (HP > 0)
             {
+                UpdateParticle(gameTime);
                 if (Keyboard.GetState().IsKeyDown(Keys.LeftAlt))
                 {
                     isHpBarVisible = true;
@@ -601,6 +634,15 @@ namespace TCOBO
             //spriteBatch.Draw(TextureManager.sand1, boundsBot, Color.Black);
             //spriteBatch.Draw(TextureManager.sand1, boundsLeft, Color.Black);
             //spriteBatch.Draw(TextureManager.sand1, boundsRight, Color.Black);
+        }
+
+        public void DrawLevelEffect(SpriteBatch sb)
+        {
+            foreach (ParticleEngine PE in particleEngine)
+            {
+                PE.Draw(sb);
+            }
+
         }
     }
 }

@@ -504,6 +504,7 @@ namespace TCOBO
                 {
                     e.DrawBlood(spriteBatch);
                 }
+                player.DrawLevelEffect(spriteBatch);
                 foreach (Enemy e in enemyList)
                 {
                     e.Draw(spriteBatch);

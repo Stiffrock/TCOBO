@@ -40,7 +40,6 @@ namespace TCOBO
         public float playerSize = 36, basePlayerSize = 36;
         public Rectangle boundsTop, boundsBot, boundsLeft, boundsRight;
         Texture2D strikeTexSword1, strikeTexPlayer1, strikeTexSword2, strikeTexPlayer2, deathTex;
-        bool drawBlood = false;
         public int
         Str = 10, Dex = 10,
         Vit = 10, Int = 10, health, expDrop;
@@ -244,7 +243,7 @@ namespace TCOBO
 
         public void StartParticleEffect()
         {
-            ParticleEngine NPE = new ParticleEngine(blood, new Vector2(pos.X, pos.Y), Vit);
+            ParticleEngine NPE = new ParticleEngine(blood, new Vector2(pos.X, pos.Y), Vit, true);
             NPE.bloodTimer = TimeSpan.FromSeconds(NPE.bloodTime);
             NPE.drawBlood = true;
             particleEngine.Add(NPE);
