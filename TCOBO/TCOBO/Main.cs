@@ -526,9 +526,9 @@ namespace TCOBO
 
              
                 spriteBatch.Draw(TextureManager.HUD1, Vector2.Zero, new Color(255,255,255, 0.6f));
-                spriteBatch.DrawString(TextureManager.uitext, "Level: " + player.Level.ToString(), new Vector2(50, 25), Color.White);
-                spriteBatch.DrawString(TextureManager.uitext, "Health: " + player.HP.ToString() + " / " + player.Vit * 5, new Vector2(125, 25), Color.White);
-                spriteBatch.DrawString(TextureManager.uitext, "Mana: " + player.MANA.ToString() + " / " + player.Int * 10, new Vector2(250, 25), Color.White);
+                spriteBatch.DrawString(TextureManager.uitext, "Level: " + player.Level.ToString(), new Vector2(60, 25), Color.White);
+                spriteBatch.DrawString(TextureManager.uitext, "Health: " + player.HP.ToString() + " / " + player.Vit * 5, new Vector2(140, 25), Color.White);
+                spriteBatch.DrawString(TextureManager.uitext, "Mana: " + player.MANA.ToString() + " / " + player.Int * 10, new Vector2(270, 25), Color.White);
                
                 handleTooltip(spriteBatch);
                 if (bloodtrans != 0)
