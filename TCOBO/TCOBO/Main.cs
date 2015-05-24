@@ -357,22 +357,22 @@ namespace TCOBO
 
         public void handleScreenBlood()
         {
-            if (player.HP < (player.Vit * 5)/1.5 )
+            if (player.HP > (player.Vit * 5) /1.2)
             {
-                bloodtrans = 0.2f;
+                bloodtrans = 0f;
             }
 
-            if (player.HP <= (player.Vit * 5) / 2)
+            if (player.HP <= (player.Vit * 5) /1.2)
             {
                 bloodtrans = 0.4f;
             }
 
-            if (player.HP <= (player.Vit * 5) / 4)
+            if (player.HP <= (player.Vit * 5) /2)
             {
                 bloodtrans = 0.6f;
             }
 
-            if (player.HP <= (player.Vit * 5)/5)
+            if (player.HP <= (player.Vit * 5)/4)
             {
                 bloodtrans = 0.8f;
             }
