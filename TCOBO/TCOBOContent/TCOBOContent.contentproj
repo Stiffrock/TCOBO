@@ -903,7 +903,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="greenkey.png">
       <Name>greenkey</Name>
       <Importer>TextureImporter</Importer>
@@ -911,7 +910,9 @@
     </Compile>
     <Compile Include="greenwall.png">
       <Name>greenwall</Name>
-=======
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <Compile Include="faststrikesword4.1.png">
       <Name>faststrikesword4.1</Name>
       <Importer>TextureImporter</Importer>
@@ -928,7 +929,6 @@
   <ItemGroup>
     <Compile Include="faststrikesword7.png">
       <Name>faststrikesword7</Name>
->>>>>>> origin/Stoffe
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
