@@ -141,7 +141,7 @@ namespace TCOBO
 
             if (i < 6)
             {
-                spriteBatch.DrawString(TextureManager.uitext, activeTooltip, new Vector2(300, 200), Color.Silver);
+                spriteBatch.DrawString(TextureManager.uitext, activeTooltip, new Vector2(200, 690), Color.Silver);
             }
             
         }
@@ -494,8 +494,12 @@ namespace TCOBO
                 }
                 spriteBatch.End();
                 spriteBatch.Begin();
+             
+                spriteBatch.Draw(TextureManager.HUD1, Vector2.Zero, Color.White);
+                spriteBatch.DrawString(TextureManager.uitext, "Level: "+ player.Level.ToString(), new Vector2(50, 25), Color.White);
+                spriteBatch.DrawString(TextureManager.uitext, "Health: " + player.HP.ToString(), new Vector2(200, 25), Color.White);
+                spriteBatch.DrawString(TextureManager.uitext, "Mana: " + player.MANA.ToString(), new Vector2(300, 25), Color.White);
                 handleTooltip(spriteBatch);
-         
                 board.Draw(spriteBatch);
                 itemManager.Draw(spriteBatch);
                 if (!enemiesSpawned)
